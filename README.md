@@ -1,1 +1,1 @@
-# 2021Wanxiang-Blockchain-Hackathon-AdaitaHealth
+# 2021Wanxiang-Blockchain-Hackathon-AdvaitaHealth
