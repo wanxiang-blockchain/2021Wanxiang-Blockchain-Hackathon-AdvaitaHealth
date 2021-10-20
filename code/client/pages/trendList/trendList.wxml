@@ -1,0 +1,122 @@
+<MyHeader bind:back="back"  backIcon="{{true}}" ></MyHeader>
+<view class="circle-list flex-box">
+	<view class="circle-item {{titleType == 0?'circle-active':''}}" bindtap="changeType" data-type="0">心藏趋势</view>
+	<view class="circle-item {{titleType == 1?'circle-active':''}}" bindtap="changeType" data-type="1">肝藏趋势</view>
+	<view class="circle-item {{titleType == 2?'circle-active':''}}" bindtap="changeType" data-type="2">肾藏趋势</view>
+</view>
+<view class="time-list flex-box">
+	<view class="time-item {{timeVal == 7?'time-active':''}} {{timeVal == 30?'time-active-no':''}}" bindtap="changeTime" data-type="7">最近7天</view>
+	<view class="time-item {{timeVal == 30?'time-active':''}} {{timeVal == 90?'time-active-no':''}}" bindtap="changeTime" data-type="30">最近1月</view>
+	<view class="time-item {{timeVal == 90?'time-active':''}} {{timeVal == 180?'time-active-no':''}}" bindtap="changeTime" data-type="90">最近3月</view>
+	<view class="time-item {{timeVal == 180?'time-active':''}}" bindtap="changeTime" data-type="180">最近6月</view>
+</view>
+<login wx:if="{{!userInfo}}"></login>
+ <scroll-view style="top: {{statusBarHeight*2+navHeight*2+192}}rpx;width:{{windowWidth}}px;" scroll-y="true" class="scroll-h">
+	<view class="life-bar" wx:if="{{titleType == 0}}">
+		<view class="life-echart">
+			<text class="left pink">心藏</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{heartData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-heart" canvas-id="mychart-dom-heart" ec="{{ecHeart}}"></ec-canvas>
+		</view>
+	</view>
+	<view class="life-bar" wx:if="{{titleType == 0}}">
+		<view class="life-echart">
+			<text class="left brown">心血管</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{cardiovascularscoreData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-cardiovascular" canvas-id="mychart-dom-cardiovascular" ec="{{ecCardiovascular}}"></ec-canvas>
+		</view>
+	</view>
+	<view class="life-bar" wx:if="{{titleType == 0}}">
+		<view class="life-echart">
+			<text class="left orange">精神</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{spiritscoreData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-spirit" canvas-id="mychart-dom-spirit" ec="{{ecSpirit}}"></ec-canvas>
+		</view>
+	</view>
+	<view class="life-bar" wx:if="{{titleType == 0}}">
+		<view class="life-echart">
+			<text class="left blue">睡眠</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{sleepqualiscoreData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-sleepquali" canvas-id="mychart-dom-sleepquali" ec="{{ecSleepquali}}"></ec-canvas>
+		</view>
+	</view>
+	<view class="life-bar" wx:if="{{titleType == 0}}">
+		<view class="life-echart">
+			<text class="left yellow">生命节律</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{diurnalrhythmscoreData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-diurnalrhythm" canvas-id="mychart-dom-diurnalrhythm" ec="{{ecDiurnalrhythm}}"></ec-canvas>
+		</view>
+	</view>
+	
+	 
+	<view class="life-bar" wx:if="{{titleType == 1}}">
+		<view class="life-echart">
+			<text class="left green">肝藏</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{liverData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-liver" canvas-id="mychart-dom-liver" ec="{{ecLiver}}"></ec-canvas>
+		</view>
+	</view>
+	
+	<view class="life-bar" wx:if="{{titleType == 2}}">
+		<view class="life-echart">
+			<text class="left lightblue">肾藏</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{kidneyData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-kidney" canvas-id="mychart-dom-kidney" ec="{{ecKidney}}"></ec-canvas>
+		</view>
+	</view>
+	
+	<view class="life-bar" wx:if="{{titleType == 2}}">
+		<view class="life-echart">
+			<text class="left lightgreen">寒热状态</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view  wx:if="{{energyscoreData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view  wx:if="{{ bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-energy" canvas-id="mychart-dom-energy" ec="{{chartEnergy}}"></ec-canvas>
+		</view>
+	</view>
+	
+	<view class="life-bar" wx:if="{{titleType == 2}}">
+		<view class="life-echart">
+			<text class="left lessblue">生命活力</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box">
+			<view wx:if="{{sympatheticscoreData.length==0 && !bpLoading}}" class="no-data">暂无数据</view>
+			<view wx:if="{{ bpLoading}}" class="no-data"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-sympathetic" canvas-id="mychart-dom-sympathetic" ec="{{chartSympathetic}}"></ec-canvas>
+		</view>
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+	<include src="../common/public.wxml" />
+	<include src="../common/auth.wxml" />

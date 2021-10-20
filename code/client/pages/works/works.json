@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+    	 "myLoading": "/components/myLoading/myLoading",
+		 "MyHeader": "/components/MyHeader/MyHeader",
+		 "myUserInfo": "/components/userInfo/userInfo",
+		 "messageboxOne": "/components/messageboxOne/messageboxOne",
+		 "login":"/components/login/login"
+    },
+	"navigationBarTextStyle": "black"
+}

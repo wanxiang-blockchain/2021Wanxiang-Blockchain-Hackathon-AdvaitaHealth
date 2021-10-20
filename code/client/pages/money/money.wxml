@@ -1,0 +1,25 @@
+<!--pages/activityApply/activityApply.wxml-->
+<!-- 头部 -->
+<include src="../common/auth.wxml" />
+<MyHeader  bind:back="back" backIcon="{{true}}"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;background: #f2f2f2;" scroll-y="true">
+	<view class="content">
+		<view class="team-list" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);">
+			<view class="team-item" wx:for="{{userList}}" wx:key='index' bindtap="getPay" data-id="{{item.poster_time_id}}">
+				<!-- <view class="team-name">名称：{{item.name}}</view> -->
+				<view class="team-name">{{item.intro}}</view>
+				<view class="team-name" style="font-weight:bold;font-size:32rpx;">¥ {{item.price}}</view>
+				<!-- <view class="team-name">开始时间：{{item.start_time}}</view> -->
+				<!-- <view class="team-name">结算时间：{{item.end_time}}</view> -->
+				<!-- <view class="team-name">更新时间：{{item.save_time}}</view> -->
+				<!-- <view class="team-name">是否每天重复执行{{item.is_everyday}}</view> -->
+			</view>
+			<view class="no-more" wx:if="{{ !userListMore && userList.length > 0 }}">-- 没有更多数据了 --</view>
+			<view class="no-more" wx:if="{{ userList.length === 0 }}">-- 暂无数据 --</view>
+		</view>
+	</view>
+  <!--判断未登录状态-->
+  <view wx:if="{{!userInfo}}" style="position: fixed;width: 100%;z-index: 999;height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);" bindtap="showLogin"></view>
+</scroll-view>
+<include src="../common/public.wxml" />

@@ -1,0 +1,50 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='排行榜' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view  scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll_h">
+	<view class="content">
+		<rank info="{{info}}" wx:if="{{info && userInfo}}" userInfo="{{userInfo}}" bindchangeId="changeSeason"></rank>
+		<view class="score-box" wx:if="{{isSign != 0 && isStart && !isEnd}}" bindtap="goUrl" data-url="/pageHappy/pageHappy/signature/signature">
+			<view class="score-item">*你缺卡了，需连续打卡才能进入排行榜</view>
+			<view class="score-item score-sign">忘记打卡-去补签</view>
+		</view>
+		
+		<block wx:if="{{isEnd && info.is_allow_get_prize == 1 && info.ranking<=30 && info.get_prize_state != 1 && isValid}}">
+			<view class="reward-box">
+				<image class="reward-img" src="{{goods.logo_url}}" mode="aspectFill" wx:if="{{(info.ranking>=goods.ranking_start)&& (info.ranking<=goods.ranking_end)}}"  wx:for="{{info.activity_fixed_prize_goods}}" wx:key="i" wx:for-item="goods" wx:for-index="i"/>
+				<view class="reward-time">
+					<view>{{validTime}}</view>
+					<view class="reward-text">有效领取倒计时</view>
+				</view>
+				<view class="reward-btn" bindtap="getGoods">领奖品</view>
+			</view>
+			<view class="reward-tips">恭喜你赢得本赛季奖品，请在7天内领取。</view>
+		</block>
+		
+		<view class="finish-box" wx:if="{{isEnd && info.get_prize_state == 1 && info.ranking<=30}}">
+			<image class="finish-img" src="{{goods.logo_url}}" mode="aspectFill" wx:if="{{(info.ranking>=goods.ranking_start)&& (info.ranking<=goods.ranking_end)}}"  wx:for="{{info.activity_fixed_prize_goods}}" wx:key="i" wx:for-item="goods" wx:for-index="i"/>
+			<view class="finish-btn">已领取奖品</view>
+		</view>
+		
+		<view class="score-box score-title" wx:if="{{topList.length>0}}">
+			<view class="score-item text-small">TOP100排名榜单</view>
+			<view class="score-reward">赛季奖品</view>
+			<view class="score-item text-small">积分</view>
+		</view>
+		<view class="rank-item" wx:for="{{topList}}" wx:key="index">
+			<view class="rank-index" style="color:#FF1919" wx:if="{{index == 0}}">{{index + 1}}</view>
+			<view class="rank-index" wx:elif="{{index<30 && index !=0}}">{{index + 1}}</view>
+			<view class="rank-index" style="color:#989898" wx:else>{{index + 1}}</view>
+			<image class="rank-image" src="{{item.avatar_url}}" mode="aspectFill" />
+			<view class="rank-name">{{item.nickname}}</view>
+			
+			<view class="rank-goods" wx:if="{{index < 30}}">
+				<image class="rank-img" src="{{goods.logo_url}}" bindtap="goUrl" data-url="/pageShop/pageShop/shopDetail/shopDetail?goods_id={{goods.goods_id}}" mode="aspectFill" wx:if="{{(index+1>=goods.ranking_start)&& (index+1<=goods.ranking_end)}}"  wx:for="{{info.activity_fixed_prize_goods}}" wx:key="i" wx:for-item="goods" wx:for-index="i"/>
+			</view>
+			<view class="rank-score">{{item.integral_num}}</view>
+		</view>
+	 </view>
+	<view style="height: 50rpx;"></view>
+</scroll-view>

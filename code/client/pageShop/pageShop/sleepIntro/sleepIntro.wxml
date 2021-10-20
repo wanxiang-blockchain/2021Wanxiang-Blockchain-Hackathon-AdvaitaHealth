@@ -1,0 +1,84 @@
+<view style="position: relative;z-index: 2;">
+	<MyHeader bind:back="back" backIcon="{{true}}" titleText='' background="#fff" color="#000"></MyHeader>
+</view>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view bindscroll="bindscroll" scroll-into-view="{{tagId}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;padding:{{scrollViewTopPx}} 15px 0px 15px;"
+ scroll-y="true" class="scroll_h">
+ <block wx:for="{{data}}" wx:key="index">
+	<image src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='top'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image style="width:40%;margin-left:5%;" bindtap="goUrl" data-url="{{item.to_url}}" src="{{item.image_url}}" mode="widthFix" wx:if="{{item.to_url_type=='2'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag4" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='师资'}}"></image>
+</block>
+	<view class="btn-group {{scrollTop>tag1_top ? 'nav' : 'rel'}}" style="top:{{scrollTop>tag1_top?statusBarHeight+ navHeight:0}}px;">
+		<view class="btn" bindtap="selectNav" data-type="tag1"><view class="{{select =='1' ? 'a' : 'o'}}">12矿盐</view></view>
+		<view class="btn" bindtap="selectNav" data-type="tag21"><view class="{{select=='2' ? 'a' : 'o'}}">功效分类</view></view>
+		<view class="btn" bindtap="selectNav" data-type="tag3"><view class="{{select=='3' ? 'a' : 'o'}}">方法</view></view>
+		<view class="btn" bindtap="selectNav" data-type="tag4"><view class="{{select=='4' ? 'a' : 'o'}}">师资</view></view>
+		<view class="btn-group2" wx:if="{{select=='2'}}">
+			<view class="btn" bindtap="selectNav" data-type="tag21"><view class="{{select_item=='1' ? 'a' : 'o'}}">1</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag22"><view class="{{select_item=='2' ? 'a' : 'o'}}">2</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag23"><view class="{{select_item=='3' ? 'a' : 'o'}}">3</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag24"><view class="{{select_item=='4' ? 'a' : 'o'}}">4</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag25"><view class="{{select_item=='5' ? 'a' : 'o'}}">5</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag26"><view class="{{select_item=='6' ? 'a' : 'o'}}">6</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag27"><view class="{{select_item=='7' ? 'a' : 'o'}}">7</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag28"><view class="{{select_item=='8' ? 'a' : 'o'}}">8</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag29"><view class="{{select_item=='9' ? 'a' : 'o'}}">9</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag210"><view class="{{select_item=='10' ? 'a' : 'o'}}">10</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag211"><view class="{{select_item=='11' ? 'a' : 'o'}}">11</view></view>
+			<view class="btn" bindtap="selectNav" data-type="tag212"><view class="{{select_item=='12' ? 'a' : 'o'}}">12</view></view>
+		<view class="clearfix"></view>
+
+		</view>
+		<view class="clearfix"></view>
+	</view>
+
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag1" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='12矿盐'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag21" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='1'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag22" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='2'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag23" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='3'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag24" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='4'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag25" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='5'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag26" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='6'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag27" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='7'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag28" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='8'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag29" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='9'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag210" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='10'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag211" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='11'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag212" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='12'}}"></image>
+</block>
+<block wx:for="{{data}}" wx:key="index">
+	<image id="tag3" src="{{item.image_url}}" mode="widthFix" class="image" wx:if="{{item.to_url=='方法'}}"></image>
+</block>
+</scroll-view>

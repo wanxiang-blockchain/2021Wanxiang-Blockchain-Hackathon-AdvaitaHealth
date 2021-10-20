@@ -1,0 +1,40 @@
+@import "/common/iconfont.wxss";
+.navbar {
+  position: relative;
+}
+.back-icon {
+  width: 56rpx;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 9;
+}
+
+.back{
+    font-size: 42rpx;
+}
+.home{
+	font-size: 42rpx;
+}
+.home-icon {
+  width: 56rpx;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 80rpx;
+  z-index: 9;
+}
+
+
+.nav-title,
+.nav-icon {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left:50%;
+  font-size: 0;
+  font-weight: bold;
+}
+.nav-title{
+  font-size: 30rpx;
+}

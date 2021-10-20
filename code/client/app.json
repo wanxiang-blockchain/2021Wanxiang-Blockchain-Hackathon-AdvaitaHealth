@@ -1,0 +1,135 @@
+{
+	"pages": [
+		"pages/indexPage/indexPage",
+		"pages/home/home",
+		"pages/index/index",
+		"pages/noCheck/no_check",
+		"pages/chartList/chartList",
+		"pages/trendList/trendList",
+		"pages/scanWatch/scanWatch",
+		"pages/addTreportUser/addTreportUser",
+		"pages/chartInfo/chartInfo",
+		"pages/shop/shop",
+		
+		"pages/home/news",
+		"pages/home/quota",
+
+		"pages/personal/personal",
+		
+		"pages/money/money",
+		"pages/help/help",
+		"pages/works/works",
+		
+		"pages/linkErr/linkErr",
+		"pages/msg/msg_fail",
+		"pages/focus/focus"
+	],
+	"requiredBackgroundModes": ["audio"],
+	"subPackages": [{
+		"root": "pageShop",
+		"pages": [
+			"pageShop/shopDetail/shopDetail",
+			"pageShop/address/address",
+			"pageShop/sleepIntro/sleepIntro",
+
+			"pageShop/orderConfirm/orderConfirm",
+			"pageShop/orderDetail/orderDetail",
+
+			"pageShop/agentAdmin/agentAdmin",
+			"pageShop/agentAdmin/getCash",
+			"pageShop/agentAdmin/coupon",
+			
+			"pageShop/moneyDetail/moneyDetail",
+			"pageShop/moneyList/moneyList",
+			"pageShop/agentApply/agentApply",
+			
+			"pageShop/car/car",
+			"pageShop/order/order",
+			"pageShop/workDetail/workDetail",
+			"pageShop/activity/activity",
+			"pageShop/moreGoods/moreGoods",
+			"pageShop/agent/agent",
+			"pageShop/meditation/meditation",
+			"pageShop/rankList/rankList"
+			
+		]
+	},{
+		"root": "pageWatch",
+		"pages": [
+			"pageWatch/wifiList/myWifi",
+			"pageWatch/treport/treport",
+			"pageWatch/moodList/moodList",
+			"pageWatch/onceLog/onceLog",
+			"pageWatch/treportBindUser/treportBindUser",
+			"pageWatch/watchesList/watchesList"
+		]
+		
+	},{
+		"root": "pageSleep",
+		"pages": [
+			"pageSleep/choice/choice",
+			"pageSleep/choiceChat/choiceChat",
+			"pageSleep/choiceWatch/choiceWatch",
+			"pageSleep/orderList/orderList",
+			"pageSleep/serviceTest/serviceTest",
+			"pageSleep/serviceWatch/serviceWatch",
+			"pageSleep/serviceWatchDoc/serviceWatchDoc",
+			"pageSleep/teacherHong/teacherHong",
+			"pageSleep/teacherWu/teacherWu"
+		]
+	}],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["pageWatch","pageShop", "pageSleep"]
+		},
+		"pages/personal/personal": {
+			"network": "all",
+			"packages": ["pageWatch", "pageShop", "pageSleep"]
+		},
+		"pages/shop/shop": {
+			"network": "all",
+			"packages": ["pageWatch", "pageShop", "pageSleep"]
+		},
+		"pageSleep/pageSleep/choice/choice": {
+			"network": "all",
+			"packages": ["pageWatch", "pageShop", "pageSleep"]
+		},
+		"pages/indexPage/indexPage": {
+			"network": "all",
+			"packages": ["pageWatch", "pageShop", "pageSleep"]
+		}
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序定位"
+		},
+		"scope.werun": {
+			"desc": "即将获取你的微信步数"
+		}
+
+	},
+	"window": {
+		"navigationStyle": "custom",
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTextStyle": "white",
+		"backgroundColor": "#eeeeee",
+		"backgroundTextStyle": "light",
+		"navigationBarTitleText": "情绪管理 健康预警",
+		"enablePullDownRefresh": false
+	},
+	"plugins": {
+		"tencentvideo": {
+			"version": "1.4.5",
+			"provider": "wxa75efa648b60994b"
+		}
+	},
+	"usingComponents": {},
+	"networkTimeout": {
+		"request": 3000000,
+		"uploadFile":100000,
+		"downloadFile": 10000
+	},
+	"debug": false,
+	"sitemapLocation": "sitemap.json"
+}

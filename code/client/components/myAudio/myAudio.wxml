@@ -1,0 +1,52 @@
+<view class="audio {{showPlayer?'all-content':''}}">
+	<view class="" wx:if="{{type == 1 && !showPlayer}}">
+	</view>
+	<view class="audio-box" wx:if="{{type == 2}}">
+		<view class="start-audio" bindtap="playAudio" data-num="1" wx:if="{{changeAudio != 1}}">
+			喜悦{{isGone < signinTime?'早':'晚'}}冥想
+			<view class="audio-icon inline iconfont iconbofang1" bindtap="pauseClick" wx:if="{{ !isPlay && !isLoading }}"></view>
+			<view class="audio-icon inline iconfont iconzanting1" bindtap="pauseClick" wx:if="{{ isPlay && !isLoading }}"></view>
+			<view class="audio-icon inline iconfont iconjiazai" wx:if="{{isLoading}}"></view>
+		</view>
+		<view class="start-content">
+			<view class="audio-time">
+				<view class="signin-now" style="width:{{100*currentTime/duration+'%'}}"></view>
+			</view>
+			<view class="audio-state">
+				<view class="audio-start inline">{{currentTimeStr+'/'+durationStr}}</view>
+				<view class="audio-skip" bindtap="close">跳过音频 直接打卡</view>
+			</view>
+		</view>
+		
+	</view>
+	<block class="" wx:if="{{type == 3}}">
+		<!-- 音乐 -->
+		<view class="audio-icon-big inline iconfont iconbofang1" bindtap="pauseClick" wx:if="{{ !isPlay && !isLoading }}"></view>
+		<view class="audio-icon-big inline iconfont iconzanting1" bindtap="pauseClick" wx:if="{{ isPlay && !isLoading }}"></view>
+		<view class="audio-icon-big inline iconfont iconjiazai" wx:if="{{isLoading}}"></view>
+	</block>
+	<block class="audio-box" wx:if="{{type == 4}}">
+		<!-- 经典 -->
+		<view class="audio-icon-big inline iconfont iconbofang1 audio-classic" bindtap="pauseClick" wx:if="{{ !isPlay && !isLoading }}"></view>
+		<view class="audio-icon-big inline iconfont iconzanting1 audio-classic" bindtap="pauseClick" wx:if="{{ isPlay && !isLoading }}"></view>
+		<view class="audio-icon-big inline iconfont iconjiazai audio-classic" wx:if="{{isLoading}}"></view>
+		<view class="audio-time">
+			<view class="signin-now" style="width:{{100*currentTime/duration+'%'}}"></view>
+		</view>
+	</block>
+	<view class="audio-box" wx:if="{{type == 5}}">
+		<!-- 冥想播放器 -->
+		<view class="start-content" style="width: 100%;height: 60rpx;color: #fff;">
+			<view class="audio-time" style="background: {{isGone < signinTime?'#6A3900':'#17194D'}};">
+				<view class="signin-now" style="width:{{100*currentTime/duration+'%'}};background: {{isGone < signinTime?'#B05E00':'#383C90'}};"></view>
+			</view>
+			<view class="audio-state" style="margin-bottom: 8rpx;">
+				<view class="audio-player iconfont iconbofang1" bindtap="pauseClick" wx:if="{{ !isPlay && !isLoading }}"></view>
+				<view class="audio-player iconfont iconzanting1" bindtap="pauseClick" wx:if="{{ isPlay && !isLoading }}"></view>
+				<view class="audio-player iconfont iconjiazai" wx:if="{{isLoading}}"></view>
+				<view class="audio-start inline" style="color: #fff;">{{currentTimeStr+'/'+durationStr}}</view>
+				<!-- <view class="audio-skip" bindtap="close" style="color: #fff;">跳过音频 直接打卡</view> -->
+			</view>
+		</view>
+	</view>
+</view>

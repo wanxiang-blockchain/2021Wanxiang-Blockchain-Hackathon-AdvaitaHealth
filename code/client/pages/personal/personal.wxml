@@ -1,0 +1,91 @@
+<MyHeader titleText='我的'></MyHeader>
+<login wx:if="{{!userInfo}}" isBottom="1"></login>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<scroll-view scroll-y="true" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;">
+	<view class="user">
+		<myUserInfo height="136" contentLeft="128" borderLeft="{{0}}" wx:if="{{!userInfo}}">
+			<view slot="avatar">
+				<image class="" mode="aspectFill" catchtap="goDetail" src="http://i.2fei2.com/5d638db0055ea.png" style="height:60rpx;width:60rpx;left: 44rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 8rpx;"></image>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 50rpx;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">请登录</view>
+			</view>
+		</myUserInfo>
+		<myUserInfo height="136" contentLeft="128" borderLeft="{{0}}" wx:else>
+			<view slot="avatar">
+				<image class="" mode="aspectFill" catchtap="goDetail" src="{{userInfo.Wechat_xcxSetUser.avatar_url}}" style="height:60rpx;width:60rpx;left: 44rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 8rpx;background-color: #ccc;"></image>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 50rpx;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">{{userInfo.Wechat_xcxSetUser.nickname}}</view>
+				<!-- <view class="wechat-box" bindtap="goChat">更新头像</view> -->
+				
+				
+				<button class="wechat-box" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"><view class="wechat-icon iconfont iconweixinhaoyou1"></view> 更新头像昵称 </button>
+				<button class="wechat-box" wx:else open-type="getUserInfo" bindgetuserinfo="confirm"><view class="wechat-icon iconfont iconweixinhaoyou1"></view> 更新头像昵称 </button>
+			</view>
+		</myUserInfo>
+	</view>
+	
+	<!-- <view class="user-item"
+	bindtap="goUrl" data-url="/pageShop/pageShop/sleepIntro/sleepIntro" >
+		<myUserInfo height="100" contentLeft="120" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont iconbiyan" style="height: 72rpx; display:inline-block;font-size:50rpx;color: #1A184C;position: absolute;left:44rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 34rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">睡眠测评</view>
+			</view>
+		</myUserInfo>
+	</view> -->
+	
+	<view class="user-item"
+	bindtap="goUrl" data-url="/pageSleep/pageSleep/orderList/orderList">
+		<myUserInfo height="100" contentLeft="120" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont2 icongaiicon-" style="height: 72rpx; display:inline-block;font-size:50rpx;color: #223370;position: absolute;left:44rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 34rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">我的合约</view>
+			</view>
+		</myUserInfo>
+	</view>
+	
+	<view class="user-item"
+	bindtap="goUrl" data-url="/pageShop/pageShop/order/order">
+		<myUserInfo height="100" contentLeft="120" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont2 icon6" style="height: 72rpx; display:inline-block;font-size:50rpx;color: #223370;position: absolute;left:44rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 34rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">我的订单</view>
+			</view>
+		</myUserInfo>
+	</view>
+	<view class="user-item"
+	bindtap="goChat">
+		<myUserInfo height="100" contentLeft="120" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont2 iconlianxiwomen" style="height: 72rpx; display:inline-block;font-size:50rpx;color:#41202C;position: absolute;left:44rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 34rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">联系客服</view>
+			</view>
+		</myUserInfo>
+	</view>
+	
+	<!-- <view class="user-item"
+	bindtap="goChat">
+		<myUserInfo height="100" contentLeft="120" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont2 iconlianxiwomen" style="height: 72rpx; display:inline-block;font-size:50rpx;color:#41202C;position: absolute;left:44rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 34rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">我的问卷</view>
+			</view>
+		</myUserInfo>
+	</view> -->
+</scroll-view>
+
+<!-- <include src="../common/service.wxml"/> -->
+<include src="../common/footer.wxml" />
+<include src="../common/auth.wxml" />

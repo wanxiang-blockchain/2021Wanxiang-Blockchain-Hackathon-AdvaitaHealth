@@ -1,0 +1,22 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='商品列表' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view  scroll-into-view="{{type}}" 
+style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="scrollMore">
+	<view class="flex-box container" style="margin-top: 34rpx;">
+		<view class="floor-item" wx:for="{{list}}" wx:key="index" bindtap="goDetail" data-item="{{item}}" data-goods_id="{{item.goods_id}}" 
+		data-item="{{item}}">
+			<view class="floor-item-box">
+				<image class="floor-item-img"  src="{{item.logo_url}}" mode="widthFix"></image>
+			</view>
+			<view class="floor-item-title">{{item.goods_name}}</view>
+			<view class="floor-item-price">￥{{item.old_sale_price_section}}</view>
+			<image class="floor-item-icon" wx:if="{{type == 'g520'}}" src="https://i.2fei2.com/goods/logo/2021-05-13/10:04:24/609c8928bac09.png" mode="aspectFill"></image>
+		</view>
+		<view style="width: 212rpx;"></view>
+	</view>
+	<view class="no-more" wx:if="{{!listMore && list && list.length > 0}}" style="text-align: center;padding-bottom: 30rpx;">-- 没有更多数据了 --</view>
+	<view class="no-more" wx:if="{{list && list.length==0 && !loading}}" style="text-align: center;padding-top: 30rpx;">暂无数据</view>
+</scroll-view>

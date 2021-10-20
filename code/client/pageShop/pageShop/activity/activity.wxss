@@ -1,0 +1,17 @@
+page {
+	font-size: 24rpx;
+	color: #282828;
+	background-color: #fff;
+}
+
+.go-btn{
+	font-size: 32rpx;
+	width: 640rpx;
+	height: 92rpx;
+	line-height: 92rpx;
+	text-align: center;
+	color: #fff;
+	background: #017AFF;
+	border-radius: 26rpx;
+	margin: 0 auto 36rpx;
+}

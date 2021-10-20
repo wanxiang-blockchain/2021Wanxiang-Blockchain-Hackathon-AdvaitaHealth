@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"myUserInfo": "/components/userInfo/userInfo",
+		"myLoading": "/components/myLoading/myLoading"
+	},
+	"component": true
+}

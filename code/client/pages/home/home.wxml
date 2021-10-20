@@ -1,0 +1,305 @@
+<MyHeader homeIcon="icongouwuche" bindhome="goCar" titleText='健康脉诊手表'></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px - 98rpx); width:{{windowWidth}}px;position:relative;padding-top:{{isImbibition?'100rpx':0}}"
+ scroll-y="true" bindscroll="bindscroll" scroll-into-view="{{isSelect}}" bindscrolltolower="searchScrollLower" >
+	 <cover-image bindtap="goUrl" data-url="/pageShop/pageShop/shopDetail/shopDetail?goods_id=2871" class="ball" src="https://i.2fei2.com/shop/logo/2021-01-13/11:40:39/5ffe6bb7231ef.png"></cover-image>
+	 <view class="banner-box">
+		<image class="banner-img" src="https://i.2fei2.com/shop/logo/2020-11-17/11:34:57/5fb344e15cd53.png" mode="widthFix"></image>
+		<!-- <view class="banner-title">健康脉诊手表</view>
+		<view class="banner-line"></view>
+		<view class="title-price">
+			<text class="old-grey">￥{{oldPrice}}</text>
+			<text class="title-icon">￥</text>
+			<text class="">{{price}}</text>
+		</view>
+		<view class="switch-btn">
+			<view class="switch-bg"></view>
+			<text class="switch-icon iconfont icongouwu"></text>
+			<view class="text">前往选购</view>
+		</view> -->
+	 </view>
+	<view class="title-box box-bar"  bindtap="goUrl" data-url="/pageShop/pageShop/shopDetail/shopDetail?goods_id=2871">
+		<view class="title-name">{{goods_name}}</view>
+		<view class="shop-price"><text class="shop-icon">￥</text>{{price}}
+			<text class="shop-grey">￥{{oldPrice}}</text>
+		</view>
+		<view class="shop-car">
+			<text class="shop-car-icon iconfont icongouwu"></text>
+			<view class="shop-car-text">前往选购</view>
+		</view>
+	</view>
+	<view class="data flex-box {{isImbibition?'imbibition':''}}" style="top:{{imbibitionTop}}px" bindtap="changeTab">
+		<view class="data-box {{tabNum == 0?'active':''}}" data-num="0">科技背景</view>
+		<view class="data-box {{tabNum == 1?'active':''}}" data-num="1">手表特点</view>
+		<view class="data-box {{tabNum == 2?'active':''}}" data-num="2">整体测评</view>
+	</view>
+	<view class="block-box" wx:if="{{isImbibition}}"></view>
+	
+	<view class="tab-box detail-item" id="indexes-0">
+		<view class="equipment-head">科技背景</view>
+
+		<view class="equipment-tab">
+			<text class="equipment-icon iconfont iconzhuanjiatuandui"></text>
+			<view class="equipment-name">专家团队</view>
+		</view>
+		<view class="equipment-box clearfix" bindtap="goUrl" data-url="/pages/home/news?type=2">
+			<view class="equipment-content">张启明，中国中医科学院医学实验中心教授
+				博士生导师。国家药监局医疗器械分类技术委员会中医器械专业组组长。科技部"主动健康和老龄化科技应对"专家组成员。国家重点研发计划"穿戴式五藏功能态势监测设备关键技术研究（ 编号2019YFC1711700 ）"项目负责人。</view>
+			<image class="equipment-zhang" src="https://i.2fei2.com/shop/logo/2020-08-12/14:38:39/5f338e6f2057c.png"></image>
+			<view class="equipment-more">查看更多</view>
+		</view>
+		
+		<view class="equipment-line"></view>
+		<view class="equipment-tab">
+			<text class="equipment-icon iconfont iconzhongdianxiangmu"></text>
+			<view class="equipment-name">科技部重点专项</view>
+		</view>
+		<view class="equipment-box">
+			<image class="equipment-img" src="https://i.2fei2.com/shop/logo/2020-08-10/17:53:37/5f31192152cd3.png" mode="widthFix"></image>
+			<view class="equipment-title">科技部重点专项2019年立项项目</view>
+			<view class="">根据《国务院关于改进加强中央财政科研项目和资金管理的若干意见》（国发[2014]11号）、《国务院关于深化中央财政科技计划（专项、基金等）管理改革方案的通知》（国发[2014]64号）、《国家重点研发计划管理暂行办法》（国科发资[2017]152号）等文件要求，现将“中医药现代化研究”重点专项2019年度立项项目信息进行公示。</view>
+			<view class="equipment-text" bindtap="goUrl" data-url="/pages/home/news?type=1">查看清单</view>
+		</view>
+
+		<view class="scissors-line"></view>
+
+		<view class="equipment-head">学术视频</view>
+		
+		<view class="video-box">
+			<txv-video vid="o3253l4dr8w" playerid="txv1"></txv-video>
+		</view>
+		<view class="video-bar">
+			<view class="video-tips">央视经济半小时 脉诊手表专题报道</view>
+		</view>
+		
+		<view class="video-box">
+			<txv-video vid="q3253ph5xrq" playerid="txv5"></txv-video>
+		</view>
+		<view class="video-bar">
+			<view class="video-tips">易流模型及其在健康科学中的应用</view>
+		</view>
+		
+		<view class="video-box">
+			<txv-video vid="v0518duzqv7" playerid="txv4"></txv-video>
+		</view>
+		<view class="video-bar">
+			<view class="video-tips">2017年生物医学工程学会视频</view>
+		</view>
+
+		<view class="video-box">
+			<txv-video vid="q0869bbzmv5" playerid="txv3"></txv-video>
+		</view>
+		<view class="video-bar">
+			<view class="video-tips">2019年生物医学工程学会中医药分会演讲</view>
+		</view>
+
+		<view class="video-box">
+			<txv-video vid="a3133u65dpd" playerid="txv2"></txv-video>
+		</view>
+		<view class="video-bar" style="margin-bottom: 56rpx;">
+			<view class="video-tips">2020年整体健康测评视频</view>
+		</view>
+
+		
+		<view style="height: 1px;width: 100%;"></view>
+	</view>
+
+	<view class="tab-border detail-item" id="indexes-1">
+		<view class="equipment-head" style="padding-top: 32rpx;">手表特点</view>
+		<view class="tab-box" style="padding: 0 40rpx;">
+		<view class="equipment-head">跟市面的手表不同</view>
+		<view class="equipment-watch">
+			<image class="watch-one" src="https://i.2fei2.com/shop/logo/2020-08-11/09:50:15/5f31f95724c2f.png" mode="widthFix"></image>
+			<image class="" style="width: 148rpx;height: 60rpx;float: left; clear: both;" src="" mode="widthFix"></image>
+			当今医院常用的核磁、CT、X光、B超、显微镜等设备常用于人体组成结构的检测，如冠心病、肿瘤。市面上流行的手表、手环仅对心率、血压、血氧、运动量的过高或过低起警示作用。
+		</view>
+		<view class="equipment-watch" style="background-color: rgba(251,217,109,0.61);color: #C86E00;margin-bottom: 0rpx;">
+			<image class="watch-two" src="https://i.2fei2.com/shop/logo/2020-08-11/10:02:02/5f31fc1a45abf.png" mode="widthFix"></image>
+			<image class="" style="width: 160rpx;height: 100rpx;float: right; clear: both;" src="" mode="widthFix"></image>
+			“健康脉诊手表”则借助脉搏波、体动、血氧和体温的生活和工作场景下24小时监测，通过对精神状态、睡眠质量、生命节律、心血管裕度、心理状态、生命活力、体力、平衡能力、血气交换和代谢水平10个生命指征的评估。
+		</view>
+		</view>
+		
+		<view class="record">
+			<view class="picture-box">
+				<view class="picture-left">
+					<view class="">目前市面上的智能手表、手环采样频率多为10Hz。“中医健康态势监测手表”采样频率为100Hz。</view>
+					<view class="picture-left-btn">右图展示了两者的区别</view>
+				</view>
+				<view class="picture-right">
+					<image class="picture-right-img" src="https://i.2fei2.com/shop/logo/2020-08-13/10:42:32/5f34a898dc1e4.png" mode="widthFix"></image>
+					<view class="picture-right-btn"></view>
+				</view>
+			</view>
+			<view class="expert-line"></view>
+			<view class="compare-people">● 受试者1</view>
+			<view class="compare-text" style="margin: 8rpx 0 0;">24小时检测数据，采样频率为100Hz、25 Hz的庞氏图对比。</view>
+			<view class="flex-box">
+				<image class="img-box" src="https://i.2fei2.com/shop/logo/2020-08-13/11:03:55/5f34ad9bba3fc.png" mode="widthFix"></image>
+				<image class="img-box" src="https://i.2fei2.com/shop/logo/2020-08-13/11:04:26/5f34adba6e31c.png" mode="widthFix"></image>
+			</view>
+			<view class="expert-line"></view>
+			<view class="compare-people">● 受试者2</view>
+			<view class="compare-text" style="margin: 8rpx 0 0;">24小时检测数据，采样频率为100Hz、25 Hz的庞氏图对比。</view>
+		
+			<view class="flex-box">
+				<image class="img-box" src="https://i.2fei2.com/shop/logo/2020-08-13/11:06:20/5f34ae2c8ddd7.png" mode="widthFix"></image>
+				<image class="img-box" src="https://i.2fei2.com/shop/logo/2020-08-13/11:06:53/5f34ae4d2168a.png" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="column-box clearfix">
+			<view class="column-item column-right">●
+				“健康脉诊手表”则借助脉搏波、体动、血氧和体温的生活和工作场景下24小时监测，通过对精神状态、睡眠质量、生命节律、心血管裕度、心理状态、生命活力、体力、平衡能力、血气交换和代谢水平10个生命指征的评估。</view>
+			<view class="column-item column-left">● 评价人的自组织能力、自适应能力和自修复能力。</view>
+			<view class="column-item column-right">● 预警：老年性痴呆、中风、心脏病、高血压、糖尿病、甲亢、焦虑症、抑郁症等重大疾病发生之前早期预警。</view>
+			<view class="column-item column-left">● 有望成为破解医改难题的标志性成果。</view>
+		</view>
+		<view class="symptom">
+			<view class="symptom-title">● 具体症状</view>
+			<view class="expert-line" style="width: 599rpx;"></view>
+			<view class="symptom-item">
+				<view class="symptom-left">精神不振</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">无精打采、反应迟钝、健忘、少语、少动、表情淡漠、动作迟缓。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">精神亢奋</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">非常兴奋、静不下心来、多语、心烦、躁动不安。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">睡眠质量差</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">入睡困难、早醒、似睡非睡、一有动静就醒、多梦。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">生命节律 紊乱</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">坐着打盹躺着睡不着、月经或提前或延后、体温、心率、血压和呼吸的昼夜节律消失、心理、智力和体力的周期消失。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">抑郁状态</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">头目、胸胁、乳房胀痛、咽如物梗、腹部包块时隐时现、兴趣低落、闷闷不乐、善悲欲哭、多疑善虑、多愁善感、自卑自责、有自杀念头、不愿与人交往。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">焦虑状态</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">头目胀痛、头重脚轻、面红目赤、耳鸣如潮、失眠多梦、睡眠轻浅、提心吊胆、多语多动、手足心汗、急躁易怒、坐立不宁、烦躁不安。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">生命活力 降低</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">体倦乏力、食欲不振、形体消瘦、动则气喘、胸闷气短、运动量少、话语量少、工作效率低、抵抗力低。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">体寒状态</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">不怕热怕冷、不敢吃凉东西、吃得少拉的少，穿得多盖得多、喜欢夏天不喜欢冬天、手脚发凉。</view>
+				</view>
+			</view>
+			<view class="symptom-item">
+				<view class="symptom-left">体热状态</view>
+				<view class="symptom-content">
+					<view class="">常见症状：</view>
+					<view class="">不怕冷怕热、喜欢吃凉东西、吃得多拉的多，穿得少盖得少、喜欢冬天不喜欢夏天、手脚心热。</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="tab-border tab-box admin detail-item" id="indexes-2" style="padding: 0 40rpx;">
+		<view class="equipment-head" style="padding-top: 32rpx;">整体测评</view>
+		<view class="btn-gra btn-all" style="height:100rpx;line-height:100rpx" bindtap="goUrl" data-url="/pages/home/quota?local=heart">中医心藏(音zàng)储备功能的含义及重要指标</view>
+		<view class="btn-gra btn-all" style="height:100rpx;line-height:100rpx" bindtap="goUrl" data-url="/pages/home/quota?local=liver">中医肝藏(音zàng)储备功能的含义及重要指标</view>
+		<view class="btn-gra btn-all" style="height:100rpx;line-height:100rpx" bindtap="goUrl" data-url="/pages/home/quota?local=kidney">中医肾藏(音zàng)储备功能的含义及重要指标</view>
+		<view class="scissors-bg" style="margin: 60rpx 0 57rpx;">
+			<image class="scissors" src="https://i.2fei2.com/shop/logo/2020-08-10/18:01:42/5f311b0684f15.png" mode="widthFix"></image>
+		</view>
+		<image class="user-poster" bindtap="goUrl" data-url="/pageWatch/pageWatch/onceLog/onceLog?example=1" src="https://i.2fei2.com/shop/logo/2020-10-30/17:11:15/5f9bd8b3407cb.png" mode="widthFix"></image>
+		<view class="equipment-example" bindtap="goUrl" data-url="/pages/home/news?type=3">
+			<image class="example-bg" src="https://i.2fei2.com/shop/logo/2020-08-11/10:25:01/5f32017de8cc9.png" mode="widthFix"></image>
+			<view class="example-text">报告案例<text class="equipment-back iconfont iconjiantouyou"></text></view>
+		</view>
+		<!-- <view class="admin-title admin-bold">整体健康包括四个层面</view>
+		<view class="admin-box">
+			<image class="admin-img" src="https://i.2fei2.com/shop/logo/2020-08-11/11:16:25/5f320d89a82dd.png" mode="widthFix"></image>
+			<view class="admin-tips" style="color: #D14937;">
+				<view class="admin-bold">身体层 :</view>
+				<view class="admin-bold">西医 运动处方 五谷饭</view>
+				<view class="admin-bold">瑜伽体式 瑜伽断食</view>
+			</view>
+		</view>
+		<view class="admin-box" style="background-color: #FBD96D;">
+			<image class="admin-img" src="https://i.2fei2.com/shop/logo/2020-08-11/11:16:49/5f320da1ead3d.png" mode="widthFix"></image>
+			<view class="admin-tips" style="height: 80rpx;color: #B38800;">
+				<view class="admin-bold">能量层：</view>
+				<view class="admin-bold">中医 瑜伽呼吸控制法</view>
+			</view>
+		</view>
+		<view class="admin-box" style="background-color: #DFF8EA;">
+			<image class="admin-img" src="https://i.2fei2.com/shop/logo/2020-08-11/11:17:07/5f320db39f3b9.png" mode="widthFix"></image>
+			<view class="admin-tips" style="color: #30A764;">
+				<view class="admin-bold">心灵层：</view>
+				<view class="admin-bold">中医矿盐 顺势疗法</view>
+				<view class="admin-bold">瑜伽 冥想</view>
+			</view>
+		</view>
+		<view class="admin-box" style="background-color: #B1EAFD;">
+			<image class="admin-img" src="https://i.2fei2.com/shop/logo/2020-08-11/11:17:28/5f320dc87d7c9.png" mode="widthFix"></image>
+			<view class="admin-tips" style="height: 80rpx;color: #1E5162;">
+				<view class="admin-bold">心灵导向灵性层：</view>
+				<view class="admin-bold">瑜伽冥想 禅修</view>
+			</view>
+		</view>
+		<view class="admin-bold">根据健康脉诊手表测评报告，对每个客户做精准的个性化的整体健康管理。做到上医治未病。</view>
+		<view class="scissors-line" style="margin: 60rpx 0 57rpx;">
+			<image class="scissors" src="https://i.2fei2.com/shop/logo/2020-08-10/18:01:42/5f311b0684f15.png" mode="widthFix"></image>
+		</view>
+		<view class="equipment-head">对应的产品</view>
+		<view class="admin-column">
+			<view class="admin-bold">喜悦之路：</view>
+			<view class="admin-content">冥想、梵唱、体式、断食、社群</view>
+			<view class="btn-gra admin-btn" data-id="wx0be46ce593099afb" data-page="pages/index/index" bindtap="goMini">进入</view>
+		</view>
+		<view class="admin-column">
+			<view class="admin-bold">喜悦矿盐：中医+西方传统医学，中医喜悦矿盐</view>
+			<view class="admin-content admin-dot">针对睡眠的晚安系列：个性化睡眠调理，无效退款</view>
+			<view class="admin-content">人工智能睡眠</view>
+			<view class="admin-content admin-dot">12组织细胞盐,智能化精准个性化调理</view>
+			<view class="admin-content">细胞盐的简介</view>
+			<view class="btn-gra admin-btn" data-id="wx2c2755a39b5c7370" data-page="pages/search/search" bindtap="goMini">进入</view>
+		</view> -->
+		<view style="height: 98rpx;width: 100%;"></view>
+	</view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />
+<include src="../common/footer.wxml" />
+<!-- 群聊已发送 -->
+<view class="m-mask" bindtap="hideMask" wx:if="{{showWechatMask}}">
+	<view class="mask-box" catchtap="forbiddenBubble">
+		<view class="mask-title">请注意查收</view>
+		<view class="mask-tips">
+			入群二维码已经通过
+			<view style="display: inline-block;color: #FF9E20;">服务消息</view>
+			发送到您的微信
+		</view>
+		<button class="btn-gra btn-all canvas-btn" catchtap="hideMask">好的</button>
+	</view>
+</view>

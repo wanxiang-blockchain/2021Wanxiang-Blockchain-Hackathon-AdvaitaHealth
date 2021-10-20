@@ -1,0 +1,15 @@
+{
+	"usingComponents": {
+		"login":"/components/login/login",
+		"myLoading": "/components/myLoading/myLoading",
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"myLive": "/components/live/live",
+		"myToast": "/components/myToast/myToast",
+		"myAudio": "/components/myAudio/myAudio",
+		"signin": "/pageShop/components/signin/signin",
+		"myCanvas": "/pageShop/components/myCanvas/myCanvas",
+		"rank": "/pageShop/components/rank/rank"
+	},
+	"navigationBarTextStyle": "black"
+
+}

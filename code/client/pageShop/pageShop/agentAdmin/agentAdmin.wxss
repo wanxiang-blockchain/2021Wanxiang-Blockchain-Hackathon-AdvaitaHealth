@@ -1,0 +1,66 @@
+page {
+	font-size: 24rpx;
+	color: #282828;
+	background-color: #fff;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.search{
+	margin: 32rpx 0;
+}
+.classic{
+	font-size: 26rpx;
+	margin-left: 60rpx;
+	display: inline-block;
+	color: #666666;
+}
+.classic-icon{
+	color: #ADADAD;
+	margin-left: 13rpx;
+}
+/* 提现详情 */
+.money-box{
+	width:690rpx;
+	padding: 0 20rpx;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 2rpx 10rpx 0px rgba(0,0,0,0.15);
+	border-radius:13rpx;
+	margin: 0 auto;
+}
+.money-item{
+	height: 136rpx;
+	border-bottom: 1rpx solid #F4F4F4;
+	position: relative;
+}
+.money-item:last-child{
+	border: none;
+}
+.money-name{
+	font-weight:bold;
+	color:rgba(102,102,102,1);
+	position: absolute;
+	left: 15rpx;
+	top: 30rpx;
+}
+.money-time{
+	color: #989898;
+	position: absolute;
+	left: 15rpx;
+	top: 73rpx;
+}
+.money-num{
+	height: 56rpx;
+	font-size:36rpx;
+	font-weight:bold;
+	color:rgba(231,152,11,1);
+	position: absolute;
+	right: 19rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}

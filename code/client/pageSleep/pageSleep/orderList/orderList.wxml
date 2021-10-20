@@ -1,0 +1,75 @@
+<MyHeader bind:back="back"  backIcon="{{true}}"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="scrollMore">
+	<!-- <view class="no-more">暂无记录</view> -->
+	<view style="position: relative;">
+		<text lines="1" class="info1">我的合约</text>
+		<button class="info1-btn" bindtap="goWatchDoc" data-id=""  wx:if="{{userInfo.is_expert_user}}">
+			新增合约
+		</button>
+	</view>
+	
+	<block wx:if="{{userInfo.is_expert_user}}">
+		<view class="section2">
+			<view class="block1" style="height: 197rpx;" wx:for="{{orderList}}" wx:key="index" wx:for-item="items">
+				<view class="layer1">
+					<view class="box1">
+						<view class="main1">
+							<!-- <image wx:if="{{items.goods_name == '调理喷雾+专家咨询'}}" src="https://i.2fei2.com/goods/logo/2021-09-30/10:58:39/615527df1c9f2.png" class="icon1"></image> -->
+							<image src="https://i.2fei2.com/goods/logo/2021-09-30/11:01:08/615528749598c.png" style="width: 36rpx;height: 36rpx;" class="icon1"></image>
+							<!-- <image src="{{items.goods_logo_url}}" style="width: 36rpx;height: 36rpx;" class="icon1"></image> -->
+						</view>
+						<view class="main2">
+							<text lines="1" class="info2">脉诊手表+效果付费</text>
+							<text lines="1" class="word2" wx:if="{{items.tips == '服务已关闭'}}">{{items.tips}}</text>
+							<text lines="1" class="word6" wx:else>{{items.tips}}</text>
+						</view>
+						<text lines="1" class="txt1" wx:if="{{items.confirm_state == 1}}">已完成</text>
+						<block wx:else>
+							<button class="section6" bindtap="goWatchDoc" data-id="{{items.contract_id}}">
+								<text lines="1" class="word9">进入</text>
+							</button>
+						</block>
+					</view>
+					<view class="box2"></view>
+					<text lines="1" class="word4" style="margin-top: 20rpx;">方案：提高{{items.lift_avg_score}}分,单价{{items.unit_price}}元,共计{{items.pay_price}}元</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="section2">
+			<view class="block1" wx:for="{{orderList}}" wx:key="index" wx:for-item="items">
+				<view class="layer1">
+					<view class="box1">
+						<view class="main1">
+							<!-- <image wx:if="{{items.goods_name == '调理喷雾+专家咨询'}}" src="https://i.2fei2.com/goods/logo/2021-09-30/10:58:39/615527df1c9f2.png" class="icon1"></image> -->
+							<image src="https://i.2fei2.com/goods/logo/2021-09-30/11:01:08/615528749598c.png" style="width: 36rpx;height: 36rpx;" class="icon1"></image>
+							<!-- <image src="{{items.goods_logo_url}}" style="width: 36rpx;height: 36rpx;" class="icon1"></image> -->
+						</view>
+						<view class="main2">
+							<text lines="1" class="info2">脉诊手表+效果付费</text>
+							<text lines="1" class="word2" wx:if="{{items.tips == '服务已关闭'}}">{{items.tips}}</text>
+							<text lines="1" class="word6" wx:else>{{items.tips}}</text>
+						</view>
+						<text lines="1" class="txt1" wx:if="{{items.confirm_state == 1}}">已完成</text>
+						<block wx:else>
+							<button class="section6" bindtap="goWatch" data-items="{{items}}">
+								<text lines="1" class="word9">进入</text>
+							</button>
+						</block>
+					</view>
+					<view class="box2"></view>
+					<text lines="1" decode="true" class="word3">购买日期：{{items.time}}</text>
+					<text lines="1" class="word4">付款金额：{{items.pay_price}}元</text>
+				</view>
+				<text lines="1" decode="true" class="infoBox1">方案：提高{{items.lift_avg_score}}分，单价{{items.unit_price}}元，共计{{items.pay_price}}元</text>
+			</view>
+		</view>
+	</block>
+	<view class="no-more" wx:if="{{!listMore && orderList && orderList.length > 0}}" style="text-align: center;padding-bottom: 30rpx;">-- 没有更多数据了 --</view>
+	<view class="no-more" wx:if="{{orderList && orderList.length==0 && !isLoading}}" style="text-align: center;padding-top: 30rpx;">暂无订单</view>
+</scroll-view>

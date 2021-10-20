@@ -1,0 +1,71 @@
+<!-- 商品列表 -->
+<view class="shop-item" bindtap="goDetail" wx:if="{{type==1}}">
+	<myUserInfo height="80" contentLeft="70" borderLeft="{{0}}">
+		<view slot="avatar">
+			<image class="" mode="aspectFill" src="{{item.avatar_url}}" style="height:56rpx;width:56rpx;left: 0;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 50%;background-color: #ccc;"></image>
+		</view>
+		<view slot="content">
+			<view class="hidden-text" style="margin-top: 0rpx;color: #333;max-width: 400rpx;font-size: 26rpx;font-weight: bold;">{{item.nickname}}
+			</view>
+			<view class="" style="color: #333;font-size: 24rpx;">{{item.time}} {{item.goods_name}} /{{item.goods_attr_name}}
+			</view>
+		</view>
+	</myUserInfo>
+	<view class="salt-content" style="margin: 26rpx 0;">
+		{{item.detailInfo}}
+		<!-- <rich-text nodes="{{item.detailInfo}}"></rich-text> -->
+	</view>
+	<view class="salt-image" wx:if="{{item.slide_img.length>0}}">
+		<image wx:if="{{item.slide_img.length == 1}}" class="salt-image-item" mode="aspectFill" src="{{item.slide_img[0].url}}"></image>
+		<block wx:elif="{{item.slide_img.length < 3}}">
+			<image class="salt-image-item salt-image-two" mode="aspectFill" src="{{item.slide_img[0].url}}"></image>
+			<image class="salt-image-item salt-image-two" mode="aspectFill" src="{{item.slide_img[1].url}}"></image>
+
+		</block>
+		<block wx:else>
+			<image class="salt-image-item salt-image-two" mode="aspectFill" src="{{item.slide_img[0].url}}"></image>
+			<view class="salt-image-vertical">
+				<image class="salt-image-item salt-image-three" mode="aspectFill" src="{{item.slide_img[1].url}}"></image>
+				<view class="salt-image-item salt-image-three">
+					<image class="salt-image-item salt-image-three" mode="aspectFill" src="{{item.slide_img[2].url}}"></image>
+					<view class="shop-image-num">
+						<view class="salt-image-text" style="margin-top: 74rpx;">{{item.slide_img.length-2}} 图</view>
+						<view class="salt-image-text" style="font-size: 18rpx;">查看全部</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="icon-box ">
+		<view class="group-icon">
+			<text class="comfort-icon iconfont iconrenwuzhongxin-huodepinglun"></text>
+			<text class="comfort-num">{{item.dynamic_remark_list.length}}</text>
+		</view>
+		<view class="love-icon">
+			<text class="comfort-icon shop-comfort-icon iconfont iconzan"></text>
+			<text class="comfort-num shop-comfort-num">{{item.agree_num}}</text>
+		</view>
+	</view>
+</view>
+<!-- 矿盐列表 -->
+<view class="salt-bg salt-title-box" bindtap="goDetail" wx:if="{{type==2}}">
+	<view class="salt-title">{{item.title}}</view>
+	<view class="salt-user">
+		<image class="salt-img" mode="aspectFill" src="{{item.avatar_url}}" ></image>
+		<text class="salt-name">{{item.nickname}}</text>
+	</view>
+	<view class="salt-content">
+		{{item.detailInfo}}
+	</view>
+	<view class="salt-label {{textItem.type?'salt-label-active':''}}" wx:for="{{item.topic}}" wx:key="index"  wx:for-item="textItem">{{textItem.name}}</view>
+	<view class="icon-box" >
+		<view class="group-icon">
+			<text class="comfort-icon iconfont iconrenwuzhongxin-huodepinglun"></text>
+			<text class="comfort-num">{{item.dynamic_remark_list.length}}</text>
+		</view>
+		<view class="love-icon">
+			<text class="comfort-icon iconfont iconzan"></text>
+			<text class="comfort-num">{{item.agree_num}}</text>
+		</view>
+	</view>
+</view>

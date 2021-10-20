@@ -1,0 +1,109 @@
+@import "/common/iconfont.wxss";
+.count{
+  width: 100%;
+  text-align: center;
+  font-size: 100rpx;
+  color: #1966CA;
+  font-family: 'DINPro';
+  height: 140rpx;
+  line-height: 140rpx;
+}
+
+.count text{
+  opacity: 0.8;
+  font-size: 28rpx;
+  color: #ADADAD;
+  text-align: center;
+  margin-left: 10rpx;
+}
+
+.grade{
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #ADADAD;
+  margin-bottom: 20rpx;
+  margin-top: -10rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+/* 图片 */
+.picture{
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.picture image{
+  width: 100%;
+}
+.picture .text{
+  text-align: center;
+  font-size: 28rpx;
+}
+/* 指标 */
+.target{
+  margin-bottom: 34rpx;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.no-margin{
+	margin-bottom: 0;
+}
+.target  .item{
+  /* width: 33.33%; */
+  width: 25%;
+  /* float: left; */
+
+}
+.target .item .title{
+  font-size: 28rpx;
+  color: #ADADAD;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.target .item .value{
+  font-family: 'DINPro';
+  font-size: 32rpx;
+  color: #282828;
+  font-weight: bold;
+  text-align: center;
+}
+.iconwenhaolveguo{
+  font-size: 38rpx;
+  color: #1966CA;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -5rpx;
+  font-weight: 400;
+}
+
+/* 建议 */
+.analyze{
+  margin-bottom: 40rpx;
+}
+.analyze  .item{
+  margin-bottom: 30rpx;
+}
+.analyze .item .title{
+  font-size: 28rpx;
+  color: #ADADAD;
+  text-align: left;
+  margin-bottom: 20rpx;
+}
+.analyze .item .value{
+  font-size: 26rpx;
+  color: #282828;
+  text-align: left;
+}
+.horizon-line{
+  width: 100%;
+  height: 2rpx;
+  background-color:#E6E6E6;
+}
+.content-title{
+  font-size:28rpx;
+  color: #282828;
+  text-align: center;
+  padding: 30rpx 0;
+}

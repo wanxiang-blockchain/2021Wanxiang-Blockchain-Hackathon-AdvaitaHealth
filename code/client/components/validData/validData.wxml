@@ -1,0 +1,80 @@
+<view class="watch-border">
+	<view class="watch-state" catchtap="showtips" style="padding: 32rpx 0 30rpx;margin-top: 0;">
+		<text class="watch-icon iconfont iconzhuangtai"></text>
+		<text class="watch-text">佩戴状态<text style="color: #FF9E20;font-size: 24rpx;margin-left: 20rpx;">有效数据满24小时可生成报告</text></text>
+		<text class="watch-ask iconfont iconwenhaolveguo"></text>
+	</view>
+	<view>
+	<!-- 生命体征 -->
+		<view catchtap="goUrl" data-url="/pages/chartList/chartList">
+			<view class="container life-bar" wx:if="{{isShowChart}}">
+				<view class="life-echart">
+					<text class="left">心率变异性SDNN</text>
+					<!-- <text class="life-back right iconfont iconjiantouyou"></text> -->
+					<text class="right">平均{{hrvAvg}}ms</text>
+				</view>
+				<view class="echart-box" style="height: 263rpx;">
+					<view wx:if="{{hrvData.length==0 && !hrvLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;">暂无数据</view>
+					<view wx:if="{{hrvLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;">
+						<loading size="40"></loading>
+					</view>
+					<ec-canvas id="mychart-dom-line" canvas-id="mychart-dom-line" ec="{{ecHRV}}"></ec-canvas>
+				</view>
+			</view>
+			<view class="watch-box flex-box" style="margin-top: 0;">
+				<view class="watch-item">开始时间 {{valid.data_start_time == 0?"--":valid.data_start_time}}</view>
+				<!-- <view class="watch-time-line"></view> -->
+				<view class="watch-item" style="text-align: right;">最近更新 {{valid.data_end_time == 0?"--":valid.data_end_time}}</view>
+			</view>
+			<view class="watch-box flex-box" style="padding-bottom: 10rpx;">
+				<view class="watch-time-item">
+					<view class="watch-title" style="color: #2B86FF;">
+						<!-- <view class="watch-square" style="background: #2B86FF;"></view> -->
+						有效数据
+					</view>
+					<view class="watch-time-text">{{valid.validtime}}</view>
+				</view>
+				<view class="watch-time-item">
+					<view class="watch-title" style="color: #FF9E20;">
+						<!-- <view class="watch-square" style="background: #FF9E20;"></view> -->
+						无效数据
+					</view>
+					<view class="watch-time-text">{{valid.uselesstime}}</view>
+				</view>
+				<view class="watch-time-item">
+					<view class="watch-title" style="color: rgba(98, 54, 255, 0.52);">
+						<!-- <view class="watch-square" style="background: rgba(98, 54, 255, 0.52);"></view> -->
+						尚需数据
+					</view>
+					<view class="watch-time-text">{{valid.surplus_time_second}}</view>
+				</view>
+			</view>
+		</view>
+		<view style="margin-bottom: 16rpx;" wx:if="{{user_id == testUserId}}">
+			<commentInput
+			type="3"
+			placeContent="{{text}}"
+			bindhideCommentMask="hideCommentMask"></commentInput>
+		</view>
+		<view style="height: 1rpx;"></view>
+	</view>
+	<!-- 同步方法 -->
+	<!-- <view class="watch-manual" catchtap="openTips" wx:if="{{valid.is_to_upload_data == 1 && isShowAuto}}">
+		<view class="manual-title">部分数据未上传，请手动同步，获取报告</view>
+		<view class="manual-btn">同步方法</view>
+	</view> -->
+</view>
+<!-- 有效数据解释 -->
+<messageboxOne wx:if="{{showValidMask}}" height="400" bottomname="确定" bindcancel="cancel">
+	<view slot="content1">
+		<view class="watch-tips">* 手表佩戴中收集的数据为【有效数据】，连续佩戴24小时后，会自动生成一次健康测评报告。</view>
+		<view class="watch-tips">* 手表佩戴中允许中断，中断时为【无效数据】，累计不能超过4小时，超过后报告将重新统计。</view>
+	</view>
+</messageboxOne>
+
+<messageboxOne wx:if="{{tipMask}}" title="同步数据" bottomname="好的，我知道了" height="520" bindcancel="cancel">
+	<view slot="content1" style="font-size: 28rpx;">
+		<view class="mask-tips" style="color: #1966CA;text-align: left;">若长时间数据未上传，请点击手表中医-数据上传，手动同步数据，或通过关机后再开机尝试自动同步。</view>
+		<view class="mask-tips" style="text-align: left;">心率变异性数据量比较大,手表若长时间无法自动完成上传，请在网络好的环境下手动上传。</view>
+	</view>
+</messageboxOne>

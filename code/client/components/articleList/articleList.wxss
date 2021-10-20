@@ -1,0 +1,165 @@
+@import "/common/iconfont.wxss";
+
+/* 商城 */
+.shop-item{
+	padding: 38rpx 26rpx 0;
+	border-bottom: 14rpx solid #F6F6F6;
+}
+.salt-image{
+	width: 698rpx;
+	height: 458rpx;
+	border-radius: 12rpx;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.salt-image-item{
+	width: 100%;
+	height: 458rpx;
+	border-radius: 12rpx;
+	background-color: #ccc;
+}
+.salt-image-two{
+	width: 342rpx;
+}
+.salt-image-vertical{
+	width: 342rpx;
+	height: 458rpx;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.salt-image-three{
+	width: 342rpx;
+	height: 222rpx;
+	position: relative;
+}
+.shop-image-num{
+	width: 342rpx;
+	height: 222rpx;
+	background-color: rgba(0,0,0,0.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.salt-image-text{
+	text-align: center;
+	font-size: 26rpx;
+	color: #fff;
+}
+
+/* 商城图标 */
+.icon-box {
+	width: 750rpx;
+	height: 88rpx;
+	position: relative;
+	color: #999;
+}
+.group-icon {
+	padding: 4rpx 26rpx 0 26rpx;
+	position: absolute;
+	left: -26rpx;
+	top: 14rpx;
+	
+}
+.love-icon {
+	padding: 4rpx 26rpx 0 26rpx;
+	position: absolute;
+	left: 92rpx;
+	top: 14rpx;
+}
+
+.comfort-icon {
+	font-size: 32rpx;
+	vertical-align: middle;
+}
+.comfort-num{
+	width: 60rpx;
+	display: inline-block;
+	font-size: 24rpx;
+	margin-left: 6rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+/* 文章列表 */
+.salt-bg{
+	background-color: #fff;
+	margin-bottom: 20rpx;
+}
+.salt-title-box{
+	width: 750rpx;
+	padding: 0 26rpx;
+	background: #FFFFFF;
+}
+.salt-title{
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #000000;
+	line-height: 44rpx;
+	padding: 20rpx 0 12rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.salt-user{
+	margin-bottom: 10rpx;
+}
+.salt-img{
+	width: 36rpx;
+	height: 36rpx;
+	border-radius: 50%;
+	background-color: #ccc;
+	vertical-align: middle;
+}
+.salt-name{
+	font-size: 24rpx;
+	color: #646464;
+	line-height: 34rpx;
+	vertical-align: middle;
+	margin-left: 10rpx;
+}
+.salt-content{
+	max-height: 80rpx;
+	font-size: 28rpx;
+	color: #444444;
+	line-height: 40rpx;
+	margin-bottom: 14rpx;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.salt-content-off{
+	height: 120rpx;
+	font-size: 28rpx;
+	color: #444444;
+	line-height: 40rpx;
+	margin-bottom: 14rpx;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.salt-label{
+	display: inline-block;
+	height: 36rpx;
+	padding: 0 14rpx;
+	background: #47251A;
+	color: #fff;
+	font-size: 20rpx;
+	border-radius: 22rpx;
+	margin-right: 4rpx;
+}
+.salt-label-active{
+	background: #333E6F;
+}

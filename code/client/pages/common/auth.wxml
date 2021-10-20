@@ -1,0 +1,40 @@
+<!--授权登录-->
+<cover-view class="auth" style="top:calc({{windowIsBang ? 40 : 16}}px + 52px);" wx:if="{{is_auth}}">
+	<cover-image class="auth-bg" src="http://i.2fei2.com/5dfc6a1dad326.jpg" style="top:calc({{windowIsBang ? 40 : 16}}px + 52px);"></cover-image>
+	<button class="auth-yes" bindgetuserinfo="clickGetUserInfo" open-type="getUserInfo">开启非二之旅</button>
+	<button class="auth-no" bindtap="showLogin">返回</button>
+
+	<!-- <cover-view style="background:#282828;opacity:.6;width:100%;height:100%;" bindtap="showLogin"></cover-view> -->
+	<!-- <cover-view style="background:#FFF;position:fixed;top:280rpx;left:0;width:80%;margin-left:10%;border-radius:3px;">
+		<cover-view style="font-size:40rpx;font-weight:600;text-align: center;color:#282828;margin-top:50rpx;">您还未登录</cover-view>
+		<cover-view style="margin:10rpx 0 20rpx 0;font-size:16px;color:#989898;text-align: center;">请先登录在进行操作</cover-view>
+		<cover-view style="margin-top:30rpx;margin-bottom:60rpx;">
+		<button style="width:40%;color:#282828;border:1px #282828 solid;border-radius:3px;padding:5px 0;margin-left: 7.5%;float:left;" class="btn" bindtap="showLogin">暂不登录</button>
+		<button style="width:40%;background:#282828;border:1px #282828 solid;border-radius:3px;padding:5px 0;color:#fff;margin-left: 5%;float:left;" class="btn" bindgetuserinfo="clickGetUserInfo" open-type="getUserInfo">立即登录</button>
+		<cover-view class="clearfix"></cover-view>
+		</cover-view>
+	</cover-view> -->
+
+</cover-view>
+
+<!--邀请代理-->
+<view class="notice" style="{{isShowJoinAgent ? '' : 'display:none'}}">
+    <view class="mask" style="width:100%;height:100%;opacity:.8;"></view>
+    <view style="width: 80%;background: #fff;border-radius:10px;position: fixed;left:calc(10% - 10px);top:400rpx;z-index:9999;padding: 10px;padding-bottom:0;">
+        <view style="text-align:center;padding:15px;">{{shareUserInfo.nickname}}邀请您成为代理</view>
+        <button style="background:#F3F3F3;color:#007BFF;width:40%;float:left;margin-left:5%;" data-state="2" bindtap="joinAgent">先逛逛</button>
+        <button style="background:#007BFF;color:#fff;width:40%;float:right;margin-right:5%;" data-state="1" bindtap="joinAgent">去申请</button>
+        <view class="clearfix" style="margin-bottom:20px;"></view>
+    </view>
+</view>
+
+<!--订阅消息授权-->
+<view class="notice" style="{{isOpenMessage ? '' : 'display:none'}}">
+    <view class="mask" style="width:100%;height:100%;opacity:.8;"></view>
+    <view style="width: 80%;background: #fff;border-radius:10px;position: fixed;left:calc(10% - 10px);top:400rpx;z-index:9999;padding: 10px;padding-bottom:0;">
+        <view style="text-align:center;padding:15px;">“OmTatSat”想要使用您的通知服务</view>
+        <button style="background:#F3F3F3;color:#282828;width:40%;float:left;margin-left:5%;" data-state="2" bindtap="isOpenMessage">稍后设置</button>
+        <button style="background:#282828;color:#fff;width:40%;float:right;margin-right:5%;" data-state="1" bindtap="isOpenMessage">好的OK</button>
+        <view class="clearfix" style="margin-bottom:20px;"></view>
+    </view>
+</view>

@@ -1,0 +1,96 @@
+<view class="agent">
+	<block wx:if="{{showAgent}}">
+		<view class="agent-info">
+			<block wx:if="{{userInfo.Wechat_xcxSetUser && (userInfo.Wechat_xcxSetUser.avatar_url || userInfo.Wechat_xcxSetUser.nickname)}}">
+				<image class="agent-avatar" src="{{userInfo.Wechat_xcxSetUser && userInfo.Wechat_xcxSetUser.avatar_url}}" mode="aspectFill"></image>
+				<view class="agent-name">{{userInfo.Wechat_xcxSetUser && userInfo.Wechat_xcxSetUser.nickname}}</view>
+			</block>
+			<view class="agent-btn" bindtap="showMask">
+				<view class="agent-type">
+					{{textArr[type]}}
+					<view class="agent-change iconfont iconqiehuan" wx:if="{{agentArr.length>1}}"></view>
+				</view>
+			</view>
+			<view class="info-money" bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type='+ type+'&sort=2&total='+agentInfo[type].price}}">
+				<view class="info-num">
+				{{agentInfo[type].price}}
+				<view class="info-more iconfont iconjiantouyou"></view>
+				</view>
+				<view class="info-title">账户余额</view>
+			</view>
+			<view class="draw" bindtap="getCash">提现</view>
+		</view>
+		<view class="rebate-box">
+			<view class="rebate-title">预计返利</view>
+			<view class="rebate-rule" bindtap="goUrl" data-url="{{'/pageShop/pageShop/agentApply/agentApply?type=rule&url='+agentInfo[type].img}}">返利规则</view>
+			<view class="rebate-content flex-box">
+				<view class="rebate-item">
+					<view class="rebate-num">{{agentInfo[type].rebate.month}}</view>
+					<view class="rebate-text">本月</view>
+				</view>
+				<view class="rebate-item">
+					<view class="rebate-num">{{agentInfo[type].rebate.season}}</view>
+					<view class="rebate-text">本季</view>
+				</view>
+				<view class="rebate-item">
+					<view class="rebate-num">{{agentInfo[type].rebate.year}}</view>
+					<view class="rebate-text">本年</view>
+				</view>
+			</view>
+		</view>
+	</block>
+	
+	<view class="invite-box" style="margin: 82rpx auto 32rpx;" wx:if="{{!showAgent}}">
+		<image class="agent-avatar" wx:if="{{userInfo.Wechat_xcxSetUser && userInfo.Wechat_xcxSetUser.avatar_url}}" src="{{userInfo.Wechat_xcxSetUser && userInfo.Wechat_xcxSetUser.avatar_url}}"
+		 mode="aspectFill"></image>
+		<view class="invite-title">邀请有礼</view>
+		<view class="invite-tips" wx:for="{{invite_text}}" wx:key="index">{{item}}</view>
+		<button class="invite-btn" open-type="share" id="agent">去邀请</button>
+	</view>
+	<block wx:if="{{showAgent}}">
+		<view class="coupon-item"  bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type='+ type+'&sort=1&total='+coupon.india}}" wx:if="{{ type == 'india'}}" style="background: linear-gradient(340deg, #04C38B 0%, #009570 100%);">
+			<view class="coupon-title">{{textArr[type]}}储值卡</view>
+			<view class="coupon-num">{{coupon.india}}</view>
+			<view class="coupon-text">总资金</view>
+			<view class="coupon-detail">明细</view>
+		</view>
+		<view class="coupon-item" bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type='+ type+'&sort=1&total='+coupon.uk}}" wx:if="{{ type == 'uk'}}" style="background: linear-gradient(340deg, #FFC06A 0%, #FFB146 100%)">
+			<view class="coupon-title">{{textArr[type]}}储值卡</view>
+			<view class="coupon-num">{{coupon.uk}}</view>
+			<view class="coupon-text">总资金</view>
+			<view class="coupon-detail">明细</view>
+		</view>
+		<view class="coupon-item" bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type='+ type+'&sort=1&total='+coupon.watch}}" wx:if="{{ type == 'watch'}}" style="background: linear-gradient(340deg, #FF7169 0%, #FE5150 100%);">
+			<view class="coupon-title">{{textArr[type]}}储值卡</view>
+			<view class="coupon-num">{{coupon.watch}}</view>
+			<view class="coupon-text">总资金</view>
+			<view class="coupon-detail">明细</view>
+		</view>
+	</block>
+	<block wx:if="{{!showAgent}}">
+		<view class="coupon-item"  bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type=india&sort=1&total='+coupon.india}}" wx:if="{{india_ky_agent_state == 1}}" style="background: linear-gradient(340deg, #04C38B 0%, #009570 100%);">
+			<view class="coupon-title">印度矿盐储值卡</view>
+			<view class="coupon-num">{{coupon.india}}</view>
+			<view class="coupon-text">总资金</view>
+			<view class="coupon-detail">明细</view>
+		</view>
+		<view class="coupon-item" bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type=uk&sort=1&total='+coupon.uk}}" wx:if="{{uk_ky_agent_state == 1}}" style="background: linear-gradient(340deg, #FFC06A 0%, #FFB146 100%)">
+			<view class="coupon-title">英国矿盐储值卡</view>
+			<view class="coupon-num">{{coupon.uk}}</view>
+			<view class="coupon-text">总资金</view>
+			<view class="coupon-detail">明细</view>
+		</view>
+		<view class="coupon-item" bindtap="goUrl" data-url="{{'/pageShop/pageShop/moneyList/moneyList?type=watch&sort=1&total='+coupon.watch}}" wx:if="{{watches_agent_state == 1}}" style="background: linear-gradient(340deg, #FF7169 0%, #FE5150 100%);">
+			<view class="coupon-title">中医手表储值卡</view>
+			<view class="coupon-num">{{coupon.watch}}</view>
+			<view class="coupon-text">总资金</view>
+			<view class="coupon-detail">明细</view>
+		</view>
+	</block>
+	<view class="invite-box" wx:if="{{showAgent}}">
+		<view class="invite-title">邀请有礼</view>
+		<view class="invite-tips" wx:for="{{invite_text}}" wx:key="index">{{item}}</view>
+		<button class="invite-btn" open-type="share" id="agent">去邀请</button>
+	</view>
+	<view class="agent-apply" wx:if="{{!showAgent}}" bindtap="goUrl" data-url="/pageShop/pageShop/agentApply/agentApply?type=apply">立即成为代理</view>
+</view>

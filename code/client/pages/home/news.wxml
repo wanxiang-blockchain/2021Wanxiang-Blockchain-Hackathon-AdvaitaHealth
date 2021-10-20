@@ -1,0 +1,83 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='健康脉诊手表' background="transparent" color="#fff"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<image class="banner-box" src="https://i.2fei2.com/shop/logo/2020-08-12/14:00:23/5f33857718525.png" mode="widthFix"></image>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true">
+
+	<block wx:if="{{_GET.type == 1}}">
+		<!-- 项目公示 -->
+		<view class="content-img">
+			<image class="img-box" src="https://i.2fei2.com/shop/logo/2020-08-12/14:20:05/5f338a15f0595.png" mode="widthFix"></image>
+			<image class="img-box" src="https://i.2fei2.com/shop/logo/2020-08-14/15:14:33/5f3639d9bb238.png" mode="widthFix"></image>
+		</view>
+	</block>
+	<block wx:if="{{_GET.type == 2}}">
+		<!-- 专家团队 -->
+		<view class="content-img expert-box">
+			<view class="center-circle">专家团队</view>
+			<view class="expert-line"></view>
+			<view class="expert-title">中国中医科学院</view>
+			<image class="equipment-img" src="https://i.2fei2.com/shop/logo/2020-08-10/17:05:55/5f310df341acf.png" mode="widthFix"></image>
+			<view class="expert-content">中国中医科学院是国家中医药管理局直属的集科研、医疗、教学为一体的综合性中医药研究机构，以中医药科学研究作为中心任务。该院屠呦呦终身研究员由于青蒿素的发现及其应用于治疗疟疾方面做出的杰出贡献，于2015年10月获诺贝尔医学奖。（中国唯一的医学诺贝尔奖）</view>
+			<view class="expert-line"></view>
+			<view class="expert-title">香山科学会议</view>
+			<view class="expert-content">香山科学会议是由国家科学技术部(原国家科委)发起，在科学技术部和中国科学院的共同支持下于1993年正式创办。相继得到国家自然科学基金委员会、中国科学院和学部、中国工程院、教育部、中央军委科学技术委员会、中国科学技术协会、国家卫生和计划生育委员会、农业部、交通运输部等部门的资助与支持。香山科学会议是我国科技界以探索科学前沿、促进知识创新为主要目标的高层次、跨学科、小规模的常设性学术会议。</view>
+
+			<view class="expert-content" style="margin-top: 50rpx;">2019年4月24日，以“未病状态测量与辨识的科学问题、前沿技术和核心装备”为主题的香山科学会议第650次学术讨论会在深圳成功召开。会议聘请天津中医药大学张伯礼教授、电子科技大学陈东义教授、中国科学院深圳先进技术研究院王磊研究员和中国中医科学院医学实验中心张启明研究员担任会议执行主席。来自国内外20余家单位的40余名专家学者应邀出席了会议。</view>
+			<image class="equipment-photo" src="https://i.2fei2.com/shop/logo/2020-08-12/15:01:59/5f3393e7cd9bf.png" mode="widthFix"></image>
+			<view class="expert-tips">张伯礼院士给与高度评价</view>
+			<view class="expert-content">● 人民网北京10月10日电
+				中医学是中国传统文化的重要组成部分。几千年来，中医学在中华民族的繁衍生息中做出了重要贡献。然而，对中医的质疑也一直存在。中医不能精确化、定量化、可视化吗？近日，在人民网举办的“体现中医特点的人体功能状态测评”座谈会上，中国中医科学院张启明教授展示了29年的研究成果，让人们用一个全新的视角来走进中医，认识中医，解读中医。</view>
+			<image class="equipment-photo" src="https://i.2fei2.com/shop/logo/2020-08-12/15:02:19/5f3393fb73a92.png" mode="widthFix"></image>
+			<view class="expert-tips">俞梦孙院士</view>
+			<view class="expert-content">会议由著名航空医学专家俞梦孙院士主持，天津医科大学顾汉卿教授、中国中医科学院翁维良首席研究员、北京大学赵一鸣教授、北京中医药大学孙塑伦教授、全国名老中医张士舜主任医师、中国中医科学院张启明教授参加。</view>
+			<view class="expert-line"></view>
+			<view class="expert-title" style="margin-bottom: 36rpx;">未病测评学原理</view>
+			<image class="equipment-book" src="https://i.2fei2.com/shop/logo/2020-08-10/17:17:36/5f3110b0458cc.png" mode="widthFix"></image>
+		</view>
+	</block>
+
+	<block wx:if="{{_GET.type == 3}}">
+		<!-- 案例 -->
+		<view class="content-img example">
+			<view class="example-user">
+				<image class="user-img" src="https://i.2fei2.com/shop/logo/2020-08-12/17:34:33/5f33b7a911bb7.png" mode="widthFix"></image>
+				<view class="user-name">体检者: 陈先生</view>
+				<view class="user-age">年龄: 53岁</view>
+			</view>
+			<image class="user-poster" bindtap="goUrl" data-url="/pageWatch/pageWatch/onceLog/onceLog?example=1" src="https://i.2fei2.com/shop/logo/2020-10-30/17:11:15/5f9bd8b3407cb.png" mode="widthFix"></image>
+			<view class="btn-border ">
+				<view class="btn-border-in" bindtap="goUrl" data-url="/pageWatch/pageWatch/treport/treport?share_user_id=70&DeviceIdentity=863221040319426&id=705&example=1">
+					<view class="world-title">复食日</view>
+					<image class="example-img" src="https://i.2fei2.com/shop/logo/2020-12-22/17:51:59/5fe1c1bf8d350.png" mode="widthFix"></image>
+					<view class="equipment-more">查看更多<text class="equipment-back iconfont iconjiantouyou"></text></view>
+				</view>
+			</view>
+			<view class="btn-border ">
+				<view class="btn-border-in" bindtap="goUrl" data-url="/pageWatch/pageWatch/treport/treport?share_user_id=70&DeviceIdentity=863221040319426&id=702&example=1">
+					<view class="world-title">断食日</view>
+					<image class="example-img" src="https://i.2fei2.com/shop/logo/2020-08-12/16:46:42/5f33ac722a3f9.png" mode="widthFix"></image>
+					<view class="equipment-more">查看更多<text class="equipment-back iconfont iconjiantouyou"></text></view>
+				</view>
+			</view>
+			<view class="btn-border ">
+				<view class="btn-border-in" bindtap="goUrl" data-url="/pageWatch/pageWatch/treport/treport?share_user_id=70&DeviceIdentity=863221040319426&id=699&example=1">
+					<view class="world-title">减食日</view>
+					<image class="example-img" src="https://i.2fei2.com/shop/logo/2020-08-12/16:47:02/5f33ac86c801d.png" mode="widthFix"></image>
+					<view class="equipment-more">查看更多<text class="equipment-back iconfont iconjiantouyou"></text></view>
+				</view>
+			</view>
+			<view class="btn-border ">
+				<view class="btn-border-in" bindtap="goUrl" data-url="/pageWatch/pageWatch/treport/treport?share_user_id=70&DeviceIdentity=863221040319426&id=684&example=1">
+					<view class="world-title">减食前</view>
+					<image class="example-img" src="https://i.2fei2.com/shop/logo/2020-08-12/16:47:18/5f33ac962d3c1.png" mode="widthFix"></image>
+					<view class="equipment-more">查看更多<text class="equipment-back iconfont iconjiantouyou"></text></view>
+				</view>
+			</view>
+			<view class="example-tips">● 精准测评到身体的变化情况，断食日身体处于应激状态，所以各项指标均是很低。</view>
+		</view>
+	</block>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

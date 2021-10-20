@@ -1,0 +1,124 @@
+<MyHeader bind:back="back"  backIcon="{{true}}"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="scrollMore">
+	<view class="outer1">
+		<view class="box2">
+			<view lines="1" class="infoBox1">睡眠管理效果付费智能合约</view>
+			<text lines="1" class="word1">脉诊手表（租赁或者采购）+30天陪伴干预。</text>
+		</view>
+		<block wx:if="{{buyState}}">
+		<view class="box3">
+			<view class="box4" bindtap="goConfirm">
+				<view class="bd1">
+					<image src="https://i.2fei2.com/goods/logo/2021-09-30/11:01:08/615528749598c.png" class="label1"></image>
+				</view>
+				<view class="bd2">
+					<text lines="1" class="info2">脉诊手表+效果付费</text>
+					<!-- <text lines="1" class="txt1">2000RMB</text> -->
+				</view>
+				<button bindtap="onClick" class="bd3">
+					<text lines="1" class="word2">购买</text>
+				</button>
+			</view>
+		</view>
+		<view class="box5">
+			<view class="layer1">
+				<text lines="1" decode="true" class="info3">1&nbsp;检测阶段&nbsp;(10天）</text>
+				<view class="wrap1">
+					<text lines="1" class="word3">填写量表</text>
+				</view>
+				<view class="wrap1">
+					<text lines="1" class="word3">购买或者租用手表</text>
+				</view>
+				<view class="wrap1">
+					<text lines="1" class="word3">计算5次睡眠得分的平均分数</text>
+				</view>
+				<view class="wrap1">
+					<text lines="1" class="word3">戴脉诊手表10天内出5次未病测评报告和1次内稳态报告</text>
+				</view>
+			</view>
+		</view>
+		<view class="box6">
+			<view class="wrap5">
+				<text lines="1" decode="true" class="info4">2&nbsp;干预阶段&nbsp;(10天）</text>
+				<view class="wrap1">
+					<text lines="1" class="word3">咨询，出具干预方案</text>
+				</view>
+				<view class="wrap1">
+					<text lines="1" class="word3">继续佩戴手表，观察干预效果</text>
+				</view>
+				<view class="wrap1">
+					<text lines="1" class="word3">动态调整干预方案</text>
+				</view>
+			</view>
+		</view>
+		<view class="box7">
+			<view class="group1-0">
+				<view class="layer5-0">
+					<text lines="1" decode="true" class="txt4-0">3&nbsp;巩固阶段&nbsp;(10天）</text>
+					<view class="wrap1">
+						<text lines="1" class="word3">执行干预方案</text>
+					</view>
+					<view class="wrap1">
+						<text lines="1" class="word3">10天内出具5次未病测评报告</text>
+					</view>
+					<view class="wrap1">
+						<text lines="1" class="word3">计算5次睡眠得分的平均分数</text>
+					</view>
+				</view>
+			</view>
+			<view class="group1-1">
+				<view class="layer5-1">
+					<text lines="1" decode="true" class="txt4-1">4&nbsp;执行智能合约</text>
+					<view class="wrap1">
+						<text lines="1" class="word3">对比巩固期和测试期的睡眠平均分数</text>
+					</view>
+					<view class="wrap1">
+						<text lines="1" class="word3">达到约定提高分数，支付费用给专家</text>
+					</view>
+					<view class="wrap1">
+						<text lines="1" class="word3">没有达到约定分数，退款给用户</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<text lines="1" class="paragraph5">如果您对睡眠服务还有不明白的地方，您可以</text>
+		<text lines="1" decode="true" class="word5" bindtap="goChat">咨询客服&gt;&nbsp;</text>
+		</block>
+		
+		
+		<block wx:else>
+			<view class="bd31">
+				<view class="layer11">
+					<view class="main21">
+						<image src="https://i.2fei2.com/goods/logo/2021-09-30/10:58:39/615527df1c9f2.png" class="icon1"></image>
+					</view>
+					<view class="main31">
+						<text lines="1" class="info11">调理喷雾+专家咨询</text>
+						<text lines="1" class="txt11">您可以在：菜单栏“我的”-“我的订单”查看</text>
+					</view>
+					<text lines="1" class="info21">已购买</text>
+				</view>
+			</view>
+			<view class="bd41">
+				<view class="main41">
+					<view class="layer21">
+						<text lines="1" class="word21">必</text>
+					</view>
+					<text lines="1" class="info31">开始</text>
+				</view>
+				<view class="main51">
+					<text lines="1" class="paragraph11">请先添加睡眠小助手，获取睡眠喷雾与专家建议。</text>
+				</view>
+				<view class="main61">
+					<button bindtap="onClick" class="group11">
+						<text lines="1" class="word31">去添加</text>
+					</button>
+				</view>
+			</view>
+		</block>
+	</view>
+</scroll-view>

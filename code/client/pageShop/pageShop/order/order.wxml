@@ -1,0 +1,7 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='我的订单' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view bindscroll="bindscroll" scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll_h">
+	<myOrder ></myOrder>
+</scroll-view>

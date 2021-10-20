@@ -1,0 +1,11 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"watchList": "/components/watchList/watchList",
+		"messagebox": "/pageShop/components/messagebox/messagebox",
+		"messageboxOne": "/components/messageboxOne/messageboxOne",
+		"login":"/components/login/login",
+		"previewImg": "/pageShop/components/previewImg/previewImg"
+	},
+	"navigationBarTextStyle": "black"
+}

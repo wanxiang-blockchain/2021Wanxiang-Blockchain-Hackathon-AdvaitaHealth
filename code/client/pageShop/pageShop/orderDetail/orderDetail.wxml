@@ -1,0 +1,155 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='确认订单' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;padding-bottom: {{hasBtn?120:0}}rpx;"
+ scroll-y="true" class="scroll_h" scroll-into-view="{{isSelect}}">
+	<view class="order-status" wx:if="{{info.state == 1}}" style="{{skinThemeStyle}}">
+		<view class="status-icon iconfont icondizhi"></view>
+		<view class="status-title">{{info.state_text}}</view>
+		<view class="status-time">距离订单关闭时间还剩{{surplus_time[0]}}：{{surplus_time[1]}}：{{surplus_time[2]}}秒</view>
+	</view>
+	<view class="order-status" wx:else style="{{skinThemeStyle}}">
+		<view class="status-icon iconfont icondizhi"></view>
+		<view class="status-title" style="padding-top: 62rpx;">{{info.state_text}}</view>
+	</view>
+	<view class="address-info item-box">
+		<view class="address-name"><text class="address-local iconfont icondizhi"></text>{{info.address_name}}
+			{{info.address_phone}}</view>
+		<view class="address-text">{{info.address_province}}{{info.address_city}}{{info.address_county}}{{info.address_details}}</view>
+	</view>
+	<!-- 商品 -->
+	<view class="shop-item item-box">
+		<view style="margin-bottom: 20rpx;" wx:for="{{info.goods}}" wx:key="index">
+			<watchList info="{{item}}"></watchList>
+			<view class="order-info" bindtap="showImg" data-info="{{item}}" wx:if="{{item.goods_message || item.artwork_id}}">
+				<view class="left">
+					<text style="color: #989898;">印刷图案</text>
+				</view>
+				<view class="right">查看</view>
+			</view>
+			<!-- <view class="refund-box"  > -->
+			<view class="refund-box"  wx:if="{{info.return_relation_orders.length>0 || (info.state >= 2 && info.state <= 12 && info.state != 7)}}" >
+				<view class="refund-btn" 
+				bindtap="goUrl" 
+				wx:if="{{info.return_relation_orders.length>0}}" 
+				data-url="{{'/pages/focus/focus?url=https://peiyueh5.advaita.world/#/pages/order/refundList&orders_id='+info.orders_id+'&user_id='+user_id+'&goods_id='+item.goods_id+'&token='+token+'&app_type='+app_type}}" style="margin-left: 32rpx;">协商历史</view>
+				<view class="refund-btn" 
+				bindtap="goUrl" 
+				wx:if="{{info.state >= 2 && info.state <= 12 && info.state != 7}}"
+				data-url="{{'/pages/focus/focus?url=https://peiyueh5.advaita.world/#/&orders_id='+info.orders_id+'&user_id='+user_id+'&goods_id='+item.goods_id+'&token='+token+'&app_type='+app_type}}">申请售后</view>
+				<view class="refund-btn red"  bindtap="goUrl" data-url="{{'/pageFriend/pageFriend/addCircle/addCircle?bigType=0&goods_id='+item.goods_id+'&order_id='+item.detail_id}}" >立即评价</view>
+			</view>
+		</view>
+		<view class="order-info">
+			<view class="left">商品总价</view>
+			<view class="right">￥{{info.goods_price}}</view>
+		</view>
+		<view class="order-info">
+			<view class="left">运费</view>
+			<view class="right">￥{{info.mail_price}}</view>
+		</view>
+		<view class="order-info">
+			<view class="left">优惠金额</view>
+			<view class="right">-￥{{info.favorable_price}}</view>
+		</view>
+		<view class="order-info order-total">
+			<view class="left">订单总价</view>
+			<view class="right"><text style="font-size: 24rpx;">￥</text>{{info.should_pay_price}}</view>
+		</view>
+		<view class="order-line"></view>
+		<view class="order-info order-total" style="margin-bottom: 0;">
+			<view class="left">实付款</view>
+			<view class="right" style="color: #E7980B;"><text style="font-size: 26rpx;">￥</text>{{info.should_pay_price}}</view>
+		</view>
+	</view>
+
+	<!-- 订单信息 -->
+	<view class="item-box num-info">
+		<view class="order-info-title">订单信息</view>
+		<view class="order-info-num">订单编号：{{info.orders_num}}</view>
+		<view class="order-info-num">创建时间：{{add_time}}</view>
+		<view class="order-copy" bindtap="goCopy" data-num="{{info.orders_num}}">复制</view>
+	</view>
+	
+	<!-- 服务状态 -->
+	<view class="item-box num-info" wx:if="{{(info.goods[0].goods_id == 2951 || info.goods[0].goods_id == 2952) && info.state > 1 && info.state != 7 }}">
+		<view class="order-info-title">服务状态</view>
+		<view class="order-info-num">{{info.tips}}</view>
+		<view class="order-info-btn" bindtap="goTest">进入</view>
+	</view>
+
+	<!-- 物流信息 -->
+	<block wx:if="{{info.state == 2 ||info.state == 6}}">
+	<view class=" num-info">
+		<view class="order-info-title">物流信息</view>
+		<view class="order-info-num">{{info.express_company?info.express_company:'--'}} {{info.express_num}}
+		<view class="" bindtap="goCopy" data-num="{{info.express_num}}" style="float: right;color: #1966CA;" wx:if="{{info.express_num}}">复制</view></view>
+	</view>
+	<view class="logistics-item"  style="padding-left:100rpx;">
+		<view class="logistics-icon">收</view>
+		<view class="logistics-content">[收货地址]{{info.address_province}}{{info.address_city}}{{info.address_county}}{{info.address_details}} {{info.address_phone}}</view>
+	</view>
+	<view class="item-box" wx:if="{{info.express_traces && info.express_traces.traces }}">
+		<view class="logistics-border" wx:if="{{info.express_traces.traces.length>1}}">
+			<view class="logistics-item" wx:for="{{info.express_traces.traces}}" wx:key="index" wx:if="{{index == 0 || (index !=info.express_traces.traces.length-1)}}">
+				<view class="logistics-color" wx:if="{{index == 0}}"></view>
+				<view class="logistics-bg" wx:else></view>
+				<view style="color: {{index == 0?'#FF623E':'#B5B5B5'}};">{{item.time}}</view>
+				<view style="color: {{index == 0?'#000000':'#B5B5B5'}};">{{item.text}}</view>
+			</view>
+		</view>
+		<view class="logistics-item" style="margin-left:54rpx;" wx:elif="{{info.express_traces.traces.length == 1}}">
+			<view class="logistics-color"></view>
+			<view>{{info.express_traces.traces[0].time}}</view>
+			<view>{{info.express_traces.traces[0].text}}</view>
+		</view>
+		<view class="logistics-item" style="margin-left:54rpx;" wx:else>
+			<view class="logistics-color"></view>
+			<view></view>
+			<view>暂无消息</view>
+		</view>
+		<view class="logistics-item" style="margin-left:54rpx;" wx:if="{{info.express_traces.traces.length >1}}">
+			<view class="logistics-bg"></view>
+			<view>{{info.express_traces.traces[info.express_traces.traces.length-1].time}}</view>
+			<view>{{info.express_traces.traces[info.express_traces.traces.length-1].text}}</view>
+		</view>
+	</view>
+	<view class="logistics-item" style="margin-left:54rpx;" wx:else>
+		<view class="logistics-color"></view>
+		<view></view>
+		<view>暂无消息</view>
+	</view>
+	</block>
+	<!-- 客服 -->
+	<view class="item-box" bindtap='' style="border-bottom: {{hasBtn?'20rpx solid #f2f2f2':'none'}};" bindtap="goUrl"
+	 data-url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/EPSCOJKTd9hLUigh1I-7YA">
+		<text class="chat-icon iconfont icondizhi"></text>
+		<view class="chat-title">联系客服</view>
+		<text class="chat-back iconfont iconjiantouyou"></text>
+		<!-- <button open-type="contact" send-message-title="联系客服" send-message-path="/pages/home/home" show-message-card style="height:100rpx;line-height:100rpx;margin-bottom: 40rpx;" session-from="https://i.2fei2.com/shop/logo/2020-08-12/10:06:43/5f334eb3ceb97.png">联系客服</button> -->
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+<view class="cart-all" wx:if="{{hasBtn}}">
+	<view class="cart-cancel" wx:if="{{info.state == 1}}" bindtap="showCancel">取消订单</view>
+	<view class="cart-btn" wx:if="{{info.state == 1}}" bindtap="goPay">付款</view>
+	<view class="cart-btn" wx:if="{{info.state == 2}}" bindtap="showConfirmOrder">确认收货</view>
+</view>
+<messagebox wx:if="{{showCancelMask}}" bindconfirmChange="confirmChange" bindcancel="cancel"></messagebox>
+<messagebox wx:if="{{showConfirmMask}}" bindconfirmChange="confirmOrder" bindcancel="cancel" tips="确认已收到货物吗?"></messagebox>
+<include src="../../../pages/common/auth.wxml" />
+<!-- 
+<messageboxOne wx:if="{{showImgMask}}" title="预览图" bottomname="确定" height="770" bindcancel="hideMask">
+	<view slot="content1">
+		<view style="position: relative;">
+			<image src="{{sentence.url?sentence.url+'?imageView2/0/w/285':''}}" mode="aspectFit" class="choose-img"></image>
+			<view class="text-box" bindtouchmove='touchmove' style="left:{{sentence.write[0]/100}}%;top:{{sentence.write[1]/100}}%;">
+				<view class="text-bg" style="background-color: {{sentence.color}};color: {{sentence.color}};mix-blend-mode: multiply;"
+				 bindtouchstart="moveStart" bindtouchmove='slide'>{{sentence.text}}</view>
+				<view class="text-name">{{sentence.text}}</view>
+			</view>
+		</view>
+	</view>
+</messageboxOne> -->
+
+<previewImg bindhideMask="hideMask" wx:if="{{showImgMask}}" info="{{previewImg}}"></previewImg>

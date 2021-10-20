@@ -1,0 +1,76 @@
+<MyHeader></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px - 98rpx);position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="scrollMore">
+	<view class="block1">
+		<view class="mod1">
+			<view class="section1">
+				<view lines="1" class="paragraph1">睡眠服务</view>
+				<text lines="1" class="word1">您可以快速获得健康的专业服务</text>
+			</view>
+			<view class="section2">
+				<image src="../../images/lanhu_shuimian/SketchPngf80e36c6e6d29e8118714225653f7180b20198076e70c0b55108e8ff2797e8ee.png"
+				 class="pic1"></image>
+			</view>
+		</view>
+		<view class="mod2">
+			<view class="group1-0" bindtap="goUrl" data-url="/pageSleep/pageSleep/choiceChat/choiceChat">
+				<view class="mod3-0">
+					<view class="mod4-0">
+						<image src="https://i.2fei2.com/goods/logo/2021-09-30/10:58:39/615527df1c9f2.png" class="label1-0"></image>
+					</view>
+					<text lines="1" class="info1-0">调理喷雾+专家咨询</text>
+					<view class="mod5-0">
+						<text lines="1" class="word2-0">进入</text>
+					</view>
+				</view>
+			</view>
+			<view class="group1-1" bindtap="goUrl" data-url="/pageSleep/pageSleep/choiceWatch/choiceWatch">
+				<view class="mod3-1">
+					<view class="mod4-1">
+						<image src="https://i.2fei2.com/goods/logo/2021-09-30/11:01:08/615528749598c.png" class="label1-1"></image>
+					</view>
+					<text lines="1" class="info1-1">脉诊手表+效果付费</text>
+					<view class="mod5-1">
+						<text lines="1" class="word2-1">进入</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="block3">
+			<view lines="1" class="paragraph2">专家服务</view>
+			<text lines="1" class="paragraph3">台湾睡眠专家一对一来帮助您深层地解除睡眠障碍，齐全的方案与丰富的经验。</text>
+		</view>
+		<view class="mod7">
+			<view class="section3-0">
+				<view class="mod8-0">
+					<view class="outer2-0">
+						<image src="https://i.2fei2.com/goods/logo/2021-10-14/13:43:34/6167c38655596.jpg" class="outer2-0"></image>
+					</view>
+					<text lines="1" class="word3-0">睡眠大师</text>
+					<view class="outer3-0" bindtap="goUrl" data-url="/pageSleep/pageSleep/teacherHong/teacherHong">
+						<text lines="1" class="word4-0">了解更多</text>
+					</view>
+				</view>
+				<text lines="1" class="word5-0">容华</text>
+			</view>
+			<view class="section3-1">
+				<view class="mod8-1">
+					<view class="outer2-1">
+						<image src="https://i.2fei2.com/goods/logo/2021-10-14/14:11:10/6167c9fe79852.png" class="outer2-1"></image>
+					</view>
+					<text lines="1" class="word3-1">睡眠专家</text>
+					<view class="outer3-1" bindtap="goUrl" data-url="/pageSleep/pageSleep/teacherWu/teacherWu">
+						<text lines="1" class="word4-1">了解更多</text>
+					</view>
+				</view>
+				<text lines="1" class="word5-1">吴奇伟</text>
+			</view>
+		</view>
+	</view>
+
+	
+</scroll-view>
+<include src="../../../pages/common/footer.wxml" />

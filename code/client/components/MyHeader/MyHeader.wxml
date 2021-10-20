@@ -1,0 +1,17 @@
+<view class='nav' style='height: {{status + navHeight}}px;color:{{color}};background:{{background}};'>
+    <view class='status' style='height: {{status}}px;{{containerStyle}}'></view>
+    <view class='navbar' style='height:{{navHeight}}px;{{containerStyle}}'>
+        <view class='back-icon'  wx:if="{{backIcon}}" bindtap='back'>
+            <view class="back iconfont iconjiantouyou" style="transform: rotate(180deg);color:{{color}}"></view>
+        </view>
+        <view class='home-icon'  wx:if="{{backIcon}}" bindtap='index'>
+            <view class="home iconfont iconzhuye"></view>
+        </view>
+		 <view class='home-icon' wx:if="{{homeIcon}}" bindtap='home' style=" left: 36rpx;">
+			<view class="home iconfont {{homeIcon}}"></view>
+		</view>
+        <view class='nav-title' wx:if="{{titleText}}">
+            <text style='{{textStyle}}'>{{titleText}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,197 @@
+<!--头部-->
+<include src="../../../pages/common/auth.wxml" />
+<MyHeader bind:clickDate="clickDate" titleText='{{title}}'  bind:back="back" backIcon="{{true}}"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;background: #FBFBFB;"  scroll-y="true"
+ scroll-top="{{scrollTop}}" bindscrolltolower="searchScrollLower">
+	<view  wx:if="{{type == 1}}">
+		<view class="user-item">
+			<image class="user-img" src="{{selectWatch.avatar_url}}"></image>
+			<view class="user-content">
+				<view class="user-name hidden-text">{{selectWatch.name}}</view>
+				<view class="user-icon iconfont iconnv1" style="color: #FF5175"  wx:if="{{selectWatch.sex == 2}}"></view>
+				<view class="user-icon iconfont iconnan1" style="color: #3D88E0;" wx:else></view>
+			</view>
+			<!-- <view class="user-btn" bindtap="showDeleteUser" wx:if="{{selectWatch && selectWatch.isDel}}">删除成员</view> -->
+			<view class="user-btn" bindtap="scanDelete" wx:if="{{user_id == 8}}">扫码删除</view>
+		<!-- 	<view class="user-btn" catchtap="goUrl" data-url="/pages/help/help" wx:else>使用教程</view> -->
+		</view>
+		<!--选择手表-->
+		<view class="select-user list">
+			<!-- <scroll-view class="list" scroll-y="true" style="height: calc({{windowHeight}}px - {{windowIsBang ? 40 : 16}}px - 52px - 360rpx); width:{{windowWidth}}px;position:relative;"> -->
+			<!-- 	<view class="new-wetches" bindtap="showScanCode">绑定新手表<text class="iconfont iconjiatianjia"></text></view> -->
+				<view class="p-title" wx:if="{{watchesListAdmin.length > 0 }}">我管理的手表</view>
+				<view class="watch-list" wx:if="{{watchesListAdmin.length > 0 }}">
+					<view class="item" wx:for="{{watchesListAdmin}}" wx:key="index" data-list="watchesListAdmin" data-index="{{index}}" data-device_id="{{item.device_id}}">
+						<view class="watch-info">
+							<image src="https://i.2fei2.com/shop/logo/2020-10-29/13:56:22/5f9a5986e999c.png" class="watches"></image>
+							<view class="item-content">
+								<view class="title " wx:if="{{item.treport_user_name!=''}}">
+								<text class="hidden-text" style="max-width: 300rpx;display: inline-block;padding-left: 0;">{{item.treport_user_name}}</text>
+								<text style="color: #ADADAD;float: none;font-size: 28rpx;">正在使用</text>
+								</view>
+								<view class="title" wx:else>手表未绑定成员</view>
+								<view class="bind-code" style="color: #ADADAD;">{{item.name}}</view>
+								<view class="bind-code">绑定码：{{item.device_id}}</view>
+							</view>
+							<view class="btn change-btn" data-device_id="{{item.device_id}}" bindtap="changeIndexWatch">切换</view>
+						</view>
+						<view class="watch-line"></view>
+						<view class="flex-box2" style="padding-left: 64rpx;">
+							<view class="btn "  data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}" data-use_id="{{item.bind_treport_user_table_id}}" bindtap="getUserlist">更换用户</view>
+							<view class="btn " style="margin-left: 30rpx;"  data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}"  catchtap="goUrl" data-url="{{'/pageWatch/pageWatch/wifiList/myWifi?device_id='+item.device_id+'&name='+item.treport_user_name}}" data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}">我的WiFi</view>
+							
+							<view class="btn change2"  data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}"  bindtap="isDeleteWatches" data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}">删除手表</view>
+						</view>
+						<view class="clearfix"></view>
+					</view>
+				</view>
+				<view class="p-title" >我使用的手表</view>
+				<view class="watch-list">
+					<view class="item" wx:for="{{watchesList}}" wx:key="index" data-list="watchesList" data-index="{{index}}" data-device_id="{{item.device_id}}">
+						<view class="watch-info">
+							<image src="https://i.2fei2.com/shop/logo/2020-10-29/13:56:22/5f9a5986e999c.png" class="watches"></image>
+							<view class="item-content">
+								<view class="title" wx:if="{{item.treport_user_name!=''}}">
+								<text class="hidden-text" style="max-width: 300rpx;display: inline-block;padding-left: 0;">{{item.treport_user_name}}</text>
+								<text style="color: #ADADAD;float: none;font-size: 28rpx;">正在使用</text>
+								</view>
+								<view class="title" wx:else>手表未绑定成员</view>
+								<view class="bind-code" style="margin-top: 16rpx;color: #ADADAD;">{{item.name}}</view>
+								<view class="bind-code">绑定码：{{item.device_id}}</view>
+							</view>
+							<view class="btn change-btn" data-device_id="{{item.device_id}}" bindtap="changeIndexWatch">切换</view>
+						</view>
+						<view class="watch-line"></view>
+						<view class="flex-box2" style="padding-left: 310rpx;">
+							<view class="btn "  data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}"  catchtap="goUrl" data-url="{{'/pageWatch/pageWatch/wifiList/myWifi?device_id='+item.device_id+'&name='+item.treport_user_name}}" data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}">我的WiFi</view>
+							<view class="btn change2" data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}"  bindtap="isDeleteWatches" data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}">删除手表</view>
+							<!-- <view class="btn change"  data-device_id="{{item.device_id}}" data-is_possessor="{{item.is_possessor}}" bindtap="getUserlist">更换使用者</view> -->
+						</view>
+						<view class="clearfix"></view>
+					</view>
+				</view>
+				<view class="no-more" wx:if="{{watchesList.length == 0 }}">-- 暂无手表 --</view>
+			<!-- </scroll-view> -->
+		</view>
+	</view>
+	<view wx:if="{{type == 1}}" class="add-watch" bindtap="addWatch">添加手表</view>
+	<!-- 手表信息 -->
+	<view class="watch-detail" wx:elif="{{type==2}}">
+		<image  class="watches-img" src="http://i.2fei2.com/5e02bdc081f6f.png"></image>
+		<view class="watches-name">{{selectWatch.name}}</view>
+		<view class="watches-code">绑定码：{{selectWatch.device_id}}</view>
+		<view class="p-title">使用者</view>
+		<view class="user-item" bindtap="getUserlist">
+			<image class="user-img" src="{{selectWatch.avatar_url}}"></image>
+			<view class="user-content">
+				<view class="user-name">{{selectWatch.treport_user_name}}</view>
+				<view class="user-icon iconfont iconnv1" style="color: #FF5175"  wx:if="{{selectWatch.wechat_sex == 2}}"></view>
+				<view class="user-icon iconfont iconnan1" style="color: #3D88E0;" wx:else></view>
+			</view>
+			<view class="user-btn">更改</view>
+		</view>
+		<view class="delete-btn" bindtap="isDeleteWatches" data-device_id="{{}}" data-is_possessor="{{}}">解除手表绑定</view>
+	</view>
+	
+	<!-- 选择成员 -->
+	<view class="choose-user" wx:else>
+		<view class="choose-item" bindtap="checkUser" wx:for="{{treport_user_list}}" wx:key="index" data-list="watchesList" data-index="{{index}}" data-device_id="{{item.device_id}}" data-id="{{item.id}}" wx:if="{{select_user != item.map_treport_user_table_id}}">
+			<image class="choose-img" src="{{item.avatar_url}}" wx:if="{{item.avatar_url}}"></image>
+			<view class="choose-blank" wx:else>
+				<view class="blank-icon iconfont iconren"></view>
+			</view>
+			<view class="choose-name name-active">{{item.name}}</view>
+			<!-- <view class="choose-active iconfont iconxuanzhong"></view> -->
+			<view class="choose-box"></view>
+		</view>
+		<view class="no-more" wx:if="{{treport_user_list.length == 1}}">-- 暂无用户 --</view>
+	</view>
+	
+	<!-- 手表绑定 -->
+	<view class="m-mask" wx:if="{{showChangeWatch}}" bindtap="showChangeCode">
+		<view class="mask-box" catchtap="stopMask">
+			<view class="mask-title">手表绑定</view>
+			<view class="mask-content" >
+				<view>该手表 {{selectWatch.treport_user_name}} 正在使用</view>
+				<view>确定绑定吗？</view>
+			</view>
+			<view class="mask-group">
+				<button class="mask-btn mask-cancel" catchtap="showChangeCode">取消</button>
+				<button class="mask-btn" catchtap="comfirmChangeWatch">确定绑定</button>
+			</view>
+		</view>
+	</view>
+	
+	<!-- 绑定新手表 -->
+	<view class="m-mask" wx:if="{{showBindWatch}}" bindtap="showScanCode">
+		<view class="mask-box" catchtap="stopMask" style="height:580rpx">
+			<view class="mask-title" style="margin-bottom:32rpx;font-size: 40rpx;">请打开手表二维码进行绑定</view>
+			<view class="mask-content" >
+				<view class="guide">
+					<view class="guide-item">
+						<text class="guide-icon iconfont iconshoubiao"></text>
+						<view class="guide-title">点击手表</view>
+					</view>
+					<view class="guide-arrow iconfont iconjiantouyou"></view>
+					<view class="guide-item">
+						<text class="guide-icon iconfont iconshezhi1"></text>
+						<view class="guide-title">打开设置</view>
+					</view>
+					<view class="guide-arrow iconfont iconjiantouyou"></view>
+					<view class="guide-item">
+						<text class="guide-icon iconfont iconbangding1"></text>
+						<view class="guide-title">扫描绑定</view>
+					</view>
+				</view>
+				<button class="mask-btn bind-btn" bindtap="scanCode">扫描二维码进行绑定</button>
+				<button class="bind-cancel-btn" catchtap="showScanCode">暂不绑定</button>
+			</view>
+		</view>
+	</view>
+	<!--弹出确认-->
+	<!-- <view class="alert-affirm" wx:if="{{showChangeWatch}}" bindtap="showChangeCode">
+		<view class="mask" catchtap="stopMask"></view>
+		<view class="window">
+			<view class="title">手表绑定</view>
+			<view class="content-text" wx:if="{{treport_user_name!=''}}">该手表{{treport_user_name}}正在使用</view>
+			<view class="content-text">确定绑定吗？</view>
+			<view class="btn-group">
+				<button class="btn cancel" catchtap="showChangeCode">取消</button>
+				<button class="btn" catchtap="confirmBindWatches">确定</button>
+				<view class="clearfix"></view>
+			</view>
+		</view>
+	</view> -->
+	<!--解绑手表-->
+	<view class="alert-affirm" wx:if="{{isDeleteWatches}}">
+		<view class="mask"></view>
+		<view class="window">
+			<view class="title">解除绑定</view>
+			<view class="content-text" wx:if="{{is_possessor==1}}" style="text-align: left;">您是该手表的所有者，解绑手表会将使用者绑定好的手表同时删除，您确定解绑手表吗？</view>
+			<view class="content-text" wx:else>确定解绑手表吗？</view>
+			<view class="btn-group">
+				<button class="btn cancel" bindtap="isDeleteWatches" data-state="2">取消</button>
+				<button class="btn" bindtap="isDeleteWatches" data-state="1">确定</button>
+				<view class="clearfix"></view>
+			</view>
+		</view>
+	</view>
+	<!--删除手表-->
+	<view class="alert-affirm" wx:if="{{delUserMask}}">
+		<view class="mask"></view>
+		<view class="window">
+			<view class="title">删除成员</view>
+			<view class="content-text">确定删除该成员吗？</view>
+			<view class="btn-group">
+				<button class="btn cancel" bindtap="hideDeleteUser">取消</button>
+				<button class="btn" bindtap="deleteUser">确定</button>
+				<view class="clearfix"></view>
+			</view>
+		</view>
+	</view>
+	
+	<include src="../../../pages/common/public.wxml" />
+
+
+</scroll-view>

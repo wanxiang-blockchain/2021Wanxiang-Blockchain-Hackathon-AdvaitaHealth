@@ -1,0 +1,159 @@
+<!-- 头部 -->
+<cover-view class="header" style="height: {{statusBarHeight+navHeight}}px;">
+	<cover-view class="header-text" style="height: {{navHeight}}px;line-height: {{navHeight}}px;">{{headerTitle}}</cover-view>
+</cover-view>
+<myLoading wx:if="{{hrvLoading}}"></myLoading>
+<login wx:if="{{is_auth}}" isBottom="1"  bindcloseLogin="closeLogin"></login>
+<view style="-webkit-overflow-scrolling: touch;padding-bottom: 98rpx;padding-top: {{statusBarHeight+navHeight}}px; width:{{windowWidth}}px;background: #06132F;">
+	<!-- 首页内容 -->
+	<view class="index">
+		<view class="bind-watch">
+			<block wx:if="{{treport && treport.count}}">
+				<view class="report-box" bindtap="toUrl" data-login="true" data-url="/pageWatch/pageWatch/onceLog/onceLog">
+					<view class="report-text">综合评分 (分)</view>
+					<view class="jiantou" wx:if="{{treport && treport.old_count_state!=0}}">
+						<image src="{{treport.old_count_state>0 ? 'http://i.2fei2.com/5df6f1b025a5b.png?imageView/1/w/50/h/50/interlace/1/q/100' : 'http://i.2fei2.com/5df6f1f471134.png?imageView/1/w/50/h/50/interlace/1/q/100'}}"
+						 class="image-icon jiantou-icon" wx:if="{{treport && treport.old_count_state!=0}}"></image>
+						<view class="{{treport.old_count_state>0 ? 'jiantoutigao' : 'jiantoujiangdi'}}">
+							{{treport.grow_count}}
+						</view>
+					</view>
+					<view class="report-count" style="margin-top: {{treport && treport.old_count_state!=0?20:96}}rpx;">{{treport.count}}</view>
+					<view class="history-list" style="margin-top: 10rpx;font-size: 28rpx;" >
+						<view class="history-text">往期报告<view class="history-back iconfont iconjiantouyou"></view>
+						</view>
+					</view>
+				</view>
+				<view class="info-box report-near">
+					<view>
+						<image src="{{avatar_url}}" class="info-img" wx:if="{{avatar_url}}"></image>
+						<image src="http://i.2fei2.com/5df32bcad8ab3.png" class="info-img" wx:else></image>
+						<view class="info-name hidden-text" wx:if="{{nickname}}">{{nickname}}</view>
+						<view class="info-name" wx:else bindtap="showLogin">未登录</view>
+					</view>
+					<view class="info-imei" wx:if="{{this_treport_user && this_treport_user.device_id}}">
+						{{this_treport_user.name}} IMEI: {{this_treport_user.device_id}}
+					</view>
+					<view class="info-imei" wx:else>未绑定任何手表</view>
+					<view class="info-imei">用户ID: {{user_id?user_id:'--'}}</view>
+					<view class="info-imei">出具报告日期：{{treport.creatTimeString}}</view>
+				</view>
+				<view class="switch-btn report-switch"  bindtap="showSwitchUser" style="position: absolute; left: 286rpx; top: 300rpx">
+					<text class="switch-icon iconfont iconshoubiao"></text>
+					<view class="switch-text">我的手表</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="create-report" wx:if="{{this_treport_user && this_treport_user.device_id}}" bindtap="toUrl" data-login="true"
+				 data-url="/pageWatch/pageWatch/onceLog/onceLog">
+					<view class="create-title">报告生成中</view>
+					<view class="create-text">请连续佩戴手表</view>
+					<view class="create-text">24小时后生成报告</view>
+					<view class="history-list" style="margin-top: 10rpx;" >
+						<view class="history-text">往期报告<view class="history-back iconfont iconjiantouyou"></view>
+						</view>
+					</view>
+				</view>
+				<view class="bind-box" wx:else>
+					<block wx:if="{{reportErr}}">
+						<view class="err-tips" bindtap="changeErr">出错了,点我刷新试试</view>
+					</block>
+					<block wx:else>
+						<view bindtap="scanCode">
+							<view class="bg-image">
+								<image class="bind-image" src="http://i.2fei2.com/5e24116d0287b.png" mode="widthFix"></image>
+							</view>
+							<view class="bind-text">绑定手表</view>
+						</view>
+						<!-- <view class="history-list" catchtap="goUrl" data-url="/pages/help/help">
+							<view class="history-text">使用教程<view class="history-back iconfont iconjiantouyou"></view>
+							</view>
+						</view> -->
+					</block>
+				</view>
+				<view class="info-box">
+					<image src="{{avatar_url}}" class="info-img" wx:if="{{avatar_url}}"></image>
+					<image src="http://i.2fei2.com/5df32bcad8ab3.png" class="info-img" wx:else></image>
+
+					<view class="info-name hidden-text" wx:if="{{nickname}}">{{nickname}}</view>
+					<view class="info-name" wx:else bindtap="showLogin">未登录</view>
+					<view class="info-imei" wx:if="{{this_treport_user && this_treport_user.device_id}}">
+						{{this_treport_user.name}} IMEI: {{this_treport_user.device_id}}
+					</view>
+					<view class="info-imei" wx:else>未绑定任何手表</view>
+					<view class="info-imei" style="margin-top:8rpx;">用户ID: {{user_id?user_id:'--'}}</view>
+				</view>
+				<view class="switch-btn"  bindtap="showSwitchUser">
+					<text class="switch-icon iconfont iconshoubiao"></text>
+					<view class="switch-text">我的手表</view>
+				</view>
+			</block>
+		</view>
+		<view class="ai-box" catchtap="goUrl" data-url="/pageWatch/pageWatch/moodList/moodList" wx:if="{{(treport && treport.count) || (this_treport_user && this_treport_user.device_id)}}">
+			<!-- AI预警 -->
+			<view class="ai-title" >内稳态风险预警 <text class="ai-title-icon iconfont iconjiantouyou"></text></view>
+			<view class="ai-time">影响内稳态的风险参数{{analyzeTime?'（ '+analyzeTime+'）':analyzeTime}}</view>
+			<block wx:if="{{hasAnalyze}}">
+				<view class="ai-tips" wx:if="{{analyze.length>0}}" >
+					<view class="ai-tips-high"><view class="ai-dot"></view>高风险</view>
+					<view class="ai-tips-high"><view class="ai-dot" style="background: #F7B500;"></view>中风险</view>
+					<view class="ai-tips-high"><view class="ai-dot" style="background: #6D7278;"></view>低风险</view>
+				</view>
+				<view class="ai-tips" wx:else>
+					<view class="ai-tips-high" style="color: #6DD400;">恭喜你，你的躯体参数无风险。</view>
+				</view>
+				<view class="ai-item" catchtap="goUrl" data-url="{{item.lineUrl}}" wx:if="{{analyze.length>0}}" wx:for="{{analyze}}" wx:key="index" style="margin-bottom: {{index == analyze.length-1?0:'24rpx'}};margin-top: {{index == 0?'40rpx':'0'}};">
+					<view class="ai-item-title"  >
+						<view class="ai-item-text">{{item.line_name}}<text class="ai-item-icon iconfont iconwenhaolveguo"></text></view>
+						<view class="ai-item-line"></view>
+					</view>
+					<view class="ai-item-content" >
+						<view class="ai-item-time" wx:for="{{item.row_detail}}" wx:key="index"  wx:for-item="option"><view class="ai-dot" style="background: {{item.color}};"></view>报告({{option.time}})</view>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="ai-tips">
+					<view class="ai-tips-high" style="color: #2B86FE;">检测中...</view>
+				</view>
+			</block>
+		</view>
+		<!-- <view class="unfold-content">
+			<Carousel wx:if="{{ banner2.length>0}}" type="3" imgUrls='{{banner2}}' autoplay="{{true}}" bindgoUrl="gobubbleUrl" swiperIndex="{{0}}" marginNum="{{20}}" width="678"></Carousel>
+			<view class="chat-bar" style="padding-top: {{(this_treport_user && this_treport_user.device_id)?0:30}}rpx;">
+				<view style="min-height:600rpx;">
+					<view wx:if="{{(treport && treport.count )||(this_treport_user && this_treport_user.device_id)}}">
+						<validData
+						testUserId="{{user_id}}"
+						wx:if="{{ triggleChart}}"
+						validInfo="{{info}}"
+						text="{{treport_diary_text}}"
+						></validData>
+					</view>
+				</view>
+			</view>
+		</view> -->
+	</view>
+</view>
+
+<!-- 校准血压 -->
+<view class="notice" style="{{isShowCorrect ? '' : 'display:none'}}">
+	<view class="mask" style="width:100%;height:100%;background: rgba(0,0,0,.8);display: block;" bindtap="cancelCorrectBP"></view>
+	<view style="width: 80%;background: #fff;border-radius:10px;position: fixed;left:calc(10% - 10px);top:400rpx;z-index:9999;padding: 10px;padding-bottom:0;">
+		<form bindsubmit="correctBP" report-submit="true">
+			<view style="text-align:center;padding:15px;">请填写血压计测量的静态舒张压</view>
+			<input type="text" name="diastoli" style="border-bottom: 1px solid #ccc;text-align: center;margin:0 auto 20rpx auto;width:80%;height: 80rpx;"></input>
+			<view style="text-align:center;padding:15px;">请填写血压计测量的静态收缩压</view>
+			<input type="text" name="systolic" style="border-bottom: 1px solid #ccc;text-align: center;margin:0 auto 40rpx auto;width:80%;height: 80rpx;"></input>
+			<button style="background:#F3F3F3;color:#282828;width:40%;float:left;margin-left:5%;" data-state="2" bindtap="isShowCorrect">
+				取消
+			</button>
+			<button style="background:#031331;color:#fff;width:40%;float:right;margin-right:5%;" data-state="1" formType="submit">
+				校准
+			</button>
+		</form>
+		<view class="clearfix" style="margin-bottom:20px;"></view>
+	</view>
+</view>
+<include src="../common/footer.wxml" />
+

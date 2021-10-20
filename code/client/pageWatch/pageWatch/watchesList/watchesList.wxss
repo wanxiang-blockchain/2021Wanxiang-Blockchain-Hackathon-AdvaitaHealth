@@ -1,0 +1,521 @@
+/*1~9字体*/
+@font-face {
+    font-family: 'DINPro';
+    src: url(data:font/truetype;charset=utf-8;base64,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) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.p-title{
+  font-size: 30rpx;
+  color: #989898;
+  text-align: left;
+  /*font-weight: 600;*/
+  /*margin-bottom: 40rpx;*/
+  /*margin-top: 60rpx;*/
+  margin:26rpx 30rpx;
+  border-left: 6rpx solid #989898;
+  padding-left: 10rpx;
+  line-height: 1;
+}
+.new-wetches{
+  font-size: 28rpx;
+  background-color: #fff;
+  color: #282828;
+  width: 690rpx;
+  margin:30rpx auto;
+  box-shadow: 0 0 15rpx 0 rgba(152,152,152,0.15);
+  text-align: center;
+}
+.new-wetches .iconfont{
+  float: none;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  padding: 0;
+  color: #ADADAD;
+}
+
+.list{
+  padding-bottom: 200rpx;
+}
+.watch-list{
+	padding:0 30rpx;
+	background: #fff;
+	margin-top: 30rpx;
+	box-shadow: 0px 0px 15rpx 0px rgba(152, 152, 152, 0.15);
+}
+.list .item{
+  /* height: 180rpx; */
+  border-bottom: 1rpx solid #EDEDED;
+  position: relative;
+}
+.watch-list .item:last-child{
+	border-bottom: none;
+}
+.list .item .watches{
+  width: 53rpx;
+  height: 101rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.item-content{
+	height: 120rpx;
+	position: absolute;
+	top: 0;
+	left: 84rpx;
+	bottom: 0;
+	margin: auto;
+}
+.list .item .title{
+  text-align: left;
+  line-height: 1;
+  font-size: 28rpx;
+  color: #282828;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+.list .item .bind-code{
+  line-height: 1;
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 1px;
+  margin-top: 16rpx;
+}
+.list .item .btn{
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 56rpx;
+  padding: 0;
+  text-align: center;
+  color: #2B86FF;
+  font-size: 26rpx;
+border: 2rpx solid #2B86FF;
+  border-radius: 30rpx;
+  margin: 30rpx 0;
+  /* position: absolute;
+  right: 0;
+  bottom: 96rpx; */
+}
+.list .item .change{
+	line-height: 60rpx;
+	border: none;
+	background:#2B86FF;
+	color: #fff;
+	/* position: absolute;
+	right: 0;
+	bottom: 25rpx; */
+}
+.list .item .change2{
+	line-height: 60rpx;
+	border: none;
+	background:#2B86FF;
+	color: #fff;
+	margin-left: 30rpx;
+}
+.list .item .watches-name{
+  line-height: 1;
+  text-align: right;
+  font-size: 24rpx;
+  color: #ADADAD;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.list .item .select{
+  background: #EDEDED;
+  border: 1px solid #ADADAD;
+  border-radius: 10em;
+  text-align: center;
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+}
+.list .item  .select .iconfont{
+  color: #EDEDED;
+  line-height: 38rpx;
+  font-size: 20rpx;
+}
+.list .item  .select.active{
+  background: #031331;
+  border: 1px solid #031331;
+}
+.list .item  .select.active .iconfont{
+  color: #fff;
+
+}
+.bottom-btn-group{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 360rpx;
+  background: #fff;
+  box-shadow: 0 0 15rpx 0 rgba(152,152,152,0.15);
+}
+.bottom-btn-group .btn-select{
+  background: #031331;
+  border: 1px solid #031331;
+  border-radius: 50rpx;
+  width: calc(100% - 40rpx);
+  line-height: 100rpx;
+  margin:40rpx 20rpx 20rpx 20rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 40rpx;
+}
+.bottom-btn-group .btn-scan{
+  background: #fff;
+  border: 1px solid #031331;
+  border-radius: 50rpx;
+  width: calc(100% - 40rpx);
+  line-height: 100rpx;
+  margin:0 20rpx 40rpx 20rpx;
+  text-align: center;
+  color: #031331;
+  font-size: 40rpx;
+}
+
+.dot-group{
+  margin:0 auto;
+  width: 88rpx;
+}
+.dot-group .dot{
+  background: #EDEDED;
+  border-radius: 10em;
+  width: 15rpx;
+  height: 15rpx;
+  float: left;
+  margin:0 15rpx;
+
+}
+.dot-group .dot.active{
+  background: #031331;
+}
+.add-user .title{
+  margin-top: 80rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #031331;
+  text-align: center;
+}
+.add-user .input{
+  width: 100%;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
+}
+.add-user .sex .item{
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.add-user .sex .item .iconfont{
+  font-size: 90rpx;
+  color: #ADADAD;
+}
+.add-user .sex .item .text{
+  color: #ADADAD;
+}
+.add-user .sex .item.active .text{
+  color: #031331;
+}
+.add-user .sex .item.active:nth-child(1) .iconfont{
+  color: #3D88E0;
+}
+.add-user .sex .item.active:nth-child(2) .iconfont{
+  color: #E8696A;
+}
+.add-user .input .name{
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+  color: #ADADAD;
+  margin:0 auto;
+  font-size: 42rpx;
+  text-align: center;
+  float: none;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.add-user .bind-code{
+  margin-top: 30rpx;
+  font-family: 'DINPro';
+  font-size: 48rpx;
+  color: #282828;
+  letter-spacing: 1.6rpx;
+  text-align: center;
+}
+.add-user .btn-add{
+  font-size: 40rpx;
+  color: #fff;
+  background: #031331;
+  border-radius: 50rpx;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 100rpx;
+  line-height: 100rpx;
+  margin-bottom: 70rpx;
+}
+
+/* 手表详情 */
+.watch-detail{
+	text-align: center;
+}
+.watches-img{
+	width: 136rpx;
+	height: 240rpx;
+	margin: 120rpx auto 0rpx;
+}
+.watches-name{
+	color: #282828;
+	font-size: 36rpx;
+	font-weight: bold;
+	margin-bottom: 20rpx;
+}
+.watches-code{
+	color: #282828;
+	font-size: 28rpx;
+	font-weight: bold;
+	margin-bottom: 102rpx;
+}
+.user-item{
+	height: 198rpx;
+	padding: 0 30rpx;
+	position: relative;
+	background-color: #fff;
+	box-shadow: 0px 0px 15rpx 0px rgba(152, 152, 152, 0.15);
+}
+.user-img{
+	width: 98rpx;
+	height: 98rpx;
+	border-radius: 50%;
+	background-color: #ccc;
+	position: absolute;
+	left: 30rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+.user-content{
+	display: inline-block;
+	height: 98rpx;
+	position: absolute;
+	left: 148rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+.user-name{
+	width: 420rpx;
+	color: #282828;
+	font-size: 36rpx;
+	/* margin-bottom: 10rpx; */
+}
+.user-icon{
+	font-size: 44rpx;
+	text-align: left;
+	position: relative;
+	top: -10rpx;
+	left: -4rpx;
+}
+.user-btn{
+	width:180rpx;
+	height:60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	color: #fff;
+	font-size: 28rpx;
+	background:linear-gradient(180deg, #FFBF31 0%, #FF8B16 100%);
+	border-radius:30rpx;
+	position: absolute;
+	right: 30rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+.delete-btn{
+	width:690rpx;
+	height:100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	font-size: 36rpx;
+	border-radius:50rpx;
+	color:rgba(3,19,49,1);
+	border:3rpx solid rgba(3,19,49,1);
+	margin: 256rpx auto 100rpx;
+}
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.flex-box2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+}
+.watch-line{
+	width: 626rpx;
+	height: 2rpx;
+	background-color: rgba(0,0,0,0.1);
+	margin-left: 64rpx;
+}
+.watch-info{
+	height: 180rpx;
+	position: relative;
+}
+.change-btn{
+	position: absolute;
+	right: 0rpx;
+	top: 30rpx;
+}
+/* 成员选择 */
+.choose-user{
+	padding: 20rpx 0 20rpx 30rpx;
+}
+.choose-item{
+	height: 128rpx;
+	position: relative;
+	border-bottom: 1rpx solid #EDEDED;
+}
+.choose-item:last-child{
+	border:none;
+}
+.choose-img{
+	width: 88rpx;
+	height: 88rpx;
+	background-color: #ccc;
+	border-radius: 50%;
+	position: absolute;
+	left: 40rpx;
+	bottom: 20rpx;
+}
+.choose-blank{
+	width:88rpx;
+	height:88rpx;
+	border-radius: 50%;
+	border:2rpx solid rgba(173,173,173,1);
+	position: absolute;
+	left: 40rpx;
+	bottom: 20rpx;
+}
+.blank-icon{
+	width: 40rpx;
+	height: 62rpx;
+	color: #ADADAD;
+	font-size: 40rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+.choose-name{
+	font-size: 24rpx;
+	line-height: 128rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 148rpx;
+	margin: auto;
+}
+
+.name-active{
+	color: #1966CA;
+	font-weight: bold;
+}
+.choose-icon{
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	background-color: #EDEDED;
+	border: 2rpx solid #ADADAD;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 60rpx;
+	margin: auto;
+}
+.choose-box{
+	width: 40rpx;
+	height: 40rpx;
+	background: #EDEDED;
+	border-radius: 50%;
+	border: 2rpx solid #ADADAD;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 60rpx;
+	margin: auto;
+}
+.choose-active{
+	height: 62rpx;
+	font-size: 40rpx;
+	color: #1966CA;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 60rpx;
+	margin: auto;
+}
+
+/* 绑定新手表 */
+.guide{
+	height: 170rpx;
+	padding: 0 82rpx;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: 0 auto 60rpx;
+}
+.guide-item{
+	width:132rpx;
+	height: 114rpx;
+}
+.guide-icon{
+	font-size: 80rpx;
+}
+.guide-title{
+	font-size:28rpx;
+}
+.guide-arrow{
+	height: 114rpx;
+	line-height: 114rpx;
+	font-size:28rpx;
+	color: #ADADAD;
+}
+.bind-btn{
+	width: 550rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	font-size: 32rpx;
+	margin: auto;
+}
+.bind-cancel-btn{
+	font-size: 28rpx;
+	color: #ADADAD;
+	background-color: transparent;
+	margin:20rpx 0;
+}
+.add-watch{
+	width: 630rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	background: #2B86FF;
+	color: #fff;
+	font-size: 40rpx;
+	border-radius: 50rpx;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 70rpx;
+	margin: auto;
+}

@@ -1,0 +1,48 @@
+<MyHeader bind:back="back" backIcon="{{true}}"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="scrollMore">
+	<view class="content">
+		<view class="box2">
+			<view lines="1" class="infoBox1">问卷服务</view>
+			<text lines="1" class="paragraph1">请先完成下方两个睡眠问卷，然后点击“下一步”咨询专家。</text>
+		</view>
+		<view class="box3">
+			<view class="bd1-0">
+				<view class="box4-0">
+					<view class="main2-0">
+						<image src="https://i.2fei2.com/goods/logo/2021-09-30/15:51:01/61556c65ac44a.png" class="icon2-0"></image>
+					</view>
+					<text lines="1" class="info1-0">现代顺势问卷测试</text>
+					<button class="main3-0" wx:if="{{xiandai_state >= 1}}">
+						<text lines="1" class="info2-0">已完成</text>
+					</button>
+					<button class="main3-1" wx:else bindtap="goUrl" data-url="https://api-connect.2fei2.com/Web_View/Poster/writeForm/poster_id/155">
+						<text lines="1" class="info2-1">开始</text>
+					</button>
+				</view>
+			</view>
+			<view class="bd1-1">
+				<view class="box4-1">
+					<view class="main2-1">
+						<image src="https://i.2fei2.com/goods/logo/2021-09-30/15:51:24/61556c7c3cf83.png" class="icon2-1"></image>
+					</view>
+					<text lines="1" class="info1-1">传统顺势问卷测试</text>
+					<button class="main3-0" wx:if="{{chuangtong_state >= 1}}">
+						<text lines="1" class="info2-0">已完成</text>
+					</button>
+					<button class="main3-1" wx:else bindtap="goUrl" data-url="https://api-connect.2fei2.com/Web_View/Poster/writeForm/poster_id/234">
+						<text lines="1" class="info2-1">开始</text>
+					</button>
+					
+				</view>
+			</view>
+		</view>
+		<text lines="1" class="txt2">请先全部完成睡眠问卷</text>
+		<view class="box5" bindtap="goChat" style="background:{{chuangtong_state >= 1 && xiandai_state >= 1?'rgba(70,98,255,1)':''}};">
+			<text lines="1" class="word1">下一步</text>
+		</view>
+	</view>
+</scroll-view>

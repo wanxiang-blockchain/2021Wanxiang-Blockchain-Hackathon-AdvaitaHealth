@@ -1,0 +1,151 @@
+<MyHeader titleText='喜悦之路'></MyHeader>
+<!-- <Loading v-if="isLoading"></Loading> -->
+<!-- 登录 -->
+<login wx:if="{{isLogin}}" bindcloseLogin="closeLogin" isLogin="{{isLogin}}"></login>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<myToast text="{{textToast}}"></myToast>
+<myCanvas wx:if="{{paintPallette}}" bindclose="closeCanvas" type="2" info="{{paintPallette}}" width="600" height="856"></myCanvas>
+
+<!-- 关注公众号提示 -->
+<view class="login-simple" bindtap="goFocus" wx:if="{{userInfo.Wechat_xcxSetUser && isFocus && neverOfficial}}">
+	<text class="iconfont icontixing1" style="font-size: 24rpx;margin-right: 10rpx;"></text>
+	开启冥想提醒,让爱的光引领我们一起前进
+</view>
+<!-- 关注公众号弹窗 -->
+<view class="official-mask" bindtap="hideOfficialMask" wx:if="{{isShowOfficial}}">
+	<view class="official-box" bindtap="">
+		<view class="canvas-box" catchtap="hideOfficialMask"><text class="canvas-icon iconfont iconcha"></text></view>
+		<view class="official-title">开启早晚冥想提醒</view>
+		<view class="official-tips">每天叫我去冥想</view>
+		<view class="official-btn" bindtap="goFocus">去开启</view>
+		<view class="official-close" bindtap="hideOfficial">
+			<view class="official-icon iconfont icondui" wx:if="{{neverOfficial}}"></view>
+			<view class="official-border" wx:else></view>
+			<view class="official-text">不再显示</view>
+		</view>
+	</view>
+</view>
+
+<!-- 添加我的小程序 -->
+<!-- <view class="add-my" style="top: {{ statusBarHeight + navHeight + 10 }}px" bindtap="hideTips" wx:if="{{!isShowTips}}">
+	<view class="add-title ">添加到'我的小程序',督促自己冥想!</view>
+	<view class="add-icon iconfont iconchahao "></view>
+</view> -->
+
+<scroll-view style="height: calc({{windowHeight}}px - {{isFocus}}px - {{statusBarHeight}}px - {{navHeight}}px ); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll-h">
+	<view class="content-box">
+		<rank wx:if="{{userInfo}}" userInfo="{{userInfo}}"></rank>
+		<image class="preview-img" wx:if="{{new_activity.image_url}}" src="{{new_activity.image_url}}" bindtap="goUrl" data-url="{{new_activity.to_url}}" mode="aspectFill" />
+		<image class="preview-img" wx:else src="{{posterData.yoga_user_set.end_base_image}}" mode="aspectFill" />
+		
+		<view class="change-img" bindtap="goUrl" data-url="/pageShop/pageShop/poster/poster"><view class="change-icon inline iconfont icontihuantupian"></view>换图</view>
+		
+		<!-- 冥想播放 -->
+		<view class="start-audio" style="background: {{(isGone < signinTime?posterData.morning_sing_time!=0:posterData.night_sing_time!=0)?'#D3D3D3':'#027AFE'}};" bindtap="playAudio" data-num="1" wx:if="{{changeAudio != 1}}">
+			喜悦{{isGone < signinTime?'早':'晚'}}冥想
+			<view class="start-icon inline iconfont iconbofang1"></view>
+		</view>
+		<myAudio info="{{meditation}}" 
+		wx:if="{{meditation && changeAudio == 1}}" 
+		type="2" text="{{isGone < signinTime?'晨间':'晚间'}}" bindclose="close"
+		bindupdateErr="updateErr"></myAudio>
+		
+		<!-- 心语 -->
+		<view class="preview-text" >
+			<view class="text-content">{{posterData.yoga_user_set.end_base_text}}</view>
+			<view class="text-btn" bindtap="goCopy" data-num="{{posterData.yoga_user_set.end_base_text}}">复制</view>
+		</view>
+		
+		<!-- 打卡成就 -->
+		<view class="finish-box">
+			<view class="inline" style="font-weight: bold;vertical-align: middle;">已连续{{isGone < signinTime?'早':'晚'}}冥想
+				<view class="finish-state inline">
+					<image class="finish-img" wx:if="{{isGone < signinTime}}" src="https://i.2fei2.com/goods/logo/2021-07-26/15:44:12/60fe67ccbeb4d.png" mode="aspectFill" />
+					<image class="finish-img" wx:else src="https://i.2fei2.com/goods/logo/2021-07-26/16:34:14/60fe738673e40.png" mode="aspectFill" />
+					<view class="finish-add inline" wx:if="{{isGone < signinTime?posterData.morning_sing_time!=0:posterData.night_sing_time!=0}}" style="color:{{isGone < signinTime?'#FF9E20':'#9DC7FF'}}">+1</view>
+				</view>
+			</view>
+			<view class="inline finish-day">
+				<view class="inline" style="vertical-align: middle;font-weight: bold;color: {{isGone < signinTime?'#FF9E20':'#027AFE'}};">{{isGone < signinTime?posterData.morning_unfailing_day:posterData.night_unfailing_day}}天</view>
+			</view>
+			<block wx:if="{{isGone < signinTime && (posterData.morning_unfailing_day*1 < posterData.morning_sing_num)}}">
+				<view class="inline forget-now" wx:if="{{posterData.morning_unfailing_day == 0 || posterData.morning_unfailing_day == 1}}" bindtap="goUrl" data-url="/pageHappy/pageHappy/signature/signature">忘记打卡，去补签</view>
+				<view class="inline forget-ago" wx:else bindtap="goUrl" data-url="/pageHappy/pageHappy/signature/signature">补卡<view class="classic-more forget-icon inline iconfont iconjiantouyou"></view></view>
+			</block>
+			<block wx:if="{{isGone >= signinTime && (posterData.night_unfailing_day*1 < posterData.night_sing_num)}}">
+				<view class="inline forget-now" wx:if="{{posterData.night_unfailing_day == 0 || posterData.night_unfailing_day == 1}}" bindtap="goUrl" data-url="/pageHappy/pageHappy/signature/signature">忘记打卡，去补签</view>
+				<view class="inline forget-ago" wx:else bindtap="goUrl" data-url="/pageHappy/pageHappy/signature/signature">补卡<view class="classic-more forget-icon inline iconfont iconjiantouyou"></view></view>
+			</block>
+			<view class="finish-icon" wx:if="{{isGone < signinTime?posterData.morning_sing_time!=0:posterData.night_sing_time!=0}}">{{Year}}.{{Month}}.{{dateDay}} {{isGone < signinTime?posterData.morning_sing_time_text:posterData.night_sing_time_text}}</view>
+			<view class="finish-share inline"  bindtap="setCanvasData" wx:if="{{isGone < signinTime?posterData.morning_sing_time!=0:posterData.night_sing_time!=0}}"><view class="finish-share-icon inline iconfont iconfenxiang2"></view>分享</view>
+		</view>
+		
+		<!-- 持戒 -->
+		<signin wx:if="{{guideArr.length > 0}}" guideArr="{{guideArr}}" index="{{total}}" bindnext="next"></signin>	
+		
+		<!-- 音乐 -->
+		<view class="music-box">
+			<image class="music-title" src="https://i.2fei2.com/goods/logo/2021-08-02/14:21:01/61078ecdc9b85.png" mode="aspectFill" />
+			<view class="music-content inline">{{sing.title}} - <view class="inline" style="font-size: 16rpx;">{{sing.author}}</view></view>
+			<view class="music-play inline iconfont iconbofang1" wx:if="{{changeAudio != 2}}" bindtap="playAudio" data-num="2" ></view>
+			<view class="music-all inline iconfont iconbofangliebiao" bindtap="goUrl" data-url="/pageHappy/pageHappy/musicList/musicList?type=1"></view>
+			<view class="music-play" style="height: 90rpx;">
+				<myAudio info="{{sing}}"
+				wx:if="{{sing && changeAudio == 2}}" 
+				type="3" bindclose="close"
+				 bindupdateErr="updateErr"></myAudio>
+			</view>
+		</view>
+		
+		<!-- 共修 -->
+		<view class="share-night" bindtap="goUrl" data-url="/pageHappy/pageHappy/shareNight/shareNight">
+			<view class="title inline" style="vertical-align: middle;">一起静坐</view>
+			<view class="music-text inline" style="vertical-align: middle;">每日22:00-22:30</view>
+			<view class="share-time" style="vertical-align: middle;">
+				<view class="inline" wx:if="{{nowTime<startTime}}" style="color: #989898;font-size:20rpx;margin-right:10rpx">未开始</view>
+				<view class="inline" wx:elif="{{nowTime<endTime}}" style="color: #027AFE;font-size:20rpx;margin-right:10rpx">静坐中...</view>
+				<view class="inline" wx:else style="color: #989898;font-size:20rpx;margin-right:10rpx">已结束</view>
+				<view style="vertical-align: middle;font-size: 20rpx;" class="more-icon inline iconfont iconjiantouyou"></view>
+			</view>
+		</view>
+		
+		<!-- 经典 -->
+		<view class="classic-box">
+			<image class="classic-img" src="https://i.2fei2.com/goods/logo/2021-07-30/09:33:06/610356d2b0113.png" mode="aspectFill" bindtap="goUrl" data-url="/pageHappy/pageHappy/musicList/musicList?type=2"/>
+			<view class="classic-content">
+				<view class="title">邱显峰老师</view>
+				<view class="title" style="font-size: 20rpx;font-weight: normal;">{{classics.intro}}</view>
+				<view class="classic-time" wx:if="{{changeAudio != 3}}"></view>
+				<view class="classic-all" style="vertical-align: middle;" bindtap="goUrl" data-url="/pageHappy/pageHappy/musicList/musicList?type=2">全部讲座<view class="classic-more inline iconfont iconjiantouyou"></view></view>
+				<view class="classic-play inline iconfont iconbofang1" wx:if="{{changeAudio != 3}}" bindtap="playAudio" data-num="3" ></view>
+				<view class="classic-audio" wx:if="{{classics && changeAudio == 3}}" >
+					<myAudio info="{{classics}}"
+					type="4" bindclose="close"
+					bindupdateErr="updateErr"></myAudio>
+				</view>
+			</view>
+		</view>
+		
+		<!-- 其他课程 -->
+		<view class="title" style="margin: 52rpx auto 15rpx;">其他课程</view>
+		<view class="other-item" wx:for="{{listDone}}" wx:key="index" bindtap="goRoom" data-room="{{item}}">
+			<view class="other-title">{{item.name}}</view>
+			<view class="other-icon inline iconfont iconjiantouyou"></view>
+		</view>
+		<view class="other-item" bindtap="goUrl" data-url="/pageHappy/pageHappy/videoList/videoList">
+			<view class="other-title">每日体式</view>
+			<view class="other-icon inline iconfont iconjiantouyou"></view>
+		</view>
+		<view class="other-item" bindtap="goUrl" data-url="/pageHappy/pageHappy/fasting/fasting">
+			<view class="other-title">陪伴式断食营</view>
+			<view class="other-icon inline iconfont iconjiantouyou"></view>
+		</view>
+		<!-- <view class="other-item" bindtap="goUrl" data-url="/pageHappy/pageHappy/allClass/allClass" wx:if="{{!isIos}}">
+			<view class="other-title">名师精品课程</view>
+			<view class="other-icon inline iconfont iconjiantouyou"></view>
+		</view> -->
+		<view style="height: 130rpx;"></view>
+	</view>
+</scroll-view>
+<include src="../../../pages/common/footer.wxml" />

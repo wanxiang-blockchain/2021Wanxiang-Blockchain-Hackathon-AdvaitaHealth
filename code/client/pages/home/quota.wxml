@@ -1,0 +1,516 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='健康脉诊手表' background="transparent" color="#fff"></MyHeader>
+
+<image class="banner-box" src="https://i.2fei2.com/shop/logo/2020-08-12/14:00:23/5f33857718525.png" mode="widthFix"></image>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" scroll-into-view="{{local}}">
+
+	<view class="content-img" id="heart">
+		<view class="quota-title">中医心藏(音zàng)储备功能的含义及重要指标</view>
+		<view class="quota-btn">含义</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 中医心藏(音zàng)的藏(音cáng)神功能</view>
+		<view class="quota-text"><text class="quota-blue">是指中枢神经系统产生意识、思维、学习、记忆等精神活动的功能。</text>该功能异常时，常表现为精神不振、嗜睡、健忘，甚至表情淡漠、目光呆滞、动作迟缓、意识模糊、昏睡、昏迷；心烦、谵语、失眠多梦、白天打盹晚上睡不着，甚至狂躁妄动、打人毁物、胡言乱语；头沉、头蒙、注意力不集中、喃喃自语、语无伦次、行为怪异、幻听幻视、哭笑无常。</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 中医心藏主血脉功能</view>
+		<view class="quota-text"><text class="quota-blue">是指脉管系统约束和推动血液和淋巴循行全身，抗凝系统和纤溶系统防止血栓形成的功能。</text>该功能异常时，常表现为心悸怔忡，活动劳累后加重、脉虚无力；心胸冷痛、遇冷或入夜加重；心胸憋闷、胸痛掣背，夜间尤甚；局部青紫、肿胀、疼痛、出血。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line" id="XAR"></view>
+		<view class="quota-name">● 精神状态(XAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标可用以测定客户的精神状态。正常范围为76.62-84.36。</view>若XAR低于76.62则为精神不振或萎靡，表现为犯困、体倦乏力、反应迟钝、健忘、少语、少动、表情淡漠、动作迟缓，有发生健忘症、嗜睡症、痴呆症、昏迷的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。
+		</view>
+
+		<view class="quota-text">若XAR高于84.36则为精神兴奋或亢奋，表现为静不下心来、睡不着、多语、多动、心烦、急躁，有发生失眠、惊恐症、精神分裂症、狂躁症的风险。建议①多吃百合、莲子心；②放慢生活节奏，打太极、练瑜伽、听舒缓音乐。</view>
+		<block wx:if="{{detailType == 'XAR'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例1.图1的下横线以上部分表征客户处于觉醒状态，在觉醒过程中，少数时间处于兴奋状态(上横线以上部分，或上、下横线之间的接近上横线部分)，多数时间处于放松状态(上、下横线之间的接近下横线部分)，表征客户处于正常的觉醒状态(觉醒状态平均心率83.88)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:51:10/5f35ee0e3420c.png" mode="widthFix"></image>
+			<view class="quota-tips">图1 一般人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例2.图2的客户在觉醒过程中，较多时间处于兴奋状态，较少时间处于放松状态，表征客户精神过度亢奋(觉醒状态平均心率105.47)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:54:12/5f35eec4d53c3.png" mode="widthFix"></image>
+			<view class="quota-tips">图2 精神过度亢奋人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例3.图3的下横线以上部分表征客户处于觉醒状态，在觉醒过程中，少数时间处于兴奋状态，绝大多数时间处于放松状态，表征客户精神不振(觉醒状态平均心率68.63)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:55:00/5f35eef48c963.png" mode="widthFix"></image>
+			<view class="quota-tips">图3 精神不振人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例4.图4表明客户24小时的心率变化很小，事实上，客户患有老年痴呆症(觉醒状态平均心率53.80)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:55:32/5f35ef14e4e72.png" mode="widthFix"></image>
+			<view class="quota-tips">图4 老年痴呆患者24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XAR">{{detailType == 'XAR'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="XST"></view>
+		<view class="quota-name">● 睡眠时长(XST)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标可用以测定客户的睡眠时长。正常范围为6.86-8.83。分为睡眠累积时间过长和睡眠累积时间过短两种异常情况。</view>若XST低于6.86则为睡眠时长偏短或过短，表现为入睡困难、早醒、头昏沉、黑眼圈，有发生失眠、焦虑、免疫力低的风险。建议①多吃桑葚、酸枣仁；②不吃过饱；③不饮用咖啡、茶叶。
+		</view>
+
+		<view class="quota-text">若XST高于8.83则为睡眠时长偏长或过长，表现为注意力不集中、无精打采、周身困倦、反应迟钝，有发生嗜睡症、健忘症、痴呆症的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。
+			注：如果精神状态佳，不属于异常。</view>
+		<block wx:if="{{detailType == 'XST'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例5.图5的下横线以下部分表征客户处于睡眠状态，其睡眠持续时间过长，为12.15小时。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:13:29/5f35f349ac888.png" mode="widthFix"></image>
+			<view class="quota-tips">图5 睡眠时间过长人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例6.图6的下横线以下部分表征客户处于睡眠状态，其睡眠持续时间过短，为2.26小时。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:13:54/5f35f3625ae0e.png" mode="widthFix"></image>
+			<view class="quota-tips">图6睡眠时间过短人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XST">{{detailType == 'XST'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="XMSRD"></view>
+		<view class="quota-name">● 睡眠深度（XMSRD）</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标可用以测定客户的睡眠深度，正常范围为8.99-19.22。</view>若XMSRD低于8.99则为睡眠深度偏浅或过浅，表现为睡眠轻浅、一有动静就醒、精神不振、对梦境记忆犹新、反应迟钝、心事重、多梦，有发生神经衰弱、焦虑症、免疫力下降、高血压、糖尿病、胃肠疾病的风险。建议①多吃桑葚、酸枣仁；②不吃过饱；③不饮用咖啡、茶叶。
+		</view>
+		<view class="quota-text">
+			若XMSRD高于19.22则为睡眠深度偏深或过深，表现为沾床就睡、头身困重、睡眠深沉、不易叫醒、打呼噜、说梦话，有发生嗜睡症、健忘症、痴呆症、肥胖症、抑郁症、睡眠呼吸暂停综合征、高脂血症、高黏滞血症的风险。建议①多吃玫瑰、白芷；②积极参加户外集体活动，旅游、跳广场舞；③饮用咖啡、茶叶。
+		</view>
+		
+		<block wx:if="{{detailType == 'XMSRD'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例7. 图7的下横线以上部分表征客户处于觉醒状态，下横线以下部分表征客户处于睡眠状态，其24小时平均心率与睡眠期间平均心率之差(XMSRD)过大(26.43)，说明客户睡眠过深。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:17:08/5f35f424c8304.png" mode="widthFix"></image>
+			<view class="quota-tips">图7 睡眠过深人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例8.图8的下横线以上部分表征客户处于觉醒状态，下横线以下部分表征客户处于睡眠状态，其24小时平均心率与睡眠期间平均心率之差(XMSRD)过小(5.70)，说明客户睡眠过浅。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:17:23/5f35f433559b7.png" mode="widthFix"></image>
+			<view class="quota-tips">图8 睡眠过浅人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XMSRD">{{detailType == 'XMSRD'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="XASRD"></view>
+		<view class="quota-name">● 昼夜节律(XASRD)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的昼夜节律，正常范围为≥21.84。</view>分为两种：昼精夜瞑(清醒时精力充沛，睡眠时睡得香甜)的客户该指标取值很大，说明客户昼夜节律明显，藏神功能正常。昼不精夜不瞑(精神不振，睡眠不实)的客户该指标取值很小，说明客户昼夜节律不明显，表示气血运行不畅。
+		</view>
+		<view class="quota-text">
+			若XASRD低于21.84则为昼夜节律偏低或过低，表现为坐着打盹躺着睡不着、一有动静就醒、精神不振、反应迟钝，有发生健忘症、痴呆症的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。</view>
+	
+		<block wx:if="{{detailType == 'XASRD'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例9. 在图9中，觉醒时的平均心率与睡眠时的平均心率差(XASRD)较高(30.11)，说明客户昼夜节律的调节能力较强。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:20:00/5f35f4d076713.png" mode="widthFix"></image>
+			<view class="quota-tips">图9 昼夜节律调节能力较强人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例10.在图10中，觉醒时的平均心率与睡眠时的平均心率差(XASRD)较低(8.66)，说明客户昼夜节律的调节能力降低。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:20:25/5f35f4e983644.png" mode="widthFix"></image>
+			<view class="quota-tips">图10 昼夜节律调节能力较低人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XASRD">{{detailType == 'XASRD'?'收起':'应用举例'}}</view>
+
+		<view class="expert-line" id="XBAR"></view>
+		<view class="quota-name">● 心肌收缩力(XBAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XBAR是测定用户心肌收缩力的指标，正常范围为169.54-230.24(修改）。</view>在中医学体系中，用以反映心藏的主血脉功能状态。该指标越小说明人体需要心脏做的功越小，心脏功能越好。
+		</view>
+
+		<view class="expert-line" id="XAAR"></view>
+		<view class="quota-name">● 外周血管阻力(XAAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XAAR是测定用户外周血管阻力的指标，正常范围为256.26-406.68(修改）。</view>在中医学体系中，用以反映心藏的主血脉功能状态。该指标越小说明用户外周血管阻力越小，动脉功能越好。
+		</view>
+
+	</view>
+	<view class="content-img" id="liver">
+		<view class="quota-title">中医肝藏(音zàng)储备功能的含义及重要指标</view>
+		<view class="quota-btn">含义</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 中医肝藏(音zàng)的疏泄功能</view>
+		<view class="quota-text"><text class="quota-blue">是指内脏神经系统产生和传导内脏感觉和运动信号，并使人对外来刺激产生情绪体验的功能。</text>该功能异常时，肝阳上亢表现为头晕胀痛、面红目赤、耳鸣如潮、头重脚轻；肝气郁结表现为胸胁、乳房、少腹胀痛、咽如物梗、瘕聚不定；肝气不舒表现急躁易怒、善恐易惊、闷闷不乐、善悲欲哭、多疑善虑、多愁善感。</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 中医肝藏(音zàng)的藏(音cáng)血功能</view>
+		<view class="quota-text"><text class="quota-blue">是指躯体神经系统产生和传导躯体感觉和运动信号支配躯体运动的功能。</text>该功能异常时常表现为肌肤麻木、手足震颤、肌肉瞤动、眼球震颤；颈项强直、半身不遂、口眼歪斜、舌强语謇、两目上视、口吐白沫、作猪羊叫声、四肢抽搐、角弓反张、牙关紧闭。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line" id="GSA"></view>
+		<view class="quota-name">● 相邻心率变异性(GSA)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的相邻心率变异性，正常范围为≥15.56。
+			</view>
+			若GSA低于15.56则为相邻心率变异性较差或很差，表现为头晕胀痛、面红目赤、耳鸣如潮、头重脚轻、失眠多梦、睡眠轻浅、心身紧张、惊悸不宁、手足心汗、胸胁、乳房、少腹胀痛、咽如物梗、瘕聚不定、急躁易怒、善恐易惊，有发生高血压、失眠、惊恐症、焦虑症、梅核气、经前紧张综合征、更年期紧张综合征、神经衰弱的风险。建议①多吃桑葚、当归、白芍；②多吃青皮、香橼、玳玳花；③放慢生活节奏，打太极、练瑜伽、听舒缓音乐。
+		</view>
+		
+		<block wx:if="{{detailType == 'GSA'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例11.图11中的相邻心率变异性（GSA）较差(6.91)，表明客户肝藏主疏泄功能较差。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:22:36/5f35f56c14e73.png" mode="widthFix"></image>
+			<view class="quota-tips">图11相邻心率变异性人群poincare散点图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="GSA">{{detailType == 'GSA'?'收起':'应用举例'}}</view>
+		
+		<view class="expert-line" id="GLA"></view>
+		<view class="quota-name">● 最大心率变异性(GLA)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的最大心率变异性，正常范围为≥104.65。</view>若GLA低于104.65则为最大心率变异性较差或很差，表现为或精神不振、反应迟钝；或多语、多动、心烦、急躁，有发生健忘症、痴呆症；或惊恐症、精神分裂症、狂躁症的风险。
+		</view>
+		
+		<block wx:if="{{detailType == 'GLA'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例12.图12中的最大心率变异性（GLA）较差(56.57)，表明客户肝藏主疏泄功能较差。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:24:40/5f35f5e8661ac.png" mode="widthFix"></image>
+			<view class="quota-tips">图12最大心率变异性较差人群poincare散点图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="GLA">{{detailType == 'GLA'?'收起':'应用举例'}}</view>
+		
+		<view class="expert-line" id="GSDA"></view>
+		<view class="quota-name">● 心率综合变异性(GSDA)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的心率综合变异性，正常范围为≥1174。</view>若GSDA低于1174则为综合心率变异性较差或很差，表现为不耐劳作、不耐兴奋、闷闷不乐、善悲欲哭、多疑善虑、多愁善感，有发生神经衰弱、抑郁症、痴呆症的风险。建议①多吃黄精、山药、桑椹、白芍；②避免情绪兴奋和劳累。
+		</view>
+		<block wx:if="{{detailType == 'GSDA'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例13.GSDA较大时(1636)，表明客户交感神经与副交感神经的协调性较好，肝藏主疏泄功能较好。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:26:46/5f35f666dec03.png" mode="widthFix"></image>
+			<view class="quota-tips">图13 心率综合变异性较好人群散点图</view>
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例14. GSDA较小时(310)，表明客户交感神经与副交感神经的协调性较差，肝藏主疏泄功能较差。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:31:22/5f35f77a27ce3.png" mode="widthFix"></image>
+			<view class="quota-tips">图14 心率综合变异性较差人群散点图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="GSDA">{{detailType == 'GSDA'?'收起':'应用举例'}}</view>
+	</view>
+	<view class="content-img" id="kidney">
+		<view class="quota-title">中医肾藏(音zàng)储备功能的含义及重要指标</view>
+		<view class="quota-btn">含义</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 中医肾藏的气化功能</view>
+		<view class="quota-text"><text class="quota-blue">是指同化异化系统合成和分解有机物，产生、承载和排放能量的功能。</text>其中，同化异化系统包括主管有机物合成分解的细胞器和酶，主管能量承载的体液和ATP，和产热散热器官。该功能异常时，高代谢状态表现为五心烦热、骨蒸潮热、午后颧红；低代谢状态表现为四肢厥冷、腰或小腹冷痛。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line" id="SMR"></view>
+		<view class="quota-name">● 代谢水平(SMR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的代谢水平，正常范围为69.93-76.43。
+			</view>若SMR低于69.93则为阴寒状态，表现为畏寒怕冷、吃得少、穿得多盖得多、手脚发凉、腰凉、腹凉、喜欢热饮、女性痛经，有发生甲状腺功能减退、慢性结肠炎、慢性盆腔炎、女性不孕、男性精冷不育的风险。建议①多吃生姜、八角、茴香；②多穿衣服多盖被，防寒保暖；③多运动，少食生冷；④多吃羊肉、饮酒。
+		</view>
+		<view class="quota-text">若SMR高于76.43则为阳热状态，表现为怕热、穿得少盖得少、手脚心热、午后或傍晚低烧、口臭口苦易生溃疡、喜冷饮，有发生上火、糖尿病、甲状腺功能亢进的风险。建议①多吃金银花、蒲公英、山栀子；②冷水浴或游泳；③少吃羊肉或辛辣食品。</view>
+		
+		<block wx:if="{{detailType == 'SMR'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例15.图15的24小时平均心率较低(53.87)，表明客户整体代谢率较低。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:37:54/5f35f902deedc.png" mode="widthFix"></image>
+			<view class="quota-tips">图15 整体代谢率较低人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例16.图16的24小时平均心率较高(115.5)，表明客户整体代谢率较高。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:38:08/5f35f9107a7ad.png" mode="widthFix"></image>
+			<view class="quota-tips">图16 整体代谢率较高人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="SMR">{{detailType == 'SMR'?'收起':'应用举例'}}</view>
+	</view>
+	<view class="content-img" id="diseases">
+		<view class="quota-title">慢病风险预警及重要指标</view>
+		<view class="quota-btn">含义</view>
+		<view class="expert-line"></view>
+		<view class="quota-name" style="text-align: center;">失眠风险预警</view>
+		<view class="quota-text">失眠是指对睡眠时间和/或睡眠质量不满足并影响日间生活工作的一种主观体验。表现为入睡困难、似睡非睡、一有动静就醒、睡眠时间少、多梦。常伴发阻塞性睡眠呼吸暂停低通气综合征、抑郁症、焦虑症、神经衰弱、更年期综合征。中医称为心不藏神。</view>
+		<view class="quota-text">失眠风险预警是指在该病发生或加重前，根据用户在生活工作场景下24小时实时无创检测的生物信号，向用户发出预警，报告危险状况，以避免该病在不知情或准备不足的情况下发生或加重，从而最大程度上降低该病造成损失的行为。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line" id="ecg_curve"></view>
+		<view class="quota-name">● 24小时心率分布图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:14:15/5f8d4ad7ea6c9.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时心率分布图</view>
+		<view class="quota-text">该图表达了用户的24小时心率实时分布状况。横轴表达了心率变化的发生时间，纵轴表达了心率的高低。绿色部分反映用户处于睡眠状态，红色和蓝色部分反映用户处于清醒状态。睡眠和清醒状态的心率变化表达了内脏神经的调节能力。
+		</view>
+		<view class="expert-line" id="XST"></view>
+		<view class="quota-name">● 睡眠时长(XST)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标可用以测定客户的睡眠时长。正常范围为6.86-8.83。分为睡眠累积时间过长和睡眠累积时间过短两种异常情况。</view>若XST低于6.86则为睡眠时长偏短或过短，表现为入睡困难、早醒、头昏沉、黑眼圈，有发生失眠、焦虑、免疫力低的风险。建议①多吃桑葚、酸枣仁；②不吃过饱；③不饮用咖啡、茶叶。
+		</view>
+		<view class="quota-text">若XST高于8.83则为睡眠时长偏长或过长，表现为注意力不集中、无精打采、周身困倦、反应迟钝，有发生嗜睡症、健忘症、痴呆症的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。
+			注：如果精神状态佳，不属于异常。</view>
+			
+		<block wx:if="{{detailType == 'XST'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例5.图5的下横线以下部分表征客户处于睡眠状态，其睡眠持续时间过长，为12.15小时。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:13:29/5f35f349ac888.png" mode="widthFix"></image>
+			<view class="quota-tips">图5 睡眠时间过长人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例6.图6的下横线以下部分表征客户处于睡眠状态，其睡眠持续时间过短，为2.26小时。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:13:54/5f35f3625ae0e.png" mode="widthFix"></image>
+			<view class="quota-tips">图6睡眠时间过短人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XST">{{detailType == 'XST'?'收起':'应用举例'}}</view>	
+
+		<view class="expert-line" id="XVLA"></view>
+		<view class="quota-name">● 睡眠深度(XVLA)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XVLA是测定用户睡眠深度的指标。在中医学体系中，用以反映心藏藏神的功能状态。在生物医学体系中，用以反映大脑皮质的功能状态。正常范围为≥36.95。</view>
+		</view>
+		<view class="quota-text">若XVLA＜36.95则为睡眠深度偏浅或过浅，轻则表现为似睡非睡、一有动静就醒，重则表现为精神疲惫、焦虑、多梦。有发生神经衰弱、健忘症、焦虑症的风险。</view>
+
+		<view class="expert-line" id="xinxue"></view>
+		<view class="quota-name" style="text-align: center;">心血管病风险预警</view>
+		<view class="quota-text">心血管病包括风湿性心脏病、先天性心脏病、高血压性心脏病、冠心病、心肌炎、高脂血症、高黏滞血症、动脉硬化、高血压等。轻则心慌、心悬、乏力、胸闷、气短，重则夜间阵发性呼吸困难、端坐呼吸、咳血、胸骨后压迫性或紧缩性疼痛、左后背痛、左手臂痛、脚踝浮肿。中医称为心藏主血脉功能异常。</view>
+		<view class="quota-text">心血管病风险预警是指在该病发生或加重之前，根据用户在生活工作场景下24小时实时无创检测的生物信号，向用户发出预警，报告危险状况，以避免该病在不知情或准备不足的情况下发生或加重，从而最大程度上降低该病造成损失的行为。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line" id="pulse_curve"></view>
+		<view class="quota-name">● 24小时脉搏波变化图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:14:58/5f8d4b02960a5.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时脉搏波变化图</view>
+		<view class="quota-text">该图表达了用户心肌收缩力和外周阻力的24小时分布情况。心肌收缩力和外周阻力越大，数值越大；心肌收缩力和外周阻力越小，数值越小。正常情况下，心肌收缩力和外周阻力既不能太低，也不能太高。心肌收缩力和外周阻力偏低或过低说明用户为轻体力劳动者，或心衰患者。心肌收缩力和外周阻力偏高或过高说明用户为重体力劳动者，或出现动脉硬化、高血压、高脂血症、高粘滞血症。
+		</view>
+		<view class="expert-line" id="poincare"></view>
+		<view class="quota-name">● 24小时Poincare散点图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:15:18/5f8d4b16ee56d.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时Poincare散点图</view>
+		<view class="quota-text">该图表达了用户的内脏神经的调节能力。内脏神经调节能力越好，散点图面积越大；内脏神经调节能力越差，散点图面积越小。
+		</view>
+		<view class="expert-line" id="XBAR"></view>
+		<view class="quota-name">● 心肌收缩力(XBAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XBAR是测定用户心肌收缩力的指标，正常范围为169.54-230.24(修改）。</view>在中医学体系中，用以反映心藏的主血脉功能状态。该指标越小说明人体需要心脏做的功越小，心脏功能越好。
+		</view>
+
+		<view class="expert-line" id="XAAR"></view>
+		<view class="quota-name">● 外周血管阻力(XAAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XAAR是测定用户外周血管阻力的指标，正常范围为256.26-406.68(修改）。</view>在中医学体系中，用以反映心藏的主血脉功能状态。该指标越小说明用户外周血管阻力越小，动脉功能越好。
+		</view>
+		<view class="expert-line" id="XASRD"></view>
+		<view class="quota-name">● 昼夜节律(XASRD)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的昼夜节律，正常范围为≥21.84。</view>分为两种：昼精夜瞑(清醒时精力充沛，睡眠时睡得香甜)的客户该指标取值很大，说明客户昼夜节律明显，藏神功能正常。昼不精夜不瞑(精神不振，睡眠不实)的客户该指标取值很小，说明客户昼夜节律不明显，表示气血运行不畅。
+		</view>
+		<view class="quota-text">
+			若XASRD低于21.84则为昼夜节律偏低或过低，表现为坐着打盹躺着睡不着、一有动静就醒、精神不振、反应迟钝，有发生健忘症、痴呆症的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。</view>
+		
+		<block wx:if="{{detailType == 'XASRD'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例9. 在图9中，觉醒时的平均心率与睡眠时的平均心率差(XASRD)较高(30.11)，说明客户昼夜节律的调节能力较强。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:20:00/5f35f4d076713.png" mode="widthFix"></image>
+			<view class="quota-tips">图9 昼夜节律调节能力较强人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例10.在图10中，觉醒时的平均心率与睡眠时的平均心率差(XASRD)较低(8.66)，说明客户昼夜节律的调节能力降低。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:20:25/5f35f4e983644.png" mode="widthFix"></image>
+			<view class="quota-tips">图10 昼夜节律调节能力较低人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XASRD">{{detailType == 'XASRD'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="GSDA"></view>
+		<view class="quota-name">● 心率综合变异性(GSDA)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的心率综合变异性，正常范围为≥1174。</view>若GSDA低于1174则为综合心率变异性较差或很差，表现为不耐劳作、不耐兴奋、闷闷不乐、善悲欲哭、多疑善虑、多愁善感，有发生神经衰弱、抑郁症、痴呆症的风险。建议①多吃黄精、山药、桑椹、白芍；②避免情绪兴奋和劳累。
+		</view>
+		
+		<block wx:if="{{detailType == 'GSDA'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例13.GSDA较大时(1636)，表明客户交感神经与副交感神经的协调性较好，肝藏主疏泄功能较好。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:26:46/5f35f666dec03.png" mode="widthFix"></image>
+			<view class="quota-tips">图13 心率综合变异性较好人群散点图</view>
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例14. GSDA较小时(310)，表明客户交感神经与副交感神经的协调性较差，肝藏主疏泄功能较差。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:31:22/5f35f77a27ce3.png" mode="widthFix"></image>
+			<view class="quota-tips">图14 心率综合变异性较差人群散点图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="GSDA">{{detailType == 'GSDA'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="tangniao"></view>
+		<view class="quota-name" style="text-align: center;">糖尿病风险预警</view>
+		<view class="quota-text">糖尿病是一组以高血糖为特征的代谢性疾病，有两个主要成因：胰脏无法生产足够的胰岛素，或者是细胞对胰岛素不敏感。轻则表现为乏力、口干、不怕冷怕热、吃得多拉得多、穿得少盖得少、喜欢冬天不喜欢夏天，重则表现为手脚心热、心烦失眠、多食、多饮、频尿、消瘦。并发症有糖尿病酮症酸中毒、糖尿病高渗非酮症昏迷、糖尿病视网膜病变、糖尿病足、糖尿病肾病等。中医称为肾不藏精。
+		</view>
+		<view class="quota-text">糖尿病风险预警是指在该病发生或加重前，根据客户在生活工作场景下24小时实时无创检测的生物信号，向客户发出预警，报告危险状况，以避免该病在不知情或准备不足的情况下发生或加重，从而最大程度上降低该病造成损失的行为。</view>
+
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 24小时体动分布图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:15:40/5f8d4b2caa2c4.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时体动分布图</view>
+		<view class="quota-text">该图表达了用户的24小时体动实时分布状况。横轴表达体动发生的时间，纵轴表达了体动的强度。绿色部分反映用户处于静息睡眠状态，红色部分反映用户处于运动亢奋状态，蓝色部分反映用户处于一般清醒状态。糖尿病患者常出现乏力，故体动减少。
+		</view>
+
+		<view class="expert-line" id="SMR"></view>
+		<view class="quota-name">● 代谢水平(SMR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的代谢水平，正常范围为69.93-76.43。
+			</view>若SMR低于69.93则为阴寒状态，表现为畏寒怕冷、吃得少、穿得多盖得多、手脚发凉、腰凉、腹凉、喜欢热饮、女性痛经，有发生甲状腺功能减退、慢性结肠炎、慢性盆腔炎、女性不孕、男性精冷不育的风险。建议①多吃生姜、八角、茴香；②多穿衣服多盖被，防寒保暖；③多运动，少食生冷；④多吃羊肉、饮酒。
+		</view>
+		<view class="quota-text">若SMR高于76.43则为阳热状态，表现为怕热、穿得少盖得少、手脚心热、午后或傍晚低烧、口臭口苦易生溃疡、喜冷饮，有发生上火、糖尿病、甲状腺功能亢进的风险。建议①多吃金银花、蒲公英、山栀子；②冷水浴或游泳；③少吃羊肉或辛辣食品。</view>
+		
+		<block wx:if="{{detailType == 'SMR'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例15.图15的24小时平均心率较低(53.87)，表明客户整体代谢率较低。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:37:54/5f35f902deedc.png" mode="widthFix"></image>
+			<view class="quota-tips">图15 整体代谢率较低人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例16.图16的24小时平均心率较高(115.5)，表明客户整体代谢率较高。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:38:08/5f35f9107a7ad.png" mode="widthFix"></image>
+			<view class="quota-tips">图16 整体代谢率较高人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="SMR">{{detailType == 'SMR'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="SVL"></view>
+		<view class="quota-name">● SVL</view>
+		<view class="quota-text">
+			SVL是测定用户生命活力的指标。生命活力强的用户该指标取值较大，生命活力下降的用户该指标取值较小。若XVL低于114.10则为生命活力下降，轻则表现为食欲不振、体倦乏力、动则气喘、胸闷气短，重则表现为形体消瘦、少语、少动。
+		</view>
+
+		<view class="expert-line" id="laonian"></view>
+		<view class="quota-name" style="text-align: center;">老年性痴呆风险预警</view>
+		<view class="quota-text">老年性痴呆又称阿尔茨海默病，简称AD，是一种起病隐匿的进行性神经系统退行性疾病。轻则表现为健忘、无精打采、坐着打盹躺着睡不着、头蒙、头沉、思维迟钝、体倦乏力。重则表现为表情淡漠、目光呆滞、动作迟缓、幻听幻视、哭笑无常、语无伦次、循衣摸床、撮空理线、大小便失禁。
+		</view>
+		<view class="quota-text">老年性痴呆风险预警是指在该病发生或加重之前，根据用户在生活工作场景下24小时实时无创检测的生物信号，向用户发出预警，报告危险状况，以避免该病在不知情或准备不足的情况下发生或加重，从而最大程度上降低该病造成损失的行为。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 24小时心率分布图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:15:59/5f8d4b3f9723c.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时心率分布图</view>
+		<view class="quota-text">该图表达了用户的24小时心率实时分布状况。横轴表达了心率变化的发生时间，纵轴表达了心率的高低。绿色部分反映用户处于静息睡眠状态，红色部分反映用户处于运动亢奋状态，蓝色部分反映用户处于一般清醒状态。</view>
+		<view class="quota-text">在觉醒过程中，心率越低，表示用户在该段时间内越放松，精神不振。</view>
+		<view class="quota-text">如:</view>
+
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:16:19/5f8d4b5307244.png" mode="widthFix"></image>
+		<view class="quota-text">在觉醒过程中，心率越高，表示用户在该段时间内越兴奋，精神亢奋。
+			如:
+		</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:16:36/5f8d4b6401e3f.png" mode="widthFix"></image>
+		<view class="quota-name" id="pm_curve">● 24小时体动分布图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:16:55/5f8d4b77938a7.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时体动分布图</view>
+		<view class="quota-text">该图表达了用户的24小时体动实时分布状况。横轴表达体动发生的时间，纵轴表达了体动的强度。绿色部分反映用户处于静息睡眠状态，红色部分反映用户处于运动亢奋状态，蓝色部分反映用户处于一般清醒状态。</view>
+		<view class="quota-text">生命活力较好的人，体动的强度和持续时间较长。</view>
+		<view class="quota-text">如：</view>
+
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:17:18/5f8d4b8eb6074.png" mode="widthFix"></image>
+		<view class="quota-text">生命活力下降的人，体动的强度和持续时间较短。
+			如：
+		</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:17:57/5f8d4bb5548d2.png" mode="widthFix"></image>
+		<view class="quota-name">● 24小时脉搏波变化图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:18:12/5f8d4bc4edf9e.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时脉搏波变化图</view>
+		<view class="quota-text">该图表达了用户的24小时脉搏波变化情况。蓝线表示心肌收缩力，红线表示外周血管阻力。
+		</view>
+		<view class="expert-line" id="XAR"></view>
+		<view class="quota-name">● 精神状态(XAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标可用以测定客户的精神状态。正常范围为76.62-84.36。</view>若XAR低于76.62则为精神不振或萎靡，表现为犯困、体倦乏力、反应迟钝、健忘、少语、少动、表情淡漠、动作迟缓，有发生健忘症、嗜睡症、痴呆症、昏迷的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。
+		</view>
+
+		<view class="quota-text">若XAR高于84.36则为精神兴奋或亢奋，表现为静不下心来、睡不着、多语、多动、心烦、急躁，有发生失眠、惊恐症、精神分裂症、狂躁症的风险。建议①多吃百合、莲子心；②放慢生活节奏，打太极、练瑜伽、听舒缓音乐。</view>
+		
+		<block wx:if="{{detailType == 'XAR'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例1.图1的下横线以上部分表征客户处于觉醒状态，在觉醒过程中，少数时间处于兴奋状态(上横线以上部分，或上、下横线之间的接近上横线部分)，多数时间处于放松状态(上、下横线之间的接近下横线部分)，表征客户处于正常的觉醒状态(觉醒状态平均心率83.88)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:51:10/5f35ee0e3420c.png" mode="widthFix"></image>
+			<view class="quota-tips">图1 一般人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例2.图2的客户在觉醒过程中，较多时间处于兴奋状态，较少时间处于放松状态，表征客户精神过度亢奋(觉醒状态平均心率105.47)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:54:12/5f35eec4d53c3.png" mode="widthFix"></image>
+			<view class="quota-tips">图2 精神过度亢奋人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例3.图3的下横线以上部分表征客户处于觉醒状态，在觉醒过程中，少数时间处于兴奋状态，绝大多数时间处于放松状态，表征客户精神不振(觉醒状态平均心率68.63)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:55:00/5f35eef48c963.png" mode="widthFix"></image>
+			<view class="quota-tips">图3 精神不振人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例4.图4表明客户24小时的心率变化很小，事实上，客户患有老年痴呆症(觉醒状态平均心率53.80)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:55:32/5f35ef14e4e72.png" mode="widthFix"></image>
+			<view class="quota-tips">图4 老年痴呆患者24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XAR">{{detailType == 'XAR'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="XASRD"></view>
+		<view class="quota-name">● 昼夜节律(XASRD)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标用以测定客户的昼夜节律，正常范围为≥21.84。</view>分为两种：昼精夜瞑(清醒时精力充沛，睡眠时睡得香甜)的客户该指标取值很大，说明客户昼夜节律明显，藏神功能正常。昼不精夜不瞑(精神不振，睡眠不实)的客户该指标取值很小，说明客户昼夜节律不明显，表示气血运行不畅。
+		</view>
+		<view class="quota-text">
+			若XASRD低于21.84则为昼夜节律偏低或过低，表现为坐着打盹躺着睡不着、一有动静就醒、精神不振、反应迟钝，有发生健忘症、痴呆症的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。</view>
+		
+		<block wx:if="{{detailType == 'XASRD'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例9. 在图9中，觉醒时的平均心率与睡眠时的平均心率差(XASRD)较高(30.11)，说明客户昼夜节律的调节能力较强。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:20:00/5f35f4d076713.png" mode="widthFix"></image>
+			<view class="quota-tips">图9 昼夜节律调节能力较强人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例10.在图10中，觉醒时的平均心率与睡眠时的平均心率差(XASRD)较低(8.66)，说明客户昼夜节律的调节能力降低。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/10:20:25/5f35f4e983644.png" mode="widthFix"></image>
+			<view class="quota-tips">图10 昼夜节律调节能力较低人群24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XASRD">{{detailType == 'XASRD'?'收起':'应用举例'}}</view>
+		<view class="expert-line" id="SVL"></view>
+		<view class="quota-name">● SVL</view>
+		<view class="quota-text">
+			SVL是测定用户生命活力的指标。生命活力强的用户该指标取值较大，生命活力下降的用户该指标取值较小。若XVL低于114.10则为生命活力下降，轻则表现为食欲不振、体倦乏力、动则气喘、胸闷气短，重则表现为形体消瘦、少语、少动。
+		</view>
+		<view class="expert-line" id="XBAR"></view>
+		<view class="quota-name">● 心肌收缩力(XBAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XBAR是测定用户心肌收缩力的指标，正常范围为169.54-230.24(修改）。</view>在中医学体系中，用以反映心藏的主血脉功能状态。该指标越小说明人体需要心脏做的功越小，心脏功能越好。
+		</view>
+
+		<view class="expert-line" id="naoxue"></view>
+		<view class="quota-name" style="text-align: center;">脑血管病风险预警</view>
+		<view class="quota-text">脑血管病俗称中风，起病急，病死和病残率高，为老年人三大死因之一。中医称为肝不藏血，筋失所养。①缺血性的病变有脑供血不足、脑栓塞、脑梗塞、脑血栓形成等，表现为手脚麻木、走路不稳、头痛、头晕，甚至神智障碍、语言障碍、半身不遂、口眼歪斜。②出血性的病变有脑出血和蛛网膜下腔出血，表现为剧烈头疼、血压升高、恶心、呕吐、神智障碍、偏瘫。
+		</view>
+		<view class="quota-text">脑血管病风险预警是指在该病发生或加重之前，根据客户在生活工作场景下24小时实时无创检测的生物信号，向客户发出预警，报告危险状况，以避免该病在不知情或准备不足的情况下发生或加重，从而最大程度上降低该病造成损失的行为。</view>
+		<view class="expert-line"></view>
+		<view class="quota-btn">重要指标</view>
+		<view class="expert-line"></view>
+		<view class="quota-name">● 24小时脉搏波变化图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:18:35/5f8d4bdbe7445.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时脉搏波变化图</view>
+		<view class="quota-text">该图表达了用户的24小时脉搏波变化情况。蓝线表示心肌收缩力，红线表示外周血管阻力。外周血管阻力增大容易发生中风。
+		</view>
+		<view class="quota-name">● 24小时心率分布图</view>
+		<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-10-19/16:18:50/5f8d4bea76d97.png" mode="widthFix"></image>
+		<view class="quota-tips">24小时心率分布图</view>
+		<view class="quota-tips">图11相邻心率变异性人群poincare散点图</view>
+		<view class="quota-text">该图表达了用户的24小时心率实时分布状况。横轴表达了心率变化的发生时间，纵轴表达了心率的高低。绿色部分反映用户处于静息睡眠状态，红色部分反映用户处于运动亢奋状态，蓝色部分反映用户处于一般清醒状态。红色和蓝色部分数值越大，反映用户越兴奋，容易发生中风。
+		</view>
+		<view class="expert-line" id="XAAR"></view>
+		<view class="quota-name">● 外周血管阻力(XAAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">XAAR是测定用户外周血管阻力的指标，正常范围为256.26-406.68(修改）。</view>在中医学体系中，用以反映心藏的主血脉功能状态。该指标越小说明用户外周血管阻力越小，动脉功能越好。
+		</view>
+		<view class="expert-line" id="XAR"></view>
+		<view class="quota-name">● 精神状态(XAR)</view>
+		<view class="quota-text">
+			<view class="quota-blue">该指标可用以测定客户的精神状态。正常范围为76.62-84.36。</view>若XAR低于76.62则为精神不振或萎靡，表现为犯困、体倦乏力、反应迟钝、健忘、少语、少动、表情淡漠、动作迟缓，有发生健忘症、嗜睡症、痴呆症、昏迷的风险。建议①多吃黄精、山药；②积极参加户外集体活动，旅游、跳广场舞。
+		</view>
+
+		<view class="quota-text">若XAR高于84.36则为精神兴奋或亢奋，表现为静不下心来、睡不着、多语、多动、心烦、急躁，有发生失眠、惊恐症、精神分裂症、狂躁症的风险。建议①多吃百合、莲子心；②放慢生活节奏，打太极、练瑜伽、听舒缓音乐。</view>
+		
+		<block wx:if="{{detailType == 'XAR'}}">
+			<view class="expert-line"></view>
+			<view class="quota-title">应用举例</view>
+			<view class="quota-text">例1.图1的下横线以上部分表征客户处于觉醒状态，在觉醒过程中，少数时间处于兴奋状态(上横线以上部分，或上、下横线之间的接近上横线部分)，多数时间处于放松状态(上、下横线之间的接近下横线部分)，表征客户处于正常的觉醒状态(觉醒状态平均心率83.88)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:51:10/5f35ee0e3420c.png" mode="widthFix"></image>
+			<view class="quota-tips">图1 一般人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例2.图2的客户在觉醒过程中，较多时间处于兴奋状态，较少时间处于放松状态，表征客户精神过度亢奋(觉醒状态平均心率105.47)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:54:12/5f35eec4d53c3.png" mode="widthFix"></image>
+			<view class="quota-tips">图2 精神过度亢奋人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例3.图3的下横线以上部分表征客户处于觉醒状态，在觉醒过程中，少数时间处于兴奋状态，绝大多数时间处于放松状态，表征客户精神不振(觉醒状态平均心率68.63)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:55:00/5f35eef48c963.png" mode="widthFix"></image>
+			<view class="quota-tips">图3 精神不振人群24小时心率曲线图</view>
+			<view class="expert-line"></view>
+			<view class="quota-text">例4.图4表明客户24小时的心率变化很小，事实上，客户患有老年痴呆症(觉醒状态平均心率53.80)。</view>
+			<image class="quota-img" src="https://i.2fei2.com/shop/logo/2020-08-14/09:55:32/5f35ef14e4e72.png" mode="widthFix"></image>
+			<view class="quota-tips">图4 老年痴呆患者24小时心率曲线图</view>
+		</block>
+		<view class="quota-allbtn" bindtap="goUrl" data-type="XAR">{{detailType == 'XAR'?'收起':'应用举例'}}</view>
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

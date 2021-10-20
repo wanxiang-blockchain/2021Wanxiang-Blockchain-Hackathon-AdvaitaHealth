@@ -1,0 +1,152 @@
+<MyHeader  homeIcon="icongouwuche" bindhome="goCar" background="#fff" color="#000"></MyHeader>
+
+<myLoading wx:if="{{goodsLoading}}"></myLoading>
+<!-- 授权登录框 -->
+<login wx:if="{{isLogin}}" isBottom="1" bindcloseLogin="closeLogin"></login>
+
+<!-- <myCanvas
+	wx:if="{{posterData.bg}}"
+	type="tshirt"
+	isShowBg="{{false}}"
+	ratio="642,858"
+	posterData="{{posterData}}"
+	getCanvas="{{getCanvas}}"
+></myCanvas> -->
+<posterMask wx:if="{{poster}}" artid="9999" bindclose="shareImg"></posterMask>
+<scroll-view style="background: #fff; height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px - 98rpx); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" scroll-into-view="{{seleteType}}" bindscroll="bindscroll">
+
+	<view style="margin-top: 20rpx;">
+		<Carousel type="2" imgUrls='{{banner}}' bindgoUrl="gobubbleUrl" swiperIndex="{{0}}" marginNum="{{20}}" width="678"
+		 height="254"></Carousel>
+	</view>
+	
+	<!-- diy入口 -->
+	<view class="diy-box" bindtap="goUrl" data-url="{{diyEnter.to_url}}" >
+		<image class="diy-logo" src="{{diyEnter.image_url}}" mode="aspectFill"></image>
+	</view>
+
+	<!-- 轮播图 -->
+	<Carousel wx:if="{{ banner2.length>0}}" type="3" imgUrls='{{banner2}}' autoplay="{{false}}" bindgoUrl="gobubbleUrl" swiperIndex="{{0}}" marginNum="{{20}}" width="678"></Carousel>
+
+	<!-- 导航栏 -->
+	<view class="tags-false" >
+		<view class="tab-box {{isImbibition?'imbibition':''}}" style="top:{{isImbibition?statusBarHeight+ navHeight:0}}px;">
+			<view class="tab-left">
+				<myTab tab="{{tabNum}}" width="{{340}}" textData="{{['瑜伽服','定制']}}" customStyle="height:62rpx;font-size:32rpx;color:#D9D9D9;line-height:62rpx"
+				 bindbubbleTab="changeTab"></myTab>
+			</view>
+			<view class="tab-right" bindtap="goUrl" data-url="/pageShop/pageShop/chooseClothes/chooseClothes?goods_id=2909">
+				<image class="tab-logo" src="https://i.2fei2.com/goods/logo/2021-05-24/15:00:19/60ab4f034c4ee.png" mode="aspectFill"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 520栏目 -->
+	<!-- <view class="container detail-item" style="margin-top:50rpx;" bindtap="goUrl" data-url="{{yogoInfo[3].to_url}}">
+		<image class="theme-info" src="{{yogoInfo[3].image_url}}" mode="widthFix"></image>
+	</view>
+	<view class="flex-box container" style="margin-top: 22rpx;">
+		<view class="floor-item" wx:for="{{g520_goods2}}" wx:key="index" bindtap="goDetail" data-goods_id="{{item.goods_id}}" data-item="{{item}}">
+			<image class="floor-item-img" style="padding: 20rpx;" src="{{item.logo_url}}" mode="aspectFit"></image>
+			<view class="floor-item-title">{{item.goods_name}}</view>
+			<view class="floor-item-price">￥{{item.old_sale_price_section}}</view>
+			<image class="floor-item-icon" src="https://i.2fei2.com/goods/logo/2021-05-13/10:04:24/609c8928bac09.png" mode="aspectFill"></image>
+		</view>
+		<view style="width: 212rpx;"></view>
+		<view style="width: 212rpx;"></view>
+	</view> -->
+	<!-- <view class="more" bindtap="goUrl" style="margin-bottom: 50rpx;" data-url="/pageShop/pageShop/moreGoods/moreGoods?type=g520">查看全部<text class="more-arrow iconfont iconjiantouyou"></text></view> -->
+	
+	<!-- 瑜伽栏目 -->
+	<view id="indexes-0" class="detail-item" style="height: 1rpx;"></view>
+	<view class="container " style="margin-top:100rpx;" bindtap="goUrl" data-url="{{yogoInfo[1].to_url}}">
+		<image class="theme-info" src="{{yogoInfo[1].image_url}}" mode="widthFix"></image>
+	</view>
+	<view class="flex-box container" style="margin-top: 22rpx;">
+		<view class="floor-item" wx:for="{{yoga_goods2}}" wx:key="index" bindtap="goDetail" data-goods_id="{{item.goods_id}}" data-item="{{item}}">
+			<image class="floor-item-img"  src="{{item.logo_url}}" mode="aspectFit"></image>
+			<view class="floor-item-title">{{item.goods_name}}</view>
+			<view class="floor-item-price">￥{{item.old_sale_price_section}}</view>
+		</view>
+		<view style="width: 212rpx;"></view>
+		<view style="width: 212rpx;"></view>
+	</view>
+	<view class="more" bindtap="goUrl"  data-url="/pageShop/pageShop/moreGoods/moreGoods?type=cloth">查看全部<text class="more-arrow iconfont iconjiantouyou"></text></view>
+	
+	
+	
+	<view class="container " style="margin-top:100rpx;" bindtap="goUrl" data-url="{{yogoInfo[0].to_url}}">
+		<image class="theme-info" src="{{yogoInfo[0].image_url}}" mode="widthFix"></image>
+	</view>
+	<view class="flex-box container" style="margin-top: 22rpx;">
+		<view class="floor-item" wx:for="{{yoga_goods1}}" wx:key="index" bindtap="goDetail" data-goods_id="{{item.goods_id}}" data-item="{{item}}">
+			<image class="floor-item-img" src="{{item.logo_url}}" mode="aspectFill"></image>
+			<view class="floor-item-title">{{item.goods_name}}</view>
+			<view class="floor-item-price">￥{{item.old_sale_price_section}}</view>
+		</view>
+		<view style="width: 212rpx;"></view>
+		<view style="width: 212rpx;"></view>
+	</view>
+	<view class="more" bindtap="goUrl" style="margin-bottom: 16rpx;" data-url="/pageShop/pageShop/moreGoods/moreGoods?type=yoga">查看全部<text class="more-arrow iconfont iconjiantouyou"></text></view>
+	
+	
+	<!-- 定制栏目 -->
+	<view id="indexes-1" class="detail-item" style="height: 1rpx;"></view>
+	<view class="floor-name">最新佳作</view>
+	
+	<!-- <myTab 
+		width="{{678}}" 
+		textData="{{['最新非作','热门个创','ART 品']}}" 
+		customStyle="height:98rpx;font-size:24rpx;color:#CECECE;line-height:98rpx"
+		lineStyle="width: 224rpx;height: 6rpx;background: #9B9B9B;border-radius: 3rpx;" 
+		borderStyle=" width: 678rpx;height: 6rpx;background: #F0F0F0;border-radius: 3rpx;"
+		bindbubbleTab="changeNewPro" 
+		wx:if="{{tabNum == 1}}"></myTab> -->
+
+	<view class="flex-box container" style="margin-top: 34rpx;">
+		<view class="floor-item" wx:for="{{goods}}" wx:key="index" bindtap="goDetail" data-goods_id="{{item.goods_id}}" 
+		data-item="{{item}}"  >
+			<image class="floor-item-img" style="padding: 20rpx;" src="{{item.logo_url}}" mode="aspectFit"></image>
+			<view class="floor-item-title" >{{item.goods_name}}</view>
+			<view class="floor-item-price">￥{{item.old_sale_price_section}}</view>
+		</view>
+		<view style="width: 212rpx;"></view>
+		<view style="width: 212rpx;"></view>
+	</view>
+	<view class="more" bindtap="goUrl" data-url="/pageShop/pageShop/moreGoods/moreGoods?type=DIY">查看全部<text class="more-arrow iconfont iconjiantouyou"></text></view>
+	
+	<!-- <view class="watch-item" bindtap="goDetail" data-item="{{item}}" data-goods_id="{{item.goods_id}}" wx:for="{{goodsList}}"
+	 wx:key="index">
+		<image class="watch-img" src="{{item.logo_url}}" mode="aspectFill"></image>
+		<view class="watch-name">{{item.goods_name}}</view>
+		<view class="watch-price" wx:if="{{item.crowd!=''}}">{{item.crowd}}</view>
+		<view class="watch-price" wx:else><text style="font-size: 24rpx;">￥</text>{{item.old_sale_price_section}}</view>
+		<view class="iconfont iconfenxiang2" catchtap="shareImg" data-id="{{item.goods_id}}" wx:if="{{item.crowd!=''}}" style="padding: 20rpx;"></view>
+	</view> -->
+</scroll-view>
+
+<include src="../../pages/common/auth.wxml" />
+<include src="../../pages/common/footer.wxml" />
+
+<!-- 群聊已发送 -->
+<view class="m-mask" bindtap="hideMask" wx:if="{{showWechatMask}}">
+	<view class="mask-box" catchtap="forbiddenBubble">
+		<view class="mask-title">请注意查收</view>
+		<view class="mask-tips">
+			入群二维码已经通过
+			<view style="display: inline-block;color: #FF9E20;">服务消息</view>
+			发送到您的微信
+		</view>
+		<button class="btn-gra btn-all canvas-btn" catchtap="hideMask">好的</button>
+	</view>
+</view>
+<view class="m-mask" bindtap="hideMask" wx:if="{{changeMask}}">
+	<view class="mask-box" style="width:540rpx;height: 490rpx;" catchtap="forbiddenBubble">
+		<view class="mask-title">请选择代理模式</view>
+		<view class="mask-item" bindtap="changeType" data-type="{{item.name}}" wx:for="{{agentArr}}" wx:key="index">
+			<view class="mask-text">{{item.title}}</view>
+			<view class="mask-check iconfont iconxuanzhong" style="color: {{type == item.name?'#2B86FF':''}}"></view>
+		</view>
+		<view class="mask-btn" bindtap="hideMask">确认</view>
+	</view>
+</view>

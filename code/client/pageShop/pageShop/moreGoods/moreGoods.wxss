@@ -1,0 +1,66 @@
+page {
+	font-size: 24rpx;
+	color: #333333;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.scroll_h{
+}
+/* 最新产品 */
+.floor-item{
+	width: 368rpx;
+	margin-bottom: 66rpx;
+	box-sizing: border-box;
+	position: relative;
+}
+.floor-item-box{
+	width: 100%;
+	height: 368rpx;
+	position: relative;
+	overflow: hidden;
+}
+.floor-item-img{
+	width: 100%;
+	height: 368rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.floor-item-title{
+	width: 318rpx;
+	font-size: 26rpx;
+	font-weight: bold;
+	color: #000000;
+	line-height: 36rpx;
+	margin: 18rpx 0 10rpx 24rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.floor-item-price{
+	height: 28rpx;
+	font-size: 20rpx;
+	font-weight: bold;
+	color: #000;
+	line-height: 28rpx;
+	margin-left: 24rpx;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.floor-item-icon{
+	width:36rpx;
+	height: 14rpx;
+	position: absolute;
+	right: 10rpx;
+	top: 10rpx;
+}

@@ -1,0 +1,93 @@
+<view>
+	<view class="count" style="color: {{color}};">
+		{{score}}
+		<text>分</text>
+	</view>
+	<view class="grade" wx:if="{{textState}}">
+		<text style="color: {{textColor}};">{{textState}}</text>
+	</view>
+	<view class="picture">
+		<slot name="picture"></slot>
+	</view>
+	
+	<view class="target no-margin" wx:if="{{quota.length>0}}" >
+		<view class="item" style="width:28%">
+			<view class="title" >检测指标</view>
+		</view>
+		<view class="item">
+			<view class="title">检测结果</view>
+		</view>
+		<view class="item" style="width:20%">
+			<view class="title">提示</view>
+		</view>
+		<view class="item" style="width:36%">
+			<view class="title">参考范围</view>
+		</view>
+		<view class="clearfix"></view>
+	</view>
+	
+	<view class="target {{index!=quota.length-1?'no-margin':''}}" wx:for="{{quota}}" wx:key="index" wx:if="{{quota.length>0}}" bindtap="goUrl" data-url="/pages/home/quota?{{item[4]}}">
+		<view class="item" style="width:28%">
+			<view class="value">
+				{{item[0]}}
+				<view class="iconfont iconwenhaolveguo"></view>
+			</view>
+		</view>
+		<view class="item">
+			<view class="value">{{item[1]}}</view>
+		</view>
+		<view class="item" style="width:20%">
+			<view class="value" wx:if="{{item[1]<item[2]*1 && item[2] && item[3]}}" style="color:#E7980B">
+				<text class="iconfont iconarrow-down "></text>
+			</view>
+			<view class="value" wx:if="{{item[1]>item[3]*1 && item[2] && item[3]}}" style="color:#2B86FF">
+				<text class="iconfont iconup"></text>
+			</view>
+			
+			<view class="value" wx:if="{{item[1]<item[2]*1 && item[2] && !item[3]}}" style="color:#E7980B">
+				<text class="iconfont iconarrow-down"></text>
+			</view>
+			
+			<view class="value" wx:if="{{item[1]>item[3]*1 && !item[2] && item[3]}}" style="color:#2B86FF">
+				<text class="iconfont iconup "></text>
+			</view>
+		</view>
+		<view class="item" style="width:36%">
+			<view class="value" wx:if="{{item[2] && item[3]}}">{{item[2]}}-{{item[3]}}</view>
+			<view class="value" wx:if="{{!item[2]}}">≤{{item[3]}}</view>
+			<view class="value" wx:if="{{!item[3]}}">≥{{item[2]}}</view>
+		</view>
+		<view class="clearfix"></view>
+	</view>
+	
+	<view class="analyze">
+		<view wx:for="{{comment}}" wx:key="index" wx:if="{{comment.length>0}}">
+			<view class="horizon-line"></view>
+			<view class="content-title" wx:if="{{item.commentTitle}}">{{item.commentTitle}}风险评估</view>
+			<view class="item" style="padding-top: {{item.commentTitle?0:30}}rpx;">
+				<view class="title">评估结果</view>
+				<view class="value">
+					{{item.commentResult?item.commentResult:'无'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="title">常见症状</view>
+				<view class="value">
+					{{item.commentSymptom?item.commentSymptom:'无'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="title">好发疾病</view>
+				<view class="value">
+					{{item.commentWarning?item.commentWarning:'无'}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="title">调理建议</view>
+				<view class="value">
+					{{item.commentSuggestion?item.commentSuggestion:'无'}}
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

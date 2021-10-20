@@ -1,0 +1,44 @@
+<view style="position: relative;z-index: 2;">
+	<MyHeader bind:back="back" backIcon="{{true}}" titleText='' background="#fff" color="#000"></MyHeader>
+</view>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view bindscroll="bindscroll" scroll-into-view="{{type}}" 
+style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;"
+ scroll-y="true" class="scroll_h">
+	<view class="img-box">
+		<view class="banner-box" wx:if="{{place.length>0}}">
+			<Carousel imgUrls='{{place}}' autoplay="{{true}}" type="4" height="336" width="724"></Carousel>
+		</view>
+		<image class="img-pre" wx:elif="{{info.base_image_url}}"  src="{{info.base_image_url?info.base_image_url+'?imageView2/0/w/378':''}}" mode="aspectFit"></image>
+		<image class="img-pre" wx:else mode="aspectFit" src="{{info.thumbnail?info.thumbnail+'?imageView2/0/w/378':''}}"></image>
+	</view>
+	
+	<myUserInfo height="84" contentLeft="142" borderLeft="{{0}}">
+		<view slot="avatar">
+			<image class="" mode="aspectFill" catchtap="goDetail" src="{{userInfo.avatar_url}}" style="height:84rpx;width:84rpx;left: 32rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 50%;background-color: #ccc;"></image>
+		</view>
+		<view slot="content">
+			<view class="hidden-text" style="margin-top: 16rpx;color: #000;max-width: 400rpx;font-size: 32rpx;font-weight: bold;">{{userInfo.nickname}}</view>
+		</view>
+	</myUserInfo>
+	<view class="work-info">
+			<view class="work-name">{{info.goods.goods_name}}</view>
+			<view class="work-price">￥{{info.goods.sale_price_section}}</view>
+			<view class="share-box-icon iconfont iconfenxiang2" bindtap="trigglePoster"></view>
+	</view>
+	<view class="share-bottom">
+		<view class="car-box {{scaleCart?'on':''}}" bindtap="goCar">
+			<view class="car-icon iconfont icongouwuche"></view>
+			<view class="car-dot" wx:if="{{cart>0}}"></view>
+		</view>
+		<view class="car-btn" bindtap="goDesign" wx:if="{{info.image_place}}" style="right: 280rpx;{{skinThemeStyle}}">再设计</view>
+		<view class="car-btn" bindtap="goDetail" style="{{skinThemeStyle}}">加入购物车</view>
+	</view>
+</scroll-view>
+<!-- 海报 -->
+<posterMask wx:if="{{poster}}" artid="{{id}}" bindclose="trigglePoster"></posterMask>
+<!-- 参数 -->
+<buyParam wx:if="{{showWechatMask}}" info="{{cartInfo}}" attrId="{{attrId}}" buyNow="{{buyNow}}" bindgoOrder="goOrder" bindhideMask="hideMask"
+ bindparamAddCart="paramAddCart"></buyParam>

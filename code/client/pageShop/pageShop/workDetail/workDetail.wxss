@@ -1,0 +1,125 @@
+page {
+	font-size: 24rpx;
+	color: #333333;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.scroll_h{
+	width: 724rpx;
+	height: 1204rpx;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 86rpx 0px rgba(167,167,167,0.5);
+	border-radius: 36rpx 36rpx 0 0;
+	margin: 14rpx auto 0;
+	overflow: hidden;
+}
+/* img */
+.img-box{
+	width: 724rpx;
+	padding-top: 38rpx;
+	padding-bottom: 30rpx;
+	border-bottom: 2rpx solid #E3E3E3;
+	position: relative;
+	margin-bottom: 32rpx;
+}
+.img-pre{
+	width: 658rpx;
+	height: 672rpx;
+	display: block;
+	margin: auto;
+}
+
+/* info */
+.work-info{
+	padding: 30rpx 34rpx 0;
+	position: relative;
+}
+
+.work-name{
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #000000;
+	line-height: 44rpx;
+}
+.work-price{
+	font-size: 28rpx;
+	color: #000000;
+	line-height: 40rpx;
+	margin-top: 8rpx;
+}
+
+.share-box-icon{
+	padding: 20rpx;
+	font-size: 38rpx;
+	position: absolute;
+	right: 14rpx;
+	bottom: -24rpx;
+}
+
+/* bottom */
+.share-bottom{
+	width: 724rpx;
+	height: 142rpx;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 86rpx 0px rgba(167,167,167,0.5);
+	border-radius: 36rpx 36rpx 0 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.car-box{
+	height: 104rpx;
+	position: absolute;
+	left: 34rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.car-box.on{
+    -webkit-animation: to_cart_scale .3s ease;
+    animation: to_cart_scale .3s ease;
+}
+@-webkit-keyframes to_cart_scale {
+    50%{
+        -webkit-transform: scale(1.2);
+    }
+}
+@keyframes to_cart_scale {
+    50%{
+        transform: scale(1.2);
+    }
+}
+.car-icon{
+	font-size: 64rpx;
+}
+.car-dot{
+	width: 18rpx;
+	height: 18rpx;
+	border-radius: 50%;
+	background-color: #017AFF;
+	position: absolute;
+	right: -2rpx;
+	top: 14rpx;
+}
+.car-btn{
+	width: 216rpx;
+	height: 74rpx;
+	line-height: 74rpx;
+	text-align: center;
+	border-radius: 44rpx;
+	font-size: 28rpx;
+	color: #fff;
+	background: var(--main-color);
+	position: absolute;
+	right: 32rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}

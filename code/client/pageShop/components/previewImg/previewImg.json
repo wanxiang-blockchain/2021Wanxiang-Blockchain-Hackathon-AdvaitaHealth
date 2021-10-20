@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"messageboxOne": "/components/messageboxOne/messageboxOne",
+		"Carousel": "/components/Carousel/Carousel"
+	},
+	"component": true
+}

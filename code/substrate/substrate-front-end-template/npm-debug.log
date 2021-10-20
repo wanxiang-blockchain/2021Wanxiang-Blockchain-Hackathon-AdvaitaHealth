@@ -1,0 +1,1820 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'update' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly mapToRegistry name @polkadot/api
+5 silly mapToRegistry scope (from package name) @polkadot
+6 verbose mapToRegistry no registry URL found in name for scope @polkadot
+7 silly mapToRegistry using default registry
+8 silly mapToRegistry registry http://registry.npmjs.org/
+9 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fapi
+10 silly mapToRegistry name @polkadot/extension-dapp
+11 silly mapToRegistry scope (from package name) @polkadot
+12 verbose mapToRegistry no registry URL found in name for scope @polkadot
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry http://registry.npmjs.org/
+15 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fextension-dapp
+16 silly mapToRegistry name @polkadot/keyring
+17 silly mapToRegistry scope (from package name) @polkadot
+18 verbose mapToRegistry no registry URL found in name for scope @polkadot
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry http://registry.npmjs.org/
+21 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fkeyring
+22 silly mapToRegistry name @polkadot/networks
+23 silly mapToRegistry scope (from package name) @polkadot
+24 verbose mapToRegistry no registry URL found in name for scope @polkadot
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry http://registry.npmjs.org/
+27 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fnetworks
+28 silly mapToRegistry name @polkadot/types
+29 silly mapToRegistry scope (from package name) @polkadot
+30 verbose mapToRegistry no registry URL found in name for scope @polkadot
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry http://registry.npmjs.org/
+33 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2ftypes
+34 silly mapToRegistry name @polkadot/ui-keyring
+35 silly mapToRegistry scope (from package name) @polkadot
+36 verbose mapToRegistry no registry URL found in name for scope @polkadot
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry http://registry.npmjs.org/
+39 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fui-keyring
+40 silly mapToRegistry name @polkadot/ui-settings
+41 silly mapToRegistry scope (from package name) @polkadot
+42 verbose mapToRegistry no registry URL found in name for scope @polkadot
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry http://registry.npmjs.org/
+45 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fui-settings
+46 silly mapToRegistry name @polkadot/util
+47 silly mapToRegistry scope (from package name) @polkadot
+48 verbose mapToRegistry no registry URL found in name for scope @polkadot
+49 silly mapToRegistry using default registry
+50 silly mapToRegistry registry http://registry.npmjs.org/
+51 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2futil
+52 silly mapToRegistry name @polkadot/util-crypto
+53 silly mapToRegistry scope (from package name) @polkadot
+54 verbose mapToRegistry no registry URL found in name for scope @polkadot
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry http://registry.npmjs.org/
+57 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2futil-crypto
+58 silly mapToRegistry name prop-types
+59 silly mapToRegistry using default registry
+60 silly mapToRegistry registry http://registry.npmjs.org/
+61 silly mapToRegistry uri http://registry.npmjs.org/prop-types
+62 silly mapToRegistry name query-string
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry http://registry.npmjs.org/
+65 silly mapToRegistry uri http://registry.npmjs.org/query-string
+66 silly mapToRegistry name react
+67 silly mapToRegistry using default registry
+68 silly mapToRegistry registry http://registry.npmjs.org/
+69 silly mapToRegistry uri http://registry.npmjs.org/react
+70 silly mapToRegistry name react-copy-to-clipboard
+71 silly mapToRegistry using default registry
+72 silly mapToRegistry registry http://registry.npmjs.org/
+73 silly mapToRegistry uri http://registry.npmjs.org/react-copy-to-clipboard
+74 silly mapToRegistry name react-dom
+75 silly mapToRegistry using default registry
+76 silly mapToRegistry registry http://registry.npmjs.org/
+77 silly mapToRegistry uri http://registry.npmjs.org/react-dom
+78 silly mapToRegistry name react-scripts
+79 silly mapToRegistry using default registry
+80 silly mapToRegistry registry http://registry.npmjs.org/
+81 silly mapToRegistry uri http://registry.npmjs.org/react-scripts
+82 silly mapToRegistry name semantic-ui-css
+83 silly mapToRegistry using default registry
+84 silly mapToRegistry registry http://registry.npmjs.org/
+85 silly mapToRegistry uri http://registry.npmjs.org/semantic-ui-css
+86 silly mapToRegistry name semantic-ui-react
+87 silly mapToRegistry using default registry
+88 silly mapToRegistry registry http://registry.npmjs.org/
+89 silly mapToRegistry uri http://registry.npmjs.org/semantic-ui-react
+90 silly mapToRegistry name @babel/core
+91 silly mapToRegistry scope (from package name) @babel
+92 verbose mapToRegistry no registry URL found in name for scope @babel
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry http://registry.npmjs.org/
+95 silly mapToRegistry uri http://registry.npmjs.org/@babel%2fcore
+96 silly mapToRegistry name babel-preset-env
+97 silly mapToRegistry using default registry
+98 silly mapToRegistry registry http://registry.npmjs.org/
+99 silly mapToRegistry uri http://registry.npmjs.org/babel-preset-env
+100 silly mapToRegistry name eslint
+101 silly mapToRegistry using default registry
+102 silly mapToRegistry registry http://registry.npmjs.org/
+103 silly mapToRegistry uri http://registry.npmjs.org/eslint
+104 silly mapToRegistry name eslint-config-semistandard
+105 silly mapToRegistry using default registry
+106 silly mapToRegistry registry http://registry.npmjs.org/
+107 silly mapToRegistry uri http://registry.npmjs.org/eslint-config-semistandard
+108 silly mapToRegistry name eslint-config-standard
+109 silly mapToRegistry using default registry
+110 silly mapToRegistry registry http://registry.npmjs.org/
+111 silly mapToRegistry uri http://registry.npmjs.org/eslint-config-standard
+112 silly mapToRegistry name eslint-plugin-import
+113 silly mapToRegistry using default registry
+114 silly mapToRegistry registry http://registry.npmjs.org/
+115 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-import
+116 silly mapToRegistry name eslint-plugin-node
+117 silly mapToRegistry using default registry
+118 silly mapToRegistry registry http://registry.npmjs.org/
+119 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-node
+120 silly mapToRegistry name eslint-plugin-only-warn
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry http://registry.npmjs.org/
+123 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-only-warn
+124 silly mapToRegistry name eslint-plugin-promise
+125 silly mapToRegistry using default registry
+126 silly mapToRegistry registry http://registry.npmjs.org/
+127 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-promise
+128 silly mapToRegistry name eslint-plugin-standard
+129 silly mapToRegistry using default registry
+130 silly mapToRegistry registry http://registry.npmjs.org/
+131 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-standard
+132 silly mapToRegistry name gh-pages
+133 silly mapToRegistry using default registry
+134 silly mapToRegistry registry http://registry.npmjs.org/
+135 silly mapToRegistry uri http://registry.npmjs.org/gh-pages
+136 silly mapToRegistry name react-app-rewired
+137 silly mapToRegistry using default registry
+138 silly mapToRegistry registry http://registry.npmjs.org/
+139 silly mapToRegistry uri http://registry.npmjs.org/react-app-rewired
+140 silly mapToRegistry name semistandard
+141 silly mapToRegistry using default registry
+142 silly mapToRegistry registry http://registry.npmjs.org/
+143 silly mapToRegistry uri http://registry.npmjs.org/semistandard
+144 verbose request uri http://registry.npmjs.org/@polkadot%2fnetworks
+145 verbose request no auth needed
+146 info attempt registry request try #1 at 11:21:43 AM
+147 verbose request id 4289dc749ab431ec
+148 verbose etag W/"a0c0ae5734e0b9eba7bc6e1b9a623011"
+149 verbose lastModified Fri, 24 Sep 2021 17:47:01 GMT
+150 http request GET http://registry.npmjs.org/@polkadot%2fnetworks
+151 verbose request uri http://registry.npmjs.org/@polkadot%2fextension-dapp
+152 verbose request no auth needed
+153 info attempt registry request try #1 at 11:21:43 AM
+154 verbose etag W/"9cfe555509eb453b6cad177eca4d59e8"
+155 verbose lastModified Sat, 18 Sep 2021 05:50:49 GMT
+156 http request GET http://registry.npmjs.org/@polkadot%2fextension-dapp
+157 verbose request uri http://registry.npmjs.org/@polkadot%2fkeyring
+158 verbose request no auth needed
+159 info attempt registry request try #1 at 11:21:43 AM
+160 verbose etag W/"060da8dd68fcaf512ecdea10c02b939c"
+161 verbose lastModified Fri, 24 Sep 2021 17:46:59 GMT
+162 http request GET http://registry.npmjs.org/@polkadot%2fkeyring
+163 verbose request uri http://registry.npmjs.org/@polkadot%2fui-keyring
+164 verbose request no auth needed
+165 info attempt registry request try #1 at 11:21:43 AM
+166 verbose etag W/"8bae9d29a11e11df693bb2edc6077d0e"
+167 verbose lastModified Fri, 17 Sep 2021 14:43:26 GMT
+168 http request GET http://registry.npmjs.org/@polkadot%2fui-keyring
+169 verbose request uri http://registry.npmjs.org/@polkadot%2fui-settings
+170 verbose request no auth needed
+171 info attempt registry request try #1 at 11:21:43 AM
+172 verbose etag W/"444103031fbc71d160a4d6fa047f5615"
+173 verbose lastModified Fri, 17 Sep 2021 14:43:29 GMT
+174 http request GET http://registry.npmjs.org/@polkadot%2fui-settings
+175 verbose request uri http://registry.npmjs.org/@polkadot%2futil
+176 verbose request no auth needed
+177 info attempt registry request try #1 at 11:21:43 AM
+178 verbose etag W/"8dfcee0d1a989ee70249fd0b16b5a18b"
+179 verbose lastModified Fri, 24 Sep 2021 17:47:07 GMT
+180 http request GET http://registry.npmjs.org/@polkadot%2futil
+181 verbose request uri http://registry.npmjs.org/prop-types
+182 verbose request no auth needed
+183 info attempt registry request try #1 at 11:21:43 AM
+184 verbose etag W/"55d6a4b59eaff16249691e2e2760b317"
+185 verbose lastModified Tue, 13 Apr 2021 15:30:06 GMT
+186 http request GET http://registry.npmjs.org/prop-types
+187 verbose request uri http://registry.npmjs.org/query-string
+188 verbose request no auth needed
+189 info attempt registry request try #1 at 11:21:43 AM
+190 verbose etag W/"0db56c900ed9d08433664f787f4c1db8"
+191 verbose lastModified Mon, 21 Jun 2021 17:36:49 GMT
+192 http request GET http://registry.npmjs.org/query-string
+193 verbose request uri http://registry.npmjs.org/react
+194 verbose request no auth needed
+195 info attempt registry request try #1 at 11:21:43 AM
+196 verbose etag W/"1aa3fb89094642fedefa4bd4c9763011"
+197 verbose lastModified Fri, 24 Sep 2021 16:15:14 GMT
+198 http request GET http://registry.npmjs.org/react
+199 verbose request uri http://registry.npmjs.org/react-copy-to-clipboard
+200 verbose request no auth needed
+201 info attempt registry request try #1 at 11:21:43 AM
+202 verbose etag W/"9a060f3966b0431ad3e2a0a4e786e65e"
+203 verbose lastModified Tue, 17 Aug 2021 13:21:16 GMT
+204 http request GET http://registry.npmjs.org/react-copy-to-clipboard
+205 verbose request uri http://registry.npmjs.org/@polkadot%2futil-crypto
+206 verbose request no auth needed
+207 info attempt registry request try #1 at 11:21:43 AM
+208 verbose etag W/"a25d55d1075233b2064610c795e2a0d4"
+209 verbose lastModified Fri, 24 Sep 2021 17:47:13 GMT
+210 http request GET http://registry.npmjs.org/@polkadot%2futil-crypto
+211 verbose request uri http://registry.npmjs.org/react-scripts
+212 verbose request no auth needed
+213 info attempt registry request try #1 at 11:21:43 AM
+214 verbose etag W/"f733fe154ffb8ccbd061786f2f6aed5e"
+215 verbose lastModified Wed, 01 Sep 2021 17:51:31 GMT
+216 http request GET http://registry.npmjs.org/react-scripts
+217 verbose request uri http://registry.npmjs.org/semantic-ui-css
+218 verbose request no auth needed
+219 info attempt registry request try #1 at 11:21:43 AM
+220 verbose etag W/"da23fdd80ba3a247bacbc4ea8d25374e"
+221 verbose lastModified Sat, 05 Jan 2019 11:13:08 GMT
+222 http request GET http://registry.npmjs.org/semantic-ui-css
+223 verbose request uri http://registry.npmjs.org/semantic-ui-react
+224 verbose request no auth needed
+225 info attempt registry request try #1 at 11:21:43 AM
+226 verbose etag W/"0a3f1fca91bbe98f9b9ec6d36d6fb0bc"
+227 verbose lastModified Thu, 23 Sep 2021 14:26:14 GMT
+228 http request GET http://registry.npmjs.org/semantic-ui-react
+229 verbose request uri http://registry.npmjs.org/@babel%2fcore
+230 verbose request no auth needed
+231 info attempt registry request try #1 at 11:21:43 AM
+232 verbose etag W/"5e8e5d8a6352cf0a9528ff71c42d52e6"
+233 verbose lastModified Sat, 04 Sep 2021 08:58:54 GMT
+234 http request GET http://registry.npmjs.org/@babel%2fcore
+235 verbose request uri http://registry.npmjs.org/babel-preset-env
+236 verbose request no auth needed
+237 info attempt registry request try #1 at 11:21:43 AM
+238 verbose etag W/"32fc5afff8ff81b8a6be03dbfff67f00"
+239 verbose lastModified Fri, 06 Nov 2020 03:14:53 GMT
+240 http request GET http://registry.npmjs.org/babel-preset-env
+241 verbose request uri http://registry.npmjs.org/eslint
+242 verbose request no auth needed
+243 info attempt registry request try #1 at 11:21:43 AM
+244 verbose etag W/"6031f2c3ae01201a8517694e3361b1eb"
+245 verbose lastModified Fri, 24 Sep 2021 21:54:37 GMT
+246 http request GET http://registry.npmjs.org/eslint
+247 verbose request uri http://registry.npmjs.org/eslint-config-semistandard
+248 verbose request no auth needed
+249 info attempt registry request try #1 at 11:21:43 AM
+250 verbose etag W/"c065dc929bb6c358857c4056bb2a71dc"
+251 verbose lastModified Wed, 25 Aug 2021 02:09:02 GMT
+252 http request GET http://registry.npmjs.org/eslint-config-semistandard
+253 verbose request uri http://registry.npmjs.org/eslint-config-standard
+254 verbose request no auth needed
+255 info attempt registry request try #1 at 11:21:43 AM
+256 verbose etag W/"da2bec9260f2747e8cf88610c3cf41ab"
+257 verbose lastModified Wed, 25 Aug 2021 02:09:02 GMT
+258 http request GET http://registry.npmjs.org/eslint-config-standard
+259 verbose request uri http://registry.npmjs.org/eslint-plugin-import
+260 verbose request no auth needed
+261 info attempt registry request try #1 at 11:21:43 AM
+262 verbose etag W/"b70313f4c716549b7a81f82032bd0e07"
+263 verbose lastModified Tue, 24 Aug 2021 23:06:49 GMT
+264 http request GET http://registry.npmjs.org/eslint-plugin-import
+265 verbose request uri http://registry.npmjs.org/react-dom
+266 verbose request no auth needed
+267 info attempt registry request try #1 at 11:21:43 AM
+268 verbose etag W/"bde15238e479949ec1314cddf7d94dd6"
+269 verbose lastModified Fri, 24 Sep 2021 16:15:21 GMT
+270 http request GET http://registry.npmjs.org/react-dom
+271 verbose request uri http://registry.npmjs.org/eslint-plugin-only-warn
+272 verbose request no auth needed
+273 info attempt registry request try #1 at 11:21:43 AM
+274 verbose etag W/"c10f2d78b7efad0e6e558b6b13f4b67c"
+275 verbose lastModified Mon, 26 Jul 2021 11:53:55 GMT
+276 http request GET http://registry.npmjs.org/eslint-plugin-only-warn
+277 verbose request uri http://registry.npmjs.org/eslint-plugin-node
+278 verbose request no auth needed
+279 info attempt registry request try #1 at 11:21:43 AM
+280 verbose etag W/"29c09e55cf4f8fd72f5da7a32906b440"
+281 verbose lastModified Sat, 28 Mar 2020 11:46:50 GMT
+282 http request GET http://registry.npmjs.org/eslint-plugin-node
+283 verbose request uri http://registry.npmjs.org/eslint-plugin-standard
+284 verbose request no auth needed
+285 info attempt registry request try #1 at 11:21:43 AM
+286 verbose etag W/"844ed3d30469256d1ca98195d54694e7"
+287 verbose lastModified Wed, 25 Aug 2021 02:09:04 GMT
+288 http request GET http://registry.npmjs.org/eslint-plugin-standard
+289 verbose request uri http://registry.npmjs.org/eslint-plugin-promise
+290 verbose request no auth needed
+291 info attempt registry request try #1 at 11:21:43 AM
+292 verbose etag W/"7f4e298474eeadf5997f36074960c982"
+293 verbose lastModified Fri, 09 Apr 2021 23:09:56 GMT
+294 http request GET http://registry.npmjs.org/eslint-plugin-promise
+295 verbose request uri http://registry.npmjs.org/gh-pages
+296 verbose request no auth needed
+297 info attempt registry request try #1 at 11:21:43 AM
+298 verbose etag W/"27dc3eb0f8c40986ede868f9b19c2436"
+299 verbose lastModified Mon, 21 Jun 2021 21:01:09 GMT
+300 http request GET http://registry.npmjs.org/gh-pages
+301 verbose request uri http://registry.npmjs.org/react-app-rewired
+302 verbose request no auth needed
+303 info attempt registry request try #1 at 11:21:43 AM
+304 verbose etag W/"589fca41261bbdf4cd661df182542941"
+305 verbose lastModified Sat, 12 Dec 2020 11:33:41 GMT
+306 http request GET http://registry.npmjs.org/react-app-rewired
+307 verbose request uri http://registry.npmjs.org/semistandard
+308 verbose request no auth needed
+309 info attempt registry request try #1 at 11:21:43 AM
+310 verbose etag W/"5c5414d218e421bd2305210f9e2f56aa"
+311 verbose lastModified Wed, 25 Aug 2021 02:09:03 GMT
+312 http request GET http://registry.npmjs.org/semistandard
+313 verbose request uri http://registry.npmjs.org/@polkadot%2fapi
+314 verbose request no auth needed
+315 info attempt registry request try #1 at 11:21:44 AM
+316 verbose etag W/"d57051a83574884ffb0a46bfba76e595"
+317 verbose lastModified Fri, 24 Sep 2021 08:24:51 GMT
+318 http request GET http://registry.npmjs.org/@polkadot%2fapi
+319 verbose request uri http://registry.npmjs.org/@polkadot%2ftypes
+320 verbose request no auth needed
+321 info attempt registry request try #1 at 11:21:44 AM
+322 verbose etag W/"61a87096809d41b5b8b2dd54bf40c74c"
+323 verbose lastModified Fri, 24 Sep 2021 08:26:00 GMT
+324 http request GET http://registry.npmjs.org/@polkadot%2ftypes
+325 http 304 http://registry.npmjs.org/prop-types
+326 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+326 verbose headers   connection: 'keep-alive',
+326 verbose headers   'cf-ray': '69519a871a4aeac7-LAX',
+326 verbose headers   age: '295',
+326 verbose headers   'cache-control': 'public, max-age=300',
+326 verbose headers   etag: '"55d6a4b59eaff16249691e2e2760b317"',
+326 verbose headers   'last-modified': 'Tue, 13 Apr 2021 15:30:06 GMT',
+326 verbose headers   vary: 'Accept-Encoding',
+326 verbose headers   'cf-cache-status': 'HIT',
+326 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+326 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+326 verbose headers   server: 'cloudflare' }
+327 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+328 silly get cb [ 304,
+328 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+328 silly get     connection: 'keep-alive',
+328 silly get     'cf-ray': '69519a871a4aeac7-LAX',
+328 silly get     age: '295',
+328 silly get     'cache-control': 'public, max-age=300',
+328 silly get     etag: '"55d6a4b59eaff16249691e2e2760b317"',
+328 silly get     'last-modified': 'Tue, 13 Apr 2021 15:30:06 GMT',
+328 silly get     vary: 'Accept-Encoding',
+328 silly get     'cf-cache-status': 'HIT',
+328 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+328 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+328 silly get     server: 'cloudflare' } ]
+329 verbose etag http://registry.npmjs.org/prop-types from cache
+330 verbose get saving prop-types to /home/ubuntu/.npm/registry.npmjs.org/prop-types/.cache.json
+331 http 304 http://registry.npmjs.org/react
+332 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+332 verbose headers   connection: 'keep-alive',
+332 verbose headers   'cf-ray': '69519a871b2f5337-LAX',
+332 verbose headers   age: '265',
+332 verbose headers   'cache-control': 'public, max-age=300',
+332 verbose headers   etag: '"1aa3fb89094642fedefa4bd4c9763011"',
+332 verbose headers   'last-modified': 'Fri, 24 Sep 2021 16:15:14 GMT',
+332 verbose headers   vary: 'Accept-Encoding',
+332 verbose headers   'cf-cache-status': 'HIT',
+332 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+332 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+332 verbose headers   'x-amz-replication-status': 'PENDING',
+332 verbose headers   server: 'cloudflare' }
+333 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+334 silly get cb [ 304,
+334 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+334 silly get     connection: 'keep-alive',
+334 silly get     'cf-ray': '69519a871b2f5337-LAX',
+334 silly get     age: '265',
+334 silly get     'cache-control': 'public, max-age=300',
+334 silly get     etag: '"1aa3fb89094642fedefa4bd4c9763011"',
+334 silly get     'last-modified': 'Fri, 24 Sep 2021 16:15:14 GMT',
+334 silly get     vary: 'Accept-Encoding',
+334 silly get     'cf-cache-status': 'HIT',
+334 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+334 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+334 silly get     'x-amz-replication-status': 'PENDING',
+334 silly get     server: 'cloudflare' } ]
+335 verbose etag http://registry.npmjs.org/react from cache
+336 verbose get saving react to /home/ubuntu/.npm/registry.npmjs.org/react/.cache.json
+337 http 304 http://registry.npmjs.org/gh-pages
+338 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+338 verbose headers   connection: 'keep-alive',
+338 verbose headers   'cf-ray': '69519a872ee331af-LAX',
+338 verbose headers   age: '47',
+338 verbose headers   'cache-control': 'public, max-age=300',
+338 verbose headers   etag: '"27dc3eb0f8c40986ede868f9b19c2436"',
+338 verbose headers   'last-modified': 'Mon, 21 Jun 2021 21:01:09 GMT',
+338 verbose headers   vary: 'Accept-Encoding',
+338 verbose headers   'cf-cache-status': 'HIT',
+338 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+338 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+338 verbose headers   server: 'cloudflare' }
+339 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+340 silly get cb [ 304,
+340 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+340 silly get     connection: 'keep-alive',
+340 silly get     'cf-ray': '69519a872ee331af-LAX',
+340 silly get     age: '47',
+340 silly get     'cache-control': 'public, max-age=300',
+340 silly get     etag: '"27dc3eb0f8c40986ede868f9b19c2436"',
+340 silly get     'last-modified': 'Mon, 21 Jun 2021 21:01:09 GMT',
+340 silly get     vary: 'Accept-Encoding',
+340 silly get     'cf-cache-status': 'HIT',
+340 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+340 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+340 silly get     server: 'cloudflare' } ]
+341 verbose etag http://registry.npmjs.org/gh-pages from cache
+342 verbose get saving gh-pages to /home/ubuntu/.npm/registry.npmjs.org/gh-pages/.cache.json
+343 http 304 http://registry.npmjs.org/react-copy-to-clipboard
+344 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+344 verbose headers   connection: 'keep-alive',
+344 verbose headers   'cf-ray': '69519a872d4beb39-LAX',
+344 verbose headers   age: '27',
+344 verbose headers   'cache-control': 'public, max-age=300',
+344 verbose headers   etag: '"9a060f3966b0431ad3e2a0a4e786e65e"',
+344 verbose headers   'last-modified': 'Tue, 17 Aug 2021 13:21:16 GMT',
+344 verbose headers   vary: 'Accept-Encoding',
+344 verbose headers   'cf-cache-status': 'HIT',
+344 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+344 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+344 verbose headers   'x-amz-replication-status': 'COMPLETED',
+344 verbose headers   server: 'cloudflare' }
+345 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+346 silly get cb [ 304,
+346 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+346 silly get     connection: 'keep-alive',
+346 silly get     'cf-ray': '69519a872d4beb39-LAX',
+346 silly get     age: '27',
+346 silly get     'cache-control': 'public, max-age=300',
+346 silly get     etag: '"9a060f3966b0431ad3e2a0a4e786e65e"',
+346 silly get     'last-modified': 'Tue, 17 Aug 2021 13:21:16 GMT',
+346 silly get     vary: 'Accept-Encoding',
+346 silly get     'cf-cache-status': 'HIT',
+346 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+346 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+346 silly get     'x-amz-replication-status': 'COMPLETED',
+346 silly get     server: 'cloudflare' } ]
+347 verbose etag http://registry.npmjs.org/react-copy-to-clipboard from cache
+348 verbose get saving react-copy-to-clipboard to /home/ubuntu/.npm/registry.npmjs.org/react-copy-to-clipboard/.cache.json
+349 http 304 http://registry.npmjs.org/eslint-plugin-node
+350 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+350 verbose headers   connection: 'keep-alive',
+350 verbose headers   'cf-ray': '69519a872cdcebd9-LAX',
+350 verbose headers   age: '239',
+350 verbose headers   'cache-control': 'public, max-age=300',
+350 verbose headers   etag: '"29c09e55cf4f8fd72f5da7a32906b440"',
+350 verbose headers   'last-modified': 'Sat, 28 Mar 2020 11:46:50 GMT',
+350 verbose headers   vary: 'Accept-Encoding',
+350 verbose headers   'cf-cache-status': 'HIT',
+350 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+350 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+350 verbose headers   server: 'cloudflare' }
+351 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+352 silly get cb [ 304,
+352 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+352 silly get     connection: 'keep-alive',
+352 silly get     'cf-ray': '69519a872cdcebd9-LAX',
+352 silly get     age: '239',
+352 silly get     'cache-control': 'public, max-age=300',
+352 silly get     etag: '"29c09e55cf4f8fd72f5da7a32906b440"',
+352 silly get     'last-modified': 'Sat, 28 Mar 2020 11:46:50 GMT',
+352 silly get     vary: 'Accept-Encoding',
+352 silly get     'cf-cache-status': 'HIT',
+352 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+352 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+352 silly get     server: 'cloudflare' } ]
+353 verbose etag http://registry.npmjs.org/eslint-plugin-node from cache
+354 verbose get saving eslint-plugin-node to /home/ubuntu/.npm/registry.npmjs.org/eslint-plugin-node/.cache.json
+355 http 304 http://registry.npmjs.org/eslint-plugin-standard
+356 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+356 verbose headers   connection: 'keep-alive',
+356 verbose headers   'cf-ray': '69519a872894522d-LAX',
+356 verbose headers   age: '75',
+356 verbose headers   'cache-control': 'public, max-age=300',
+356 verbose headers   etag: '"844ed3d30469256d1ca98195d54694e7"',
+356 verbose headers   'last-modified': 'Wed, 25 Aug 2021 02:09:04 GMT',
+356 verbose headers   vary: 'Accept-Encoding',
+356 verbose headers   'cf-cache-status': 'HIT',
+356 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+356 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+356 verbose headers   'x-amz-replication-status': 'COMPLETED',
+356 verbose headers   server: 'cloudflare' }
+357 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+358 silly get cb [ 304,
+358 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+358 silly get     connection: 'keep-alive',
+358 silly get     'cf-ray': '69519a872894522d-LAX',
+358 silly get     age: '75',
+358 silly get     'cache-control': 'public, max-age=300',
+358 silly get     etag: '"844ed3d30469256d1ca98195d54694e7"',
+358 silly get     'last-modified': 'Wed, 25 Aug 2021 02:09:04 GMT',
+358 silly get     vary: 'Accept-Encoding',
+358 silly get     'cf-cache-status': 'HIT',
+358 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+358 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+358 silly get     'x-amz-replication-status': 'COMPLETED',
+358 silly get     server: 'cloudflare' } ]
+359 verbose etag http://registry.npmjs.org/eslint-plugin-standard from cache
+360 verbose get saving eslint-plugin-standard to /home/ubuntu/.npm/registry.npmjs.org/eslint-plugin-standard/.cache.json
+361 http 304 http://registry.npmjs.org/eslint-config-standard
+362 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+362 verbose headers   connection: 'keep-alive',
+362 verbose headers   'cf-ray': '69519a871a985287-LAX',
+362 verbose headers   age: '148',
+362 verbose headers   'cache-control': 'public, max-age=300',
+362 verbose headers   etag: '"da2bec9260f2747e8cf88610c3cf41ab"',
+362 verbose headers   'last-modified': 'Wed, 25 Aug 2021 02:09:02 GMT',
+362 verbose headers   vary: 'Accept-Encoding',
+362 verbose headers   'cf-cache-status': 'HIT',
+362 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+362 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+362 verbose headers   'x-amz-replication-status': 'COMPLETED',
+362 verbose headers   server: 'cloudflare' }
+363 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+364 silly get cb [ 304,
+364 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+364 silly get     connection: 'keep-alive',
+364 silly get     'cf-ray': '69519a871a985287-LAX',
+364 silly get     age: '148',
+364 silly get     'cache-control': 'public, max-age=300',
+364 silly get     etag: '"da2bec9260f2747e8cf88610c3cf41ab"',
+364 silly get     'last-modified': 'Wed, 25 Aug 2021 02:09:02 GMT',
+364 silly get     vary: 'Accept-Encoding',
+364 silly get     'cf-cache-status': 'HIT',
+364 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+364 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+364 silly get     'x-amz-replication-status': 'COMPLETED',
+364 silly get     server: 'cloudflare' } ]
+365 verbose etag http://registry.npmjs.org/eslint-config-standard from cache
+366 verbose get saving eslint-config-standard to /home/ubuntu/.npm/registry.npmjs.org/eslint-config-standard/.cache.json
+367 http 304 http://registry.npmjs.org/query-string
+368 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+368 verbose headers   connection: 'keep-alive',
+368 verbose headers   'cf-ray': '69519a87183942f4-LAX',
+368 verbose headers   age: '59',
+368 verbose headers   'cache-control': 'public, max-age=300',
+368 verbose headers   etag: '"0db56c900ed9d08433664f787f4c1db8"',
+368 verbose headers   'last-modified': 'Mon, 21 Jun 2021 17:36:49 GMT',
+368 verbose headers   vary: 'Accept-Encoding',
+368 verbose headers   'cf-cache-status': 'HIT',
+368 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+368 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+368 verbose headers   server: 'cloudflare' }
+369 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+370 silly get cb [ 304,
+370 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+370 silly get     connection: 'keep-alive',
+370 silly get     'cf-ray': '69519a87183942f4-LAX',
+370 silly get     age: '59',
+370 silly get     'cache-control': 'public, max-age=300',
+370 silly get     etag: '"0db56c900ed9d08433664f787f4c1db8"',
+370 silly get     'last-modified': 'Mon, 21 Jun 2021 17:36:49 GMT',
+370 silly get     vary: 'Accept-Encoding',
+370 silly get     'cf-cache-status': 'HIT',
+370 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+370 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+370 silly get     server: 'cloudflare' } ]
+371 verbose etag http://registry.npmjs.org/query-string from cache
+372 verbose get saving query-string to /home/ubuntu/.npm/registry.npmjs.org/query-string/.cache.json
+373 http 304 http://registry.npmjs.org/react-scripts
+374 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+374 verbose headers   connection: 'keep-alive',
+374 verbose headers   'cf-ray': '69519a872c980c97-LAX',
+374 verbose headers   age: '202',
+374 verbose headers   'cache-control': 'public, max-age=300',
+374 verbose headers   etag: '"f733fe154ffb8ccbd061786f2f6aed5e"',
+374 verbose headers   'last-modified': 'Wed, 01 Sep 2021 17:51:31 GMT',
+374 verbose headers   vary: 'Accept-Encoding',
+374 verbose headers   'cf-cache-status': 'HIT',
+374 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+374 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+374 verbose headers   'x-amz-replication-status': 'PENDING',
+374 verbose headers   server: 'cloudflare' }
+375 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+376 silly get cb [ 304,
+376 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+376 silly get     connection: 'keep-alive',
+376 silly get     'cf-ray': '69519a872c980c97-LAX',
+376 silly get     age: '202',
+376 silly get     'cache-control': 'public, max-age=300',
+376 silly get     etag: '"f733fe154ffb8ccbd061786f2f6aed5e"',
+376 silly get     'last-modified': 'Wed, 01 Sep 2021 17:51:31 GMT',
+376 silly get     vary: 'Accept-Encoding',
+376 silly get     'cf-cache-status': 'HIT',
+376 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+376 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+376 silly get     'x-amz-replication-status': 'PENDING',
+376 silly get     server: 'cloudflare' } ]
+377 verbose etag http://registry.npmjs.org/react-scripts from cache
+378 verbose get saving react-scripts to /home/ubuntu/.npm/registry.npmjs.org/react-scripts/.cache.json
+379 http 304 http://registry.npmjs.org/react-app-rewired
+380 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+380 verbose headers   connection: 'keep-alive',
+380 verbose headers   'cf-ray': '69519a8729603678-LAX',
+380 verbose headers   age: '27',
+380 verbose headers   'cache-control': 'public, max-age=300',
+380 verbose headers   etag: '"589fca41261bbdf4cd661df182542941"',
+380 verbose headers   'last-modified': 'Sat, 12 Dec 2020 11:33:41 GMT',
+380 verbose headers   vary: 'Accept-Encoding',
+380 verbose headers   'cf-cache-status': 'HIT',
+380 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+380 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+380 verbose headers   server: 'cloudflare' }
+381 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+382 silly get cb [ 304,
+382 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+382 silly get     connection: 'keep-alive',
+382 silly get     'cf-ray': '69519a8729603678-LAX',
+382 silly get     age: '27',
+382 silly get     'cache-control': 'public, max-age=300',
+382 silly get     etag: '"589fca41261bbdf4cd661df182542941"',
+382 silly get     'last-modified': 'Sat, 12 Dec 2020 11:33:41 GMT',
+382 silly get     vary: 'Accept-Encoding',
+382 silly get     'cf-cache-status': 'HIT',
+382 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+382 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+382 silly get     server: 'cloudflare' } ]
+383 verbose etag http://registry.npmjs.org/react-app-rewired from cache
+384 verbose get saving react-app-rewired to /home/ubuntu/.npm/registry.npmjs.org/react-app-rewired/.cache.json
+385 http 304 http://registry.npmjs.org/eslint
+386 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+386 verbose headers   connection: 'keep-alive',
+386 verbose headers   'cf-ray': '69519a873c98315b-LAX',
+386 verbose headers   age: '113',
+386 verbose headers   'cache-control': 'public, max-age=300',
+386 verbose headers   etag: '"6031f2c3ae01201a8517694e3361b1eb"',
+386 verbose headers   'last-modified': 'Fri, 24 Sep 2021 21:54:37 GMT',
+386 verbose headers   vary: 'Accept-Encoding',
+386 verbose headers   'cf-cache-status': 'HIT',
+386 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+386 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+386 verbose headers   'x-amz-replication-status': 'PENDING',
+386 verbose headers   server: 'cloudflare' }
+387 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+388 silly get cb [ 304,
+388 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+388 silly get     connection: 'keep-alive',
+388 silly get     'cf-ray': '69519a873c98315b-LAX',
+388 silly get     age: '113',
+388 silly get     'cache-control': 'public, max-age=300',
+388 silly get     etag: '"6031f2c3ae01201a8517694e3361b1eb"',
+388 silly get     'last-modified': 'Fri, 24 Sep 2021 21:54:37 GMT',
+388 silly get     vary: 'Accept-Encoding',
+388 silly get     'cf-cache-status': 'HIT',
+388 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+388 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+388 silly get     'x-amz-replication-status': 'PENDING',
+388 silly get     server: 'cloudflare' } ]
+389 verbose etag http://registry.npmjs.org/eslint from cache
+390 verbose get saving eslint to /home/ubuntu/.npm/registry.npmjs.org/eslint/.cache.json
+391 http 304 http://registry.npmjs.org/react-dom
+392 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+392 verbose headers   connection: 'keep-alive',
+392 verbose headers   'cf-ray': '69519a8728f40cc7-LAX',
+392 verbose headers   age: '161',
+392 verbose headers   'cache-control': 'public, max-age=300',
+392 verbose headers   etag: '"bde15238e479949ec1314cddf7d94dd6"',
+392 verbose headers   'last-modified': 'Fri, 24 Sep 2021 16:15:21 GMT',
+392 verbose headers   vary: 'Accept-Encoding',
+392 verbose headers   'cf-cache-status': 'HIT',
+392 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+392 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+392 verbose headers   'x-amz-replication-status': 'PENDING',
+392 verbose headers   server: 'cloudflare' }
+393 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+394 silly get cb [ 304,
+394 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+394 silly get     connection: 'keep-alive',
+394 silly get     'cf-ray': '69519a8728f40cc7-LAX',
+394 silly get     age: '161',
+394 silly get     'cache-control': 'public, max-age=300',
+394 silly get     etag: '"bde15238e479949ec1314cddf7d94dd6"',
+394 silly get     'last-modified': 'Fri, 24 Sep 2021 16:15:21 GMT',
+394 silly get     vary: 'Accept-Encoding',
+394 silly get     'cf-cache-status': 'HIT',
+394 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+394 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+394 silly get     'x-amz-replication-status': 'PENDING',
+394 silly get     server: 'cloudflare' } ]
+395 verbose etag http://registry.npmjs.org/react-dom from cache
+396 verbose get saving react-dom to /home/ubuntu/.npm/registry.npmjs.org/react-dom/.cache.json
+397 http 304 http://registry.npmjs.org/babel-preset-env
+398 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+398 verbose headers   connection: 'keep-alive',
+398 verbose headers   'cf-ray': '69519a872af10581-LAX',
+398 verbose headers   age: '192',
+398 verbose headers   'cache-control': 'public, max-age=300',
+398 verbose headers   etag: '"32fc5afff8ff81b8a6be03dbfff67f00"',
+398 verbose headers   'last-modified': 'Fri, 06 Nov 2020 03:14:53 GMT',
+398 verbose headers   vary: 'Accept-Encoding',
+398 verbose headers   'cf-cache-status': 'HIT',
+398 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+398 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+398 verbose headers   server: 'cloudflare' }
+399 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+400 silly get cb [ 304,
+400 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+400 silly get     connection: 'keep-alive',
+400 silly get     'cf-ray': '69519a872af10581-LAX',
+400 silly get     age: '192',
+400 silly get     'cache-control': 'public, max-age=300',
+400 silly get     etag: '"32fc5afff8ff81b8a6be03dbfff67f00"',
+400 silly get     'last-modified': 'Fri, 06 Nov 2020 03:14:53 GMT',
+400 silly get     vary: 'Accept-Encoding',
+400 silly get     'cf-cache-status': 'HIT',
+400 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+400 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+400 silly get     server: 'cloudflare' } ]
+401 verbose etag http://registry.npmjs.org/babel-preset-env from cache
+402 verbose get saving babel-preset-env to /home/ubuntu/.npm/registry.npmjs.org/babel-preset-env/.cache.json
+403 http 304 http://registry.npmjs.org/eslint-plugin-import
+404 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+404 verbose headers   connection: 'keep-alive',
+404 verbose headers   'cf-ray': '69519a872acb52d7-LAX',
+404 verbose headers   age: '247',
+404 verbose headers   'cache-control': 'public, max-age=300',
+404 verbose headers   etag: '"b70313f4c716549b7a81f82032bd0e07"',
+404 verbose headers   'last-modified': 'Tue, 24 Aug 2021 23:06:49 GMT',
+404 verbose headers   vary: 'Accept-Encoding',
+404 verbose headers   'cf-cache-status': 'HIT',
+404 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+404 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+404 verbose headers   'x-amz-replication-status': 'COMPLETED',
+404 verbose headers   server: 'cloudflare' }
+405 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+406 silly get cb [ 304,
+406 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+406 silly get     connection: 'keep-alive',
+406 silly get     'cf-ray': '69519a872acb52d7-LAX',
+406 silly get     age: '247',
+406 silly get     'cache-control': 'public, max-age=300',
+406 silly get     etag: '"b70313f4c716549b7a81f82032bd0e07"',
+406 silly get     'last-modified': 'Tue, 24 Aug 2021 23:06:49 GMT',
+406 silly get     vary: 'Accept-Encoding',
+406 silly get     'cf-cache-status': 'HIT',
+406 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+406 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+406 silly get     'x-amz-replication-status': 'COMPLETED',
+406 silly get     server: 'cloudflare' } ]
+407 verbose etag http://registry.npmjs.org/eslint-plugin-import from cache
+408 verbose get saving eslint-plugin-import to /home/ubuntu/.npm/registry.npmjs.org/eslint-plugin-import/.cache.json
+409 http 304 http://registry.npmjs.org/@babel%2fcore
+410 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+410 verbose headers   connection: 'keep-alive',
+410 verbose headers   'cf-ray': '69519a872c49360a-LAX',
+410 verbose headers   age: '78',
+410 verbose headers   'cache-control': 'public, max-age=300',
+410 verbose headers   etag: '"5e8e5d8a6352cf0a9528ff71c42d52e6"',
+410 verbose headers   'last-modified': 'Sat, 04 Sep 2021 08:58:54 GMT',
+410 verbose headers   vary: 'Accept-Encoding',
+410 verbose headers   'cf-cache-status': 'HIT',
+410 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+410 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+410 verbose headers   'x-amz-replication-status': 'PENDING',
+410 verbose headers   server: 'cloudflare' }
+411 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+412 silly get cb [ 304,
+412 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+412 silly get     connection: 'keep-alive',
+412 silly get     'cf-ray': '69519a872c49360a-LAX',
+412 silly get     age: '78',
+412 silly get     'cache-control': 'public, max-age=300',
+412 silly get     etag: '"5e8e5d8a6352cf0a9528ff71c42d52e6"',
+412 silly get     'last-modified': 'Sat, 04 Sep 2021 08:58:54 GMT',
+412 silly get     vary: 'Accept-Encoding',
+412 silly get     'cf-cache-status': 'HIT',
+412 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+412 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+412 silly get     'x-amz-replication-status': 'PENDING',
+412 silly get     server: 'cloudflare' } ]
+413 verbose etag http://registry.npmjs.org/@babel%2fcore from cache
+414 verbose get saving @babel/core to /home/ubuntu/.npm/registry.npmjs.org/_40babel_252fcore/.cache.json
+415 http 304 http://registry.npmjs.org/eslint-plugin-promise
+416 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+416 verbose headers   connection: 'keep-alive',
+416 verbose headers   'cf-ray': '69519a874ade5319-LAX',
+416 verbose headers   age: '68',
+416 verbose headers   'cache-control': 'public, max-age=300',
+416 verbose headers   etag: '"7f4e298474eeadf5997f36074960c982"',
+416 verbose headers   'last-modified': 'Fri, 09 Apr 2021 23:09:56 GMT',
+416 verbose headers   vary: 'Accept-Encoding',
+416 verbose headers   'cf-cache-status': 'HIT',
+416 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+416 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+416 verbose headers   server: 'cloudflare' }
+417 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+418 silly get cb [ 304,
+418 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+418 silly get     connection: 'keep-alive',
+418 silly get     'cf-ray': '69519a874ade5319-LAX',
+418 silly get     age: '68',
+418 silly get     'cache-control': 'public, max-age=300',
+418 silly get     etag: '"7f4e298474eeadf5997f36074960c982"',
+418 silly get     'last-modified': 'Fri, 09 Apr 2021 23:09:56 GMT',
+418 silly get     vary: 'Accept-Encoding',
+418 silly get     'cf-cache-status': 'HIT',
+418 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+418 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+418 silly get     server: 'cloudflare' } ]
+419 verbose etag http://registry.npmjs.org/eslint-plugin-promise from cache
+420 verbose get saving eslint-plugin-promise to /home/ubuntu/.npm/registry.npmjs.org/eslint-plugin-promise/.cache.json
+421 http 304 http://registry.npmjs.org/eslint-plugin-only-warn
+422 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+422 verbose headers   connection: 'keep-alive',
+422 verbose headers   'cf-ray': '69519a871da8eb25-LAX',
+422 verbose headers   'cache-control': 'public, max-age=300',
+422 verbose headers   etag: '"c10f2d78b7efad0e6e558b6b13f4b67c"',
+422 verbose headers   'last-modified': 'Mon, 26 Jul 2021 11:53:55 GMT',
+422 verbose headers   vary: 'Accept-Encoding',
+422 verbose headers   'cf-cache-status': 'REVALIDATED',
+422 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+422 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+422 verbose headers   'x-amz-replication-status': 'COMPLETED',
+422 verbose headers   server: 'cloudflare' }
+423 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+424 silly get cb [ 304,
+424 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+424 silly get     connection: 'keep-alive',
+424 silly get     'cf-ray': '69519a871da8eb25-LAX',
+424 silly get     'cache-control': 'public, max-age=300',
+424 silly get     etag: '"c10f2d78b7efad0e6e558b6b13f4b67c"',
+424 silly get     'last-modified': 'Mon, 26 Jul 2021 11:53:55 GMT',
+424 silly get     vary: 'Accept-Encoding',
+424 silly get     'cf-cache-status': 'REVALIDATED',
+424 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+424 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+424 silly get     'x-amz-replication-status': 'COMPLETED',
+424 silly get     server: 'cloudflare' } ]
+425 verbose etag http://registry.npmjs.org/eslint-plugin-only-warn from cache
+426 verbose get saving eslint-plugin-only-warn to /home/ubuntu/.npm/registry.npmjs.org/eslint-plugin-only-warn/.cache.json
+427 http 304 http://registry.npmjs.org/eslint-config-semistandard
+428 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+428 verbose headers   connection: 'keep-alive',
+428 verbose headers   'cf-ray': '69519a871cc242bc-LAX',
+428 verbose headers   'cache-control': 'public, max-age=300',
+428 verbose headers   etag: '"c065dc929bb6c358857c4056bb2a71dc"',
+428 verbose headers   'last-modified': 'Wed, 25 Aug 2021 02:09:02 GMT',
+428 verbose headers   vary: 'Accept-Encoding',
+428 verbose headers   'cf-cache-status': 'REVALIDATED',
+428 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+428 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+428 verbose headers   'x-amz-replication-status': 'COMPLETED',
+428 verbose headers   server: 'cloudflare' }
+429 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+430 silly get cb [ 304,
+430 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+430 silly get     connection: 'keep-alive',
+430 silly get     'cf-ray': '69519a871cc242bc-LAX',
+430 silly get     'cache-control': 'public, max-age=300',
+430 silly get     etag: '"c065dc929bb6c358857c4056bb2a71dc"',
+430 silly get     'last-modified': 'Wed, 25 Aug 2021 02:09:02 GMT',
+430 silly get     vary: 'Accept-Encoding',
+430 silly get     'cf-cache-status': 'REVALIDATED',
+430 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+430 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+430 silly get     'x-amz-replication-status': 'COMPLETED',
+430 silly get     server: 'cloudflare' } ]
+431 verbose etag http://registry.npmjs.org/eslint-config-semistandard from cache
+432 verbose get saving eslint-config-semistandard to /home/ubuntu/.npm/registry.npmjs.org/eslint-config-semistandard/.cache.json
+433 http 304 http://registry.npmjs.org/semantic-ui-css
+434 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+434 verbose headers   connection: 'keep-alive',
+434 verbose headers   'cf-ray': '69519a871d150cb3-LAX',
+434 verbose headers   'cache-control': 'public, max-age=300',
+434 verbose headers   etag: '"da23fdd80ba3a247bacbc4ea8d25374e"',
+434 verbose headers   'last-modified': 'Sat, 05 Jan 2019 11:13:08 GMT',
+434 verbose headers   vary: 'Accept-Encoding',
+434 verbose headers   'cf-cache-status': 'REVALIDATED',
+434 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+434 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+434 verbose headers   server: 'cloudflare' }
+435 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+436 silly get cb [ 304,
+436 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+436 silly get     connection: 'keep-alive',
+436 silly get     'cf-ray': '69519a871d150cb3-LAX',
+436 silly get     'cache-control': 'public, max-age=300',
+436 silly get     etag: '"da23fdd80ba3a247bacbc4ea8d25374e"',
+436 silly get     'last-modified': 'Sat, 05 Jan 2019 11:13:08 GMT',
+436 silly get     vary: 'Accept-Encoding',
+436 silly get     'cf-cache-status': 'REVALIDATED',
+436 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+436 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+436 silly get     server: 'cloudflare' } ]
+437 verbose etag http://registry.npmjs.org/semantic-ui-css from cache
+438 verbose get saving semantic-ui-css to /home/ubuntu/.npm/registry.npmjs.org/semantic-ui-css/.cache.json
+439 http 304 http://registry.npmjs.org/semistandard
+440 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+440 verbose headers   connection: 'keep-alive',
+440 verbose headers   'cf-ray': '69519a871b633648-LAX',
+440 verbose headers   'cache-control': 'public, max-age=300',
+440 verbose headers   etag: '"5c5414d218e421bd2305210f9e2f56aa"',
+440 verbose headers   'last-modified': 'Wed, 25 Aug 2021 02:09:03 GMT',
+440 verbose headers   vary: 'Accept-Encoding',
+440 verbose headers   'cf-cache-status': 'REVALIDATED',
+440 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+440 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+440 verbose headers   'x-amz-replication-status': 'COMPLETED',
+440 verbose headers   server: 'cloudflare' }
+441 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+442 silly get cb [ 304,
+442 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+442 silly get     connection: 'keep-alive',
+442 silly get     'cf-ray': '69519a871b633648-LAX',
+442 silly get     'cache-control': 'public, max-age=300',
+442 silly get     etag: '"5c5414d218e421bd2305210f9e2f56aa"',
+442 silly get     'last-modified': 'Wed, 25 Aug 2021 02:09:03 GMT',
+442 silly get     vary: 'Accept-Encoding',
+442 silly get     'cf-cache-status': 'REVALIDATED',
+442 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+442 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+442 silly get     'x-amz-replication-status': 'COMPLETED',
+442 silly get     server: 'cloudflare' } ]
+443 verbose etag http://registry.npmjs.org/semistandard from cache
+444 verbose get saving semistandard to /home/ubuntu/.npm/registry.npmjs.org/semistandard/.cache.json
+445 http 304 http://registry.npmjs.org/semantic-ui-react
+446 verbose headers { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+446 verbose headers   connection: 'keep-alive',
+446 verbose headers   'cf-ray': '69519a872eaf0544-LAX',
+446 verbose headers   'cache-control': 'public, max-age=300',
+446 verbose headers   etag: '"0a3f1fca91bbe98f9b9ec6d36d6fb0bc"',
+446 verbose headers   'last-modified': 'Thu, 23 Sep 2021 14:26:14 GMT',
+446 verbose headers   vary: 'Accept-Encoding',
+446 verbose headers   'cf-cache-status': 'REVALIDATED',
+446 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+446 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+446 verbose headers   'x-amz-replication-status': 'COMPLETED',
+446 verbose headers   server: 'cloudflare' }
+447 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+448 silly get cb [ 304,
+448 silly get   { date: 'Mon, 27 Sep 2021 03:21:44 GMT',
+448 silly get     connection: 'keep-alive',
+448 silly get     'cf-ray': '69519a872eaf0544-LAX',
+448 silly get     'cache-control': 'public, max-age=300',
+448 silly get     etag: '"0a3f1fca91bbe98f9b9ec6d36d6fb0bc"',
+448 silly get     'last-modified': 'Thu, 23 Sep 2021 14:26:14 GMT',
+448 silly get     vary: 'Accept-Encoding',
+448 silly get     'cf-cache-status': 'REVALIDATED',
+448 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+448 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+448 silly get     'x-amz-replication-status': 'COMPLETED',
+448 silly get     server: 'cloudflare' } ]
+449 verbose etag http://registry.npmjs.org/semantic-ui-react from cache
+450 verbose get saving semantic-ui-react to /home/ubuntu/.npm/registry.npmjs.org/semantic-ui-react/.cache.json
+451 http 304 http://registry.npmjs.org/@polkadot%2fnetworks
+452 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+452 verbose headers   connection: 'keep-alive',
+452 verbose headers   'cf-ray': '69519a862852533d-LAX',
+452 verbose headers   'cache-control': 'public, max-age=300',
+452 verbose headers   etag: '"a0c0ae5734e0b9eba7bc6e1b9a623011"',
+452 verbose headers   'last-modified': 'Fri, 24 Sep 2021 17:47:01 GMT',
+452 verbose headers   vary: 'Accept-Encoding',
+452 verbose headers   'cf-cache-status': 'REVALIDATED',
+452 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+452 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+452 verbose headers   'x-amz-replication-status': 'COMPLETED',
+452 verbose headers   server: 'cloudflare' }
+453 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+454 silly get cb [ 304,
+454 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+454 silly get     connection: 'keep-alive',
+454 silly get     'cf-ray': '69519a862852533d-LAX',
+454 silly get     'cache-control': 'public, max-age=300',
+454 silly get     etag: '"a0c0ae5734e0b9eba7bc6e1b9a623011"',
+454 silly get     'last-modified': 'Fri, 24 Sep 2021 17:47:01 GMT',
+454 silly get     vary: 'Accept-Encoding',
+454 silly get     'cf-cache-status': 'REVALIDATED',
+454 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+454 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+454 silly get     'x-amz-replication-status': 'COMPLETED',
+454 silly get     server: 'cloudflare' } ]
+455 verbose etag http://registry.npmjs.org/@polkadot%2fnetworks from cache
+456 verbose get saving @polkadot/networks to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252fnetworks/.cache.json
+457 http 304 http://registry.npmjs.org/@polkadot%2fui-settings
+458 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+458 verbose headers   connection: 'keep-alive',
+458 verbose headers   'cf-ray': '69519a872bf6534f-LAX',
+458 verbose headers   'cache-control': 'public, max-age=300',
+458 verbose headers   etag: '"444103031fbc71d160a4d6fa047f5615"',
+458 verbose headers   'last-modified': 'Fri, 17 Sep 2021 14:43:29 GMT',
+458 verbose headers   vary: 'Accept-Encoding',
+458 verbose headers   'cf-cache-status': 'REVALIDATED',
+458 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+458 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+458 verbose headers   'x-amz-replication-status': 'COMPLETED',
+458 verbose headers   server: 'cloudflare' }
+459 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+460 silly get cb [ 304,
+460 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+460 silly get     connection: 'keep-alive',
+460 silly get     'cf-ray': '69519a872bf6534f-LAX',
+460 silly get     'cache-control': 'public, max-age=300',
+460 silly get     etag: '"444103031fbc71d160a4d6fa047f5615"',
+460 silly get     'last-modified': 'Fri, 17 Sep 2021 14:43:29 GMT',
+460 silly get     vary: 'Accept-Encoding',
+460 silly get     'cf-cache-status': 'REVALIDATED',
+460 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+460 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+460 silly get     'x-amz-replication-status': 'COMPLETED',
+460 silly get     server: 'cloudflare' } ]
+461 verbose etag http://registry.npmjs.org/@polkadot%2fui-settings from cache
+462 verbose get saving @polkadot/ui-settings to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252fui-settings/.cache.json
+463 http 304 http://registry.npmjs.org/@polkadot%2fkeyring
+464 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+464 verbose headers   connection: 'keep-alive',
+464 verbose headers   'cf-ray': '69519a872de05307-LAX',
+464 verbose headers   'cache-control': 'public, max-age=300',
+464 verbose headers   etag: '"060da8dd68fcaf512ecdea10c02b939c"',
+464 verbose headers   'last-modified': 'Fri, 24 Sep 2021 17:46:59 GMT',
+464 verbose headers   vary: 'Accept-Encoding',
+464 verbose headers   'cf-cache-status': 'REVALIDATED',
+464 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+464 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+464 verbose headers   'x-amz-replication-status': 'COMPLETED',
+464 verbose headers   server: 'cloudflare' }
+465 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+466 silly get cb [ 304,
+466 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+466 silly get     connection: 'keep-alive',
+466 silly get     'cf-ray': '69519a872de05307-LAX',
+466 silly get     'cache-control': 'public, max-age=300',
+466 silly get     etag: '"060da8dd68fcaf512ecdea10c02b939c"',
+466 silly get     'last-modified': 'Fri, 24 Sep 2021 17:46:59 GMT',
+466 silly get     vary: 'Accept-Encoding',
+466 silly get     'cf-cache-status': 'REVALIDATED',
+466 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+466 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+466 silly get     'x-amz-replication-status': 'COMPLETED',
+466 silly get     server: 'cloudflare' } ]
+467 verbose etag http://registry.npmjs.org/@polkadot%2fkeyring from cache
+468 verbose get saving @polkadot/keyring to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252fkeyring/.cache.json
+469 http 304 http://registry.npmjs.org/@polkadot%2fui-keyring
+470 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+470 verbose headers   connection: 'keep-alive',
+470 verbose headers   'cf-ray': '69519a872ac2530d-LAX',
+470 verbose headers   'cache-control': 'public, max-age=300',
+470 verbose headers   etag: '"8bae9d29a11e11df693bb2edc6077d0e"',
+470 verbose headers   'last-modified': 'Fri, 17 Sep 2021 14:43:26 GMT',
+470 verbose headers   vary: 'Accept-Encoding',
+470 verbose headers   'cf-cache-status': 'REVALIDATED',
+470 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+470 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+470 verbose headers   'x-amz-replication-status': 'COMPLETED',
+470 verbose headers   server: 'cloudflare' }
+471 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+472 silly get cb [ 304,
+472 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+472 silly get     connection: 'keep-alive',
+472 silly get     'cf-ray': '69519a872ac2530d-LAX',
+472 silly get     'cache-control': 'public, max-age=300',
+472 silly get     etag: '"8bae9d29a11e11df693bb2edc6077d0e"',
+472 silly get     'last-modified': 'Fri, 17 Sep 2021 14:43:26 GMT',
+472 silly get     vary: 'Accept-Encoding',
+472 silly get     'cf-cache-status': 'REVALIDATED',
+472 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+472 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+472 silly get     'x-amz-replication-status': 'COMPLETED',
+472 silly get     server: 'cloudflare' } ]
+473 verbose etag http://registry.npmjs.org/@polkadot%2fui-keyring from cache
+474 verbose get saving @polkadot/ui-keyring to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252fui-keyring/.cache.json
+475 http 304 http://registry.npmjs.org/@polkadot%2futil
+476 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+476 verbose headers   connection: 'keep-alive',
+476 verbose headers   'cf-ray': '69519a871ed10ccf-LAX',
+476 verbose headers   'cache-control': 'public, max-age=300',
+476 verbose headers   etag: '"8dfcee0d1a989ee70249fd0b16b5a18b"',
+476 verbose headers   'last-modified': 'Fri, 24 Sep 2021 17:47:07 GMT',
+476 verbose headers   vary: 'Accept-Encoding',
+476 verbose headers   'cf-cache-status': 'REVALIDATED',
+476 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+476 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+476 verbose headers   'x-amz-replication-status': 'COMPLETED',
+476 verbose headers   server: 'cloudflare' }
+477 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+478 silly get cb [ 304,
+478 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+478 silly get     connection: 'keep-alive',
+478 silly get     'cf-ray': '69519a871ed10ccf-LAX',
+478 silly get     'cache-control': 'public, max-age=300',
+478 silly get     etag: '"8dfcee0d1a989ee70249fd0b16b5a18b"',
+478 silly get     'last-modified': 'Fri, 24 Sep 2021 17:47:07 GMT',
+478 silly get     vary: 'Accept-Encoding',
+478 silly get     'cf-cache-status': 'REVALIDATED',
+478 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+478 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+478 silly get     'x-amz-replication-status': 'COMPLETED',
+478 silly get     server: 'cloudflare' } ]
+479 verbose etag http://registry.npmjs.org/@polkadot%2futil from cache
+480 verbose get saving @polkadot/util to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252futil/.cache.json
+481 http 304 http://registry.npmjs.org/@polkadot%2fextension-dapp
+482 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+482 verbose headers   connection: 'keep-alive',
+482 verbose headers   'cf-ray': '69519a872fb803fe-LAX',
+482 verbose headers   'cache-control': 'public, max-age=300',
+482 verbose headers   etag: '"9cfe555509eb453b6cad177eca4d59e8"',
+482 verbose headers   'last-modified': 'Sat, 18 Sep 2021 05:50:49 GMT',
+482 verbose headers   vary: 'Accept-Encoding',
+482 verbose headers   'cf-cache-status': 'REVALIDATED',
+482 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+482 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+482 verbose headers   'x-amz-replication-status': 'COMPLETED',
+482 verbose headers   server: 'cloudflare' }
+483 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+484 silly get cb [ 304,
+484 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+484 silly get     connection: 'keep-alive',
+484 silly get     'cf-ray': '69519a872fb803fe-LAX',
+484 silly get     'cache-control': 'public, max-age=300',
+484 silly get     etag: '"9cfe555509eb453b6cad177eca4d59e8"',
+484 silly get     'last-modified': 'Sat, 18 Sep 2021 05:50:49 GMT',
+484 silly get     vary: 'Accept-Encoding',
+484 silly get     'cf-cache-status': 'REVALIDATED',
+484 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+484 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+484 silly get     'x-amz-replication-status': 'COMPLETED',
+484 silly get     server: 'cloudflare' } ]
+485 verbose etag http://registry.npmjs.org/@polkadot%2fextension-dapp from cache
+486 verbose get saving @polkadot/extension-dapp to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252fextension-dapp/.cache.json
+487 http 304 http://registry.npmjs.org/@polkadot%2futil-crypto
+488 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+488 verbose headers   connection: 'keep-alive',
+488 verbose headers   'cf-ray': '69519a872ba30564-LAX',
+488 verbose headers   'cache-control': 'public, max-age=300',
+488 verbose headers   etag: '"a25d55d1075233b2064610c795e2a0d4"',
+488 verbose headers   'last-modified': 'Fri, 24 Sep 2021 17:47:13 GMT',
+488 verbose headers   vary: 'Accept-Encoding',
+488 verbose headers   'cf-cache-status': 'REVALIDATED',
+488 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+488 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+488 verbose headers   'x-amz-replication-status': 'COMPLETED',
+488 verbose headers   server: 'cloudflare' }
+489 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+490 silly get cb [ 304,
+490 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+490 silly get     connection: 'keep-alive',
+490 silly get     'cf-ray': '69519a872ba30564-LAX',
+490 silly get     'cache-control': 'public, max-age=300',
+490 silly get     etag: '"a25d55d1075233b2064610c795e2a0d4"',
+490 silly get     'last-modified': 'Fri, 24 Sep 2021 17:47:13 GMT',
+490 silly get     vary: 'Accept-Encoding',
+490 silly get     'cf-cache-status': 'REVALIDATED',
+490 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+490 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+490 silly get     'x-amz-replication-status': 'COMPLETED',
+490 silly get     server: 'cloudflare' } ]
+491 verbose etag http://registry.npmjs.org/@polkadot%2futil-crypto from cache
+492 verbose get saving @polkadot/util-crypto to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252futil-crypto/.cache.json
+493 http 304 http://registry.npmjs.org/@polkadot%2ftypes
+494 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+494 verbose headers   connection: 'keep-alive',
+494 verbose headers   'cf-ray': '69519a872dea52a1-LAX',
+494 verbose headers   'cache-control': 'public, max-age=300',
+494 verbose headers   etag: '"61a87096809d41b5b8b2dd54bf40c74c"',
+494 verbose headers   'last-modified': 'Fri, 24 Sep 2021 08:26:00 GMT',
+494 verbose headers   vary: 'Accept-Encoding',
+494 verbose headers   'cf-cache-status': 'REVALIDATED',
+494 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+494 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+494 verbose headers   'x-amz-replication-status': 'COMPLETED',
+494 verbose headers   server: 'cloudflare' }
+495 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+496 silly get cb [ 304,
+496 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+496 silly get     connection: 'keep-alive',
+496 silly get     'cf-ray': '69519a872dea52a1-LAX',
+496 silly get     'cache-control': 'public, max-age=300',
+496 silly get     etag: '"61a87096809d41b5b8b2dd54bf40c74c"',
+496 silly get     'last-modified': 'Fri, 24 Sep 2021 08:26:00 GMT',
+496 silly get     vary: 'Accept-Encoding',
+496 silly get     'cf-cache-status': 'REVALIDATED',
+496 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+496 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+496 silly get     'x-amz-replication-status': 'COMPLETED',
+496 silly get     server: 'cloudflare' } ]
+497 verbose etag http://registry.npmjs.org/@polkadot%2ftypes from cache
+498 verbose get saving @polkadot/types to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252ftypes/.cache.json
+499 http 304 http://registry.npmjs.org/@polkadot%2fapi
+500 verbose headers { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+500 verbose headers   connection: 'keep-alive',
+500 verbose headers   'cf-ray': '69519a874e50317f-LAX',
+500 verbose headers   'cache-control': 'public, max-age=300',
+500 verbose headers   etag: '"d57051a83574884ffb0a46bfba76e595"',
+500 verbose headers   'last-modified': 'Fri, 24 Sep 2021 08:24:51 GMT',
+500 verbose headers   vary: 'Accept-Encoding',
+500 verbose headers   'cf-cache-status': 'REVALIDATED',
+500 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+500 verbose headers   'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+500 verbose headers   'x-amz-replication-status': 'COMPLETED',
+500 verbose headers   server: 'cloudflare' }
+501 warn notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+502 silly get cb [ 304,
+502 silly get   { date: 'Mon, 27 Sep 2021 03:21:45 GMT',
+502 silly get     connection: 'keep-alive',
+502 silly get     'cf-ray': '69519a874e50317f-LAX',
+502 silly get     'cache-control': 'public, max-age=300',
+502 silly get     etag: '"d57051a83574884ffb0a46bfba76e595"',
+502 silly get     'last-modified': 'Fri, 24 Sep 2021 08:24:51 GMT',
+502 silly get     vary: 'Accept-Encoding',
+502 silly get     'cf-cache-status': 'REVALIDATED',
+502 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+502 silly get     'npm-notice': 'Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/',
+502 silly get     'x-amz-replication-status': 'COMPLETED',
+502 silly get     server: 'cloudflare' } ]
+503 verbose etag http://registry.npmjs.org/@polkadot%2fapi from cache
+504 verbose get saving @polkadot/api to /home/ubuntu/.npm/registry.npmjs.org/_40polkadot_252fapi/.cache.json
+505 info outdated updating [ { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@babel/core',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '7.15.5',
+505 info outdated     latest: '7.15.5',
+505 info outdated     req: '^7.14.3',
+505 info outdated     what: '@babel/core@7.15.5' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/api',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '5.9.1',
+505 info outdated     latest: '6.0.5',
+505 info outdated     req: '^5.3.2',
+505 info outdated     what: '@polkadot/api@5.9.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/extension-dapp',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '0.39.3',
+505 info outdated     latest: '0.40.3',
+505 info outdated     req: '^0.39.1',
+505 info outdated     what: '@polkadot/extension-dapp@0.39.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/keyring',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '7.4.1',
+505 info outdated     latest: '7.4.1',
+505 info outdated     req: '^7.1.1',
+505 info outdated     what: '@polkadot/keyring@7.4.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/networks',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '7.4.1',
+505 info outdated     latest: '7.4.1',
+505 info outdated     req: '^7.1.1',
+505 info outdated     what: '@polkadot/networks@7.4.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/types',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '5.9.1',
+505 info outdated     latest: '6.0.5',
+505 info outdated     req: '^5.3.2',
+505 info outdated     what: '@polkadot/types@5.9.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/ui-keyring',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '0.84.3',
+505 info outdated     latest: '0.85.4',
+505 info outdated     req: '^0.84.3',
+505 info outdated     what: '@polkadot/ui-keyring@0.84.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/ui-settings',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '0.84.3',
+505 info outdated     latest: '0.85.4',
+505 info outdated     req: '^0.84.3',
+505 info outdated     what: '@polkadot/ui-settings@0.84.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/util',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '7.4.1',
+505 info outdated     latest: '7.4.1',
+505 info outdated     req: '^7.1.1',
+505 info outdated     what: '@polkadot/util@7.4.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: '@polkadot/util-crypto',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '7.4.1',
+505 info outdated     latest: '7.4.1',
+505 info outdated     req: '^7.1.1',
+505 info outdated     what: '@polkadot/util-crypto@7.4.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'babel-preset-env',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '1.7.0',
+505 info outdated     latest: '1.7.0',
+505 info outdated     req: '^1.7.0',
+505 info outdated     what: 'babel-preset-env@1.7.0' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '7.32.0',
+505 info outdated     latest: '7.32.0',
+505 info outdated     req: '^7.20.0',
+505 info outdated     what: 'eslint@7.32.0' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-config-semistandard',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '15.0.1',
+505 info outdated     latest: '16.0.0',
+505 info outdated     req: '^15.0.1',
+505 info outdated     what: 'eslint-config-semistandard@15.0.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-config-standard',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '16.0.3',
+505 info outdated     latest: '16.0.3',
+505 info outdated     req: '^16.0.2',
+505 info outdated     what: 'eslint-config-standard@16.0.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-plugin-import',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '2.24.2',
+505 info outdated     latest: '2.24.2',
+505 info outdated     req: '^2.22.1',
+505 info outdated     what: 'eslint-plugin-import@2.24.2' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-plugin-node',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '11.1.0',
+505 info outdated     latest: '11.1.0',
+505 info outdated     req: '^11.1.0',
+505 info outdated     what: 'eslint-plugin-node@11.1.0' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-plugin-only-warn',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '1.0.3',
+505 info outdated     latest: '1.0.3',
+505 info outdated     req: '^1.0.2',
+505 info outdated     what: 'eslint-plugin-only-warn@1.0.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-plugin-promise',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '4.3.1',
+505 info outdated     latest: '5.1.0',
+505 info outdated     req: '^4.3.1',
+505 info outdated     what: 'eslint-plugin-promise@4.3.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'eslint-plugin-standard',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '5.0.0',
+505 info outdated     latest: '5.0.0',
+505 info outdated     req: '^5.0.0',
+505 info outdated     what: 'eslint-plugin-standard@5.0.0' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'gh-pages',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '3.2.3',
+505 info outdated     latest: '3.2.3',
+505 info outdated     req: '^3.1.0',
+505 info outdated     what: 'gh-pages@3.2.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'prop-types',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '15.7.2',
+505 info outdated     latest: '15.7.2',
+505 info outdated     req: '^15.7.2',
+505 info outdated     what: 'prop-types@15.7.2' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'query-string',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '6.14.1',
+505 info outdated     latest: '7.0.1',
+505 info outdated     req: '^6.13.5',
+505 info outdated     what: 'query-string@6.14.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'react',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '16.14.0',
+505 info outdated     latest: '17.0.2',
+505 info outdated     req: '^16.14.0',
+505 info outdated     what: 'react@16.14.0' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'react-app-rewired',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '2.1.8',
+505 info outdated     latest: '2.1.8',
+505 info outdated     req: '^2.1.8',
+505 info outdated     what: 'react-app-rewired@2.1.8' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'react-copy-to-clipboard',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '5.0.4',
+505 info outdated     latest: '5.0.4',
+505 info outdated     req: '^5.0.3',
+505 info outdated     what: 'react-copy-to-clipboard@5.0.4' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'react-dom',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '16.14.0',
+505 info outdated     latest: '17.0.2',
+505 info outdated     req: '^16.14.0',
+505 info outdated     what: 'react-dom@16.14.0' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'react-scripts',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '4.0.3',
+505 info outdated     latest: '4.0.3',
+505 info outdated     req: '^4.0.3',
+505 info outdated     what: 'react-scripts@4.0.3' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'semantic-ui-css',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '2.4.1',
+505 info outdated     latest: '2.4.1',
+505 info outdated     req: '^2.4.1',
+505 info outdated     what: 'semantic-ui-css@2.4.1' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'semantic-ui-react',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '2.0.4',
+505 info outdated     latest: '2.0.4',
+505 info outdated     req: '^2.0.3',
+505 info outdated     what: 'semantic-ui-react@2.0.4' },
+505 info outdated   { dep:
+505 info outdated      { package: [Object],
+505 info outdated        path: '/opt/substrate-contracts-node/substrate-front-end-template',
+505 info outdated        parent: [Object],
+505 info outdated        isMissing: true },
+505 info outdated     depname: 'semistandard',
+505 info outdated     current: undefined,
+505 info outdated     wanted: '16.0.1',
+505 info outdated     latest: '16.0.1',
+505 info outdated     req: '^16.0.0',
+505 info outdated     what: 'semistandard@16.0.1' } ]
+506 silly loadCurrentTree Starting
+507 silly install loadCurrentTree
+508 silly install readLocalPackageData
+509 silly fetchPackageMetaData @babel/core@7.15.5
+510 silly fetchPackageMetaData @polkadot/api@5.9.1
+511 silly fetchPackageMetaData @polkadot/extension-dapp@0.39.3
+512 silly fetchPackageMetaData @polkadot/keyring@7.4.1
+513 silly fetchPackageMetaData @polkadot/networks@7.4.1
+514 silly fetchPackageMetaData @polkadot/types@5.9.1
+515 silly fetchPackageMetaData @polkadot/ui-keyring@0.84.3
+516 silly fetchPackageMetaData @polkadot/ui-settings@0.84.3
+517 silly fetchPackageMetaData @polkadot/util@7.4.1
+518 silly fetchPackageMetaData @polkadot/util-crypto@7.4.1
+519 silly fetchPackageMetaData babel-preset-env@1.7.0
+520 silly fetchPackageMetaData eslint@7.32.0
+521 silly fetchPackageMetaData eslint-config-semistandard@15.0.1
+522 silly fetchPackageMetaData eslint-config-standard@16.0.3
+523 silly fetchPackageMetaData eslint-plugin-import@2.24.2
+524 silly fetchPackageMetaData eslint-plugin-node@11.1.0
+525 silly fetchPackageMetaData eslint-plugin-only-warn@1.0.3
+526 silly fetchPackageMetaData eslint-plugin-promise@4.3.1
+527 silly fetchPackageMetaData eslint-plugin-standard@5.0.0
+528 silly fetchPackageMetaData gh-pages@3.2.3
+529 silly fetchPackageMetaData prop-types@15.7.2
+530 silly fetchPackageMetaData query-string@6.14.1
+531 silly fetchPackageMetaData react@16.14.0
+532 silly fetchPackageMetaData react-app-rewired@2.1.8
+533 silly fetchPackageMetaData react-copy-to-clipboard@5.0.4
+534 silly fetchPackageMetaData react-dom@16.14.0
+535 silly fetchPackageMetaData react-scripts@4.0.3
+536 silly fetchPackageMetaData semantic-ui-css@2.4.1
+537 silly fetchPackageMetaData semantic-ui-react@2.0.4
+538 silly fetchPackageMetaData semistandard@16.0.1
+539 silly fetchNamedPackageData @babel/core
+540 silly mapToRegistry name @babel/core
+541 silly mapToRegistry scope (from package name) @babel
+542 verbose mapToRegistry no registry URL found in name for scope @babel
+543 silly mapToRegistry using default registry
+544 silly mapToRegistry registry http://registry.npmjs.org/
+545 silly mapToRegistry uri http://registry.npmjs.org/@babel%2fcore
+546 silly fetchNamedPackageData @polkadot/api
+547 silly mapToRegistry name @polkadot/api
+548 silly mapToRegistry scope (from package name) @polkadot
+549 verbose mapToRegistry no registry URL found in name for scope @polkadot
+550 silly mapToRegistry using default registry
+551 silly mapToRegistry registry http://registry.npmjs.org/
+552 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fapi
+553 silly fetchNamedPackageData @polkadot/extension-dapp
+554 silly mapToRegistry name @polkadot/extension-dapp
+555 silly mapToRegistry scope (from package name) @polkadot
+556 verbose mapToRegistry no registry URL found in name for scope @polkadot
+557 silly mapToRegistry using default registry
+558 silly mapToRegistry registry http://registry.npmjs.org/
+559 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fextension-dapp
+560 silly fetchNamedPackageData @polkadot/keyring
+561 silly mapToRegistry name @polkadot/keyring
+562 silly mapToRegistry scope (from package name) @polkadot
+563 verbose mapToRegistry no registry URL found in name for scope @polkadot
+564 silly mapToRegistry using default registry
+565 silly mapToRegistry registry http://registry.npmjs.org/
+566 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fkeyring
+567 silly fetchNamedPackageData @polkadot/networks
+568 silly mapToRegistry name @polkadot/networks
+569 silly mapToRegistry scope (from package name) @polkadot
+570 verbose mapToRegistry no registry URL found in name for scope @polkadot
+571 silly mapToRegistry using default registry
+572 silly mapToRegistry registry http://registry.npmjs.org/
+573 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fnetworks
+574 silly fetchNamedPackageData @polkadot/types
+575 silly mapToRegistry name @polkadot/types
+576 silly mapToRegistry scope (from package name) @polkadot
+577 verbose mapToRegistry no registry URL found in name for scope @polkadot
+578 silly mapToRegistry using default registry
+579 silly mapToRegistry registry http://registry.npmjs.org/
+580 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2ftypes
+581 silly fetchNamedPackageData @polkadot/ui-keyring
+582 silly mapToRegistry name @polkadot/ui-keyring
+583 silly mapToRegistry scope (from package name) @polkadot
+584 verbose mapToRegistry no registry URL found in name for scope @polkadot
+585 silly mapToRegistry using default registry
+586 silly mapToRegistry registry http://registry.npmjs.org/
+587 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fui-keyring
+588 silly fetchNamedPackageData @polkadot/ui-settings
+589 silly mapToRegistry name @polkadot/ui-settings
+590 silly mapToRegistry scope (from package name) @polkadot
+591 verbose mapToRegistry no registry URL found in name for scope @polkadot
+592 silly mapToRegistry using default registry
+593 silly mapToRegistry registry http://registry.npmjs.org/
+594 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2fui-settings
+595 silly fetchNamedPackageData @polkadot/util
+596 silly mapToRegistry name @polkadot/util
+597 silly mapToRegistry scope (from package name) @polkadot
+598 verbose mapToRegistry no registry URL found in name for scope @polkadot
+599 silly mapToRegistry using default registry
+600 silly mapToRegistry registry http://registry.npmjs.org/
+601 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2futil
+602 silly fetchNamedPackageData @polkadot/util-crypto
+603 silly mapToRegistry name @polkadot/util-crypto
+604 silly mapToRegistry scope (from package name) @polkadot
+605 verbose mapToRegistry no registry URL found in name for scope @polkadot
+606 silly mapToRegistry using default registry
+607 silly mapToRegistry registry http://registry.npmjs.org/
+608 silly mapToRegistry uri http://registry.npmjs.org/@polkadot%2futil-crypto
+609 silly fetchNamedPackageData babel-preset-env
+610 silly mapToRegistry name babel-preset-env
+611 silly mapToRegistry using default registry
+612 silly mapToRegistry registry http://registry.npmjs.org/
+613 silly mapToRegistry uri http://registry.npmjs.org/babel-preset-env
+614 silly fetchNamedPackageData eslint
+615 silly mapToRegistry name eslint
+616 silly mapToRegistry using default registry
+617 silly mapToRegistry registry http://registry.npmjs.org/
+618 silly mapToRegistry uri http://registry.npmjs.org/eslint
+619 silly fetchNamedPackageData eslint-config-semistandard
+620 silly mapToRegistry name eslint-config-semistandard
+621 silly mapToRegistry using default registry
+622 silly mapToRegistry registry http://registry.npmjs.org/
+623 silly mapToRegistry uri http://registry.npmjs.org/eslint-config-semistandard
+624 silly fetchNamedPackageData eslint-config-standard
+625 silly mapToRegistry name eslint-config-standard
+626 silly mapToRegistry using default registry
+627 silly mapToRegistry registry http://registry.npmjs.org/
+628 silly mapToRegistry uri http://registry.npmjs.org/eslint-config-standard
+629 silly fetchNamedPackageData eslint-plugin-import
+630 silly mapToRegistry name eslint-plugin-import
+631 silly mapToRegistry using default registry
+632 silly mapToRegistry registry http://registry.npmjs.org/
+633 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-import
+634 silly fetchNamedPackageData eslint-plugin-node
+635 silly mapToRegistry name eslint-plugin-node
+636 silly mapToRegistry using default registry
+637 silly mapToRegistry registry http://registry.npmjs.org/
+638 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-node
+639 silly fetchNamedPackageData eslint-plugin-only-warn
+640 silly mapToRegistry name eslint-plugin-only-warn
+641 silly mapToRegistry using default registry
+642 silly mapToRegistry registry http://registry.npmjs.org/
+643 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-only-warn
+644 silly fetchNamedPackageData eslint-plugin-promise
+645 silly mapToRegistry name eslint-plugin-promise
+646 silly mapToRegistry using default registry
+647 silly mapToRegistry registry http://registry.npmjs.org/
+648 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-promise
+649 silly fetchNamedPackageData eslint-plugin-standard
+650 silly mapToRegistry name eslint-plugin-standard
+651 silly mapToRegistry using default registry
+652 silly mapToRegistry registry http://registry.npmjs.org/
+653 silly mapToRegistry uri http://registry.npmjs.org/eslint-plugin-standard
+654 silly fetchNamedPackageData gh-pages
+655 silly mapToRegistry name gh-pages
+656 silly mapToRegistry using default registry
+657 silly mapToRegistry registry http://registry.npmjs.org/
+658 silly mapToRegistry uri http://registry.npmjs.org/gh-pages
+659 silly fetchNamedPackageData prop-types
+660 silly mapToRegistry name prop-types
+661 silly mapToRegistry using default registry
+662 silly mapToRegistry registry http://registry.npmjs.org/
+663 silly mapToRegistry uri http://registry.npmjs.org/prop-types
+664 silly fetchNamedPackageData query-string
+665 silly mapToRegistry name query-string
+666 silly mapToRegistry using default registry
+667 silly mapToRegistry registry http://registry.npmjs.org/
+668 silly mapToRegistry uri http://registry.npmjs.org/query-string
+669 silly fetchNamedPackageData react
+670 silly mapToRegistry name react
+671 silly mapToRegistry using default registry
+672 silly mapToRegistry registry http://registry.npmjs.org/
+673 silly mapToRegistry uri http://registry.npmjs.org/react
+674 silly fetchNamedPackageData react-app-rewired
+675 silly mapToRegistry name react-app-rewired
+676 silly mapToRegistry using default registry
+677 silly mapToRegistry registry http://registry.npmjs.org/
+678 silly mapToRegistry uri http://registry.npmjs.org/react-app-rewired
+679 silly fetchNamedPackageData react-copy-to-clipboard
+680 silly mapToRegistry name react-copy-to-clipboard
+681 silly mapToRegistry using default registry
+682 silly mapToRegistry registry http://registry.npmjs.org/
+683 silly mapToRegistry uri http://registry.npmjs.org/react-copy-to-clipboard
+684 silly fetchNamedPackageData react-dom
+685 silly mapToRegistry name react-dom
+686 silly mapToRegistry using default registry
+687 silly mapToRegistry registry http://registry.npmjs.org/
+688 silly mapToRegistry uri http://registry.npmjs.org/react-dom
+689 silly fetchNamedPackageData react-scripts
+690 silly mapToRegistry name react-scripts
+691 silly mapToRegistry using default registry
+692 silly mapToRegistry registry http://registry.npmjs.org/
+693 silly mapToRegistry uri http://registry.npmjs.org/react-scripts
+694 silly fetchNamedPackageData semantic-ui-css
+695 silly mapToRegistry name semantic-ui-css
+696 silly mapToRegistry using default registry
+697 silly mapToRegistry registry http://registry.npmjs.org/
+698 silly mapToRegistry uri http://registry.npmjs.org/semantic-ui-css
+699 silly fetchNamedPackageData semantic-ui-react
+700 silly mapToRegistry name semantic-ui-react
+701 silly mapToRegistry using default registry
+702 silly mapToRegistry registry http://registry.npmjs.org/
+703 silly mapToRegistry uri http://registry.npmjs.org/semantic-ui-react
+704 silly fetchNamedPackageData semistandard
+705 silly mapToRegistry name semistandard
+706 silly mapToRegistry using default registry
+707 silly mapToRegistry registry http://registry.npmjs.org/
+708 silly mapToRegistry uri http://registry.npmjs.org/semistandard
+709 verbose get http://registry.npmjs.org/@babel%2fcore not expired, no request
+710 verbose get http://registry.npmjs.org/@polkadot%2fextension-dapp not expired, no request
+711 verbose get http://registry.npmjs.org/@polkadot%2fkeyring not expired, no request
+712 verbose get http://registry.npmjs.org/@polkadot%2fapi not expired, no request
+713 verbose get http://registry.npmjs.org/@polkadot%2fnetworks not expired, no request
+714 verbose get http://registry.npmjs.org/@polkadot%2fui-settings not expired, no request
+715 verbose get http://registry.npmjs.org/@polkadot%2fui-keyring not expired, no request
+716 verbose get http://registry.npmjs.org/@polkadot%2futil not expired, no request
+717 verbose get http://registry.npmjs.org/babel-preset-env not expired, no request
+718 verbose get http://registry.npmjs.org/@polkadot%2futil-crypto not expired, no request
+719 verbose get http://registry.npmjs.org/eslint not expired, no request
+720 verbose get http://registry.npmjs.org/eslint-config-semistandard not expired, no request
+721 verbose get http://registry.npmjs.org/eslint-config-standard not expired, no request
+722 verbose get http://registry.npmjs.org/eslint-plugin-import not expired, no request
+723 verbose get http://registry.npmjs.org/@polkadot%2ftypes not expired, no request
+724 verbose get http://registry.npmjs.org/eslint-plugin-node not expired, no request
+725 verbose get http://registry.npmjs.org/eslint-plugin-only-warn not expired, no request
+726 verbose get http://registry.npmjs.org/eslint-plugin-promise not expired, no request
+727 verbose get http://registry.npmjs.org/eslint-plugin-standard not expired, no request
+728 verbose get http://registry.npmjs.org/gh-pages not expired, no request
+729 verbose get http://registry.npmjs.org/prop-types not expired, no request
+730 verbose get http://registry.npmjs.org/query-string not expired, no request
+731 verbose get http://registry.npmjs.org/react not expired, no request
+732 verbose get http://registry.npmjs.org/react-dom not expired, no request
+733 verbose get http://registry.npmjs.org/react-scripts not expired, no request
+734 verbose get http://registry.npmjs.org/semantic-ui-css not expired, no request
+735 verbose get http://registry.npmjs.org/semantic-ui-react not expired, no request
+736 verbose get http://registry.npmjs.org/semistandard not expired, no request
+737 verbose get http://registry.npmjs.org/react-copy-to-clipboard not expired, no request
+738 verbose get http://registry.npmjs.org/react-app-rewired not expired, no request
+739 silly install normalizeTree
+740 silly loadCurrentTree Finishing
+741 silly loadIdealTree Starting
+742 silly install loadIdealTree
+743 silly cloneCurrentTree Starting
+744 silly install cloneCurrentTreeToIdealTree
+745 silly cloneCurrentTree Finishing
+746 silly loadShrinkwrap Starting
+747 silly install loadShrinkwrap
+748 silly loadShrinkwrap Finishing
+749 silly loadAllDepsIntoIdealTree Starting
+750 silly install loadAllDepsIntoIdealTree
+751 silly resolveWithNewModule @babel/core@7.15.5 checking installable status
+752 silly cache add args [ '@babel/core@7.15.5', null ]
+753 verbose cache add spec @babel/core@7.15.5
+754 verbose stack Error: Missing required argument #1
+754 verbose stack     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+754 verbose stack     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+754 verbose stack     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+754 verbose stack     at /usr/share/npm/lib/install/deps.js:190:5
+754 verbose stack     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:35
+754 verbose stack     at Array.forEach (<anonymous>)
+754 verbose stack     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:11
+754 verbose stack     at Array.forEach (<anonymous>)
+754 verbose stack     at asyncMap (/usr/share/npm/node_modules/slide/lib/async-map.js:51:8)
+754 verbose stack     at exports.loadRequestedDeps (/usr/share/npm/lib/install/deps.js:188:3)
+755 verbose cwd /opt/substrate-contracts-node/substrate-front-end-template
+756 error Linux 4.15.0-142-generic
+757 error argv "/usr/bin/node" "/usr/bin/npm" "update"
+758 error node v8.10.0
+759 error npm  v3.5.2
+760 error code EMISSINGARG
+761 error typeerror Error: Missing required argument #1
+761 error typeerror     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+761 error typeerror     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+761 error typeerror     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+761 error typeerror     at /usr/share/npm/lib/install/deps.js:190:5
+761 error typeerror     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:35
+761 error typeerror     at Array.forEach (<anonymous>)
+761 error typeerror     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:11
+761 error typeerror     at Array.forEach (<anonymous>)
+761 error typeerror     at asyncMap (/usr/share/npm/node_modules/slide/lib/async-map.js:51:8)
+761 error typeerror     at exports.loadRequestedDeps (/usr/share/npm/lib/install/deps.js:188:3)
+762 error typeerror This is an error with npm itself. Please report this error at:
+762 error typeerror     <http://github.com/npm/npm/issues>
+763 verbose exit [ 1, true ]

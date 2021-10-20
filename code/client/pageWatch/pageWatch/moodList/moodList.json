@@ -1,0 +1,10 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		 "loading": "/components/loading/loading",
+		 "login":"/components/login/login",
+		 "myLoading": "/components/myLoading/myLoading",
+		 "aiList": "/pageWatch/components/aiList/aiList"
+	},
+	"navigationBarTextStyle": "black"
+}

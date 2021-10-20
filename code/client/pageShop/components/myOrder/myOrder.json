@@ -1,0 +1,10 @@
+{
+	"usingComponents": {
+		"watchList": "/components/watchList/watchList",
+		"messagebox": "/pageShop/components/messagebox/messagebox",
+		"messageboxOne": "/components/messageboxOne/messageboxOne",
+		"previewImg": "/pageShop/components/previewImg/previewImg",
+		"myLoading": "/components/myLoading/myLoading"
+	},
+	"component": true
+}

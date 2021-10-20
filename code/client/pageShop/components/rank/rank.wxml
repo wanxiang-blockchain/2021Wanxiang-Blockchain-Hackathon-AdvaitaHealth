@@ -1,0 +1,41 @@
+<view class="score-box">
+	<view class="score-item"><view class="signature-blue">21天冥想挑战赛</view>「{{startTime}}-{{endTime}}」</view>
+	<view class="score-item triangle" wx:if="{{info.activity_list.length>1}}" bindtap="pickMask">第{{nowNum + 1}}赛季</view>
+	<view class="score-item" wx:else>第{{nowNum + 1}}赛季</view>
+</view>
+
+<view class="rank-user">
+	<myUserInfo height="48" contentLeft="110" borderLeft="{{0}}">
+		<view slot="avatar">
+			<image class="" mode="aspectFill" catchtap="goDetail" src="{{userInfo.Wechat_xcxSetUser.avatar_url}}" style="height:48rpx;width:48rpx;left: 0rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 8rpx;background-color: #ccc;"></image>
+		</view>
+		<view slot="content">
+			<view class="hidden-text" style="max-width: 400rpx;font-size: 28rpx;font-weight: bold;left: 58rpx;position: absolute;top: 0;bottom: 0;margin: auto;">{{userInfo.Wechat_xcxSetUser.nickname}}</view>
+			<button class="score-btn" wx:if="{{!isEnd}}" bindtap="goUrl1" data-url="/pageShop/pageShop/task/task">做任务赚积分</button>
+			<view class="score-reward" wx:if="{{isEnd && ranking < 31}}">本赛季第{{ranking}}名{{isValid?'，赢得奖品':''}}</view>
+			<view class="score-reward" style="color: #989898;" wx:if="{{isEnd && ranking > 30}}">您没有获奖，下赛季加油哦</view>
+		</view>
+	</myUserInfo>
+</view>
+
+<view class="rank-list" >
+	<view class="rank-score inline">总积分</view>
+	<view class="signature-blue" style="position: absolute;left: 96rpx;" wx:if="{{!isStart && !info.activity_list}}">未开始</view>
+	<view class="signature-blue" style="position: absolute;left: 96rpx;" wx:else>{{score}}</view>
+	<view class="rank-total inline">排名</view>
+	<view class="signature-blue" style="position: absolute;left: 282rpx;" wx:if="{{isSign == 0}}">{{ranking}}</view>
+	<view class="signature-blue" style="position: absolute;left: 282rpx;" wx:else>无排名（需补卡）</view>
+	
+	<view class="rank-more inline" wx:if="{{pageType == 1}}" bindtap="goUrl" data-url="/pageShop/pageShop/rankList/rankList">排行榜<view class="more-icon inline iconfont iconjiantouyou"></view></view>
+	
+	<block wx:else>
+		<view class="rank-more inline" wx:if="{{!isEnd && isStart}}" style="left: 494rpx;">结束</view>
+		<view class="signature-blue"  wx:if="{{!isEnd && isStart}}" style="position: absolute;right: 20rpx;">{{endDay[0]}}天后</view>
+		<view class="rank-more inline"  wx:if="{{isEnd}}" style="right: 22rpx;">已结束</view>
+		<view class="rank-more inline"  wx:if="{{!isStart}}" style="right: 22rpx;">未开始</view>
+	</block>
+</view>
+
+<van-popup class="secure-box" show="{{ showPicker }}" round position="bottom">
+	<van-picker show-toolbar columns="{{columns}}" default-index="{{nowNum}}" bind:confirm="onPickerConfirm" bind:cancel="onPickerCancel" />
+</van-popup>

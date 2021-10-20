@@ -1,0 +1,93 @@
+page {
+	font-size: 24rpx;
+	color: #282828;
+	background-color: #fff;
+}
+.scroll-box{
+	padding-top: 30rpx;
+}
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+/* 提现到微信 */
+.cash-box{
+	width:690rpx;
+	height:159rpx;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 2rpx 10rpx 0px rgba(0,0,0,0.15);
+	border-radius:13rpx;
+	margin:0 auto 30rpx;
+	position: relative;
+}
+.wx-icon{
+	height: 52rpx;
+	display: block;
+	color: rgb(9,187,7);
+	font-size: 50rpx;
+	position: absolute;
+	top: 42rpx;
+	left: 52rpx;
+}
+.cash-title{
+	height: 40rpx;
+	font-size: 26rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 146rpx;
+	margin: auto;
+}
+.money-box{
+	width:690rpx;
+	height:488rpx;
+	padding: 0 35rpx;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 2rpx 10rpx 0px rgba(0,0,0,0.15);
+	border-radius:13rpx;
+	margin: auto;
+}
+.money-name{
+	font-size:26rpx;
+	font-weight: bold;
+	color: #666;
+	padding-top: 40rpx;
+}
+.money-input{
+	height: 150rpx;
+	border-bottom: 1rpx solid #D3D3D3;
+	position: relative;
+}
+.money-icon{
+	font-size: 60rpx;
+	position: absolute;
+	bottom: 33rpx;
+	left: 0;
+}
+.input-custom{
+	width: 550rpx;
+	height: 90rpx;
+	padding: 10rpx 30rpx;
+	font-size: 40rpx;
+	position: absolute;
+	bottom: 26rpx;
+	left: 44rpx;
+}
+.money-tips{
+	margin: 38rpx 0;
+}
+.text-blue{
+	color: #388AF7;
+}
+.money-btn{
+	width:620rpx;
+	height:100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	font-size: 26rpx;
+	color: #fff;
+	background:linear-gradient(180deg,rgba(86,187,255,1) 0%,rgba(43,134,255,1) 100%);
+	border-radius:8rpx;
+}

@@ -1,0 +1,16 @@
+.retry-text{
+	padding-top: 32rpx;
+	font-size: 28rpx;
+	text-align: center;
+}
+.retry{
+	width: 186rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 24rpx;
+	color: #fff;
+	background: #2B86FF;
+	border-radius: 29rpx;
+	text-align: center;
+	margin: 20rpx auto 0;
+}

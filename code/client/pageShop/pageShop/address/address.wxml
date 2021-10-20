@@ -1,0 +1,59 @@
+<MyHeader bind:back="back"  backIcon="{{true}}" titleText="{{isAdd?'新增地址':'修改地址'}}" background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll-content"  scroll-into-view="{{isSelect}}">
+	<block class="" wx:if="{{ changeAddress == 0 }}">
+		<view class="address-item" wx:for="{{addressList}}" wx:key="index" bindtap="checkAddress" data-item="{{item}}">
+			<view class="address-check" wx:if="{{item.is_default == 1}}">
+				<text class="checkicon iconfont iconxuanze"></text>
+			</view>
+			<view class="address-check no-check" wx:else></view>
+			<view class="address-content">
+				<view class="address-name"><text class="address-left">{{item.name}} {{item.phone}}</text><text  catchtap="goUpdate" data-item="{{item}}" class="address-update">编辑</text></view>
+				<view class="address-text">{{item.province}}{{item.city}}{{item.county}}{{item.details}}</view>
+				<view>
+					<view class="address-btn address-default" wx:if="{{item.is_default == 1}}">默认</view>
+				</view>
+			</view>
+		</view>
+		<view class="address-add" bindtap="goAdd">新增地址</view>
+	</block>
+	<block wx:if="{{ changeAddress == 1 }}">
+		<view class="form">
+			<view class="form-item" bindtap="getLocation">
+				<view class="item-value">收货人姓名</view>
+				<input class="item-input" value="{{name}}" disabled="true" type="text" placeholder="请输入姓名" placeholder-style="color:#ADADAD"/>
+			</view>
+			<view class="form-item" bindtap="getLocation">
+				<view class="item-value">手机号码</view>
+				<input class="item-input" value="{{phone}}" disabled="true" type="text" placeholder="请输入手机号码" placeholder-style="color:#ADADAD"/>
+			</view>
+			<view class="form-item" bindtap="getLocation">
+				<view class="item-value">所在地区</view>
+				<input class="item-input" value="{{address_province+address_city+address_county}}" disabled="true" type="text" placeholder="请选择所在地区" placeholder-style="color:#ADADAD"/>
+			</view>
+			<view class="form-item" bindtap="getLocation">
+				<view class="item-value">街道地址</view>
+				<input class="item-input" value="{{address}}" disabled="true" type="text" placeholder="请输入详细地址" placeholder-style="color:#ADADAD"/>
+			</view>
+		</view>
+		<view class="form" style="margin-top: 40rpx;">
+			<view class="form-item">
+				<view class="item-value">设为默认地址</view>
+				<view class="item-switch">
+					<mySwitch value="{{isDefault}}" bindchange="changeSwitch"></mySwitch>
+				</view>
+			</view>
+		</view>
+		<view class="form" style="margin-top: 40rpx;" bindtap="delAddress">
+			<view class="form-item" style="height: 130rpx;line-height: 130rpx;color: #BC4B2A;">
+				<view class="">删除收货地址</view>
+			</view>
+		</view>
+		<view class="address-add" bindtap="changeAddress">保存并使用</view>
+	</block>
+	<view style="height: 173rpx;width: 100%;"></view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

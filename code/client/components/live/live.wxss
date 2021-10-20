@@ -1,0 +1,215 @@
+/* pagesTest/live/live.wxss */
+
+@font-face {
+  font-family: "iconfont";
+  src: url("//at.alicdn.com/t/font_1667828_pgzbmsmji4e.eot?t=1583316743452"); /* IE9 */
+  src: url("//at.alicdn.com/t/font_1667828_pgzbmsmji4e.eot?t=1583316743452#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMQAAsAAAAABugAAALBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBRIFAATYCJAMMCwgABCAFhG0HQRsRBsgekiQIQQIFKKQiEBpPPPy3H+2+mVnVJqLZm3syoFESCUqgdErf09FM/vPa1WcPYu5qmYNkdlbZl8nZJVuq1lcFsoLyFqDf57mc3jWAApkfo5zm2HjUCzAOKNA9sA0ScIEk6A1jF7iE0wQa9Quh2skrqQFWCmtSID7JEgeschFFYfl6obZmZRHfmKtPX9IdwNfw+/FPVNST1GTWzKPnXBFk/Gz79j2PVCNafIJ0PhfYOjJmAYV4qM1cMRWMZapRY9ZeXqsIaa54VRFKdFWt/YdHEkQtq7YZTKJs4mebK0m136HsrnMZ7k6QNcAus/suIYa6uc1PzUvXvEafV195nrXytHb5ef7ck6C9lx0rz+sWn4Q476cse+Dlud0RdyQujuzNe0orqtHv6df9HgspQarOmoXP5r9WjjL+/54be2AefZxs0rT9YqGgV8U+eJ5u7bundG+Nxw6Cu4suwU1N54E48DzdcmacB0T7nDU17zvZegJQyWM5j+ROT7PJj/2N2/edynbHlP/1tgW8T65awnClgP5V6iWY9DdKe3YUXW5Zc1ElrsT0ZUM9XAko4n5VVqDTu/GGnlsthHo9IwJ1+m7bV280JQtzFjWarKJWvXU0mpG/vkkXylSUBkybBAjtTpC0+oGs3V2yMN+iRq8fqNUeGY0uwnXHJuPxZpNNEceQCPleKAvEgB07s4nqq5DUqeNoVh6y6xBV5DiMDIso5vORAdE55ihdUhRjGGJK9DAPnId0OgKNlGiQwMLUjBmTwsNx3YvCBKIHNrZRCIdBRBCvFyQTEAbY783YlD5fBZF00uHQFkpNuA5CKeTBoUhhInqQ+RpDL8q9XKLoIonCMBiEUYQelAdciM7OEJCxfpgGImDCqEekjJKEo264ryZsfZ3++/ZBI6s9R4ocRcOtHxLKkMJsOUpJdzuVJTUDAAAAAA==")
+      format("woff2"),
+    url("//at.alicdn.com/t/font_1667828_pgzbmsmji4e.woff?t=1583316743452")
+      format("woff"),
+    url("//at.alicdn.com/t/font_1667828_pgzbmsmji4e.ttf?t=1583316743452")
+      format("truetype"),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url("//at.alicdn.com/t/font_1667828_pgzbmsmji4e.svg?t=1583316743452#iconfont")
+      format("svg"); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-test:before {
+  content: "\e6e7";
+}
+
+.icon-arrow_right:before {
+  content: "\e65e";
+}
+
+.content {
+  /* padding: 0 0 112rpx; */
+  width: 100%;
+  box-sizing: border-box;
+}
+/* 上课 */
+.live-title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 52rpx 32rpx 32rpx;
+}
+.title-li {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  border-left: 1rpx solid #b4b1b4;
+  padding: 0 20rpx;
+}
+.title-li:first-child {
+  border: none;
+  padding-left: 0;
+}
+
+.live-list {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+.list-item {
+  width: 330rpx;
+  height: 307rpx;
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+}
+.img-box {
+  width: 330rpx;
+  height: 187rpx;
+  position: relative;
+  border-radius: 15rpx 15rpx 0 0;
+  overflow: hidden;
+}
+.room-img {
+  width: 330rpx;
+  height: 187rpx;
+}
+.room {
+  width: 330rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 0;
+  border-radius: 0 0 15rpx 15rpx;
+}
+.room-name {
+  width: 190rpx;
+  display: inline-block;
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 1);
+  vertical-align: top;
+  margin-left: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.room-icon {
+  display: inline-block;
+  color: #ff790d;
+  margin-right: 9rpx;
+  float: right;
+}
+.room-num {
+  display: inline-block;
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 1);
+  margin-right: 20rpx;
+  float: right;
+}
+.room-state {
+  width: 90rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 20rpx;
+  color: #fff;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 121, 13, 1) 0%,
+    rgba(255, 195, 13, 1) 100%
+  );
+  border-radius: 18rpx;
+}
+.state-end {
+  background: rgba(0, 0, 0, 0.3);
+}
+.list-title {
+  font-size: 25rpx;
+  font-weight: bold;
+  color: #333;
+  line-height: 34rpx;
+  margin: 24rpx 0 0 20rpx;
+  width: 300rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.list-time {
+  font-size: 22rpx;
+  color: #666;
+  margin: 10rpx 0 0 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300rpx;
+}
+.no-more {
+	font-size: 26rpx;
+  padding: 20rpx;
+  color: #999;
+  text-align: center;
+}
+/* 共修 */
+.share-night{
+	height: 40rpx;
+	font-size: 28rpx;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40rpx;
+	position: relative;
+	margin-left: 47rpx;
+}
+.share-night::before{
+	content: '';
+	width: 5rpx;
+	height: 25rpx;
+	background: #2B86FF;
+	position: absolute;
+	left: -15rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.share-box{
+	width: 686rpx;
+	height: 405rpx;
+	background: #FFFFFF;
+	border-radius: 12rpx;
+	overflow: hidden;
+	margin: 20rpx auto 6rpx;
+}
+.share-img{
+	width: 686rpx;
+	height: 243rpx;
+}
+.share-btn{
+	width: 636rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+	background: #FF9E20;
+	border-radius: 49rpx;
+	margin: 18rpx auto;
+}

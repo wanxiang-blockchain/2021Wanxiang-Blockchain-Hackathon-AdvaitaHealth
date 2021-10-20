@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"watchList": "/components/watchList/watchList",
+		"login":"/components/login/login"
+	},
+	"navigationBarTextStyle": "black"
+}

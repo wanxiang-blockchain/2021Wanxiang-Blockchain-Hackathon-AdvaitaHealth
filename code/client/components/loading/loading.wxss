@@ -1,0 +1,52 @@
+@font-face {
+	font-family: "iconfont-load";
+	src: url('//at.alicdn.com/t/font_2090808_7a8ro0k0vta.eot?t=1600853747762');
+	/* IE9 */
+	src: url('//at.alicdn.com/t/font_2090808_7a8ro0k0vta.eot?t=1600853747762#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALwAAsAAAAABogAAAKhAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBEIE4ATYCJAMICwYABCAFhG0HMRvfBRHVk1Fkf4FMbuUApApZ0tktgSUTHPc9yYUNZ+EY8z+oFJ6CBAAAAAAInu/9+3ftc/bFJxFRFYTKmj6vD1qwhKpM6tcAMk7+GyBgFncDLPT+8xgb5yhvyDgPNjdD16gIxZKc5/30HelY4UJ+Kfc9cAP4LwDSNHKgDoZ8nsvprYYHMr83nPamvWjqvSjAwNKAxhjW5kQKCBvGLnAJpyFAKJnKSf/g6Mn4KNYkAWT1imUL8HNxFGUlH8GtWanIKRx8c9i8hpPh7+W38sHgWKy68UsHFtP9jS3LrmCz7V4SIMD1DmCBcqAgk2vzY7EIE1hC80ou9lUt8M37PmSvfx7iYlWGA5AONfekdXW3WmkA0LizCkwa1QNMSqKuv20WGbLEG7i8sDuBtMkl0yB5de0TYFcFV7tlnZOwrLvEnDsbGP2yTzpyfuiFfbUfPfw8+viDsbuP5kxviPp0IHz54/wpe3bd7n2qV4e37e64bZ/0X9mx9XLHTT3bt3Z7818muGl69iLdQPBbsXv/5GX0HR2zc15U+39fBeDT/gsN/YLgny8g8N9MOgsfBl1veYyqqpbKAEPVqKwBQu0UBFnhWF/HOhJusiz4JNxq0CMjhcUnn1ROORzCqIeLTxdCKTO0Pow4G7GIhgCl9gMI0Z7AEEkAlmhvSOV8gUOiv3CJziKUqRK3YxiFUUll1IIOzA+Spe4dv6io+orhVTVn9aHwiXymFCzjXCxdsCPPMed8h1XEg2dqsIPzsFaCgymjlTGKHNs0+bo3jZbaoMioBR2YHyRL3fvtRZW+f8XwqppbWDXlJ/KZuodlnHuQF0vvxbqXa853WEU8eKYGOxiGtRIc9cMyWhnjiOyxTXYr39cyrm9rH1DNmrCcRuyBFqtJu9TDMAAAAAA=') format('woff2'),
+		url('//at.alicdn.com/t/font_2090808_7a8ro0k0vta.woff?t=1600853747762') format('woff'),
+		url('//at.alicdn.com/t/font_2090808_7a8ro0k0vta.ttf?t=1600853747762') format('truetype'),
+		/* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+		url('//at.alicdn.com/t/font_2090808_7a8ro0k0vta.svg?t=1600853747762#iconfont') format('svg');
+	/* iOS 4.1- */
+}
+
+.iconfont-load {
+	font-family: "iconfont-load" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loading:before {
+	content: "\e6a6";
+}
+
+
+/*纯白色圈*/
+.loader {
+	display: inline-block;
+	font-size: 32rpx;
+	animation: load-effect 1s infinite linear;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+/*动画：旋转360°*/
+@keyframes load-effect {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

@@ -1,0 +1,71 @@
+<view class="m-mask" bindtap="hideMask" >
+	<view class="mask-box-bottom" catchtap="forbiddenBubble">
+		<view class="choose-info">
+			<image wx:if="{{info.logo_url && logoUrl}}" src="{{logoUrl+'?imageView2/1/w/200/h/200'}}" class="choose-img" ></image>
+			<image wx:if="{{info.goods_logo_url}}" src="{{info.goods_logo_url +'?imageView2/1/w/200/h/200'}}" class="choose-img" ></image>
+			<view class="choose-info-content">
+				<view class="mask-title-price">
+					<text class="mask-title-old"><text style="font-size: 24rpx;">￥</text>{{goods_attr_id2?attr_price:info.sale_price_section}}</text>
+					<!-- <view class="mask-title-new">卷后 ￥2660</view> -->
+					<!-- <text class="old-grey">￥{{info.retail_price_section}}</text> -->
+				</view>
+				<!-- <view class="choose-info-num">库存{{info.stock}}件</view> -->
+				<view class="choose-info-type">购买方式：直购</view>
+			</view>
+		</view>
+		<view class="scroll-attr">
+			<!-- <view class="choose-title">规格</view>
+			<view class="flex-box">
+				<view class="choose-item {{ goods_attr_id == item.attr_id?'active':''}}" 
+				style="margin-bottom:{{info.attr.length<=3 || (index>=info.attr.length-3)?0:32}}rpx" 
+				wx:for="{{attr}}" wx:key="index" 
+				catchtap="changeType" 
+				data-id="{{item.attr_id}}" 
+				data-url="{{item.logo_url}}">{{item.attr_name}}</view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+			</view> -->
+			
+			<view class="choose-title">款式</view>
+			<view class="">
+				<view class="choose-item {{ goods_attr_id1 == item?'active':''}}" 
+				style="margin-bottom:{{info.attr.length<=3 || (index>=info.attr.length-3)?0:32}}rpx" 
+				wx:for="{{attr1}}" wx:key="index"
+				catchtap="changeType1" 
+				data-id="{{item}}" 
+				>{{item}}</view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+			</view>
+			<view class="choose-title">尺码</view>
+			<view class="">
+				<view class="choose-item {{ goods_attr_id2 == item.name?'active':''}}" 
+				style="margin-bottom:{{info.attr.length<=3 || (index>=info.attr.length-3)?0:32}}rpx" 
+				wx:for="{{attr2}}" wx:key="index"
+				catchtap="changeType2" 
+				data-id="{{item.name}}"
+				data-price="{{item.price}}"
+				>{{item.name}}</view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+				<view class="choose-item" style="background-color: transparent;height: 0;"></view>
+			</view>
+			
+			<view class="choose-line" style="margin-top: 20rpx;"></view>
+			<view class="choose-num">
+				<view class="choose-title">购买数量</view>
+				<view class="choose-btn choose-num-dec" catchtap="changeNum" data-type="1">-</view>
+				<view class="choose-btn choose-num-true">{{numCount}}</view>
+				<view class="choose-btn choose-num-add" catchtap="changeNum" data-type="2">+</view>
+			</view>
+			<!-- <view class="choose-line"></view> -->
+			<!-- <view class="choose-tips">当前商品可使用<text style="color: #569DFC;">￥140</text>入群卷</view> -->
+		</view>
+		<view class="choose-box">
+			<view class="choose-cart" catchtap="paramAddCart">{{buyNow?'立即购买':'加入购物车'}}</view>
+			<!-- <view class="choose-buy" catchtap="goOrder">立即购买</view> -->
+		</view>
+	</view>
+</view>

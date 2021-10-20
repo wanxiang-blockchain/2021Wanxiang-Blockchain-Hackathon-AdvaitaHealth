@@ -1,0 +1,198 @@
+page {
+	font-size: 24rpx;
+	color: #39393A;
+	background-color: #F8F8F8;
+}
+.scroll_h{
+	padding-bottom: 120rpx;
+	box-sizing: border-box;
+}
+.add_address{
+	width: 690rpx;
+	height: 140rpx;
+	line-height: 140rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	background: #FFFFFF;
+	box-shadow: 0px 2rpx 10rpx 0px rgba(0, 0, 0, 0.15);
+	border-radius: 13rpx;
+	margin: 30rpx auto 30rpx;
+	position: relative;
+	padding-left: 30rpx;
+}
+.add_address-icon{
+	font-size: 24rpx;
+	color: #ADADAD;
+	position: absolute;
+	right: 30rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+/* 地址已有 */
+.address-info{
+	width: 690rpx;
+	padding-bottom: 30rpx;
+	font-size: 28rpx;
+	color: #39393A;
+	font-weight: bold;
+	background: #FFFFFF;
+	box-shadow: 0px 2rpx 10rpx 0px rgba(0, 0, 0, 0.15);
+	border-radius: 13rpx;
+	margin: 30rpx auto 30rpx;
+	position: relative;
+	padding-left: 30rpx;
+}
+.address-name{
+	height: 40rpx;
+	font-weight: bold;
+	position: absolute;
+	left: 28rpx;
+	top: 26rpx;
+}
+.address-local{
+	font-size: 30rpx;
+	color: #2B86FF;
+	margin-right: 20rpx;
+}
+.address-text{
+	width: 630rpx;
+	font-size: 24rpx;
+	color: #989898;
+	/* position: absolute;
+	left: 30rpx;
+	top: 80rpx; */
+	padding-top: 80rpx;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* 商品 */
+.shop-item{
+	width: 690rpx;
+	/* height: 355rpx; */
+	padding: 30rpx;
+	background: #FFFFFF;
+	box-shadow: 0px 2rpx 10rpx 0px rgba(0, 0, 0, 0.15);
+	border-radius: 13rpx;
+	margin: 0 auto 30rpx;
+}
+.order-info{
+	height: 33rpx;
+	font-size: 24rpx;
+	font-weight: 400;
+	color: #39393A;
+	line-height: 33rpx;
+	margin: 40rpx auto 40rpx;
+}
+.order-total{
+	font-size: 26rpx;
+	text-align: right;
+}
+/* 合计 */
+.cart-all{
+	width: 100%;
+	height: 120rpx;
+	line-height: 120rpx;
+	border-top: 1rpx solid #E6E6E6;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+}
+.cart-total{
+	font-size: 28rpx;
+	color: #39393A;
+	position: absolute;
+	right: 233rpx;
+	bottom: 0;
+	vertical-align: middle;
+}
+.cart-tips{
+	font-size: 24rpx;
+	color: #989898;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 10rpx;
+}
+.cart-money{
+	max-width: 286rpx;
+	font-size: 36rpx;
+	color: #E7980B;
+	font-weight: bold;
+	display: inline-block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.cart-btn{
+	width: 188rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	color: #fff;
+	font-size: 26rpx;
+	background: linear-gradient(180deg, #56BBFF 0%, #2B86FF 100%);
+	border-radius: 30rpx;
+	position: absolute;
+	right: 30rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+/* 新增地址 */
+.form{
+	width: 690rpx;
+	/* height: 355rpx; */
+	padding:0 30rpx;
+	background: #FFFFFF;
+	box-shadow: 0px 2rpx 10rpx 0px rgba(0, 0, 0, 0.15);
+	border-radius: 13rpx;
+	margin: 0 auto 30rpx;
+}
+.margin-top{
+	margin-top: 40rpx;
+}
+.form-item{
+	height: 97rpx;
+	line-height: 97rpx;
+	position: relative;
+}
+.form-item::last-child{
+	border-bottom: none;
+}
+.item-value{
+	width: 100rpx;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: top;
+}
+.item-price{
+	width: 100rpx;
+	display: inline-block;
+	vertical-align: top;
+	width: 400rpx;
+	text-align: right;
+	color: #9C4414;
+}
+.item-input{
+	width: 442rpx;
+	height: 97rpx;
+	line-height: 97rpx;
+	display: inline-block;
+}
+.item-switch{
+	height: 52rpx;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin:auto;
+}

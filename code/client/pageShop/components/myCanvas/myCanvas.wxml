@@ -1,0 +1,16 @@
+<myLoading wx:if="{{loading}}"></myLoading>
+<view class="mask" bindtap="hideCanvas" wx:if="{{canvasInfo}}">
+	<view class="canvas-content" catchtap="forbiddenBubble" style="width: {{width}}rpx;height: {{height}}rpx;">
+		<image class="canvas-temp" src="{{canvasTempFilePath}}" mode="widthFix" style="width: {{width}}rpx;height: {{height}}rpx;"/>
+		<button class="canvas-btn" bindtap="saveImageToPhotosAlbumFunc">
+			<!-- <text class="share-icon iconfont iconxiazai1"></text> -->
+			保存
+		</button>
+		<button class="canvas-btn" style="bottom: -220rpx;" bindtap="saveAllImages" wx:if="{{imgList.length>0}}">
+			<!-- <text class="share-icon iconfont iconxiazai1"></text> -->
+			保存所有素材图
+		</button>
+	</view>
+</view>
+<painter customStyle='position: absolute; left: -9999rpx;' palette="{{canvasInfo}}" bind:imgOK="onImgOK"
+		 bind:imgErr="onImgErr" />

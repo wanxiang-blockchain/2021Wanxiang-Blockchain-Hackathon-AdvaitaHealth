@@ -1,0 +1,123 @@
+
+page,
+view,
+text,
+input,
+button,
+image,
+cover-view {
+	font-family: "Microsoft YaHei", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+.scroll-h{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.hidden-text{
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.btn-all{
+	width: 650rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	font-size: 32rpx;
+	color: #fff;
+	background: #2B86FF;
+	border-radius: 49rpx;
+	margin: 0 auto;
+}
+scroll-view {
+	-webkit-overflow-scrolling: touch;
+}
+/* conmon */
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+/* 弹窗 */
+.m-mask {
+	background-color: rgba(0, 0, 0, 0.3);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+}
+
+.mask-box {
+	width: 666rpx;
+	height: 395rpx;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 2rpx 10rpx 0px rgba(0, 0, 0, 0.25);
+	border-radius: 15rpx;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+
+}
+
+.mask-title {
+	font-size: 36rpx;
+	font-weight: bold;
+	color: rgba(3, 19, 49, 1);
+	margin-top: 56rpx;
+	margin-bottom: 31rpx;
+}
+
+.mask-content {
+	height: 120rpx;
+	font-size: 28rpx;
+	text-align: center;
+}
+
+.mask-group {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 40rpx;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 50rpx;
+}
+
+.mask-btn {
+	width: 270rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 32rpx;
+	text-align: center;
+	box-sizing: border-box;
+	color: #fff;
+	background: #2B86FF;
+	border-radius: 45rpx;
+	border: 2rpx solid rgba(151, 151, 151, 1);
+}
+
+.mask-cancel {
+	background-color: transparent;
+	color: #031331;
+	border: 2rpx solid #031331;
+}

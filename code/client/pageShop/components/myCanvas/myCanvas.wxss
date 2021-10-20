@@ -1,0 +1,52 @@
+@import "/common/iconfont.wxss";
+@import "/common/common.wxss";
+/* 分享海报 */
+.mask {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.78);
+	z-index: 999;
+}
+.canvas-content {
+	display: block;
+	width: 568rpx;
+	height: 860rpx;
+	/* background-color: #fff; */
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 2;
+}
+
+.canvas-temp {
+	display: block;
+}
+
+.share-icon {
+	font-size: 40rpx;
+	color: #fff;
+	margin-right: 30rpx;
+	position: relative;
+	top: 3rpx;
+}
+.canvas-btn {
+	position: absolute;
+	bottom: -116rpx;
+	left:0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	font-size: 28rpx;
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	color: #027AFE;
+	background: #fff;
+	border-radius: 8rpx;
+}

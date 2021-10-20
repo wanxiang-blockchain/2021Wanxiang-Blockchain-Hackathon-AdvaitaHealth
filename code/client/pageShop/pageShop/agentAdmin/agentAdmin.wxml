@@ -1,0 +1,24 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='商城' background="#fff" color="#000"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{windowIsBang ? 40 : 16}}px - 52px ); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true"  scroll-into-view="{{isSelect}}">
+	<view class="search">
+		<view class="classic">分类<text class="classic-icon iconfont iconjiantouxia"></text></view>
+		<view class="classic" style="margin-left: 100rpx;">时间<text class="classic-icon iconfont iconjiantouxia"></text></view>
+	</view>
+	<view class="money-box">
+		<view class="money-item">
+			<view class="money-name">充值-预存金</view>
+			<view class="money-time">2019-10-09 15:19</view>
+			<view class="money-num">+7000</view>
+		</view>
+		<view class="money-item">
+			<view class="money-name">充值-预存金</view>
+			<view class="money-time">2019-10-09 15:19</view>
+			<view class="money-num">+7000</view>
+		</view>
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

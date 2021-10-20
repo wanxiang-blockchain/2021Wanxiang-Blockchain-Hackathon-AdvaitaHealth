@@ -1,0 +1,35 @@
+<view class="ai-title" wx:if="{{showTitle}}">情绪内稳态风险预警 <text wx:if="{{showUrl}}" class="ai-title-icon iconfont iconjiantouyou"></text></view>
+<view class="ai-time">影响情绪内稳态的风险参数{{analyzeTime?'（ '+analyzeTime+'）':analyzeTime}}</view>
+<block wx:if="{{hasAnalyze}}">
+	<view class="ai-tips" wx:if="{{analyze.length>0}}">
+		<view class="ai-tips-high">
+			<view class="ai-dot"></view>高风险
+		</view>
+		<view class="ai-tips-high">
+			<view class="ai-dot" style="background: #F7B500;"></view>中风险
+		</view>
+		<view class="ai-tips-high">
+			<view class="ai-dot" style="background: #6D7278;"></view>低风险
+		</view>
+	</view>
+	<view class="ai-tips" wx:else>
+		<view class="ai-tips-high" style="color: #6DD400;">恭喜你，你的情绪生理参数无风险。</view>
+	</view>
+	<view class="ai-item" bindtap="goUrl" data-url="{{item.lineUrl}}" wx:if="{{analyze.length>0}}" wx:for="{{analyze}}"
+	 wx:key="index" style="margin-bottom: {{index == analyze.length-1?0:'24rpx'}};margin-top: {{index == 0?'40rpx':'0'}};">
+		<view class="ai-item-title">
+			<view class="ai-item-text">{{item.line_name}}<text wx:if="{{showUrl}}" class="ai-item-icon iconfont iconwenhaolveguo"></text></view>
+			<view class="ai-item-line"></view>
+		</view>
+		<view class="ai-item-content">
+			<view class="ai-item-time" wx:for="{{item.row_detail}}" wx:key="index" wx:for-item="option">
+				<view class="ai-dot" style="background: {{item.color}};"></view>报告({{option.time}})
+			</view>
+		</view>
+	</view>
+</block>
+<block wx:else>
+	<view class="ai-tips">
+		<view class="ai-tips-high" style="color: #2B86FE;">检测中...</view>
+	</view>
+</block>

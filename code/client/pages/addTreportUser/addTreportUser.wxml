@@ -1,0 +1,88 @@
+<!--头部-->
+<include src="../common/auth.wxml" />
+<MyHeader  titleText='添加新成员'  bind:back="back" backIcon="{{true}}" ></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;background: #FBFBFB;" scroll-top="{{scrollTop}}" bindscrolltolower="searchScrollLower">
+
+    <!--选择手表-->
+    <view class="select-user" wx:if="{{isSelectUserUI}}">
+        <scroll-view class="list" scroll-y="true" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px - 360rpx); width:{{windowWidth}}px;position:relative;">
+            <view class="p-title">请选择新成员使用的手表</view>
+
+            <view class="item" wx:for="{{watchesList}}" bindtap="selectWatches" data-index="{{index}}" data-device_id="{{item.device_id}}">
+                <view class="left">
+                    <image src="http://i.2fei2.com/5e02bdc081f6f.png" class="watches"></image>
+                </view>
+                <view class="left">
+                    <view class="title">{{item.treport_user_name!='' ? item.treport_user_name+' 正在使用' : '手表未绑定成员'}} </view>
+                    <view class="bind-code">绑定码：{{item.device_id}}</view>
+                </view>
+                <view class="right">
+                    <view class="watches-name">{{item.name}}</view>
+                    <view class="select {{item.active==1 ? 'active': ''}}">
+                        <view class="iconfont iconxuanze"></view>
+                    </view>
+                </view>
+                <view class="clearfix"></view>
+            </view>
+        </scroll-view>
+        <view class="bottom-btn-group">
+            <view class="btn-select" bindtap="confirmWatches">选择绑定 {{select_device_name}}</view>
+            <view class="btn-scan" bindtap="scanCode">扫码添加新手表</view>
+            <view class="dot-group">
+                <view class="dot active"></view>
+                <view class="dot"></view>
+                <view class="clearfix"></view>
+            </view>
+        </view>
+    </view>
+    
+    <!--填写资料-->
+    <form class="add-user" bindsubmit="addUser" wx:else>
+        <view class="title" style="margin-top: 180rpx;">成员名字</view>
+        <view class="input">
+            <input type="text" maxlength="15" name="name" class="name"></input>
+        </view>
+        <view class="title">成员性别</view>
+        <view class="sex">
+            <view class="item {{sex==1 ? 'active' : ''}}" bindtap="selectSex" data-sex="1">
+                <view class="iconfont iconnan1"></view>
+                <view class="text">男</view>
+            </view>
+            <view class="item {{sex==2 ? 'active' : ''}}" bindtap="selectSex" data-sex="2">
+                <view class="iconfont iconnv1"></view>
+                <view class="text">女</view>
+            </view>
+            <input type="text" name="sex" style="display: none;" value="{{sex}}"></input>
+            <view class="clearfix"></view>
+        </view>
+        <!-- <view class="title">成员绑定码</view>
+        <view class="bind-code">{{select_device_id}}</view> -->
+
+        <button class="btn-add" form-type="submit">添加</button>
+       <!-- <view class="dot-group">
+            <view class="dot"></view>
+            <view class="dot active"></view>
+            <view class="clearfix"></view>
+        </view> -->
+    </form>    
+
+    <!--弹出确认-->
+    <view class="alert-affirm" wx:if="{{isNeedRandNum}}">
+        <view class="mask"></view>
+        <view class="window">
+            <view class="title">手表绑定</view>
+            <view class="content-text" wx:if="{{treport_user_name!=''}}">该手表{{treport_user_name}}正在使用</view>
+            <view class="content-text">确定绑定吗？</view>
+            <view class="btn-group">
+                <button class="btn cancel" bindtap="hideIsNeedRandNum">取消</button>
+                <button class="btn" bindtap="confirmBindWatches">确定</button>
+                <view class="clearfix"></view>
+            </view>
+        </view>
+    </view>
+
+<include src="../common/public.wxml" />
+
+    
+</scroll-view>

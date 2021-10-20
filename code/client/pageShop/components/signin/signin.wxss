@@ -1,0 +1,73 @@
+@import "../../../common/iconfont.wxss";
+.title{
+	font-size: 25rpx;
+	font-weight: 800;
+	text-align: left;
+	color: #000000;
+}
+.preview-box{
+	
+	position: relative;
+}
+.preview-sentence {
+	width: 466rpx;
+	overflow: hidden;
+	text-align: left;
+	font-size: 24rpx;
+	color: #000;
+}
+
+.conduct-btn {
+	width: 168rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+	font-size: 24rpx;
+	color: #fff;
+	background: #027AFE;
+	border-radius:8rpx;
+	position: absolute;
+	right: 0;
+	top: 18rpx;
+}
+.done {
+	color: #989898;
+	background: #F7F7F7;
+}
+
+
+.conduct-scroll {
+	margin-top: 18rpx;
+	height: 50rpx;
+	overflow: hidden;
+}
+.conduct-box {
+	transition: all 0.3s;
+}
+.conduct-item {
+	width: 100%;
+	height: 50rpx;
+	line-height: 50rpx;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	/* margin-bottom: 30rpx; */
+}
+.box {
+	padding-bottom: 10rpx;
+}
+.conduct-title {
+	width: 430rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #000;
+}
+
+.more-icon{
+	display: inline-block;
+	font-size: 20rpx;
+	color: #9B9B9B;
+	margin-left: 12rpx;
+	vertical-align: middle;
+}

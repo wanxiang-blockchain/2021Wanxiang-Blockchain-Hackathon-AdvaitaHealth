@@ -1,0 +1,54 @@
+<include src="public.wxml" />
+<!-- 底部菜单栏 -->
+<view class="footer">
+	<view class="nav">
+		<view class="ul">
+			<view class="li">
+				<navigator class="nav-controller a" url="/pages/indexPage/indexPage" open-type="reLaunch"
+				 hover-class="a-hover">
+					<view class="foot-btn nav-controller {{URL == 1 ? 'active' : ''}} a">
+						<view class="iconfont2 iconyanjing_yincang" wx:if="{{URL != 1}}"></view>
+						<view class="iconfont2 iconyanjing_yincang" wx:else style="color: {{URL == 1?'#4662FF':''}};"></view>
+						<text style="color: {{URL == 1?'#4662FF':''}};">睡眠</text>
+					</view>
+				</navigator>
+			</view>
+			<view class="li">
+				<navigator class="nav-controller a" url="/pages/index/index" open-type="reLaunch" hover-class="a-hover">
+					<view class="foot-btn nav-controller {{URL == 2 ? 'active' : ''}} a">
+						<view class="iconfont2 iconimage-text-fill" wx:if="{{URL != 2}}" ></view>
+						<view class="iconfont2 iconimage-text-fill" wx:else style="color: {{URL == 2?'#4662FF':''}};"></view>
+						<text style="color: {{URL == 2?'#4662FF':''}};">测评</text>
+					</view>
+				</navigator>
+			</view>
+			<view class="li">
+				<navigator class="nav-controller a" url="/pageShop/pageShop/meditation/meditation" open-type="reLaunch" hover-class="a-hover">
+					<view class="foot-btn nav-controller {{URL == 5 ? 'active' : ''}} a">
+						<view class="iconfont2 iconvs-fill" wx:if="{{URL != 5}}" ></view>
+						<view class="iconfont2 iconvs-fill" wx:else style="color: {{URL == 5?'#4662FF':''}};"></view>
+						<text style="color: {{URL == 5?'#4662FF':''}};">竞赛</text>
+					</view>
+				</navigator>
+			</view>
+			<view class="li">
+				<navigator class="nav-controller a" url="/pages/home/home" open-type="reLaunch" hover-class="a-hover">
+					<view class="foot-btn nav-controller {{URL == 3 ? 'active' : ''}} a">
+						<view class="iconfont2 iconshopping" wx:if="{{URL != 3}}"></view>
+						<view class="iconfont2 iconshopping" wx:else style="color: {{URL == 3?'#4662FF':''}};"></view>
+						<text style="color: {{URL == 3?'#4662FF':''}};">商店</text>
+					</view>
+				</navigator>
+			</view>
+			<view class="li">
+				<navigator class="nav-controller a" url="/pages/personal/personal" open-type="reLaunch" hover-class="a-hover">
+					<view class="foot-btn nav-controller {{URL == 4 ? 'active' : ''}} a">
+						<view class="iconfont2 iconmy" wx:if="{{URL != 4}}"></view>
+						<view class="iconfont2 iconmy" wx:else style="color: {{URL == 4?'#4662FF':''}};"></view>
+						<text style="color: {{URL == 4?'#4662FF':''}};">我的</text>
+					</view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>

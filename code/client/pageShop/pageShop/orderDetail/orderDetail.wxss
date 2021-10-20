@@ -1,0 +1,349 @@
+page {
+	font-size: 24rpx;
+	color: #39393A;
+	background-color: #fff;
+}
+.scroll_h{
+	padding-bottom: 120rpx;
+	box-sizing: border-box;
+}
+/* 订单状态 */
+.order-status{
+	width: 750rpx;
+	height: 165rpx;
+	padding-left: 108rpx;
+	color: #fff;
+	background: var(--main-color);
+	position: relative;
+}
+.status-icon{
+	height: 76rpx;
+	font-size: 48rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 35rpx;
+	margin: auto;
+}
+.status-title{
+	height: 84rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	line-height: 40rpx;
+	letter-spacing: 1rpx;
+	padding-top: 44rpx;
+}
+.status-time{
+	height: 40rpx;
+	font-size: 20rpx;
+	font-weight: 500;
+	line-height: 28rpx;
+	letter-spacing: 1rpx;
+	margin-top: 12rpx;
+}
+/* 边框 */
+.item-box{
+	border-bottom: 20rpx solid #f2f2f2;
+	position: relative;
+}
+/* 地址已有 */
+.address-info{
+	width: 750rpx;
+	font-size: 28rpx;
+	color: #39393A;
+	font-weight: bold;
+	background: #FFFFFF;
+	position: relative;
+	padding-left: 30rpx;
+	padding-bottom: 30rpx;
+}
+.address-name{
+	height: 40rpx;
+	font-weight: bold;
+	position: absolute;
+	left: 28rpx;
+	top: 26rpx;
+}
+.address-local{
+	font-size: 30rpx;
+	color: #2B86FF;
+	margin-right: 20rpx;
+}
+.address-text{
+	width: 630rpx;
+	font-size: 24rpx;
+	color: #989898;
+	padding-top: 80rpx;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* 商品 */
+.shop-item{
+	padding: 30rpx;
+}
+.order-info{
+	height: 33rpx;
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #565656;
+	line-height: 33rpx;
+	letter-spacing: 1rpx;
+	margin-bottom: 20rpx;
+}
+.refund-box{
+	height: 60rpx;
+	margin: 10rpx 0 30rpx;
+}
+.refund-btn{
+	width: 140rpx;
+	height: 60rpx;
+	line-height: 56rpx;
+	text-align: center;
+	font-size: 28rpx;
+	border: 1rpx solid #565656;
+	border-radius: 30rpx;
+	color: #565656;
+	float: right;
+	margin-left: 20rpx;
+}
+.red{
+	color: #FF623E;
+	border: 1rpx solid #FF623E;
+}
+.order-total{
+	font-size: 26rpx;
+	color: #282828;
+	margin-bottom: 30rpx;
+}
+.order-total .right{
+	font-size: 28rpx;
+}
+.order-line{
+	width: 690rpx;
+	height: 2rpx;
+	background-color: #D3D3D3;
+	margin-bottom: 30rpx;
+}
+/* 订单 */
+.num-info{
+	padding: 30rpx 30rpx 0;
+}
+.order-info-title{
+	height: 40rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #282828;
+	line-height: 40rpx;
+	letter-spacing: 2rpx;
+	margin-bottom: 20rpx;
+}
+.order-info-num{
+	height: 33rpx;
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #565656;
+	line-height: 33rpx;
+	letter-spacing: 1rpx;
+	margin-top: 20rpx;
+	margin-bottom: 27rpx;
+	position: relative;
+}
+.order-info-btn{
+	width: 188rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	color: #fff;
+	font-size: 26rpx;
+	background: linear-gradient(180deg, #56BBFF 0%, #2B86FF 100%);
+	border-radius: 30rpx;
+	position: absolute;
+	right: 30rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+.order-copy{
+	padding: 30rpx;
+	color: #1966CA;
+	height: 93rpx;
+	line-height: 33rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0rpx;
+	margin: auto;
+}
+/* 物流 */
+.logistics-border{
+	margin-left: 54rpx;
+	border-left: 2rpx solid #B5B5B5;
+}
+.logistics-item{
+	width: 668rpx;
+	padding-left: 44rpx;
+	position: relative;
+	font-size: 24rpx;
+	color: #B5B5B5;
+	line-height: 34rpx;
+	padding-bottom: 30rpx;
+}
+.logistics-bg{
+	width: 30rpx;
+	height: 30rpx;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 2rpx solid #B5B5B5;
+	position: absolute;
+	left: -15rpx;
+	top: 0;
+	z-index: 9;
+}
+.logistics-color{
+	width: 50rpx;
+	height: 50rpx;
+	border-radius: 50%;
+	background: #FF623E;
+	position: absolute;
+	left: -24rpx;
+	top: -10rpx;
+	z-index: 1;
+}
+.logistics-color::after{
+	content: '';
+	width: 30rpx;
+	height: 30rpx;
+	border-radius: 50%;
+	border: 2rpx solid #fff;
+	background-color: #FF623E;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 9;
+}
+
+.logistics-icon{
+	width: 48rpx;
+	height: 48rpx;
+	line-height: 46rpx;
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	background: #B5B5B5;
+	font-size: 24rpx;
+	position: absolute;
+	left: 34rpx;
+	top: 10rpx;
+	
+}
+.logistics-content{
+	width: 668rpx;
+}
+/* 客服 */
+.chat-icon{
+	height: 72rpx;
+	font-size: 44rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 30rpx;
+	margin: auto;
+}
+.chat-title{
+	height: 105rpx;
+	font-size: 24rpx;
+	font-weight: bold;
+	color: #282828;
+	line-height: 105rpx;
+	letter-spacing: 1rpx;
+	padding-left: 95rpx;
+}
+.chat-back{
+	height: 44rpx;
+	font-size: 24rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 30rpx;
+	margin: auto;
+}
+/* 合计 */
+.cart-all{
+	width: 100%;
+	height: 120rpx;
+	line-height: 120rpx;
+	border-top: 1rpx solid #E6E6E6;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+}
+.cart-cancel{
+	width: 188rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	color: #282828;
+	font-size: 26rpx;
+	background: #F4F4F4;
+	border-radius: 30rpx;
+	position: absolute;
+	right: 240rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+.cart-btn{
+	width: 188rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	color: #fff;
+	font-size: 26rpx;
+	background: linear-gradient(180deg, #56BBFF 0%, #2B86FF 100%);
+	border-radius: 30rpx;
+	position: absolute;
+	right: 30rpx;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+/* 图片预览 */
+.choose-img{
+	width: 100%;
+	border-radius: 36rpx;
+	position: relative;
+}
+.text-box{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.text-bg{
+	height: 28rpx;
+	font-size: 16rpx;
+	padding: 4rpx 8rpx;
+	mix-blend-mode: multiply;
+}
+.text-name{
+	font-size: 16rpx;
+	padding: 4rpx 8rpx;
+	font-weight: 500;
+	height: 32rpx;
+	color: #FFFFFF;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}

@@ -1,0 +1,40 @@
+
+<view class="conduct">
+	<block wx:if="{{num<10}}">
+		<view class="conduct-scroll" style=" height: {{btnHeight}}px">
+			<view class="conduct-box" style=" transform: translateY({{scrollHeight}}px)">
+				<view class="box" wx:for="{{guideArr}}" wx:key="index">
+					<view class="conduct-item">
+						<view class="conduct-title m-center">{{ item.title }} {{ item.intro }}</view>
+						<view class="title" bindtap="goUrl" data-url="/pageHappy/pageHappy/guideList/guideList">持戒与精进<view class="more-icon iconfont iconjiantouyou"></view></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="preview-box" >
+			<view class="preview-sentence" style="font-size: {{index==0 && num<5?16:24}}rpx;" wx:for="{{textArr}}" wx:key="index" bindtap="goDetail">
+				{{ item }}
+			</view>
+			<view class="conduct-btn"  bindtap="next">打卡<text style="font-size: 18rpx;"> ({{num}}/{{guideArr.length}})</text></view>
+		</view>
+	</block>
+	
+	<block wx:else>
+		<view class="conduct-scroll" style="height:{{btnHeight}}px">
+			<view class="conduct-box">
+				<view class="box">
+					<view class="conduct-item">
+						<view class="conduct-title m-center">{{ guideArr[0].title }} {{ guideArr[0].intro }}</view>
+						<view class="title" bindtap="goUrl" data-url="/pageHappy/pageHappy/guideList/guideList">持戒与精进<view class="more-icon iconfont iconjiantouyou"></view></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="preview-box">
+			<view class="preview-sentence" style="font-size: {{index==0 ?16:24}}rpx;" wx:for="{{textArr}}" wx:key="index" bindtap="goDetail">
+				{{ item }}
+			</view>
+			<view class="conduct-btn done">已完成</view>
+		</view>
+	</block>
+</view>

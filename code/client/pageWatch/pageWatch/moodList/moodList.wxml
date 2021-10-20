@@ -1,0 +1,34 @@
+<MyHeader bind:back="back"  backIcon="{{true}}" titleText="内稳态风险参数"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<view class="time-list flex-box">
+	<view class="time-item {{timeVal == 5?'time-active':''}}" bindtap="changeTime" data-type="5">5次</view>
+	<view class="time-item {{timeVal == 30?'time-active':''}}" bindtap="changeTime" data-type="30">30天</view>
+	<view class="time-item {{timeVal == 90?'time-active':''}}" bindtap="changeTime" data-type="90">90天</view>
+	<view class="time-item {{timeVal == 180?'time-active':''}}" bindtap="changeTime" data-type="180">半年</view>
+	<view class="time-item {{timeVal == 365?'time-active':''}}" bindtap="changeTime" data-type="365">一年</view>
+</view>
+ <scroll-view style="top: {{statusBarHeight*2+navHeight*2+98}}rpx;width:{{windowWidth}}px;" scroll-y="true" class="scroll-h">
+	<!-- AI预警 -->
+	<aiList info="{{info}}"></aiList>
+	
+	<view class="quota-box">
+		<view class="quota-line"></view>
+		<view class="quota-tips" style="color: #6E6E6E;">*中医测评与内稳态参数是身心健康评价参考，不可替代医生诊断，如有不适请立即就近就医。</view>
+		
+		<view class="quota-title" style="margin-top: 60rpx;">内稳态风险参数</view>
+		<view class="quota-text" style="margin-top: 14rpx;">情绪的不稳定会引起人体内稳态的神经体液调节能力（血压、心率、心率变异性、睡眠、矿物质含量等等）的不稳定，身体不稳定同样会影响到情绪，所以监测发现不稳定情绪参数，寻找影响情绪的参数诱因，去除诱因才能有稳定情绪和状态，身心健康。</view>
+		<image class="quota-img" src="https://i.2fei2.com/goods/logo/2021-06-29/14:04:18/60dab7e287280.png"></image>
+		<view class="quota-tips">内稳态算法：采用刘承宜教授易流算法</view>
+		
+		<view class="avatar-box">
+			<view class="quota-title">易流算法发明人</view>
+			<view class="quota-text"><text style="font-weight: bold;">刘承宜教授</text> | 华南师范大学博士生导师</view>
+			<image class="quota-avatar" src="https://i.2fei2.com/goods/logo/2021-06-23/10:38:18/60d29e9a507bc.png" mode="aspectFit"></image>
+		</view>
+		
+		<view class="quota-title">易流算法</view>
+		<view class="quota-text">不同系统的不同参数用几何平均值标准化后，可在同一平台进行比较的算法。该算法用于动态分析多系统多参数复杂系统的稳定与健康状态。发现不稳定参数，去除不稳定参数诱因，达到平衡稳定与健康状态。</view>
+	</view>
+</scroll-view>
+

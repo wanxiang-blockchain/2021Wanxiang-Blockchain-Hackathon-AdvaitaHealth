@@ -1,0 +1,18 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='我的订单' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view  scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll_h">
+	<Agent agentType="{{agentType}}" bindchangeType="showChangeMask"></Agent>
+</scroll-view>
+
+<view class="m-mask"  bindtap="hideMask" wx:if="{{changeMask}}">
+	<view class="mask-box"  style="width:540rpx;height: 490rpx;" catchtap="forbiddenBubble">
+		<view class="mask-title">请选择代理模式</view>
+		<view class="mask-item" bindtap="changeType" data-type="{{item.name}}" wx:for="{{agentArr}}" wx:key="index">
+			<view class="mask-text">{{item.title}}</view>
+			<view class="mask-check iconfont iconxuanzhong" style="color: {{type == item.name?'#2B86FF':''}}"></view>
+		</view>
+		<view class="mask-btn" bindtap="hideMask">确认</view>
+	</view>
+</view>

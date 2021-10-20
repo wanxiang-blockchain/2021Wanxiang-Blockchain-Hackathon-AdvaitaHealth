@@ -1,0 +1,275 @@
+@import "/common/iconfont.wxss";
+
+page {
+	font-size: 24rpx;
+	color: #6D7278;
+	background-color: #fff;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.agent {
+	padding: 30rpx 0 60rpx;
+}
+/* 代理信息 */
+.agent-info{
+	width: 686rpx;
+	height: 344rpx;
+	background: #FFFFFF;
+	border-radius: 12rpx;
+	margin: 82rpx auto 0;
+	position: relative;
+	padding-top: 1rpx;
+}
+.agent-avatar{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+	background-color: #ccc;
+	position: absolute;
+	top: -60rpx;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.agent-name{
+	height: 50rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #3E1006;
+	line-height: 50rpx;
+	text-align: center;
+	margin-top: 72rpx;
+}
+.agent-btn{
+	padding: 6rpx 0;
+	text-align: center;
+}
+.agent-type{
+	width: 110rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 20rpx;
+	margin:auto;
+	border-radius: 3rpx;
+	border: 1rpx solid #3E1006;
+	position: relative;
+}
+.agent-change{
+	font-size: 30rpx;
+	color: #000;
+	position: absolute;
+	right: -50rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.info-money{
+	width: 450rpx;
+	text-align: center;
+	margin-top: 8rpx;
+}
+.info-num{
+	height: 84rpx;
+	font-size: 60rpx;
+	font-weight: 800;
+	color: #FF5000;
+	line-height: 84rpx;
+}
+.info-more{
+	display: inline-block;
+	font-size: 26rpx;
+	font-weight: normal;
+	color: #999999;
+	vertical-align: middle;
+	margin-left: -10rpx;
+}
+.info-title{
+	height: 45rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333333;
+	line-height: 45rpx;
+	letter-spacing: 1rpx;
+	margin-top: 6rpx;
+}
+.draw{
+	width: 180rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background: #2B86FF;
+	text-align: center;
+	border-radius: 30rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #FFFFFF;
+	position: absolute;
+	right: 32rpx;
+	bottom: 95rpx;
+}
+/* 返利规则 */
+.rebate-box{
+	width: 686rpx;
+	height: 257rpx;
+	background: #FFFFFF;
+	border-radius: 12rpx;
+	margin: 32rpx auto;
+	position: relative;
+}
+.rebate-title{
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333333;
+	line-height: 45rpx;
+	padding: 32rpx;
+}
+.rebate-rule{
+	width: 120rpx;
+	height: 46rpx;
+	line-height: 46rpx;
+	text-align: center;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.78);
+	border-radius: 100rpx 0px 0px 100rpx;
+	position: absolute;
+	right: 0;
+	top: 32rpx;
+}
+.rebate-content{
+	padding: 0 20rpx;
+}
+.rebate-item{
+	width: 33%;
+	text-align: center;
+}
+.rebate-num{
+	height: 56rpx;
+	font-size: 40rpx;
+	font-weight: bold;
+	color: #333333;
+	line-height: 56rpx;
+}
+.rebate-text{
+	height: 40rpx;
+	font-size: 28rpx;
+	font-weight: 400;
+	color: #999999;
+	line-height: 40rpx;
+	margin-top: 10rpx;
+}
+/* 邀请有礼 */
+.invite-box{
+	width: 686rpx;
+	height: 230rpx;
+	color: #fff;
+	background: linear-gradient(159deg, #2243D2 0%, #316EEA 100%);
+	border-radius: 12rpx;
+	margin: auto;
+	position: relative;
+	margin-top: 32rpx;
+}
+.invite-title{
+	padding: 32rpx 32rpx 27rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 50rpx;
+}
+.invite-tips{
+	padding-left: 32rpx;
+}
+.invite-btn{
+	width: 146rpx;
+	height: 56rpx;
+	line-height: 54rpx;
+	text-align: center;
+	font-size: 26rpx;
+	border-radius: 30rpx;
+	color: #fff;
+	background:transparent;
+	border: 1rpx solid #FFFFFF;
+	position: absolute;
+	right: 32rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+/* 优惠券 */
+.coupon-item{
+	width: 686rpx;
+	height: 222rpx;
+	padding: 32rpx 0 0 32rpx;
+	color: #fff;
+	background: linear-gradient(340deg, #FFC06A 0%, #FFB146 100%);
+	border-radius: 10rpx;
+	margin: 0 auto 20rpx;
+	position: relative;
+}
+.coupon-title{
+	height: 37rpx;
+	font-size: 26rpx;
+	font-weight: 500;
+	line-height: 37rpx;
+}
+.coupon-num{
+	height: 65rpx;
+	font-size: 46rpx;
+	font-weight: 800;
+	line-height: 65rpx;
+	margin-top: 20rpx;
+}
+.coupon-text{
+	height: 37rpx;
+	font-size: 26rpx;
+	font-weight: bold;
+	line-height: 37rpx;
+	letter-spacing: 1rpx;
+	margin-top: 10rpx;
+}
+.coupon-detail{
+	width: 90rpx;
+	height: 40rpx;
+	line-height: 38rpx;
+	text-align: center;
+	font-size: 24rpx;
+	border-radius: 23rpx;
+	border: 1rpx solid #FFFFFF;
+	position: absolute;
+	right: 32rpx;
+	top: 52rpx;
+}
+/* 成为代理 */
+.agent-apply{
+	width: 686rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	font-size: 32rpx;
+	text-align: center;
+	color: #fff;
+	background: linear-gradient(151deg, #FF6C00 0%, #FF8730 100%);
+	border-radius: 49rpx;
+	margin: 32rpx auto 0;
+}

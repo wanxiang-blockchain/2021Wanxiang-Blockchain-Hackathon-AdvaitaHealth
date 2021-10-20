@@ -1,0 +1,10 @@
+{
+	"usingComponents": {
+	"messageboxOne": "/components/messageboxOne/messageboxOne",
+		"ec-canvas": "../../utils/ec-canvas/ec-canvas",
+		"loading": "/components/loading/loading",
+		"myLoading": "/components/myLoading/myLoading",
+		"commentInput": "/components/commentInput/commentInput"
+	},
+	"component": true
+}

@@ -1,0 +1,82 @@
+<MyHeader bind:back="back"  backIcon="{{true}}" ></MyHeader>
+<!-- <scroll-view style="height: calc({{windowHeight}}px - {{windowIsBang ? 40 : 16}}px - 52px ); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true"> -->
+<!-- <scroll-view class="scroll_h" style="top: {{statusBarHeight+navHeight}}px; width:{{windowWidth}}px;position:relative;" scroll-y="true"
+> -->
+<login wx:if="{{!userInfo}}"></login>
+ <scroll-view style="top: {{statusBarHeight+navHeight}}px;width:{{windowWidth}}px;" scroll-y="true" class="scroll-h">
+	<view class="echart-bar">
+		<view class="echart-item {{isShowXL?'':'hide-bar'}}"  bindtap="showEchart" data-type="isShowXL">心率</view>
+		<!-- <view class="echart-item {{isShowBP?'':'hide-bar'}}" bindtap="showEchart" data-type="isShowBP">血压</view> -->
+		<view class="echart-item {{isShowOXY?'':'hide-bar'}}" bindtap="showEchart" data-type="isShowOXY">血氧</view>
+		<view class="type-bg">
+		<view class="type-title">
+			<image src="http://i.2fei2.com/5e22d2494f029.png" class="left-icon" bindtap="changeDate" data-type="1"></image>
+			<image src="http://i.2fei2.com/5e22d0c9ca197.png" class="day-icon"></image>
+			<text class="day-text">{{todayDate}}</text>
+			<image src="http://i.2fei2.com/5e22d27bbe7e8.png" class="right-icon" bindtap="changeDate" data-type="2"></image>
+		</view>
+		</view>
+	</view>
+	<view class="type-block"></view>
+	<view class="life-bar">
+		<view class="life-echart" bindtap="goUrl" data-url="../chartInfo/chartInfo?type=getHRV">
+			<text class="left">心率变异性SDNN</text>
+			<text class="life-back right iconfont iconjiantouyou"></text>
+			<text class="right">平均{{hrvAvg}}ms</text>
+			<view class="clearfix"></view>
+		</view>
+		
+		<view class="echart-box" style="height: 263rpx;" >
+			<view wx:if="{{hrvData.length==0 && !hrvLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;">暂无数据</view>
+			<view wx:if="{{hrvData.length==0 && hrvLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;"><loading size="40"></loading></view>
+			<!-- <view class="echart-mask" style="height: 263rpx;line-height: 263rpx;"></view> -->
+			<ec-canvas id="mychart-dom-line" canvas-id="mychart-dom-line" ec="{{ecHRV}}"></ec-canvas>
+		</view>
+	</view>
+	
+	<view class="life-bar {{isShowXL?'show':'hide'}}">
+		<view class="life-echart" bindtap="goUrl" data-url="../chartInfo/chartInfo?type=getHR">
+			<text class="left">心率</text>
+			<text class="life-back right iconfont iconjiantouyou"></text>
+			<text class="right">平均{{bpmAvg}}bpm</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box" style="height:263rpx;">
+			<view  wx:if="{{bpmData.length==0 && !bpmLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;">暂无数据</view>
+			<view  wx:if="{{bpmData.length==0 && bpmLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-bpm" canvas-id="mychart-dom-bpm" ec="{{ecBPM}}"></ec-canvas>
+		</view>
+	</view>
+	
+	<!-- <view class="life-bar {{isShowBP?'show':'hide'}}">
+		<view class="life-echart" bindtap="goUrl" data-url="../chartInfo/chartInfo?type=getBP">
+			<text class="left">血压</text>
+			<text class="life-back right iconfont iconjiantouyou"></text>
+			<text class="right">平均{{systolicAvg}}/{{diastoliAvg}}mmHg</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box" style="height:263rpx;" >
+			<view wx:if="{{systolicData.length==0 && diastoliData.length==0 && !bpLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;">暂无数据</view>
+			<view wx:if="{{systolicData.length==0 && diastoliData.length==0 && bpLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-bp" canvas-id="mychart-dom-bp" ec="{{ecBP}}"></ec-canvas>
+		</view>
+	</view> -->
+	
+	<view class="life-bar {{isShowOXY?'show':'hide'}}">
+		<view class="life-echart" bindtap="goUrl" data-url="../chartInfo/chartInfo?type=getOXY">
+			<text class="left">血氧</text>
+			<text class="life-back right iconfont iconjiantouyou"></text>
+			<text class="right">平均{{oxygenAvg}}%</text>
+			<view class="clearfix"></view>
+		</view>
+		<view class="echart-box" style="height:263rpx;" >
+			<view wx:if="{{oxygenData.length==0 && !bpLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;">暂无数据</view>
+			<view wx:if="{{oxygenData.length==0 && bpLoading}}" class="no-data" style="height: 263rpx;line-height: 263rpx;"><loading size="40"></loading></view>
+			<ec-canvas id="mychart-dom-oxy" canvas-id="mychart-dom-oxy" ec="{{ecOXY}}"></ec-canvas>
+		</view>
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+	<include src="../common/public.wxml" />
+	<include src="../common/auth.wxml" />

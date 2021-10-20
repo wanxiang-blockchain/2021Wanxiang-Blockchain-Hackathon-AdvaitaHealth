@@ -1,0 +1,86 @@
+.p-title {
+	font-size: 30rpx;
+	margin-left: 30rpx;
+	color: #031331;
+	font-weight: 500;
+	text-align: left;
+	margin-bottom: 20rpx;
+	padding-top: 40rpx;
+}
+
+.p-title .line {
+	height: 28rpx;
+	width: 6rpx;
+	background: #031331;
+	margin: 0;
+	border: none;
+	margin-right: 10rpx;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -4rpx;
+}
+
+/* 蓝色按钮 */
+.btn-all {
+	width: 690rpx;
+	height:100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	font-size: 40rpx;
+	border-radius: 50rpx;
+	color: #fff;
+	background: linear-gradient(180deg, rgba(86, 187, 255, 1) 0%, rgba(43, 134, 255, 1) 100%);
+	position: fixed;
+	bottom: 30rpx;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+/* 添加成员弹窗 */
+.add-item-mask {
+	width: 550rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	background: #031331;
+	color: #fff;
+	text-align: center;
+	box-shadow: 0px 0px 15rpx 0px rgba(152, 152, 152, 0.15);
+	border-radius: 45rpx;
+	margin: 30rpx auto;
+	position: relative;
+}
+
+.add-tips {
+	font-size: 24rpx;
+	color: #ADADAD;
+	text-align: left;
+	margin-left: 20rpx;
+}
+
+.share-btn {
+	width: 550rpx;
+	height: 80rpx;
+	background-color: transparent;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.add-user-mask {
+	line-height: 76rpx;
+	color: #031331;
+	background: transparent;
+	border: 2rpx solid #031331;
+}
+
+.add-icon-mask {
+	display: inline-block;
+	font-size: 32rpx;
+	margin-right: 18rpx;
+}
+
+.add-text-mask {
+	display: inline-block;
+	font-size: 28rpx;
+	margin-right: 18rpx;
+}

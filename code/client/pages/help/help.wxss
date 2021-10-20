@@ -1,0 +1,92 @@
+page {
+	font-size: 26rpx;
+	color: #666;
+}
+.help-title{
+	font-size:32rpx;
+	font-weight: bold;
+	color: #282828;
+	text-align: center;
+	margin: 36rpx 0;
+}
+.help-item{
+	width:639rpx;
+	line-height:45rpx;
+	margin: 0 30rpx 40rpx 81rpx;
+	position: relative;
+}
+.help-num{
+	width:32rpx;
+	height:32rpx;
+	line-height: 32rpx;
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	background:linear-gradient(180deg,rgba(56,138,247,1) 0%,rgba(43,134,255,1) 100%);
+	position: absolute;
+	left: -48rpx;
+	top: 8rpx;
+}
+/* 视频 */
+.video-box {
+	width: 670rpx;
+	height: 392rpx;
+	background: rgba(216, 216, 216, 1);
+	border-radius: 8rpx;
+	margin: 40rpx 0 30rpx;
+}
+.video-bar{
+	margin: 22rpx 0 32rpx;	
+}
+.equipment-triangle {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-left: 16rpx solid transparent;
+	border-right: 16rpx solid transparent;
+	border-bottom: 20rpx solid #D3D3D3;
+	margin: 0 20rpx 0 10rpx;
+}
+
+.video-tips {
+	display: inline-block;
+	color: #999999;
+}
+
+
+/* 目录 */
+.menu{
+    width: 100%;
+    position: relative;
+    background: #fff;
+    border-radius: 10rpx;
+}
+.menu .item{
+    font-size: 32rpx;
+    color: #282828;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 20rpx;
+}
+.menu .item:first-child{
+    border-radius: 10rpx 10rpx 0 0;
+    /*border-top:0;*/
+}
+.menu .item:last-child{
+    border-radius: 0 0 10rpx 10rpx;
+}
+.menu .item .iconfont{
+    display: inline-block;
+    float: left;
+    margin-right: 15rpx;
+    font-size: 42rpx;
+    color: #1966CA;
+}
+.menu .item .iconjiantouyou{
+    opacity: 0.3;
+    color: #282828;
+    float: right;
+    display: inline-block;
+    margin-right: 20rpx;
+    font-size: 28rpx;
+}

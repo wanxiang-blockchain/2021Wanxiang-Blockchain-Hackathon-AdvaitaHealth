@@ -1,0 +1,153 @@
+page {
+	font-size: 24rpx;
+	color: #282828;
+	background-color: #F8F8F8;
+}
+.tab-box {
+	padding: 50rpx 40rpx 0;
+	position: relative;
+}
+.btn-gra {
+	width: 251rpx;
+	height: 75rpx;
+	line-height: 75rpx;
+	color: #fff;
+	background: linear-gradient(180deg, rgba(86, 187, 255, 1) 0%, rgba(43, 134, 255, 1) 100%);
+	border-radius: 50rpx;
+}
+
+.btn-all {
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 26rpx;
+	border-radius: 10rpx;
+	margin-top: 30rpx;
+}
+/* 成为代理 */
+.join{
+	color: #6D7278;
+}
+.join-box{
+	width:670rpx;
+	height:661rpx;
+	padding: 50rpx 37rpx;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 2rpx 10rpx 0px rgba(0,0,0,0.15);
+	border-radius:8rpx;
+	margin: 40rpx 0;
+}
+.join-item{
+	width:507rpx;
+	height:100rpx;
+	border-radius:14rpx;
+	border:2rpx solid rgba(205,185,255,1);
+	position: relative;
+	margin-left: 89rpx;
+	margin-bottom: 55rpx;
+}
+.join-item::after{
+	content: '';
+	width:9rpx;
+	height:155rpx;
+	background:rgba(130,142,213,1);
+	position: absolute;
+	left: -67rpx;
+	top: 0;
+}
+.join-item:first-child::after{
+	border-radius:7rpx 7rpx 0 0;
+}
+.join-item:last-child::after{
+	height:100rpx;
+	border-radius:0 0 7rpx 7rpx;
+}
+.join-item::before{
+	content: '';
+	width:28rpx;
+	height:28rpx;
+	background:rgba(130,142,213,1);
+	border-radius: 50%;
+	position: absolute;
+	left: -76rpx;
+	top: 35rpx;
+}
+.join-name{
+	width:100rpx;
+	height:98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	background:rgba(205,185,255,1);
+	border-radius:14rpx;
+}
+.join-input{
+	width: 400rpx;
+	height: 100rpx;
+	font-size: 24rpx;
+	vertical-align: middle;
+	padding: 30rpx 32rpx;
+	color: #D3D3D3;
+	background-color: transparent;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+}
+.join-active{
+	color: #6D7278;
+}
+.join-back{
+	font-weight: normal;
+}
+/* 下拉菜单 */
+.select-mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 99;
+}
+.select-box{
+	width:507rpx;
+	color: #6D7278;
+	border: 1rpx solid #F9BEAD;
+	position: absolute;
+	top: 88rpx;
+	left: -2rpx;
+	border-radius:0 0 14rpx 14rpx;
+	overflow: hidden;
+	box-shadow:0px 2rpx 10rpx 0px rgba(0,0,0,0.15);
+}
+.select-item{
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: right;
+	padding-right: 35rpx;
+	border-bottom: 1rpx solid #D3D3D3;
+	background-color: #fff;
+	position: relative;
+	z-index: 999;
+}
+.select-item:last-child{
+	border: none;
+}
+
+/* 加入群聊 */
+.btn-box{
+	width: 666rpx;
+	height: 100rpx;
+	position: relative;
+}
+.team-cell {
+	width: 666rpx;
+	height: 100rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+

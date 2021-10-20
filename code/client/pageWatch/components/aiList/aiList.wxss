@@ -1,0 +1,97 @@
+@import "/common/iconfont.wxss";
+/* ai */
+.ai-box{
+	background-color: #031331;
+	color: #FFFFFF;
+	margin-bottom: 38rpx;
+}
+.ai-title{
+	height: 56rpx;
+	font-size: 40rpx;
+	font-weight: bold;
+	line-height: 56rpx;
+	padding: 0 0rpx 0 32rpx;
+}
+.ai-title-icon{
+	font-size: 34rpx;
+	float: right;
+	margin-right: 32rpx;
+}
+.ai-time{
+	font-size: 24rpx;
+	line-height: 56rpx;
+	padding: 0 0rpx 0 32rpx;
+}
+.ai-tips{
+	height: 42rpx;
+	line-height: 42rpx;
+	font-size: 20rpx;
+	padding: 0 50rpx 0 32rpx;
+}
+.ai-tips-high{
+	display: inline-block;
+	margin-right: 30rpx;
+}
+.ai-dot{
+	display: inline-block;
+	width: 20rpx;
+	height: 20rpx;
+	background: #FF0000;
+	border-radius: 50%;
+	border-radius: 8rpx;
+	margin-right: 6rpx;
+	vertical-align: middle;
+	
+}
+
+.ai-item{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin-bottom: 40rpx;
+}
+
+.ai-item-title{
+	width: 372rpx;
+	font-size: 28rpx;
+	position: relative;
+}
+.ai-item-text{
+	height: 40rpx;
+	position: absolute;
+	left: 32rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.ai-item-icon{
+	vertical-align: middle;
+	font-size: 30rpx;
+	color: #2B86FE;
+	margin-left: 12rpx;
+}
+.ai-item-line{
+	width: 4rpx;
+	height: 70%;
+	background: #E5E5E5;
+	border-radius: 2rpx;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.ai-item-content{
+	width: 374rpx;
+	font-size: 24rpx;
+	display: flex;
+	flex-flow: column;
+}
+.ai-item-time{
+	padding-left: 56rpx;
+	margin-bottom: 14rpx;
+}
+.ai-item-time:last-child{
+	margin-bottom: 0;
+}

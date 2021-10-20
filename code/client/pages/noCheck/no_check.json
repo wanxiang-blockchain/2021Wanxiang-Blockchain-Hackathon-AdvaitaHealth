@@ -1,0 +1,6 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader"
+	},
+	"navigationBarTextStyle": "black"
+}

@@ -1,0 +1,11 @@
+{
+ "usingComponents": {
+	  "van-overlay": "/miniprogram_npm/@vant/weapp/overlay/index",
+	  "MyHeader": "/components/MyHeader/MyHeader",
+	  "messageboxOne": "/components/messageboxOne/messageboxOne",
+	  "myScore": "/components/scoreColor/scoreColor",
+	  "login":"/components/login/login",
+	  "myLoading": "/components/myLoading/myLoading"
+	},
+	"navigationBarTextStyle": "black"
+}

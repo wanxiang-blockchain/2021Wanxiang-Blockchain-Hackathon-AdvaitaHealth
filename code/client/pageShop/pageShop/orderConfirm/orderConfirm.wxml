@@ -1,0 +1,82 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='确认订单' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll_h" scroll-into-view="{{isSelect}}">
+
+	<view class="address-info" bindtap="goUrl" data-url="{{'/pageShop/pageShop/address/address?changeAddress=0&num='+num+'&goods_id='+goods_id+'&goods_attr_id='+goods_attr_id}}"
+	 wx:if="{{default_address && default_address.province && default_address.city}}">
+		<view class="address-name"><text class="address-local iconfont icondizhi"></text>{{default_address.name}}
+			{{default_address.phone}}</view>
+		<view class="address-text">{{default_address.province}}{{default_address.city}}{{default_address.county}}{{default_address.details}}</view>
+	</view>
+
+	<view class="add_address" bindtap="goUrl" data-url="{{'/pageShop/pageShop/address/address?changeAddress=1&num='+num+'&goods_id='+goods_id+'&goods_attr_id='+goods_attr_id}}"
+	 wx:else>
+		<text>请添加收货地址</text>
+	</view>
+	<view class="shop-item" wx:for="{{goods_list}}" wx:key="index">
+		<watchList info="{{item}}"></watchList>
+		<view class="order-info" bindtap="showImg" data-info="{{item}}" wx:if="{{item.goods_message || item.hasMade}}">
+			<view class="left">
+				<text style="color: #989898;">印刷图案</text>
+			</view>
+			<view class="right">查看</view>
+		</view>
+		<view class="order-total">
+			<text style="color:#989898;margin-right: 10rpx;display: inline-block;">共{{item.buy_num}}件</text>
+			<text style="color:#39393A">小计：</text>
+			<text style="color:#E7980B">￥{{item.sale_price*item.buy_num}}</text>
+		</view>
+	</view>
+	<view class="form" style="margin-top: 40rpx;" wx:if="{{deduction_price > 0}}">
+		<view class="form-item">
+			<view class="item-value">储蓄卡</view>
+			<view class="item-price ">共{{deduction_price}},可抵用¥ {{use_deduction_price}}</view>
+			
+			<view class="item-switch">
+				<mySwitch value="{{isDefault}}" bindchange="changeSwitch"></mySwitch>
+			</view>
+		</view>
+	</view>
+	<!-- 优惠信息 -->
+	<view class="shop-item" style="padding:16rpx 30rpx;">
+		<view class="order-info" style="margin: 14rpx auto;">
+			<view class="left">商品总价</view>
+			<view class="right">￥{{count_goods_price}}</view>
+		</view>
+		<view class="order-info" style="margin: 14rpx auto;">
+			<view class="left">运费</view>
+			<view class="right">￥{{count_mail_price}}</view>
+		</view>
+		<block wx:if="{{count_favorable_price.length>0 && count_favorable_price[0].text}}">
+			<view class="order-info" style="margin: 14rpx auto;"  wx:for="{{count_favorable_price}}" wx:key="index">
+				<view class="left">优惠金额</view>
+				<view class="right">({{item.text}}) -￥{{item.favorable_price}}</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="order-info" style="margin: 14rpx auto;"  >
+				<view class="left">优惠金额</view>
+				<view class="right">-￥{{favorable_price?favorable_price:0}}</view>
+			</view>
+		</block>
+		
+	</view>
+
+
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+<view class="cart-all">
+	<view class="cart-total">
+		<view class="cart-tips">共{{totalNum}}件</view>
+		<view style="display: inline-block;">合计：</view>
+		<view class="cart-money">￥{{count_orders_price}}</view>
+	</view>
+	<view class="cart-btn" wx:if="{{!is_paying}}" bindtap="goPay">去支付</view>
+	<view class="cart-btn" wx:else>支付中...</view>
+</view>
+<include src="../../../pages/common/auth.wxml" />
+
+<previewImg bindhideMask="hideMask" wx:if="{{showImgMask}}" info="{{previewImg}}"></previewImg>
+

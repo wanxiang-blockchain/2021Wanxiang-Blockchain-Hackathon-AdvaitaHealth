@@ -1,0 +1,12 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"Carousel": "/components/Carousel/Carousel",
+		"buyParam": "/pageShop/components/buyParam/buyParam",
+		"login":"/components/login/login",
+		"myLoading": "/components/myLoading/myLoading",
+		"myUserInfo": "/components/userInfo/userInfo",
+		"articleList": "/components/articleList/articleList"
+	},
+	"navigationBarTextStyle": "black"
+}

@@ -1,0 +1,68 @@
+@import "/common/iconfont.wxss";
+@import "/common/common.wxss";
+/* 分享海报 */
+.mask {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 999;
+}
+.canvas-content {
+	display: block;
+	width: 686rpx;
+	height: 888rpx;
+	/* background-color: #fff; */
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 2;
+	border-radius: 12rpx 12rpx 0px 0px;
+}
+.share-close{
+	color: rgba(227, 227, 227, 0.8);
+	font-size: 50rpx;
+	position: absolute;
+	right: 0;
+	top: -84rpx;
+}
+.canvas-temp {
+	display: block;
+	width: 644rpx;
+	height: 808rpx;
+	/* background-color: #ccc; */
+	margin: auto;
+	border-radius: 12rpx 12rpx 0px 0px;
+}
+.canvas-img {
+	/* width: 686rpx;
+	height: 888rpx; */
+	/* background-color: red; */
+	position: absolute;
+	z-index: -3;
+	opacity: 0;
+	top: 0;
+	left: -100%;
+}
+.share-icon {
+	font-size: 40rpx;
+	color: #fff;
+	margin-right: 30rpx;
+	position: relative;
+	top: 5rpx;
+}
+.canvas-btn {
+	font-size: 32rpx;
+	width: 640rpx;
+	height: 92rpx;
+	line-height: 92rpx;
+	color: #fff;
+	background: #017AFF;
+	border-radius: 26rpx;
+	margin: 36rpx auto 0;
+}

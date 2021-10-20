@@ -1,0 +1,42 @@
+<myLoading wx:if="{{loading}}"></myLoading>
+<view class="cart-bar" style="height:100%">
+	<!-- <view class="cart-box" style="height: {{windowHeight*2-statusBarHeight*2-navHeight*2 -100-60-60-30}}rpx;"> -->
+	<view class="cart-box" style="height:calc(100% - 60rpx - 30rpx)">
+		<scroll-view style="height:100%;width:100%;position:relative;" scroll-y="true" scroll-into-view="{{isSelect}}"  >
+			<view class="cart-item" wx:for="{{chartInfo}}" wx:key="index">
+				<view class="cart-icon-box" bindtap="changeCheck" data-id="{{index}}">
+					<view class="cart-icon-bg" wx:if="{{!item.checked}}"></view>
+					<view class="cart-icon iconfont iconxuanzhong" wx:if="{{item.checked}}"></view>
+				</view>
+				<image class="cart-img"  bindtap="goDetail" wx:if="{{item.artwork_id !=0}}" data-url="/pageShop/pageShop/shopDetail/shopDetail?goods_id={{item.goods_id}}" src="{{item.goods_poster?item.goods_poster+'?imageView2/1/w/200/h/200':''}}" mode="widthFix"></image>
+				<image class="cart-img" bindtap="goDetail" wx:else data-url="/pageShop/pageShop/shopDetail/shopDetail?goods_id={{item.goods_id}}" src="{{item.logo_url?item.logo_url+'?imageView2/1/w/200/h/200':''}}" mode="widthFix"></image>
+				<view class="cart-content">
+					<text class="cart-close iconfont iconchahao" bindtap="delCart" data-id="{{index}}"></text>
+					<view class="cart-title">{{item.goods_name}}</view>
+					<view class="cart-type">
+						规格：{{item.typeName}}
+						<!-- <text class="cart-icon-type iconfont iconjiantouxia"></text> -->
+					</view>
+					<view class="cart-price">￥{{item.sale_price}} <text class="cart-grey">￥{{item.retail_price}}</text></view>
+				</view>
+				<view class="choose-btn choose-num-dec" bindtap="changeNum" data-type="1" data-id="{{index}}">-</view>
+				<view class="choose-btn choose-num-true">{{item.buy_num}}</view>
+				<view class="choose-btn choose-num-add" bindtap="changeNum" data-type="2" data-id="{{index}}">+</view>
+			</view>
+			<view class="no-more" wx:if="{{chartInfo.length==0}}" style="text-align: center;padding-top: 30rpx;">购物车竟然是空的</view>
+		</scroll-view>
+	</view>
+	<view class="cart-all">
+		<view class="cart-icon-box" bindtap="changeCheckAll">
+			<view class="cart-icon-bg all-icon-bg" wx:if="{{!checkAll}}"></view>
+			<view class="cart-icon iconfont iconxuanzhong all-icon" wx:if="{{checkAll}}"></view>
+		</view>
+		<view class="cart-total">
+			<view class="cart-tips">不含运费</view>
+			<view style="display: inline-block;">合计：</view>
+			<view class="cart-money">￥{{total}}</view>
+		</view>
+		<view class="cart-btn" bindtap="goUrl" data-url="/pageShop/pageShop/orderConfirm/orderConfirm?isCart=1" style="{{skinThemeStyle}}">结算({{checkNum}})</view>
+	</view>
+</view>
+

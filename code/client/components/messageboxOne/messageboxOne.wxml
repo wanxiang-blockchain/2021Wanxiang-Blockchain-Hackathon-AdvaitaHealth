@@ -1,0 +1,30 @@
+
+<view class="mask"  bindtap="cancel">
+	<myLoading wx:if="{{loading}}"></myLoading>
+	<view class="mask-box" style="height: {{height}}rpx;" catchtap="forbiddenBubble">
+		<view class="mask-title" wx:if="{{title}}">{{title}}</view>
+		<view class="mask-content">
+			<slot class="" name="content1"></slot>
+		</view>
+		<!-- 单按钮 -->
+		<view class="flex-box my-bottom" wx:if="{{bottomname && maskType == 0}}">
+			<view class="my-picker-btn" catchtap="cancel">{{bottomname}}</view>
+		</view>
+		<!-- 单按钮 -->
+		<view class="flex-box my-bottom" wx:if="{{bottomname && maskType == 3}}">
+			<view class="my-picker-btn" catchtap="confirm">{{bottomname}}</view>
+		</view>
+		<!-- 双按钮 -->
+		<view class="flex-box my-bottom" wx:if="{{bottomname && maskType == 1}}">
+			<view class="my-cancel-btn" catchtap="cancel">{{cancelname}}</view>
+			<view class="my-confirm-btn" catchtap="confirm">{{bottomname}}</view>
+		</view>
+		<!-- opentype -->
+		<view class="flex-box my-bottom" wx:if="{{ maskType == 2}}">
+			<view class="my-cancel-btn" catchtap="cancel">暂不获取</view>
+			<!-- <button class="my-confirm-btn" bindgetuserinfo="confirm" open-type="{{openType}}">{{bottomname}}</button> -->
+			<button class="my-confirm-btn" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+			<button class="my-confirm-btn" wx:else open-type="getUserInfo" bindgetuserinfo="confirm"> 获取头像昵称 </button>
+		</view>
+	</view>
+</view>

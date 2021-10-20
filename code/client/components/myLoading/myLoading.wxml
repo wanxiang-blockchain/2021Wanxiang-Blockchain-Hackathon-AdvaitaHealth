@@ -1,0 +1,4 @@
+<view class="box {{text != '加载中' ? 'box-big' : ''}}">
+	<text class="loader-01 iconfontloading icon-loading"></text>
+	<text class="loader-text">{{text}}</text>
+</view>

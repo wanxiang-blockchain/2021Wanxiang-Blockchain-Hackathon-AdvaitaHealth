@@ -1,0 +1,330 @@
+page {
+	font-size: 24rpx;
+	color: #333333;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.content{
+	margin-left: 24rpx;
+}
+.page {
+  z-index: 1;
+  position: relative;
+  width: 750rpx;
+  height: 1333rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.main1 {
+  z-index: 2;
+  height: 1333rpx;
+  background-color: rgba(255,255,255,1);
+  width: 750rpx;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.group1 {
+  z-index: auto;
+  width: 728rpx;
+  height: 1292rpx;
+  display: flex;
+  flex-direction: column;
+}
+.box1 {
+  z-index: auto;
+  width: 728rpx;
+  height: 112rpx;
+  flex-direction: row;
+  display: flex;
+}
+.icon1 {
+  z-index: 3;
+  width: 20rpx;
+  height: 34rpx;
+  margin-top: 58rpx;
+}
+.txt1 {
+  z-index: 20;
+  width: 58rpx;
+  height: 40rpx;
+  display: block;
+  overflow-wrap: break-word;
+  color: rgba(0,0,0,1);
+  font-size: 29rpx;
+  font-family: PingFangSC-Regular;
+  white-space: nowrap;
+  line-height: 40rpx;
+  text-align: left;
+  margin: 53rpx 0 0 304rpx;
+}
+.layer1 {
+  z-index: 18;
+  position: relative;
+  width: 185rpx;
+  height: 112rpx;
+  overflow: hidden;
+  margin-left: 161rpx;
+  display: flex;
+  flex-direction: column;
+}
+.img1 {
+  z-index: 19;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 185rpx;
+  height: 112rpx;
+}
+.box2 {
+  z-index: 4;
+  width: 699rpx;
+  overflow-wrap: break-word;
+  text-align: left;
+  align-self: flex-start;
+  padding-top: 24rpx;
+  font-size: 0rpx;
+}
+.infoBox1 {
+  font-size: 43rpx;
+  font-family: PingFang-SC-Heavy;
+  color: rgba(0,0,0,1.000000);
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.paragraph1 {
+  font-size: 29rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(0,0,0,1.000000);
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.box3 {
+  z-index: auto;
+  width: 707rpx;
+  height: 255rpx;
+  margin-top: 36rpx;
+  display: flex;
+  flex-direction: column;
+}
+.bd1-0 {
+  z-index: 5;
+  height: 116rpx;
+  border-radius: 14rpx;
+  background-color: rgba(248,248,248,1);
+  margin-bottom: 24rpx;
+  width: 707rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.box4-0 {
+  z-index: auto;
+  width: 665rpx;
+  height: 83rpx;
+  flex-direction: row;
+  display: flex;
+}
+.main2-0 {
+  z-index: 7;
+  height: 83rpx;
+  border-radius: 14rpx;
+  background-color: rgba(255,255,255,1);
+  width: 83rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.icon2-0 {
+  z-index: 10;
+  width: 43rpx;
+  height: 43rpx;
+  background-image: linear-gradient(180deg, rgba(71,170,255,1) 0%, rgba(20,109,228,1) 100%, );
+}
+.info1-0 {
+  z-index: 11;
+  width: 138rpx;
+  height: 40rpx;
+  display: block;
+  overflow-wrap: break-word;
+  color: rgba(0,0,0,1);
+  font-size: 29rpx;
+  font-family: PingFang-SC-Heavy;
+  white-space: nowrap;
+  line-height: 40rpx;
+  text-align: left;
+  margin: 20rpx 0 0 18rpx;
+}
+.main3-0 {
+  z-index: 13;
+  height: 51rpx;
+  border-radius: 25rpx;
+  width: 127rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 14rpx 0 0 301rpx;
+  background: transparent;
+}
+.info2-0 {
+  z-index: 15;
+  width: 65rpx;
+  height: 31rpx;
+  display: block;
+  overflow-wrap: break-word;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  white-space: nowrap;
+  line-height: 31rpx;
+  text-align: center;
+  color: rgba(151,151,151,1);
+}
+.bd1-1 {
+  z-index: 5;
+  height: 116rpx;
+  border-radius: 14rpx;
+  background-color: rgba(248,248,248,1);
+  margin-bottom: 24rpx;
+  width: 707rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.box4-1 {
+  z-index: auto;
+  width: 665rpx;
+  height: 83rpx;
+  flex-direction: row;
+  display: flex;
+}
+.main2-1 {
+  z-index: 7;
+  height: 83rpx;
+  border-radius: 14rpx;
+  background-color: rgba(255,255,255,1);
+  width: 83rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.icon2-1 {
+  z-index: 10;
+  width: 43rpx;
+  height: 43rpx;
+  background-image: linear-gradient(180deg, rgba(71,170,255,1) 0%, rgba(20,109,228,1) 100%, );
+}
+.info1-1 {
+  z-index: 11;
+  width: 138rpx;
+  height: 40rpx;
+  display: block;
+  overflow-wrap: break-word;
+  color: rgba(0,0,0,1);
+  font-size: 29rpx;
+  font-family: PingFang-SC-Heavy;
+  white-space: nowrap;
+  line-height: 40rpx;
+  text-align: left;
+  margin: 20rpx 0 0 18rpx;
+}
+.main3-1 {
+  z-index: 13;
+  height: 51rpx;
+  border-radius: 25rpx;
+  width: 127rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 14rpx 0 0 301rpx;
+  background: rgba(70,98,255,1);
+}
+.info2-1 {
+  z-index: 15;
+  width: 65rpx;
+  height: 31rpx;
+  display: block;
+  overflow-wrap: break-word;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  white-space: nowrap;
+  line-height: 31rpx;
+  text-align: center;
+  color: rgba(255,255,255,1);
+}
+.txt2 {
+  z-index: 26;
+  width: 254rpx;
+  height: 36rpx;
+  display: block;
+  overflow-wrap: break-word;
+  color: rgba(151,151,151,1);
+  font-size: 25rpx;
+  font-family: PingFangSC-Regular;
+  white-space: nowrap;
+  line-height: 36rpx;
+  text-align: left;
+  align-self: flex-start;
+  margin: 532rpx 0 0 226rpx;
+}
+.box5 {
+  z-index: 24;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background-color: rgba(213,213,213,1);
+  align-self: flex-start;
+  margin-top: 24rpx;
+  width: 707rpx;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 301rpx;
+  display: flex;
+  flex-direction: column;
+}
+.word1 {
+  z-index: 25;
+  width: 87rpx;
+  height: 40rpx;
+  display: block;
+  overflow-wrap: break-word;
+  color: rgba(255,255,255,1);
+  font-size: 29rpx;
+  font-family: PingFang-SC-Bold;
+  white-space: nowrap;
+  line-height: 40rpx;
+  text-align: left;
+}
+.group2 {
+  z-index: 22;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 750rpx;
+  height: 34rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.img2 {
+  z-index: 23;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 750rpx;
+  height: 34rpx;
+}

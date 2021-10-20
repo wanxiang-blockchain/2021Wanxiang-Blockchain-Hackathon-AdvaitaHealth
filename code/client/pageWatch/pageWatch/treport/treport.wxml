@@ -1,0 +1,521 @@
+<!-- 头部 -->
+<include src="../../../pages/common/public.wxml" />
+<MyHeader bind:clickDate="clickDate" bind:back="back" backIcon="{{true}}" ></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view class="scroll-h" scroll-into-view="{{type}}" bindscroll="bindscroll" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true">
+	<view class="user-top">
+		<block wx:if="{{treport.user_id==userInfo.user_id || (treport.user_id==0 && _GET.share_user_id)}}">
+			<!-- <navigator class="left" url=""
+			 hover-class="none"> -->
+			<view class="left">
+				<image wx:if="{{example==1}}" src="https://i.2fei2.com/shop/logo/2020-08-12/17:34:33/5f33b7a911bb7.png" class="avatar_url"></image>
+				<image wx:else src="{{treport.avatar_url}}" class="avatar_url"></image>
+				<view class="nickname">{{example==1? '陈先生' :treport.nickname}}</view>
+				<view class="starttime_text">{{treport.startString}} - {{treport.endString}}</view>
+				<block wx:if="{{example!= 1 && isSelf == 1}}">
+					<view class="btn orange-btn" wx:if="{{treport.is_allow_return_treport == 1}}" bindtap="showDelMask" >退回报告</view>
+					<view class="btn" wx:else bindtap="goUrl" data-url="/pageWatch/pageWatch/treportBindUser/treportBindUser?id={{treport.db_id}}&DeviceIdentity={{treport.deviceidentity}}">转让报告</view>
+				</block>
+				
+				<view class="clearfix"></view>
+			<!-- </navigator> -->
+			</view>
+		</block>
+		<block wx:else>
+			<view class="left">
+				<image wx:if="{{example==1}}" src="https://i.2fei2.com/shop/logo/2020-08-12/17:34:33/5f33b7a911bb7.png" class="avatar_url"></image>
+				<image wx:else src="{{treport.avatar_url}}" class="avatar_url"></image>
+				<view class="nickname">{{example==1? '陈先生' :treport.nickname}}</view>
+				<view class="starttime_text">{{treport.startString}} - {{treport.endString}}</view>
+				<view class="clearfix"></view>
+			</view>
+		</block>
+		<view class="right">
+			<view class="count">
+				{{treport.count}}
+				<text class="text">分</text>
+			</view>
+			<view class="title">综合得分</view>
+		</view>
+		<view class="clearfix"></view>
+		<view class="user-top-bottom">
+			<view class="item">检测时长：{{treport.examinetime}} h</view>
+			<view class="item">有效数据：{{treport.validation}}%</view>
+			<view class="clearfix"></view>
+		</view>
+		<view class="score-list">
+			<image class="score-bg" src="https://i.2fei2.com/shop/logo/2020-11-23/13:54:11/5fbb4e8350654.png"></image>
+			<view class="flex-box" style="padding: 0 92rpx;margin-bottom: 26rpx;padding-top: 37rpx;">
+				<view class="score-item">
+					<view class="score-text">心藏测评</view>
+					<view class="score-num">{{treport.heart_multi_score*1}}</view>
+				</view>
+				<view class="score-item">
+					<view class="score-text">肝藏测评</view>
+					<view class="score-num">{{treport.liver_multi_score*1}}</view>
+				</view>
+				<view class="score-item">
+					<view class="score-text">肾藏测评</view>
+					<view class="score-num">{{treport.kidney_multi_score*1}}</view>
+				</view>
+			</view>
+			<view class="flex-box" style="padding: 0 32rpx;">
+				<view class="score-item">
+					<view class="score-text">失眠风险</view>
+					<view class="score-num">{{treport.sleepqualiscore*1}}</view>
+				</view>
+				<view class="score-item">
+					<view class="score-text">心血管</view>
+					<view class="score-num">{{treport.cardiovascularscore*1}}</view>
+				</view>
+				<view class="score-item">
+					<view class="score-text">糖尿病</view>
+					<view class="score-num">{{treport.diabeteriskscore*1}}</view>
+				</view>
+				<view class="score-item">
+					<view class="score-text">老年痴呆</view>
+					<view class="score-num">{{treport.dementiariskscore*1}}</view>
+				</view>
+				<view class="score-item">
+					<view class="score-text">脑血管</view>
+					<view class="score-num">{{treport.cerebroriskscore*1}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="salt-list"  bindtap="addCart">
+			<!-- <image class="salt-bg" src="https://i.2fei2.com/shop/logo/2020-11-23/14:21:07/5fbb54d3971eb.png"></image> -->
+			<view class="salt-tips" wx:if="{{!isLoading}}">调理矿盐: 
+			{{recommend_sugar_ball?recommend_sugar_ball:'无需调理'}}
+				<view class="salt-title" wx:if="{{recommend_sugar_ball}}">去购买<text class="detail-back iconfont iconjiantouyou"></text></view>
+			</view>
+		</view>
+	</view>
+
+	<view class="tags-false">
+		<view class="data flex-box {{isImbibition?'imbibition':''}}" style="top:{{statusBarHeight+ navHeight}}px" bindtap="selectType">
+			<view class="data-box {{type=='indexes-1' ? 'active' : ''}}" data-num="1">心藏评测</view>
+			<view class="data-box {{type=='indexes-2' ? 'active' : ''}}" data-num="2">肝藏评测</view>
+			<view class="data-box {{type=='indexes-3' ? 'active' : ''}}" data-num="3">肾藏评测</view>
+			<view class="data-box {{type=='indexes-4' ? 'active' : ''}}" data-num="4">慢病管理</view>
+		</view>
+	</view>
+	<view class="body-min">
+		<!-- 心藏 -->
+		<view class="block-box" id="indexes-1" wx:if="{{isShowBlock}}"></view>
+		<view>
+			<view class="content">
+				<view class="type-title">中医心藏功能态势测评报告</view>
+				<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?type=heart">
+					<view class="line"></view>
+					中医心藏功能态势测评报告
+					<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+				</view>
+
+				<myScore score="{{treport.heart_multi_score}}" wx:if="{{treport.heart_multi_score}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=ecg_curve"></view>
+							</view>
+						</navigator>
+
+					</view>
+				</myScore>
+			</view>
+			<view class="p-title">
+				<view class="line"></view>
+				精神状态测评
+			</view>
+			<view class="content" style="padding-bottom:1rpx">
+				<myScore score="{{treport.spiritscore}}" textState="{{treport.mentalstate_requali}}" wx:if="{{treport.spiritscore}}"
+				 quota="{{[['XAR',treport.xar,'76.62','84.36','local=XAR']]}}" comment="{{[{commentTitle:'精神不振',commentResult:treport.lassitude_requali,commentSymptom:treport.lassitude_symptom,commentWarning:treport.lassitude_warning,commentSuggestion:treport.lassitude_suggestion},{commentTitle:'精神亢奋',commentResult:treport.mentalexcite_requali,commentSymptom:treport.mentalexcite_symptom,commentWarning:treport.mentalexcite_warning,commentSuggestion:treport.mentalexcite_suggestion}]}}">
+				</myScore>
+			</view>
+
+			<view class="p-title" wx:if="{{treport.report_version*1>=4.2}}">
+				<view class="line"></view>
+				心血管功能测评
+			</view>
+			<view class="content" style="padding-bottom:1rpx" wx:if="{{treport.report_version*1>=4.2}}">
+				<myScore score="{{treport.cardiovascularscore}}" textState="{{treport.cardiovascular_requali}}" wx:if="{{treport.cardiovascularscore && treport.report_version*1<4.3}}"
+				 quota="{{[['XBAR',treport.xbar,'159.76','206.81','local=XBAR'],['XAAR',treport.xaar,'','217.57','local=XBAR']]}}"
+				 comment="{{[{commentTitle:'',commentResult:treport.cardiovascular_requali,commentSymptom:treport.cardiovascular_symptom,commentWarning:treport.cardiovascular_warning,commentSuggestion:treport.cardiovascular_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pulse_curve}}" bindtap="previewImage" mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+				<myScore score="{{treport.cardiovascularscore}}" textState="{{treport.cardiovascular_requali}}" wx:if="{{treport.cardiovascularscore && treport.report_version*1>=4.3}}"
+				 quota="{{[['XBAR',treport.xbar,'169.54','230.24','local=XBAR'],['XAAR',treport.xaar,'256.26','406.68','local=XBAR'],['XASRD',treport.xasrd,'22.32','','local=XASRD'],['GSDA',treport.gsda,'1174','','local=GSDA']]}}"
+				 comment="{{[{commentTitle:'',commentResult:treport.cardiovascular_requali,commentSymptom:treport.cardiovascular_symptom,commentWarning:treport.cardiovascular_warning,commentSuggestion:treport.cardiovascular_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pulse_curve}}" bindtap="previewImage" mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+			<view class="p-title">
+				<view class="line"></view>
+				睡眠质量测评
+			</view>
+			<view class="content" style="padding-bottom:1rpx">
+				<myScore score="{{treport.sleepqualiscore}}" textState="{{treport.sleepquality_requali}}" wx:if="{{treport.sleepqualiscore}}"
+				 quota="{{[['XST',treport.xst,'6.86','8.83','local=XST'],['XVLA',treport.xvla,'36.95','','local=XVLA']]}}"
+				 comment="{{[{commentTitle:'',commentResult:treport.sleepquality_requali,commentSymptom:treport.sleepquality_symptom,commentWarning:treport.sleepquality_warning,commentSuggestion:treport.sleepquality_suggestion}]}}"></myScore>
+			</view>
+			<view class="p-title">
+				<view class="line"></view>
+				生命节律测评
+			</view>
+			<view class="content" style="padding-bottom:1rpx">
+				<myScore score="{{treport.diurnalrhythmscore}}" textState="{{treport.rhythmdis_requali}}" wx:if="{{treport.diurnalrhythmscore}}"
+				 quota="{{[['XASRD',treport.xasrd,'22.32','','local=XASRD']]}}" comment="{{[{commentTitle:'',commentResult:treport.rhythmdis_requali,commentSymptom:treport.rhythmdis_symptom,commentWarning:treport.rhythmdis_warning,commentSuggestion:treport.rhythmdis_suggestion}]}}"></myScore>
+			</view>
+		</view>
+		<!-- 肝藏 -->
+		<view class="block-box" id="indexes-2" wx:if="{{isShowBlock}}"></view>
+		<view class="liver-id">
+			<view class="content">
+				<view class="type-title">中医肝藏功能态势测评报告</view>
+				<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=liver">
+					<view class="line"></view>
+					中医肝藏功能态势测评
+					<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+				</view>
+				<myScore score="{{treport.liver_multi_score}}" textState="{{treport.psychologicalstate_requali}}" wx:if="{{treport.liver_multi_score}}"
+				 quota="{{[['GSA',treport.gsa,'15.56','','local=GSA'],['GLA',treport.gla,'104.65','','local=GLA'],['GSDA',treport.gsda,'1174','','local=GSDA']]}}"
+				 comment="{{[{commentTitle:'抑郁状态',commentResult:treport.depress_requali,commentSymptom:treport.depress_symptom,commentWarning:treport.depress_warning,commentSuggestion:treport.depress_suggestion},{commentTitle:'焦虑状态',commentResult:treport.anxiety_requali,commentSymptom:treport.anxiety_symptom,commentWarning:treport.anxiety_warning,commentSuggestion:treport.anxiety_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.poincare}}" data-src="{{treport.poincare}}" bindtap="previewImage" mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=poincare">
+							<view class="picture-text">24小时Ponincare散点图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+		</view>
+		<!-- 肾藏 -->
+		<view class="block-box" id="indexes-3" wx:if="{{isShowBlock}}"></view>
+		<view class="kidney-id">
+			<view class="content">
+				<view class="type-title">中医肾藏功能态势测评报告</view>
+
+				<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=kidney">
+					<view class="line"></view>
+					中医肾藏功能态势测评
+					<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+				</view>
+				<myScore score="{{treport.kidney_multi_score}}" wx:if="{{treport.kidney_multi_score}}"></myScore>
+			</view>
+			<view class="p-title">
+				<view class="line"></view>
+				寒热状态测评
+			</view>
+			<view class="content">
+				<myScore score="{{treport.sympatheticscore}}" textState="{{treport.hanrestate_requali}}" wx:if="{{treport.sympatheticscore}}"
+				 quota="{{[['SMR',treport.smr,'69.93','76.43','local=SMR']]}}" comment="{{[{commentTitle:'体寒状态',commentResult:treport.hypometabolic_requali,commentSymptom:treport.hypometabolic_symptom,commentWarning:treport.hypometabolic_warning,commentSuggestion:treport.hypometabolic_suggestion},{commentTitle:'体热状态',commentResult:treport.hypermetabolic_requali,commentSymptom:treport.hypermetabolic_symptom,commentWarning:treport.hypermetabolic_warning,commentSuggestion:treport.hypermetabolic_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+			<view class="p-title" wx:if="{{treport.report_version*1>3.2}}">
+				<view class="line"></view>
+				生命活力测评
+			</view>
+			<view class="content" style="padding-bottom:1rpx" wx:if="{{treport.report_version*1>3.2}}">
+				<myScore score="{{treport.energyscore}}" textState="{{treport.lifeenergy_requali}}" wx:if="{{treport.energyscore}}"
+				 quota="{{[['SVL',treport.svl,'114.10','','local=SVL']]}}" comment="{{[{commentTitle:'',commentResult:treport.lifeenergy_requali,commentSymptom:treport.lifeenergy_symptom,commentWarning:treport.lifeenergy_warning,commentSuggestion:treport.lifeenergy_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pm_curve}}" data-src="{{treport.pm_curve}}" bindtap="previewImage" mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pm_curve">
+							<view class="picture-text">24小时体动分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+
+				</myScore>
+			</view>
+		</view>
+		<!-- 慢病管理 -->
+		<view class="block-box {{treport.report_version*1 < 5.0 ? 'no-data':''}}" id="indexes-4" wx:if="{{isShowBlock}}"></view>
+		<view class="diseases-id" wx:if="{{treport.report_version*1 < 5.0}}">
+			<view class="content" style="text-align: center;">
+				<view class="type-title">慢病预测测评报告</view>
+				<text style="font-size: 28rpx;">暂无数据</text>
+			</view>
+		</view>
+		<view class="diseases-id" wx:else>
+			<view class="content">
+				<view class="type-title">慢病预测测评报告</view>
+				<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=diseases">
+					<view class="line"></view>
+					失眠预警报告
+					<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+				</view>
+				<myScore score="{{treport.sleepqualiscore}}" textState="{{treport.insomniarisk_requali}}" wx:if="{{treport.sleepqualiscore}}"
+				 condition="很低|偏低|极低" quota="{{[['XST',treport.xst,'6.87','8.83','local=XST'],['XVLA',treport.xvla,'36.95','','local=XVLA']]}}"
+				 comment="{{[{commentTitle:'失眠',commentResult:treport.insomniarisk_requali,commentSymptom:treport.insomniarisk_symptom,commentWarning:'',commentSuggestion:treport.insomniarisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+
+			<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=xinxue">
+				<view class="line"></view>
+				心血管风险预警报告
+				<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+			</view>
+
+			<view class="content">
+				<myScore score="{{treport.cardiovascularscore}}" textState="{{treport.cardiorisk_requali}}" wx:if="{{treport.cardiovascularscore && treport.report_version*1<4.3}}"
+				 condition="很低|偏低|极低" quota="{{[['XBAR',treport.xbar,'159.76','206.81','local=XBAR'],['XAAR',treport.xaar,'','217.57','local=XAAR'],['XASRD',treport.xasrd,'22.32','','local=XASRD'],['GSDA',treport.gsda,'1174','','local=GSDA']]}}"
+				 comment="{{[{commentTitle:'心血管',commentResult:treport.cardiorisk_requali,commentSymptom:treport.cardiorisk_symptom,commentWarning:treport.cardiorisk_warning,commentSuggestion:treport.cardiorisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pulse_curve}}" data-src="{{treport.pulse_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.poincare}}" mode="widthFix" data-src="{{treport.poincare}}" bindtap="previewImage"></image>
+						<navigator url="/pages/home/quota?local=poincare">
+							<view class="picture-text">24小时Ponincare散点图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+				<myScore score="{{treport.cardiovascularscore}}" textState="{{treport.cardiorisk_requali}}" wx:if="{{treport.cardiovascularscore && treport.report_version*1>=4.3}}"
+				 condition="很低|偏低|极低" quota="{{[['XBAR',treport.xbar,'169.54','230.24','local=XBAR'],['XAAR',treport.xaar,'256.26','406.68','local=XAAR'],['XASRD',treport.xasrd,'22.32','','local=XASRD'],['GSDA',treport.gsda,'1174','','local=GSDA']]}}"
+				 comment="{{[{commentTitle:'心血管',commentResult:treport.cardiorisk_requali,commentSymptom:treport.cardiorisk_symptom,commentWarning:treport.cardiorisk_warning,commentSuggestion:treport.cardiorisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pulse_curve}}" data-src="{{treport.pulse_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.poincare}}" mode="widthFix" data-src="{{treport.poincare}}" bindtap="previewImage"></image>
+						<navigator url="/pages/home/quota?local=poincare">
+							<view class="picture-text">24小时Ponincare散点图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+
+			<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=tangniao">
+				<view class="line"></view>
+				糖尿病风险预警报告
+				<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+			</view>
+
+			<view class="content">
+				<myScore score="{{treport.diabeteriskscore}}" textState="{{treport.diabeterisk_requali}}" wx:if="{{treport.diabeteriskscore}}"
+				 condition="很低|偏低|极低" quota="{{[['SMR',treport.smr,'69.93','76.43','local=SMR'],['SVL',treport.svl,'114.10','','local=SVL']]}}"
+				 comment="{{[{commentTitle:'糖尿病',commentResult:treport.diabeterisk_requali,commentSymptom:treport.diabeterisk_symptom,commentWarning:'',commentSuggestion:treport.diabeterisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.pm_curve}}" mode="widthFix" data-src="{{treport.pm_curve}}" bindtap="previewImage"></image>
+						<navigator url="/pages/home/quota?local=pm_curve">
+							<view class="picture-text">24小时体动分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+
+			<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=laonian">
+				<view class="line"></view>
+				老年性痴呆风险预警报告
+				<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+			</view>
+
+			<view class="content">
+				<myScore score="{{treport.dementiariskscore}}" textState="{{treport.dementiarisk_requali}}" wx:if="{{treport.dementiariskscore && treport.report_version*1<4.3}}"
+				 condition="很低|偏低|极低" quota="{{[['XAR',treport.xar,'76.62','84.36','local=XAR'],['XASRD',treport.xasrd,'22.32','','local=XASRD'],['SVL',treport.svl,'114.10','','local=SVL'],['XBAR',treport.xbar,'159.76','206.81','local=XBAR']]}}"
+				 comment="{{[{commentTitle:'老年性痴呆',commentResult:treport.dementiarisk_requali,commentSymptom:treport.dementiarisk_symptom,commentWarning:'',commentSuggestion:treport.dementiarisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.pm_curve}}" mode="widthFix" data-src="{{treport.pm_curve}}" bindtap="previewImage"></image>
+						<navigator url="/pages/home/quota?local=pm_curve">
+							<view class="picture-text">24小时体动分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.pulse_curve}}" data-src="{{treport.pulse_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+				<myScore score="{{treport.dementiariskscore}}" textState="{{treport.dementiarisk_requali}}" wx:if="{{treport.dementiariskscore && treport.report_version*1>=4.3}}"
+				 condition="很低|偏低|极低" quota="{{[['XAR',treport.xar,'76.62','84.36','local=XAR'],['XASRD',treport.xasrd,'22.32','','local=XASRD'],['SVL',treport.svl,'114.10','','local=SVL'],['XBAR',treport.xbar,'169.54','230.24','local=XBAR']]}}"
+				 comment="{{[{commentTitle:'老年性痴呆',commentResult:treport.dementiarisk_requali,commentSymptom:treport.dementiarisk_symptom,commentWarning:'',commentSuggestion:treport.dementiarisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.pm_curve}}" mode="widthFix" data-src="{{treport.pm_curve}}" bindtap="previewImage"></image>
+						<navigator url="/pages/home/quota?local=pm_curve">
+							<view class="picture-text">24小时体动分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.pulse_curve}}" data-src="{{treport.pulse_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+
+			<view class="p-title" bindtap="goUrl" data-url="/pages/home/quota?local=naoxue">
+				<view class="line"></view>
+				脑血管风险预警报告
+				<view class="detail-btn">详情<text class="detail-back iconfont iconjiantouyou"></text></view>
+			</view>
+
+			<view class="content">
+				<myScore score="{{treport.cerebroriskscore}}" textState="{{treport.cerebrorisk_requali}}" wx:if="{{treport.cerebroriskscore && treport.report_version*1<4.3}}"
+				 condition="很低|偏低|极低" quota="{{[['XAAR',treport.xaar,'','217.57','local=XBAR'],['XAR',treport.xar,'76.62','84.36','local=XAR']]}}"
+				 comment="{{[{commentTitle:'脑血管',commentResult:treport.cerebrorisk_requali,commentSymptom:treport.cerebrorisk_symptom,commentWarning:treport.cerebrorisk_warning,commentSuggestion:treport.cerebrorisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pulse_curve}}" data-src="{{treport.pulse_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+				<myScore score="{{treport.cerebroriskscore}}" textState="{{treport.cerebrorisk_requali}}" wx:if="{{treport.cerebroriskscore && treport.report_version*1>=4.3}}"
+				 condition="很低|偏低|极低" quota="{{[['XAAR',treport.xaar,'256.26','406.68','local=XBAR'],['XAR',treport.xar,'76.62','84.36','local=XAR']]}}"
+				 comment="{{[{commentTitle:'脑血管',commentResult:treport.cerebrorisk_requali,commentSymptom:treport.cerebrorisk_symptom,commentWarning:treport.cerebrorisk_warning,commentSuggestion:treport.cerebrorisk_suggestion}]}}">
+					<view slot="picture">
+						<image class="picture-img" src="{{treport.pulse_curve}}" data-src="{{treport.pulse_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=pulse_curve">
+							<view class="picture-text">24小时脉搏波变化图
+								<view class="iconfont iconwenhaolveguo" url="/pages/home/quota?local=pulse_curve"></view>
+							</view>
+						</navigator>
+						<image class="picture-img" src="{{treport.ecg_curve}}" data-src="{{treport.ecg_curve}}" bindtap="previewImage"
+						 mode="widthFix"></image>
+						<navigator url="/pages/home/quota?local=ecg_curve">
+							<view class="picture-text">24小时心率分布图
+								<view class="iconfont iconwenhaolveguo"></view>
+							</view>
+						</navigator>
+					</view>
+				</myScore>
+			</view>
+		</view>
+	</view>
+	<button class="share-treport" open-type="share">
+		<image src="http://i.2fei2.com/5e227ba4a3d02.png" mode="widthFix"></image>
+	</button>
+</scroll-view>
+<!-- 绑定报告 -->
+<view class="notice" style="{{isNeedBind ? '' : 'display:none'}}">
+	<view class="mask" style="width:100%;height:100%;display: block;background: rgba(0,0,0,.6);"></view>
+	<view style="width: 80%;background: #fff;border-radius:10px;position: fixed;left:calc(10% - 10px);top:400rpx;z-index:9999;padding: 10px;padding-bottom:0;">
+		<view style="text-align:center;padding:15px;">您确定绑定这份报告吗？</view>
+		<button style="background:#F3F3F3;color:#031331;width:40%;float:left;margin-left:5%;" data-state="2" bindtap="bindTreport">
+			先看看
+		</button>
+		<button style="background:#031331;color:#fff;width:40%;float:right;margin-right:5%;" data-state="1" wx:if="{{!userInfo}}"
+		 bindtap="showLogin">
+			是的
+		</button>
+		<button style="background:#031331;color:#fff;width:40%;float:right;margin-right:5%;" data-state="1" bindtap="bindTreport"
+		 wx:else>
+			是的
+		</button>
+		<view class="clearfix" style="margin-bottom:20px;"></view>
+	</view>
+</view>
+<!-- 退回报告 -->
+<messageboxOne wx:if="{{delMask}}" maskType="{{1}}" height="318" bottomname="确定" cancelname="取消" bindcancel="hideAuthMask" bindconfirm="acceptAuth">
+	<view slot="content1">
+		<view class="auth-title" style="margin-bottom: 21rpx;">退回报告</view>
+		<view class="auth-content">退回后您将无法查看这份报告</view>
+	</view>
+</messageboxOne>

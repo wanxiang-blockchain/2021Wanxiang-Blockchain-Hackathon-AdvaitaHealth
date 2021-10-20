@@ -1,0 +1,113 @@
+<MyHeader  titleText='' background="{{skinMainColor}}"></MyHeader>
+<login wx:if="{{!userInfo}}" isBottom="1"></login>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<scroll-view scroll-y="true" style="height: calc({{windowHeight}}px - 56px); width:{{windowWidth}}px;background-color: #F9F9F9;">
+	<view class="user" style="{{skinThemeStyle}}">
+		<myUserInfo height="128" contentLeft="178" borderLeft="{{0}}" wx:if="{{!userInfo}}">
+			<view slot="avatar">
+				<image class="" mode="aspectFill" catchtap="goDetail" src="http://i.2fei2.com/5d638db0055ea.png" style="height:128rpx;width:128rpx;left: 32rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 50%;background-color: #ccc;"></image>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 36rpx;color: #fff;max-width: 400rpx;font-size: 32rpx;font-weight: bold;">请登录</view>
+			</view>
+		</myUserInfo>
+		<myUserInfo height="128" contentLeft="172" borderLeft="{{0}}" wx:else>
+			<view slot="avatar">
+				<image class="" mode="aspectFill" catchtap="goDetail" src="{{userInfo.Wechat_xcxSetUser.avatar_url}}" style="height:128rpx;width:128rpx;left: 32rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 50%;background-color: #ccc;"></image>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 36rpx;color: #fff;max-width: 400rpx;font-size: 32rpx;font-weight: bold;">{{userInfo.Wechat_xcxSetUser.nickname}}</view>
+				<!-- <view class="" style="margin-top: -2rpx;color: #fff;font-size: 24rpx;">今日已赚取积分{{todayScore}}</view>
+				<view class="" style="color: #fff;font-size: 50rpx;position: absolute;right:32rpx;top: 0;bottom: 0;margin: auto;height: 70rpx;">
+					<image class="" mode="aspectFill" src="https://i.2fei2.com/shop/logo/2021-01-27/11:18:25/6010db81f1a83.png" style="vertical-align: middle;height:44rpx;width:44rpx;"></image>
+					<view style="vertical-align: middle;display: inline-block;margin-left: 10rpx;">{{total}}</view>
+				</view> -->
+			</view>
+		</myUserInfo>
+	</view>
+	<view class="user-item"
+	bindtap="goUrl" data-url="/pageShop/pageShop/order/order" style="margin-top: 30rpx;">
+		<myUserInfo height="124" contentLeft="124" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont iconhuabanfuben" style="height: 116rpx; display:inline-block;font-size:60rpx;color: {{skinMainColor}};position: absolute;left:32rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 30rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">我的订单</view>
+			</view>
+		</myUserInfo>
+	</view>
+	<view class="user-item"
+	bindtap="goUrl" data-url="/pages/works/works" >
+		<myUserInfo height="124" contentLeft="124" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont iconchucunkongjian" style="height: 116rpx; display:inline-block;font-size:60rpx;color: {{skinMainColor}};position: absolute;left:32rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 30rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">我的作品</view>
+			</view>
+		</myUserInfo>
+	</view>
+	<view class="user-item"
+	bindtap="goUrl" data-url="/pageShop/pageShop/agent/agent" >
+		<myUserInfo height="124" contentLeft="124" borderLeft="{{0}}">
+			<view slot="avatar">
+				<view class="iconfont iconshangcheng1" style="height: 116rpx; display:inline-block;font-size:60rpx;color: {{skinMainColor}};position: absolute;left:32rpx;top: 0;bottom: 0;margin: auto;"></view>
+			</view>
+			<view slot="content">
+				<view class="hidden-text" style="margin-top: 30rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">我的返利</view>
+			</view>
+		</myUserInfo>
+	</view>
+	<!-- <view class="score-box" style="margin-top: 0;">
+		<view class="score-title">做任务赚积分</view>
+		<view class="score-item" 
+		wx:if="{{item.integral_type_id == 27||item.integral_type_id == 31||item.integral_type_id == 32||item.integral_type_id == 33}}" 
+		wx:for="{{task}}" 
+		wx:key="index"
+		bindtap="goDetail" 
+		data-can="{{item.is_can}}"
+		data-count="{{item.to_day_get_count}}"
+		data-type="{{item.integral_type_id}}">
+			<myUserInfo height="124" contentLeft="124" borderLeft="{{0}}">
+				<view slot="avatar">
+					<view class="iconfont {{iconList[item.integral_type_id] || 'iconbaogao1'}}" style="height: 96rpx; display:inline-block;font-size:60rpx;color: {{skinMainColor}};position: absolute;left:32rpx;top: 0;bottom: 0;margin: auto;"></view>
+				</view>
+				<view slot="content">
+					<view class="hidden-text" style="margin-top: 40rpx;color: #333;max-width: 400rpx;font-size: 28rpx;font-weight: bold;">{{item.title}}</view>
+					<block wx:if="{{item.is_can == 0}}" >
+						<button wx:if="{{item.integral_type_id == 31}}" class="" open-type="share" style="font-size: 26rpx;text-align: center;color: #fff; width: 136rpx;height: 60rpx;line-height: 60rpx; background: {{skinAdornColor}};border-radius: 30rpx;position: absolute;right:32rpx;top: 0;bottom: 0;margin: auto;">
+							<view style="display: inline-block;">去完成</view>
+						</button>	
+						<view wx:else class="" style="font-size: 26rpx;text-align: center;color: #fff; width: 136rpx;height: 60rpx;line-height: 60rpx; background: {{skinAdornColor}};border-radius: 30rpx;position: absolute;right:32rpx;top: 0;bottom: 0;margin: auto;">
+							<view style="display: inline-block;">去完成</view>
+						</view>	
+					</block>
+					
+					<view  class="" wx:elif="{{item.is_can != 0 && item.to_day_get_count == 0}}" catchtap="getScore" data-id="{{item.integral_type_id}}" style="font-size: 26rpx;text-align: center;color: #fff; width: 136rpx;height: 60rpx;line-height: 60rpx; background: {{skinAdornColor}};border-radius: 30rpx;position: absolute;right:32rpx;top: 0;bottom: 0;margin: auto;">
+						<image class="" mode="aspectFill" src="https://i.2fei2.com/shop/logo/2021-01-27/11:18:25/6010db81f1a83.png" style="vertical-align: sub;height:30rpx;width:30rpx;"></image>
+						<view style="display: inline-block;margin-left: 10rpx;">+{{item.integral_num}}</view>
+					</view>
+					<view  class="" wx:else style="font-size: 26rpx;text-align: center;color: #fff; width: 136rpx;height: 60rpx;line-height: 60rpx; background: #999;border-radius: 30rpx;position: absolute;right:32rpx;top: 0;bottom: 0;margin: auto;">
+						<view style="display: inline-block;">已领取</view>
+					</view>
+				</view>
+			</myUserInfo>
+		</view>
+		<view class="no-more" wx:if="{{ task && task.length === 0 && !isLoading }}">-- 暂无任务 --</view>
+	</view> -->
+</scroll-view>
+
+<messageboxOne wx:if="{{showReport}}" title="任务待完成" bottomname="好的" height="320" bindcancel="hideReport">
+	<view slot="content1">
+		<view class="mask-tips" style="color: #1966CA;">请佩戴手表并生成一个健康测评报告</view>
+	</view>
+</messageboxOne>
+
+<messageboxOne wx:if="{{showSport}}" title="{{step_num>=target_num?'任务完成':'任务待完成'}}" bottomname="{{step_num>=target_num?'领取':'返回'}}" height="320" bindcancel="hideReport" bindconfirm="sportScore" maskType="3" data-id="32">
+	<view slot="content1">
+		<view class="mask-tips" style="color: #1966CA;">当前步数{{step_num}}步,目标步数{{target_num}}步</view>
+	</view>
+</messageboxOne>
+<!-- <include src="../common/service.wxml"/> -->
+<include src="../common/footer.wxml" />
+<include src="../common/auth.wxml" />

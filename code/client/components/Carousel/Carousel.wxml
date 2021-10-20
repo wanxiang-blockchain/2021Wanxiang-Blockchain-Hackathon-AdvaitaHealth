@@ -1,0 +1,75 @@
+<block wx:if="{{type==1}}">
+	<!-- 普通轮播图 -->
+	<swiper indicator-dots="{{!!swiperIndex}}" autoplay="{{autoplay}}" interval="3000" style="height:{{height*2}}rpx"
+	 indicator-color='#8a8a8a' indicator-active-color='#fff' circular="true" class="swiper-block" bindchange="swiperChange"
+	 previous-margin="{{marginNum?marginNum+16:0}}rpx" next-margin="{{marginNum?marginNum:0}}rpx" current="0">
+		<block wx:for="{{imgUrls}}" wx:key="index">
+			<swiper-item class="{{marginNum?'swiper-item':'swiper-item-none'}}">
+				<view class='li'>
+					<image bindtap="previewImg" data-img="{{item}}" mode="{{imgType}}" wx:if="{{marginNum}}" style="width:{{width}}rpx;height:{{height}}px" src="{{item}}" class="slide-image {{currentIndex == index ? 'active' : ''}}" />
+					<image bindtap="previewImg" data-img="{{item}}" mode="{{imgType}}" wx:else style="width:{{width}}rpx;height:{{height}}px" src="{{item}}" class="slide-image-none {{currentIndex == index ? 'active' : ''}}" />
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+</block>
+<block wx:elif="{{type==2}}">
+	<!-- 带标题折页轮播图 -->
+	<swiper indicator-dots="{{!!swiperIndex}}" autoplay="{{autoplay}}" interval="3000" style="height:{{height*2+26}}rpx"
+	 indicator-color='#8a8a8a' indicator-active-color='#fff' circular="{{false}}" class="swiper-block" bindchange="swiperChange"
+	 previous-margin="{{marginNum?marginNum+16:0}}rpx" next-margin="{{marginNum?marginNum:0}}rpx" current="0">
+		<block wx:for="{{changeData}}" wx:key="index">
+			<swiper-item class="{{marginNum?'swiper-item':'swiper-item-none'}}" bindtap="goUrl" data-url="{{item.to_url}}">
+				<view class='li'>
+					<image mode="aspectFill" wx:if="{{marginNum}}" style="width:{{width}}rpx;height:{{height*2}}rpx" src="{{item.image_url}}"
+					 class="slide-image {{currentIndex == index ? 'active' : ''}}" />
+					<image mode="aspectFill" wx:else style="width:{{width}}rpx;height:{{height*2}}rpx" src="{{item.image_url}}" class="slide-image-none {{currentIndex == index ? 'active' : ''}}" />
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="banner-content">
+		<view class="banner-title" wx:for="{{textLine}}" wx:key="index" wx:for-item="textItem">{{textItem}}</view>
+		<view class="banner-dot">
+			<indexDot totalNum="{{imgUrls.length}}" swiperIndex="{{index}}"></indexDot>
+		</view>
+	</view>
+</block>
+
+<block wx:elif="{{type==3}}">
+	<!-- 卡卷轮播 -->
+	<swiper indicator-dots="{{!!swiperIndex}}" autoplay="{{autoplay}}" interval="3000" indicator-color='#8a8a8a'
+	 indicator-active-color='#fff' circular="{{false}}" class="swiper-block" bindchange="swiperChange" previous-margin="{{marginNum?marginNum+10:0}}rpx"
+	 next-margin="{{marginNum?marginNum+10:0}}rpx" current="0" style="height: 232rpx;">
+		<block wx:for="{{imgUrls}}" wx:key="index">
+			<swiper-item class="{{marginNum?'swiper-item':'swiper-item-none'}}" bindtap="goUrl" data-url="{{item.to_url}}">
+				<view class="diy-box">
+					<image class="diy-title" src="{{item.image_url}}" mode="aspectFill"></image>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="banner-content">
+		<view class="banner-dot" style="top:0">
+			<indexDot totalNum="{{imgUrls.length}}" swiperIndex="{{index}}"></indexDot>
+		</view>
+	</view>
+</block>
+
+<block wx:if="{{ type == 4 }}">
+	<!-- 普通轮播图 -->
+	<swiper indicator-dots="{{!!swiperIndex}}" autoplay="{{autoplay}}" interval="3000" style="height:{{height*2+40}}rpx"
+	 indicator-color='#8a8a8a' indicator-active-color='#fff' circular="true" class="swiper-block" bindchange="swiperChange"
+	 previous-margin="{{marginNum?marginNum+16:0}}rpx" next-margin="{{marginNum?marginNum:0}}rpx" current="0">
+		<block wx:for="{{imgUrls}}" wx:key="index">
+			<swiper-item class="{{marginNum?'swiper-item':'swiper-item-none'}}">
+				<view class='li'>
+					<image mode="aspectFit" wx:if="{{marginNum}}" style="width:{{width}}rpx;height:{{height}}px" src="{{item.url}}"
+					 class="slide-image {{currentIndex == index ? 'active' : ''}}" />
+					<image mode="aspectFit" wx:else style="width:{{width}}rpx;height:{{height}}px" src="{{item.url}}" class="slide-image-none {{currentIndex == index ? 'active' : ''}}" />
+					<view class="text-tips">{{item.name}}</view>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+</block>

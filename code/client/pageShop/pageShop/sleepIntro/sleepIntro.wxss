@@ -1,0 +1,69 @@
+.image{
+	width: calc(100% - 30px);
+}
+.btn-group{
+	background: #fff;
+	width: calc(100% - 30px);
+}
+.rel{
+	position: relative;
+	
+}
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding:10rpx 15rpx;
+	z-index: 999;
+	width: 100%;
+}
+.btn-group>.btn{
+	width: calc(25% - 22rpx);
+	font-size:24rpx;
+	float: left;
+	font-weight: 800;
+	color: #000000;
+	text-align: center;
+	height: 68rpx;
+	line-height: 68rpx;
+	margin-left: 11rpx;
+	margin-right: 11rpx;
+}
+.btn-group>.btn .a{
+	background:#372E2E;
+	color:#fff;
+	border-radius: 60rpx;
+}
+.btn-group>.btn .o{
+	background:#F5F5F5;
+	border-radius: 60rpx;
+}
+
+
+.btn-group2{
+	background: #fff;
+	margin-top: 14rpx;
+	float: left;
+  width: 100%;
+}
+.btn-group2>.btn{
+	width: calc(8.33% - 4rpx);
+	font-size:24rpx;
+	float: left;
+	font-weight: 800;
+	color: #000000;
+	text-align: center;
+	height: 52rpx;
+	line-height: 52rpx;
+	margin-left: 2rpx;
+	margin-right: 2rpx;
+}
+.btn-group2>.btn .a{
+	background:#372E2E;
+	color:#fff;
+	border-radius: 60rpx;
+}
+.btn-group2>.btn .o{
+	background:#F5F5F5;
+	border-radius: 60rpx;
+}

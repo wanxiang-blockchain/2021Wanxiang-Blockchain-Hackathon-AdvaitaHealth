@@ -1,0 +1,129 @@
+<MyHeader bind:back="back" backIcon="{{true}}"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px);position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="scrollMore">
+	<text lines="1" class="word1">睡眠改善约定项目</text>
+	<view class="outer2">
+		<text lines="1" class="word2">{{fix_avg_score}}</text>
+		<text lines="1" class="word3">+{{score}}</text>
+		<text lines="1" class="word4">{{fix_avg_score*1 + score*1}}</text>
+	</view>
+	<view class="outer3">
+		<view class="wrap1">
+			<text lines="1" class="word5">约定之前</text>
+		</view>
+		<view class="wrap2">
+			<text lines="1" class="txt1">约定提高</text>
+		</view>
+		<view class="wrap3">
+			<text lines="1" class="info2">约定之后</text>
+		</view>
+	</view>
+	<view class="outer4">
+		<text lines="1" class="paragraph1">合约开始前检测的<br />睡眠平均分为</text>
+		<text lines="1" class="paragraph2">合约期间<br />提升的分数</text>
+		<text lines="1" class="paragraph3">合约约定项目<br />结束后的目标分</text>
+	</view>
+	<view class="outer5 content" style="height:{{showDetail || info.pay_state == 1?'611rpx':'63rpx'}}">
+		<view class="section1" bindtap="showDetailMask">
+			<text lines="1" class="info3">方案细节</text>
+			<text lines="1" class="word6">{{showDetail || info.pay_state == 1?'收起':'展示'}}</text>
+		</view>
+		<block wx:if="{{showDetail || info.pay_state == 1}}">
+			<view class="text-detail" style="margin-top: 26rpx;">干预阶段（10天）</view>
+			<view class="text-detail">咨询，出具干预方案。</view>
+			<view class="text-detail">继续佩戴手表，观察干预效果。</view>
+			<view class="text-detail">动态调整干预方案。</view>
+			
+			<view class="text-detail" style="margin-top: 30rpx;">巩固阶段(10天）</view>
+			<view class="text-detail">执行干预方案。</view>
+			<view class="text-detail">10天内出具5次未病测评报告。</view>
+			<view class="text-detail">计算5次睡眠得分的平均分数。</view>
+			
+			<view class="text-detail" style="margin-top: 30rpx;">执行智能合约</view>
+			<view class="text-detail">对比巩固期和测试期的睡眠平均分数。</view>
+			<view class="text-detail">达到约定提高分数，支付费用给专家。</view>
+			<view class="text-detail">没有达到约定分数，退款给用户。</view>
+		</block>
+	</view>
+	<block wx:if="{{info.pay_state != 1}}">
+		<view class="outer6">
+			<text lines="1" class="info4">约定提高分数</text>
+			<view class="block1">
+				<text lines="1" class="txt2">{{score}}</text>
+			</view>
+		</view>
+		<view class="outer7">
+			<text lines="1" class="word7">约定分数单价（元）</text>
+			<view class="main1">
+				<text lines="1" class="word8">{{money}}</text>
+			</view>
+		</view>
+		<view class="outer8 content"></view>
+		<text lines="1" class="txt3 ">约定总价：{{total}}元</text>
+	</block>
+	<view class="outer9">
+		<view class="section2" bindtap="confirmUser">
+			<view class="section3">
+				<view class="group2">
+					<view class="group3">
+						<image src="{{info.user_avatar_url?info.user_avatar_url:'https://i.2fei2.com/goods/logo/2021-10-14/15:04:52/6167d69453005.png'}}"
+						 class="group3"></image>
+					</view>
+					<text lines="1" class="paragraph4">我会按照方案<br />严格执行</text>
+				</view>
+				<view class="group4">
+					<view class="wrap4">
+						<text lines="1" class="txt4">{{info.user_name}}</text>
+						
+						<view wx:if="{{info.user_confirm_state == 1}}" class="mod1" >
+							<text lines="1" class="info5" >已约定</text>
+						</view>
+						<view wx:else class="mod1" style="background: rgba(70, 98, 255, 1);">
+							<text lines="1" class="info5" style="color: #fff;">确认约定</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="section4">
+			<view class="group5">
+				<view class="layer1">
+					<view class="wrap5">
+						<image src="{{info.expert_user_avatar_url}}"
+						 class="wrap5"></image>
+					</view>
+					<view class="wrap6">
+						<view class="layer2">
+							<text lines="1" class="info6">专家</text>
+						</view>
+						<text lines="1" class="txt5">{{time}}</text>
+					</view>
+				</view>
+				<view class="layer3">
+					<view class="mod2">
+						<text lines="1" class="word9">{{info.expert_user_name}}</text>
+						
+						<view wx:if="{{info.expert_confirm_state == 1}}" class="box1">
+							<text lines="1" class="info7">已约定</text>
+						</view>
+						<view wx:else class="box1" style="background: rgba(70, 98, 255, 1);" >
+							<text lines="1" class="info7" style="color: #fff;">确认约定</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<block wx:if="{{info.pay_state != 1}}">
+		<view wx:if="{{!is_paying}}" bindtap="goPay" class="outer10" style="background:{{info.expert_confirm_state == 1 && info.user_confirm_state == 1 ?'rgba(70, 98, 255, 1)':'#fff'}}">
+			<text lines="1" class="txt6">去支付</text>
+		</view>
+		<view wx:else class="outer10" style="background:{{info.expert_confirm_state == 1 && info.user_confirm_state == 1 ?'rgba(70, 98, 255, 1)':'#fff'}}">
+			<text lines="1" class="txt6">支付中...</text>
+		</view>
+	</block>
+	<view style="height: 60rpx;" wx:if="{{info.pay_state == 1}}"></view>
+</scroll-view>

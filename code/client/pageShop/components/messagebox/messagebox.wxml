@@ -1,0 +1,13 @@
+<view class="mask"  bindtap="cancel">
+	<view class="mask-box" catchtap="forbiddenBubble">
+		<view class="mask-title">{{title}}</view>
+		<view class="mask-tips">
+			{{tips}}
+		</view>
+		<view class="flex-box">
+			<view class="my-picker-btn my-picker-cancel" catchtap="cancel">取消</view>
+			<view class="my-picker-btn my-picker-confirm" catchtap="emitChange">确定</view>
+		</view>
+		
+	</view>
+</view>

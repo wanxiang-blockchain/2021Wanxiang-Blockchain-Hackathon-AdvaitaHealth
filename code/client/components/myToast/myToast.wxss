@@ -1,0 +1,27 @@
+
+.box {
+	width: 100%;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 24rpx;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 100rpx;
+	margin: auto;
+	z-index: 9999;
+}
+
+.loader-text {
+	color: #fff;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 0 20rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	border-radius: 15rpx;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15rpx;
+}
+

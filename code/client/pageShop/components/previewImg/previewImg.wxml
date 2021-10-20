@@ -1,0 +1,41 @@
+<messageboxOne title="预览图" bottomname="确定" height="770" bindcancel="hideMask">
+	<view slot="content1">
+		<block wx:if="{{previewInfo}}">
+			<view style="position: relative;" wx:if="{{previewInfo.artwork_id && previewInfo.artwork_id !=0}}">
+				<block wx:if="{{previewInfo.artwork.image_place.length>10}}">
+					<view class="banner-box">
+						<Carousel imgUrls='{{previewInfo.preview_arr}}' autoplay="{{true}}" type="4" height="240" width="570"></Carousel>
+					</view>
+				</block>
+				<block wx:else>
+					<image src="{{previewInfo.artwork.base_image_url?previewInfo.artwork.base_image_url+'?imageView2/0/w/285':''}}" mode="aspectFit" class="choose-img"></image>
+				</block>
+			</view>
+		<!-- 	<view style="position: relative;" wx:elif="{{previewInfo.artwork && previewInfo.artwork.id}}">
+				<image src="{{previewInfo.artwork.base_image_url?previewInfo.artwork.base_image_url+'?imageView2/0/w/285':''}}" mode="aspectFit" class="choose-img"></image>
+			</view> -->
+			<view style="position: relative;" wx:elif="{{previewInfo.sentence }}">
+				<!-- 历史兼容 -->
+				<image src="{{previewInfo.sentence.url?previewInfo.sentence.url+'?imageView2/0/w/285':''}}" mode="aspectFit" class="choose-img"></image>
+				<view class="text-box" bindtouchmove='touchmove' style="left:{{previewInfo.sentence.write[0]/100}}%;top:{{previewInfo.sentence.write[1]/100}}%;">
+					<view class="text-bg" style="background-color: {{previewInfo.sentence.color}};color: {{previewInfo.sentence.color}};mix-blend-mode: multiply;"
+					 bindtouchstart="moveStart" bindtouchmove='slide'>{{previewInfo.sentence.text}}</view>
+					<view class="text-name">{{previewInfo.sentence.text}}</view>
+				</view>
+			</view>
+			<view style="position: relative;" wx:elif="{{previewInfo.write}}">
+				<!-- 历史兼容 -->
+				<image src="{{previewInfo.url?previewInfo.url+'?imageView2/0/w/285':''}}" mode="aspectFit" class="choose-img"></image>
+				<view class="text-box" bindtouchmove='touchmove' style="left:{{previewInfo.write[0]/100}}%;top:{{previewInfo.write[1]/100}}%;">
+					<view class="text-bg" style="background-color: {{previewInfo.color}};color: {{previewInfo.color}};mix-blend-mode: multiply;"
+					 bindtouchstart="moveStart" bindtouchmove='slide'>{{previewInfo.text}}</view>
+					<view class="text-name">{{previewInfo.text}}</view>
+				</view>
+			</view>
+			<view class="no-img" wx:else>您没有定制图案</view>
+		</block>
+		<block wx:else>
+			<view class="no-img">您没有定制图案</view>
+		</block>
+	</view>
+</messageboxOne>

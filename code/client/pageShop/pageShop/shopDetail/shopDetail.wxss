@@ -1,0 +1,429 @@
+page {
+	font-size: 24rpx;
+	color: #333333;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.banner-box {
+	width: 750rpx;
+	/* height: 500rpx; */
+	background: linear-gradient(180deg, rgba(81, 113, 155, 1) 0%, rgba(19, 42, 78, 1) 44%, rgba(3, 19, 49, 1) 100%);
+}
+#myVideo{
+	width: 750rpx;
+	height: 400rpx;
+	margin-top: 40rpx;
+}
+/* 体验 */
+.train-bg {
+	width: 750rpx;
+	height: 224rpx;
+	color: #fff;
+	padding: 0 30rpx;
+	background: linear-gradient(180deg, #56BBFF 0%, #2B86FF 100%);
+}
+
+.train-title {
+	font-size: 24rpx;
+	padding-top: 18rpx;
+}
+
+.train-old {
+	font-size: 40rpx;
+}
+
+.train-new {
+	width: 260rpx;
+	height: 48rpx;
+	line-height: 48rpx;
+	padding: 0 20rpx;
+	color: #388AF7;
+	background: #FFFFFF;
+	border-radius: 24rpx;
+	display: inline-block;
+}
+
+.train-new-text {
+	display: inline-block;
+	vertical-align: top;
+	height: 48rpx;
+}
+
+.train-group {
+	width: 690rpx;
+	height: 68rpx;
+	line-height: 68rpx;
+	padding: 0 0 0 26rpx;
+	color: #989898;
+	font-size: 21rpx;
+	background: #FFFFFF;
+	border-radius: 10rpx;
+	position: relative;
+	margin-top: 12rpx;
+}
+
+.train-btn {
+	width: 95rpx;
+	height: 47rpx;
+	line-height: 47rpx;
+	font-size: 21rpx;
+	padding: 0 0 0 20rpx;
+	color: #388AF7;
+	background: #E9F1F9;
+	border-radius: 24rpx 0px 0px 24rpx;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.train-btn-text {
+	display: inline-block;
+	vertical-align: top;
+	height: 47rpx;
+}
+
+.train-btn-icon {
+	font-size: 20rpx;
+	margin-left: 8rpx;
+}
+
+/* 标题 */
+.box-bar {
+	width: 750rpx;
+	padding: 0 30rpx;
+	font-size: 26rpx;
+	color: #282828;
+	background: #FEFEFE;
+	border-bottom: 20rpx solid #F8F8F8;
+	position: relative;
+}
+.title-box {
+	height: 197rpx;
+	padding-top: 30rpx;
+	border-top: none;
+}
+.title-name {
+	width: 562rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #39393A;
+	line-height: 45rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.shop-icon {
+	font-size: 30rpx;
+}
+
+.shop-price {
+	width: 600rpx;
+	font-size: 56rpx;
+	font-weight: bold;
+	color: #FF5000;
+	height: 78rpx;
+	line-height: 78rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.shop-grey{
+	font-size: 28rpx;
+	height: 34rpx;
+	color: #999;
+	position: relative;
+	top: -8rpx;
+}
+.shop-grey::after{
+	content: '';
+	width: 100%;
+	height: 2rpx;
+	background-color: #979797;
+	position: absolute;
+	left: 4rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.shop-discount{
+	max-width: 300rpx;
+	height: 46rpx;
+	line-height:46rpx;
+	display: inline-block;
+	padding: 0 18rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	border-radius: 30rpx;
+	color: #fff;
+	background-color: #FF5000;
+	vertical-align: middle;
+	margin: -8rpx 0 0 20rpx;
+}
+/* 发货 */
+.deliver {
+	height: 117rpx;
+	line-height: 94rpx;
+}
+
+.deliver-name {
+	color: #989898;
+}
+
+.deliver-content {
+	width: 460rpx;
+	position: absolute;
+	left: 122rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.deliver-icon {
+	font-size: 24rpx;
+	margin-right: 20rpx;
+}
+
+.deliver-line {
+	margin: 0 14rpx;
+	color: #D3D3D3;
+}
+
+.deliver-num {
+	color: #989898;
+	font-size: 24rpx;
+	position: absolute;
+	right: 30rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+/* 选规格 */
+.choose-name {
+	height: 107rpx;
+	line-height: 107rpx;
+}
+
+.choose-type {
+	padding: 0 153rpx 0 122rpx;
+}
+
+.choose-item {
+	width: 145rpx;
+	height: 48rpx;
+	line-height: 48rpx;
+	text-align: center;
+	background: #F4F4F4;
+	border-radius: 24rpx;
+	margin-bottom: 40rpx;
+}
+
+/* tab */
+.column-bar {
+	padding: 0;
+	border-bottom: 20rpx solid #F8F8F8;
+}
+
+.column-active {
+	color: #39393A;
+	position: relative;
+}
+
+.column-active:before {
+	content: '';
+	width: 136rpx;
+	height: 6rpx;
+	background: #666666;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 22rpx;
+	margin: auto;
+}
+.detail{
+	padding-top: 30rpx;
+}
+.detail-cloth{
+	border: none;
+}
+/* 立即购买 */
+.buy-box {
+	width: 100%;
+	height: 164rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #F0F0F0;
+}
+.buy-bg{
+	height: 68rpx;
+	line-height: 68rpx;
+	text-align: center;
+	font-size: 66rpx;
+	color: var(--main-color);
+	border-radius: 50%;
+	position: absolute;
+	left: 50rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.buy-cart{
+	width: 100rpx;
+	height: 74rpx;
+	text-align: center;
+	position: absolute;
+	left: 46rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.buy-cart.on{
+    -webkit-animation: to_cart_scale .3s ease;
+    animation: to_cart_scale .3s ease;
+}
+@-webkit-keyframes to_cart_scale {
+    50%{
+        -webkit-transform: scale(1.2);
+    }
+}
+@keyframes to_cart_scale {
+    50%{
+        transform: scale(1.2);
+    }
+}
+.buy-icon{
+	font-size: 64rpx;
+	position: absolute;
+	left: 0rpx;
+	top: -12rpx;
+}
+
+.buy-num{
+	/* width: 30rpx; */
+	width: 18rpx;
+	height: 18rpx;
+	line-height: 18rpx;
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	background: var(--adorn-color);
+	font-size: 18rpx;
+	border: 1rpx solid #FFFFFF;
+	position: absolute;
+	/* top: -10rpx;
+	right: 4rpx; */
+	top: 4rpx;
+	right: 24rpx;
+}
+.buy-add{
+	width: 216rpx;
+	height: 74rpx;
+	line-height: 74rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #fff;
+	border-radius: 44rpx;
+	background: var(--main-color);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 488rpx;
+	margin: auto;
+}
+.buy-design{
+	width: 216rpx;
+	height: 74rpx;
+	line-height: 74rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #fff;
+	background: var(--adorn-color);
+	border-radius: 44rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 250rpx;
+	margin: auto;
+}
+.buy-now{
+	width: 240rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #fff;
+	/* background: #FF6C00; */
+	background: var(--adorn-color);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+/* 添加衣服 */
+.game-btn{
+	width: 128rpx;
+	height: 51rpx;
+	background: var(--main-color);
+	border-radius: 31rpx;
+	line-height: 51rpx;
+	text-align: center;
+	font-size: 21rpx;
+	color: #fff;
+	position: absolute;
+	top: 30rpx;
+	right: 30rpx;
+	
+}
+.float-btn{
+	position: fixed;
+	top: 330rpx;
+	right: 30rpx;
+	z-index: 9;
+}
+/* TAB */
+.data {
+	height: 100rpx;
+	line-height: 100rpx;
+	color: #666;
+	background-color: #fff;
+}
+
+.data-box {
+	width: 50%;
+	font-size: 24rpx;
+	text-align: center;
+}
+
+.active {
+	color: #FF5000;
+	font-weight: bold;
+}
+.imbibition{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
+
+/* 评价 */
+.shop-title{
+	width: 750rpx;
+	line-height: 84rpx;
+	padding-left: 26rpx;
+	font-size: 26rpx;
+	font-weight: bold;
+	color: #000;
+	background: #FFFFFF;
+}

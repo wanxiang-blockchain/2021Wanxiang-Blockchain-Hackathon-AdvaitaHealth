@@ -1,0 +1,43 @@
+<MyHeader bind:back="back" backIcon="{{true}}"></MyHeader>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll-h">
+	<view class="wrap1">
+		<view class="main1">
+			<view class="group1">
+				<view class="main2">
+					<view lines="1" class="paragraph1">授课老师</view>
+					<view lines="1" decode="true" class="infoBox1">吴奇伟老师 35年资深冥想教师 台北</view>
+				</view>
+			</view>
+			<view class="group2">
+				<view class="mod1">
+					<view class="group3">
+						<image src="https://i.2fei2.com/goods/logo/2021-10-14/14:11:10/6167c9fe79852.png" class="group3"></image>
+					</view>
+					<text lines="1" class="info1">睡眠专家</text>
+					<!-- <button bindtap="onClick" class="group4">
+	          <text lines="1" class="word1">加入</text>
+	        </button> -->
+				</view>
+				<text lines="1" class="word2">吴奇伟</text>
+			</view>
+			<text lines="1" class="word3">现任</text>
+			<text lines="1" class="paragraph2">·瑜珈教师证照班及断食营指导老师</text>
+			<text lines="1" class="paragraph2">·瑜伽呼吸暨身印教师证照班指导老师</text>
+			<text lines="1" class="paragraph2">·五大元素与心灵转化瑜伽师资班指导老师</text>
+			<text lines="1" class="paragraph5">教学履历</text>
+			<text lines="1" class="infoBox2">教授整体瑜伽锻炼逾20年(1996年起)<br /></text>
+			<text lines="1" class="paragraph3">自1985年起研究中国传统易理数术、星象命理、五术、气功、<br />太极、导引、各式健身法、养生中医、自然疗法、同类疗法、<br />心理咨商、禅修静坐、灵修哲学与各式修持法，并于1995年起<br />从事身心灵整体瑜伽锻炼迄今。<br /><br /></text>
+			<text lines="1" class="infoBox4">取得证照</text>
+			<text lines="1" class="word4">喜悦之路静坐协会高级瑜伽教师</text>
+			<text lines="1" class="infoBox3">喜悦之路静坐协会胜王瑜伽教师、瑜伽呼吸法与身印法教师、五大元素与心灵转化瑜伽教师<br /></text>
+			<text lines="1" class="paragraph4">美国有氧体适能协会(AFAA)垫上核心指导员<br /></text>
+		</view>
+		<view class="main4">
+			<image src="../../images/lanhu_wuqiweilaoshijieshao/SketchPngb72e358ae95636ed1452c3328663c0d9aabc9ae0b848aec4c789c77b644e7d76.png"
+			 class="pic1"></image>
+		</view>
+	</view>
+</scroll-view>

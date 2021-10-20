@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+	"loading": "/components/loading/loading",
+	"MyHeader": "/components/MyHeader/MyHeader",
+	"validData": "/components/validData/validData",
+	"login":"/components/login/login",
+	"Carousel": "/components/Carousel/Carousel",
+	"myLoading": "/components/myLoading/myLoading"
+  },
+  "navigationBarTextStyle": "white"
+}

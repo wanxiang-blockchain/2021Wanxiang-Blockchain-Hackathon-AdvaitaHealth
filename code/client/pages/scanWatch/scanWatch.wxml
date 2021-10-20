@@ -1,0 +1,134 @@
+<!-- 头部 -->
+<include src="../common/auth.wxml" />
+<MyHeader  bind:back="back" backIcon="{{true}}" background="#031331" color="#fff"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view scroll-y="true" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-top="{{scrollTop}}" bindscrolltolower="searchScrollLower">
+	<view class="scroll-box" wx:if="{{type==1}}">
+		<view class="scan-title">扫描绑定码绑定手表</view>
+		<!-- <view class="scan-tips">Scan the QR code to bind the watch</view> -->
+		<image class="watch-img" src="https://i.2fei2.com/shop/logo/2020-08-21/14:48:19/5f3f6e33cf0f2.png" mode="aspectFill"></image>
+		<view class="guide">
+			<view class="guide-item">
+				<text class="guide-icon iconfont iconshoubiao"></text>
+				<view class="guide-title">点击手表</view>
+			</view>
+			<view class="guide-arrow iconfont iconjiantouyou"></view>
+			<view class="guide-item">
+				<text class="guide-icon iconfont iconshezhi1"></text>
+				<view class="guide-title">打开设置</view>
+			</view>
+			<view class="guide-arrow iconfont iconjiantouyou"></view>
+			<view class="guide-item">
+				<text class="guide-icon iconfont iconweibiaoti--"></text>
+				<view class="guide-title">扫描绑定码</view>
+			</view>
+		
+			<view class="guide-arrow iconfont iconjiantouyou"></view>
+			<view class="guide-item">
+				<text class="guide-icon iconfont iconbangding1"></text>
+				<view class="guide-title">完成绑定</view>
+			</view>
+		</view>
+		<!-- <view class="scan-content">
+			<image src="https://i.2fei2.com/shop/logo/2020-07-29/09:53:34/5f20d69e5b0f3.png" class="scan-bg" mode="aspectFill"></image>
+			<video class="scan-video" object-fit="fill" direction="90" src="https://i.2fei2.com/1595928700008654~6.mp4"></video>
+		</view> -->
+		<button class="scan-btn" wx:if="{{userInfo}}" bindtap="scanCode">扫描绑定码进行绑定</button>
+		<button class="scan-btn" wx:else bindgetuserinfo="clickGetUserInfo" open-type="getUserInfo">扫描二维码进行绑定</button>
+		<view class="scan-skip" bindtap="backStart">暂不绑定</view>
+		<!-- <view class="dot-group">
+			<view class="dot active"></view>
+			<view class="dot "></view>
+			<view class="dot"></view>
+		</view> -->
+	</view>
+	<view class="add-user" wx:elif="{{type==2}}">
+		<view class="title">给你的手表取个名吧！</view>
+		<view class="input">
+			<input value="{{watchName}}" bind:input="changeWatchName" type="text" placeholder="如:非二科技" maxlength="15" name="name"
+			 class="name"></input>
+		</view>
+		<view class="title" style="padding-top: 140rpx;">绑定码</view>
+		<view class="bind-code">{{select_device_id}}</view>
+
+		<button class="btn-add {{watchName?'submit':''}}" bindtap="goWifi">下一步</button>
+		<view class="skip" bindtap="addWatch">跳过</view>
+		<view class="dot-group">
+			<view class="dot"></view>
+			<view class="dot active"></view>
+			<view class="dot"></view>
+		</view>
+	</view>
+	<view wx:elif="{{type==3}}">
+		<view class="title">给“{{watchName}}”连接Wi-Fi</view>
+		<scroll-view class="my-list {{showUpper?'my-list-upper':''}} {{showLower?'my-list-lower':''}}" scroll-y="true"
+		 bindscroll="bindscroll" bindscrolltolower="bindscrolltolower" bindscrolltoupper="bindscrolltoupper" wx:if="{{wifiList.length>0&&!isLoading}}">
+			<view class="my-item" bindtap="addWifi" data-name="{{item.SSID}}" data-update="0" data-readonly="1" wx:for="{{wifiList}}"
+			 wx:key="{{index}}">
+				<text class="my-suo iconfont iconsuo"></text>
+				<view class="my-name">{{item.SSID}}</view>
+				<text class="my-wifi iconfont icon-WIFI"></text>
+			</view>
+		</scroll-view>
+
+		<view class="my-item" bindtap="addWifi" data-update="0" data-readonly="0" wx:if="{{wifiList.length>0&&!isLoading}}">
+			<view class="my-name">其他</view>
+		</view>
+		<view class="m-loading" wx:if="{{isLoading}}">加载中</view>
+		<view class="block-box" wx:if="{{wifiList.length==0&&!isLoading}}">
+			<image class="block-img" src="https://i.2fei2.com/shop/logo/2020-07-28/10:04:48/5f1f87c0ba600.png"></image>
+			<view class="block-text">没有找到可用的网络</view>
+			<view class="block-btn" bindtap="addWifi" data-update="0" data-readonly="0">手动添加</view>
+		</view>
+
+		<button class="btn-add {{hasWifi?'submit':''}}" bindtap="goEnding" style="margin-top:80rpx;">下一步</button>
+		<view class="skip" bindtap="goStart">跳过</view>
+		<!-- <view class="dot-group">
+			<view class="dot"></view>
+			<view class="dot active"></view>
+			<view class="dot "></view>
+		</view> -->
+
+		<van-popup class="secure-box" show="{{ showPicker }}" round position="bottom">
+			<van-picker show-toolbar columns="{{columns}}" default-index="3" bind:confirm="onPickerConfirm" bind:cancel="onPickerCancel" />
+		</van-popup>
+		<!-- 添加wifi -->
+		<view class="m-mask" wx:if="{{showAddWifi}}" bindtap="hideMask">
+			<view class="mask-box" catchtap="stopMask" style="height:588rpx">
+				<view class="mask-title">{{hasWifiName?'输入密码':'其他网络'}}</view>
+				<view class="mask-content" style="text-align: left;">
+					<van-field class="mask-input" readonly="{{hasWifiName}}" clickable label="网络" value="{{chooseWifiName}}"
+					 input-align="right" border="{{false}}" placeholder="网络名称" bind:input="getWifiName" />
+					<van-field class="mask-input" readonly clickable label="安全性" value="{{secure.text}}" input-align="right" border="{{false}}"
+					 placeholder="请选择安全性" bindtap="changeShowPicker" is-link="{{true}}" />
+					
+					<van-field class="mask-input" value="{{wifiPwd}}" bind:input="getWifiPwd" input-align="right" border="{{false}}"
+					placeholder="密码" label="密码" />
+				</view>
+				<view class="mask-group">
+					<button class="mask-btn mask-cancel" bindtap="hideMask">取消</button>
+					<button class="mask-btn" bindtap="comfirmAddMask">加入</button>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view wx:else>
+		<image class="ending-img" src="https://i.2fei2.com/shop/logo/2020-07-29/17:26:05/5f2140ad91820.png" mode="aspectFill"></image>
+		<view class="ending-title">使用方法</view>
+		<view class="ending-content">
+			1、将手表佩戴于手腕内侧，腕横纹上约两指处，如图一所示。手表佩戴宜不松不紧，既不能在手腕滑动，也不能紧紧勒住手腕。需将手表连续佩戴24小时，才可查看中医报告。
+		</view>
+		<view class="ending-content">
+			2、在24小时的连续佩戴过程中，若给手表充电需将手表背面朝上放置，以保证数据准确性。
+		</view>
+		<view class="ending-content">
+			注：1、连续佩戴的24小时中，可间断4小时（如因洗澡、充电等原因可将手表摘下，但不可超过4小时），但睡眠期间必须佩戴手表，不能摘下。
+		</view>
+		<!-- <button class="btn-add submit" bindtap="goStart" style="margin-top:80rpx;">已知晓使用方法</button> -->
+		<button class="btn-add submit" bindtap="goWifi" style="margin-top:40rpx;margin-bottom: 30rpx;">连接WIFI，信号更稳，续航更久</button>
+		<view class="scan-skip" bindtap="goStart" style="color: #666;text-align: center;">暂不连接</view>
+	</view>
+	<include src="../common/public.wxml" />
+</scroll-view>

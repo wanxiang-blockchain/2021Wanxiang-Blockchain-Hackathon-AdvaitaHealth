@@ -1,0 +1,64 @@
+<view class="order flex-box" bindtap="changeTab">
+	<view class="order-box {{orderNum == 0?'o-active':''}}" data-num="0">全部订单</view>
+	<view class="order-box {{orderNum == 1?'o-active':''}}" data-num="1">待付款</view>
+	<view class="order-box {{orderNum == 5?'o-active':''}}" data-num="5">待发货</view>
+	<view class="order-box {{orderNum == 2?'o-active':''}}" data-num="2">待收货</view>
+	<view class="order-box {{orderNum == 6?'o-active':''}}" data-num="6">已完成</view>
+</view>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<scroll-view style="height: calc(100% - 74rpx); width:750rpx;position:relative;"
+	 scroll-y="true" scroll-into-view="{{isSelect}}"  bindscrolltolower="scrollMore">
+	<view class="order-item"  wx:for="{{orderList}}" wx:key="orders_id">
+		<view class="order-top">
+			<view class="left ">订单号：{{item.orders_num}}</view>
+			<view class="right " style="color: {{orderNum == 6?'':skinAdornColor}}">{{item.state_text}}</view>
+		</view>
+		<view style="margin-bottom: 20rpx;" wx:for="{{item.detail}}" wx:key="index" wx:for-item="items">
+			<watchList info="{{items}}"></watchList>
+			<view class="order-info" bindtap="showImg" data-info="{{items}}" wx:if="{{items.goods_message || !!(items.artwork_id*1)}}">
+				<view class="left">
+					<text style="color: #989898;">印刷图案</text>
+				</view>
+				<view class="right">查看</view>
+			</view>
+		</view>
+		<view class="order-all" wx:if="{{item.state == 1}}">
+			<text>总价：￥{{item.fixed_total_price}}  优惠：￥{{item.favorable_price}}</text>
+			<text style="font-size: 22rpx;"> 需付款:</text>
+			<text style="font-size: 28rpx;color: {{skinAdornColor}}"><text style="font-size: 20rpx;">￥</text>{{item.count_price}}</text>
+		</view>
+		<view class="order-all" wx:else>
+			<text>共{{item.detail[0].buy_num}}件商品 </text>
+			<text style="font-size: 22rpx;"> 合计:</text>
+			<text style="font-size: 28rpx;color: {{skinAdornColor}}"><text style="font-size: 20rpx;">￥</text>{{item.count_price}}</text>
+		</view>
+		<view class="order-btn-box">
+			<!-- 待付款 -->
+			<view class="right order-pay" wx:if="{{item.state == 1}}" bindtap="goPay" data-trade="{{item.orders_id}}">付款</view>
+			<view class="right order-detail" wx:if="{{item.state == 1}}" bindtap="showCancel"  data-id="{{index}}">取消订单</view>
+			<!-- 待收货 -->
+			<view class="right order-pay"  wx:if="{{item.state == 2}}" bindtap="showConfirmOrder" data-id="{{index}}">确认收货</view>
+			<!-- 全部 -->
+			<view class="right order-detail" bindtap="goUrl" data-url="{{'/pageShop/pageShop/orderDetail/orderDetail?orders_id='+item.orders_id}}" >查看详情</view>
+		</view>
+	</view>
+	<view class="no-more" wx:if="{{!listMore && orderList && orderList.length > 0}}" style="text-align: center;padding-bottom: 30rpx;">-- 没有更多数据了 --</view>
+	<view class="no-more" wx:if="{{orderList && orderList.length==0 && !isLoading}}" style="text-align: center;padding-top: 30rpx;">暂无订单</view>
+</scroll-view>
+<messagebox wx:if="{{showCancelMask}}" bindconfirmChange="confirmChange" bindcancel="cancel"></messagebox>
+<messagebox wx:if="{{showConfirmMask}}" bindconfirmChange="confirmOrder" bindcancel="cancel" tips="确认已收到货物吗?"></messagebox>
+
+<previewImg bindhideMask="hideMask" wx:if="{{showImgMask}}" info="{{previewImg}}"></previewImg>
+
+<!-- <messageboxOne wx:if="{{showImgMask}}" title="预览图" bottomname="确定" height="770" bindcancel="hideMask">
+	<view slot="content1">
+		<view style="position: relative;">
+			<image src="{{sentence.url?sentence.url+'?imageView2/0/w/285':''}}" mode="aspectFit" class="choose-img"></image>
+			<view class="text-box" bindtouchmove='touchmove' style="left:{{sentence.write[0]/100}}%;top:{{sentence.write[1]/100}}%;">
+				<view class="text-bg" style="background-color: {{sentence.color}};color: {{sentence.color}};mix-blend-mode: multiply;"
+				 bindtouchstart="moveStart" bindtouchmove='slide'>{{sentence.text}}</view>
+				<view class="text-name">{{sentence.text}}</view>
+			</view>
+		</view>
+	</view>
+</messageboxOne> -->

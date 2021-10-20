@@ -1,0 +1,2 @@
+<view class="retry-text">{{text}}</view>
+<view class="retry" bindtap="refresh">刷新重试</view>

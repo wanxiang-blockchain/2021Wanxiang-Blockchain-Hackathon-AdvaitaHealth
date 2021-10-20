@@ -1,0 +1,12 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"myUserInfo": "/components/userInfo/userInfo",
+		"posterMask": "/components/posterMask/posterMask",
+		"login":"/components/login/login",
+		"myLoading": "/components/myLoading/myLoading",
+		"buyParam": "/pageShop/components/buyParam/buyParam",
+		"Carousel": "/components/Carousel/Carousel"
+	},
+	"navigationBarTextStyle": "black"
+}

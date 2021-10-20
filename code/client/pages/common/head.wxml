@@ -1,0 +1,54 @@
+<!-- 人造头部  -->
+<view class="h-false" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);"></view>
+<view class="h">
+    <view class="h-bg" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);left:-{{h_type_px ? h_type_px : 0}}rpx;">
+        <view class="title1" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+            <text></text>
+        </view>
+        <view class="title2" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+            <text></text>
+        </view>
+        <view class="title3" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+            <text></text>
+        </view>
+        <view class="title4" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+            <text></text>
+        </view>
+        <view class="title5" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+            <text></text>
+        </view>
+        <view class="title6" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+            <text></text>
+        </view>
+    </view>
+    <view class="h-t" style="padding-top:{{windowIsBang ? 40 : 16}}px;">
+        <!--返回按钮-->
+        <navigator class="h-t-left" wx:if="{{pages_len>1}}" open-type="navigateBack" delta="1" style="top:calc({{windowIsBang ? 40 : 16}}px + 8px);">
+            <text class="iconfont iconback {{h_type_px=='3750' ? 'white' : ''}}"></text>
+            <text class="clearfix"></text>
+        </navigator>
+        <!--首页按钮-->
+        <navigator url="../index/index" open-type="reLaunch" class="h-t-left" wx:elif="{{is_menu==false}}" style="top:calc({{windowIsBang ? 40 : 16}}px + 8px);">
+            <text class="iconfont iconweibiao45100847 {{h_type_px=='3750' ? 'white' : ''}}"></text>
+            <text class="clearfix"></text>
+        </navigator>
+        <!--标题-->
+        <view class="h-t-title">
+             <block wx:if="{{h_type_px=='750'}}">
+                <view style="text-align: center;width:216rpx;margin: 0 auto;font-size:34rpx;">{{title}}</view>
+            </block>
+            <block wx:elif="{{h_type_px!='3750' || title==''}}">
+                <navigator open-type="reLaunch" url="../index/index">
+                  <view style="text-align: center;width:200rpx;margin: 0 auto;">
+                    <text style="font-size: 52rpx;margin-top: -18rpx;"></text><text ></text>         
+                    <view class="clearfix"></view>
+                  </view>
+                </navigator>
+            </block>
+           
+            <block wx:else>
+                <text class="{{white}}">{{title}}</text>
+            </block>
+        </view>
+    </view>
+</view>

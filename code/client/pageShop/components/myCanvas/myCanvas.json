@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		 "myLoading": "/components/myLoading/myLoading",
+		 "painter":"/pageShop/components/painter/painter"
+	},
+	"component": true
+}

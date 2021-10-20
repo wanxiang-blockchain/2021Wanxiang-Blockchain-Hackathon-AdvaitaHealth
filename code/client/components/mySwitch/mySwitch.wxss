@@ -1,0 +1,54 @@
+.weui-switch {
+	display: block;
+	position: relative;
+	width: 80rpx;
+	height: 48rpx;
+	border: 1px solid #DFDFDF;
+	outline: 0;
+	border-radius: 32rpx;
+	box-sizing: border-box;
+	background-color: #DFDFDF;
+	transition: background-color 0.1s, border 0.1s;
+	cursor: pointer;
+}
+
+.weui-switch:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80rpx;
+	height: 44rpx;
+	border-radius: 30rpx;
+	background-color: #FDFDFD;
+	transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+
+.weui-switch:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 44rpx;
+	height: 44rpx;
+	border-radius: 30rpx;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 6rpx rgba(0, 0, 0, 0.4);
+	transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+
+.weui-switch-on {
+	border-color: #000;
+	
+	background-color: #000;
+}
+
+.weui-switch-on:before {
+	border-color: #000;
+	
+	background-color: #000;
+}
+
+.weui-switch-on:after {
+	transform: translateX(36rpx);
+}

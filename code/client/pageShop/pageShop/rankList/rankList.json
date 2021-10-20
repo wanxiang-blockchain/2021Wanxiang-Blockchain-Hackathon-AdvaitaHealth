@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"login":"/components/login/login",
+		"rank": "/pageShop/components/rank/rank",
+		"myLoading": "/components/myLoading/myLoading"
+	},
+	"navigationBarTextStyle": "black"
+}

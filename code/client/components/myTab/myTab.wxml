@@ -1,0 +1,12 @@
+<view class="class" style="width: {{width}}rpx;">
+	<view style="{{customStyle}};color: {{propsTab == index?activeColor:''}};width: {{tabWidth}}%" class="class-li {{propsTab == index?'active':'' }}" bindtap="clickColumn"
+	 data-type="{{index}}" wx:for="{{textData}}" wx:key="index">
+		<block wx:if="{{item != '图片'}}">{{ item }}</block>
+		<block wx:else>
+			<image class="tab-img" wx:if="{{propsTab == index}}" src="https://i.2fei2.com/poster/slide/2021-05-14/09:41:40/609dd554774e2.png" mode="aspectFit"></image>
+			<image class="tab-img" wx:else src="https://i.2fei2.com/poster/slide/2021-05-14/09:41:59/609dd567785cb.png" mode="aspectFit"></image>
+		</block>
+		<view class="border-line" wx:if="{{lineStyle && propsTab == index}}" style="{{lineStyle}};"></view>
+	</view>
+	<view class="boder-bottom" wx:if="{{borderStyle}}" style="{{borderStyle}};"></view>
+</view>

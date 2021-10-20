@@ -1,0 +1,21 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='我的作品' background="#fff" color="#000"></MyHeader>
+<login wx:if="{{!userInfo}}" isBottom="1"></login>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<scroll-view scroll-y="true" 
+bindscrolltolower="searchScrollLower" 
+class="scroll_h" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;background-color: #fff;">
+	<view class="work-avatar">
+		<image class="work-img" mode="aspectFill" catchtap="goDetail" src="{{userInfo.avatar_url}}"></image>
+	</view>
+	<view class="work-name">{{userInfo.nickname}}</view>
+	<view class="work-list flex-box">
+		<view class="work-item" wx:for="{{list}}" wx:key="index" >
+			<image class="work-item-img" wx:if="{{item.base_image_url}}" bindtap="goDetail" data-i="{{item.artwork_id}}" src="{{item.base_image_url?item.base_image_url+'?imageView2/0/w/378':''}}" mode="aspectFit" catchtap="goDetail"></image>
+			<image class="work-item-img" wx:else bindtap="goDetail" data-i="{{item.artwork_id}}" src="{{item.thumbnail?item.thumbnail+'?imageView2/0/w/378':''}}" mode="aspectFit" catchtap="goDetail"></image>
+			<view class="work-close iconfont iconshanchu" catchtap="del" data-i="{{item.artwork_id}}"></view>
+		</view>
+		<view class="work-item" style="height: 0;border: none;">
+			<image class="work-item" mode="aspectFill" catchtap="goDetail" style="background: transparent;"></image>
+		</view>
+	</view>
+</scroll-view>

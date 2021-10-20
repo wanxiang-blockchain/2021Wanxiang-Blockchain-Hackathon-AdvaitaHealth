@@ -1,0 +1,53 @@
+
+.class {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: 0 auto;
+	position: relative;
+}
+.boder-bottom {
+	width: 100%;
+	height: 8rpx;
+	background: #F0F0F0;
+	border-radius: 3rpx;
+	margin: auto;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	
+}
+.class-li {
+	height: 100rpx;
+	line-height: 100rpx;
+	color: #989898;
+	text-align: center;
+	position: relative;
+	box-sizing: border-box;
+}
+.class .active {
+	font-weight: bold;
+}
+.class .active .border-line {
+	width: 60rpx;
+	height: 8rpx;
+	background: rgba(255, 121, 13, 1);
+	border-radius: 4rpx;
+	margin: auto;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 1;
+}
+.tab-img{
+	width: 80rpx;
+	height: 32rpx;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}

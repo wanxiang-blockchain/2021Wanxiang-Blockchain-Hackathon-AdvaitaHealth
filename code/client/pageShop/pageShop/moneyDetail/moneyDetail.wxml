@@ -1,0 +1,28 @@
+<MyHeader  bind:back="back"  backIcon="{{true}}" titleText=''></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view bindscrolltolower="searchScrollLower" style="background: #F9F9F9; height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;" scroll-y="true" class="scroll_h" scroll-into-view="{{isSelect}}">
+	<view class="history-bg">
+		{{money}}
+	</view>
+	<view class="title">{{time}}</view>
+	<view class="total">销售额 ￥ {{detail_total}}</view>
+	<view class="history-content">
+		<view class="history-item" wx:for="{{list}}" wx:key="index">
+			<view class="order-top">
+				<view style="float: left;">订单：{{item.orders_num}}</view>
+				<view style="float: right;">{{item.time}}</view>
+			</view>
+			<view wx:for="{{item.detail}}" wx:key="index" wx:for-item="items" style="margin-bottom: 20rpx;">
+				<watchList info="{{items}}" ></watchList>
+			</view>
+			<view class="order-all">
+				<text style="font-size: 22rpx;"> 合计:</text>
+				<text style="font-size: 28rpx;color: #FF5000;"><text style="font-size: 20rpx;">￥</text>{{item.count_price-item.favorable_price}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="no-more" wx:if="{{ list && list.length === 0 && !searchLoading }}">-- 暂无数据 --</view>
+	<view class="no-more" wx:if="{{!listMore && list && list.length > 0 && !searchLoading}}">-- 已加载全部内容 --</view>
+</scroll-view>
+

@@ -1,0 +1,87 @@
+page {
+	font-size: 26rpx;
+	color: #000;
+	background-color: #fff;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.scroll-h{
+	padding:0 14rpx;
+	box-sizing: border-box;
+}
+/* 时间 */
+.time-list{
+	padding: 0 46rpx;
+	margin: 24rpx 0;
+}
+.time-item{
+	width: 104rpx;
+	height: 50rpx;
+	line-height: 48rpx;
+	text-align: center;
+	border-radius: 16rpx;
+	color: #767676;
+	border: 2rpx solid #979797;
+	margin-right: 18rpx;
+}
+.time-active{
+	color: #fff;
+	border: 2rpx solid #2B86FF;
+	background-color: #2B86FF;
+}
+
+/* 文字 */
+.quota-box{
+	padding: 0 32rpx 100rpx;
+}
+.quota-title{
+	font-size: 36rpx;
+	line-height: 48rpx;
+	font-weight: bold;
+	color: #000;
+	margin-top: 32rpx;
+}
+.quota-line{
+	width: 660rpx;
+	height: 2rpx;
+	background-color: #6E6E6E;
+	margin: 48rpx 0 14rpx;
+}
+.quota-text{
+	font-size: 22rpx;
+	line-height: 32rpx;
+	color: #000;
+}
+.quota-img{
+	width: 100%;
+	height: 236rpx;
+	height: 300rpx;
+	display: inline-block;
+	margin: 42rpx auto 50rpx;
+}
+.quota-tips{
+	font-size: 18rpx;
+	line-height: 24rpx;
+	color: #000;
+}
+.avatar-box{
+	position: relative;
+}
+.quota-avatar{
+	width: 82rpx;
+	height: 82rpx;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: 12rpx;
+}

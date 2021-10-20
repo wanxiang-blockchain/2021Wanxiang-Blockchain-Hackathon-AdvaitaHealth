@@ -1,0 +1,11 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"login":"/components/login/login",
+		"myLoading": "/components/myLoading/myLoading",
+		"posterMask": "/components/posterMask/posterMask",
+		"myTab": "/components/myTab/myTab",
+		"Carousel": "/components/Carousel/Carousel"
+	},
+	"navigationBarTextStyle": "black"
+}

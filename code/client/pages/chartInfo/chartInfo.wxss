@@ -1,0 +1,71 @@
+page {
+    background: #031331;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 85rpx);
+    float: left;
+    display: block;
+    /*display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;*/
+}
+
+ec-canvas {
+    width: 100%;
+    height: 750rpx;
+}
+
+.top {
+    background: #031331;
+    
+}
+.top .title{
+  color: #fff;
+  font-size: 36rpx;
+  transform: rotate(90deg);
+  position: fixed;
+  white-space: nowrap;
+  left: 528rpx;
+  width: 300rpx;
+  top: 230rpx;
+}
+
+.day {
+    transform: rotate(90deg);
+    position: fixed;
+    left: 450rpx;
+    top: 700rpx;
+    justify-content: center;
+    display: flex;
+    white-space: nowrap;
+}
+
+.day .day-icon {
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.day .day-text {
+    font-size: 32rpx;
+    color: #fff;
+    margin-top: -5rpx;
+    margin-left: 20rpx;
+}
+
+.day .left-icon,
+.day .right-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 0 40rpx;
+    margin-top: 3rpx;
+
+}

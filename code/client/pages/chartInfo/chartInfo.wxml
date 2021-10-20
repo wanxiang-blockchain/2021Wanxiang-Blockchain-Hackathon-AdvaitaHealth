@@ -1,0 +1,42 @@
+<include src="../common/auth.wxml" />
+<MyHeader   bind:back="back" backIcon="{{true}}"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<!--心率图-->
+<view class="container" style="display:{{isHideBpm ? 'flex' : 'none'}};">
+  <ec-canvas id="mychart-dom-bpm" canvas-id="mychart-bpm" ec="{{ecBPM}}" style="height:calc({{windowHeight}}px  - {{statusBarHeight}}px - {{navHeight}}px);"></ec-canvas>
+</view>
+<!--血压图-->
+<view class="container" style="display:{{isHideBP ? 'flex' : 'none'}};">
+  <ec-canvas id="mychart-dom-bp" canvas-id="mychart-bp" ec="{{ecBP}}" style="height:calc({{windowHeight}}px  - {{statusBarHeight}}px - {{navHeight}}px);"></ec-canvas>
+</view>
+
+<!--血氧图-->
+<view class="container" style="display:{{isHideOXY ? 'flex' : 'none'}};">
+  <ec-canvas id="mychart-dom-oxy" canvas-id="mychart-oxy" ec="{{ecOXY}}" style="height:calc({{windowHeight}}px  - {{statusBarHeight}}px - {{navHeight}}px);"></ec-canvas>
+</view>
+
+<!--心率变异性图-->
+<view class="container" style="display:{{isHideHRV ? 'flex' : 'none'}};">
+  <ec-canvas id="mychart-dom-hrv" canvas-id="mychart-oxy" ec="{{ecHRV}}" style="height:calc({{windowHeight}}px  - {{statusBarHeight}}px - {{navHeight}}px);"></ec-canvas>
+</view>
+
+<view class="top">
+    <view class="title" wx:if="{{isHideBpm}}">
+        心率：{{bpm}} bpm
+    </view>
+    <view class="title" wx:if="{{isHideBP}}"  style="top:290rpx;left: 478rpx;width: 400rpx;">
+        血压：{{systolic}}/{{diastoli}} mmHg
+    </view>
+	<view class="title" wx:if="{{isHideOXY}}"  style="top:290rpx;left: 478rpx;width: 400rpx;">
+	    血氧：{{oxygen}}%
+	</view>
+	<view class="title" wx:if="{{isHideHRV}}"  style="top:290rpx;left: 478rpx;width: 400rpx;">
+	    心率变异性：{{hrvAvg}}ms
+	</view>
+    <view class="day">
+        <image src="http://i.2fei2.com/5e22d2494f029.png" class="left-icon" bindtap="clickDay" data-date="{{prev_date}}"></image>
+        <image src="http://i.2fei2.com/5e22d0c9ca197.png" class="day-icon"></image>
+        <view class="day-text">{{this_date}}</view>
+        <image src="http://i.2fei2.com/5e22d27bbe7e8.png" class="right-icon" bindtap="clickDay" data-date="{{next_date}}"></image>
+    </view>
+</view>

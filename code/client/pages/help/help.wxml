@@ -1,0 +1,34 @@
+<MyHeader bind:back="back" backIcon="{{true}}"  ></MyHeader>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true">
+	<view class="help-title">手表使用注意事项</view>
+	
+	<view class="menu">
+		<navigator hover-class="none" url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/aL_PA638iGkprcR3JPl2lw" class="item">
+		  <view class="iconfont iconcaidan" style="font-size: 44rpx;"></view>关于手表的简单介绍<view class="iconfont iconjiantouyou"></view>
+			<view class="clearfix"></view>
+		</navigator>
+		<navigator hover-class="none" url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/h2eVM9PUhE_akWsjBYaeug" class="item">
+		  <view class="iconfont iconcaidan" style="font-size: 44rpx;"></view>首次使用，如何绑定手表？<view class="iconfont iconjiantouyou"></view>
+			<view class="clearfix"></view>
+		</navigator>
+		<navigator hover-class="none" url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/Y4vzBP62snCG3VDOOLvPvg" class="item">
+		  <view class="iconfont iconcaidan" style="font-size: 44rpx;"></view>如何拆卸、安装表带？<view class="iconfont iconjiantouyou"></view>
+			<view class="clearfix"></view>
+		</navigator>
+		<navigator hover-class="none" url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/Tu00TyMYEadaS7adIvgEUQ" class="item">
+		  <view class="iconfont iconcaidan" style="font-size: 44rpx;"></view>手表如何连接WIFI？<view class="iconfont iconjiantouyou"></view>
+			<view class="clearfix"></view>
+		</navigator>
+		<navigator hover-class="none" url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/JDET942LqA9EzMXkOfKZ-A" class="item">
+		  <view class="iconfont iconcaidan" style="font-size: 44rpx;"></view>数据不完整，如何手动同步数据？<view class="iconfont iconjiantouyou"></view>
+			<view class="clearfix"></view>
+		</navigator>
+		<navigator hover-class="none" url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/-XSYP849-sZFpHTp0wmBsQ" class="item">
+		  <view class="iconfont iconcaidan" style="font-size: 44rpx;"></view>其他常见问题<view class="iconfont iconjiantouyou"></view>
+			<view class="clearfix"></view>
+		</navigator>
+	</view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

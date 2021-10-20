@@ -1,0 +1,38 @@
+<MyHeader bind:back="back" backIcon="{{true}}" ></MyHeader>
+<myLoading wx:if="{{isLoading}}"></myLoading>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll-h">
+	<view class="group1">
+	  <view class="bd1">
+	    <view class="mod1">
+	      <view class="bd2">
+	        <view lines="1" class="infoBox1">授课服务</view>
+	        <view lines="1" decode="true" class="infoBox2">洪容华老师 35年资深冥想教师 台北</view>
+	      </view>
+	    </view>
+	    <view class="mod2">
+	      <view class="outer1">
+	        <view class="main1">
+				<image src="https://i.2fei2.com/goods/logo/2021-10-14/13:43:34/6167c38655596.jpg"
+				 class="main1"></image>
+			</view>
+	        <text lines="1" class="info1">睡眠大师</text>
+	      </view>
+	      <text lines="1" class="word1">容华</text>
+	    </view>
+	    <text lines="1" class="infoBox3">自1986年起研究中国传统易理数术、星象命理、五术、气功、养生中医、能量医疗、自然疗法、同类疗法、心理咨商、儿童教育、禅修静坐、灵修哲学与各式修持法迄今。<br/><br/></text>
+	    <text lines="1" class="infoBox4">喜悦之路静坐协会灵性瑜珈师资班结业<br/></text>
+	    <text lines="1" class="infoBox5">脉轮与胜王瑜伽初级教师认证及助教<br/></text>
+	    <text lines="1" class="infoBox6">瑜伽呼吸暨身印教师认证<br/></text>
+	    <text lines="1" class="infoBox7">五大元素与心灵转化及瑜伽运动伤害结业<br/></text>
+	    <text lines="1" class="paragraph1">仁神术国际课程及专题课程结业<br/><br/></text>
+		<text lines="1" decode="true" class="paragraph2" style="margin-top: 30rpx;">SahajMarg&nbsp;Spirituality&nbsp;Founda&nbsp;tion-Spiritual&nbsp;Preceptor认证</text>
+		<text lines="1" decode="true" class="paragraph2">Shanti&nbsp;Institute&nbsp;of&nbsp;Ayurveda-&nbsp;Ayurveda&nbsp;Lifestyle&nbsp;Program&nbsp;结业<br/><br/><br/></text>
+	  </view>
+	  <view class="bd4">
+	    <image src="../../images/lanhu_ronghualaoshijieshao/SketchPngb72e358ae95636ed1452c3328663c0d9aabc9ae0b848aec4c789c77b644e7d76.png" class="pic1"></image>
+	  </view>
+	 
+	</view>
+</scroll-view>

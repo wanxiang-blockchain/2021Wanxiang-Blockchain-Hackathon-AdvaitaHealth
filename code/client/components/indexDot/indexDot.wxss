@@ -1,0 +1,16 @@
+/* TAB */
+.data{
+	height: 6rpx;	
+	line-height: 6rpx;
+}
+.data-box {
+	width: 38rpx;
+	height: 6rpx;
+	display: inline-block;
+	background: #F0F0F0;
+	vertical-align: text-top;
+}
+.active{
+	background: #9B9B9B;
+	border-radius: 3rpx;
+}

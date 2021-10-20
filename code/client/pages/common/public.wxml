@@ -1,0 +1,26 @@
+<!--全屏提示-->
+<view class="div winpop-mask" id="co_maks" style="{{error.result == 'fail' ? 'display: block;' : ''}}"></view>
+<view class="div winpop-box" id="co_box" style="height:293px;{{error.result == 'fail' ? 'display: block;' : ''}}">
+    <view class="div co-popmain winpop-main">
+        <view class="p co-main-words">{{error.error_info}}</view>
+        <view style="color:#ef465c;position:absolute;bottom:0;left:46%;">{{second}}s</view>
+    </view>
+    <view class="div co-btns winpop-btnss">
+            <button type="button" class="co-alert pop-btnss" value="" bindtap="closeComaks">
+            确定
+            </button>
+    </view>
+</view>
+
+<!--微小型自动隐藏弹出框-->
+<view style="{{!alert_s_state ? 'display:none;' : ''}}-webkit-animation-name: fadeInOut;-webkit-animation-duration:0.5s;-webkit-animation-fill-mode : forwards;-webkit-animation-delay:1.3s;position: fixed;bottom: 59px;width: 100%;height: auto;z-index: 999999999999999;text-align: center;">
+    <text style="color: #ffffff; background-color: #444;border-radius: 4px;font-size:12px;padding: 0.5em 0.8em;margin: 0 auto;">{{alert_s_text}}
+    </text>
+</view>
+
+<!--中型自动隐藏弹出框-->
+<view style="{{!alert_l_state ? 'display:none;' : ''}}-webkit-animation-name: fadeInOut;-webkit-animation-duration:3s;-webkit-animation-fill-mode : forwards;-webkit-animation-delay:3s;position: fixed;bottom: 50%;width: 100%;height: auto;z-index: 9999;text-align: center;">
+    <view  style="color: #ffffff; background-color: #444;border-radius: 4px;font-size:16px;padding:35px 0;margin: 0 auto;box-shadow:0 0 3px #444;">
+        {{alert_l_text}}
+    </view>
+</view>

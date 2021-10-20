@@ -1,0 +1,14 @@
+<MyHeader titleText='请输入user_id'></MyHeader>
+<view style="width: 80%;background: #fff;border-radius:10px;position: fixed;left:calc(10% - 10px);top:400rpx;z-index:9999;padding: 10px;padding-bottom:0;">
+        <form bindsubmit="reAuthorized" report-submit="true">
+            <!-- <view style="text-align:center;padding:15px;">请输入user_id</view> -->
+            <input type="text" name="user_id" style="border: 1px solid #ccc;text-align: center;margin:0 auto 20rpx auto;width:80%;height: 80rpx;"></input>
+            <!-- <view style="text-align:center;padding:15px;">请填写血压计测量的静态收缩压</view> -->
+            <!-- <input type="text" name="systolic" style="border-bottom: 1px solid #ccc;text-align: center;margin:0 auto 40rpx auto;width:80%;height: 80rpx;"></input> -->
+            
+            <button style="background:#031331;color:#fff;width:80%;float:right;margin-right:10%;" data-state="1" formType="submit">
+                进入
+            </button>
+        </form>
+        <view class="clearfix" style="margin-bottom:20px;"></view>
+    </view>

@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"Agent": "/pageShop/components/Agent/Agent",
+		"login":"/components/login/login"
+	},
+	"navigationBarTextStyle": "black"
+}

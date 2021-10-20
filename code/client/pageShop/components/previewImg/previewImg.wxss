@@ -1,0 +1,60 @@
+
+/* page {
+	font-size: 24rpx;
+	color: #333;
+	background-color: #fff;
+} */
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.banner-box{
+	width: 570rpx;
+	height: 480rpx;
+}
+/* 图片预览 */
+.choose-img{
+	width: 100%;
+	border-radius: 36rpx;
+	position: relative;
+}
+.text-box{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.text-bg{
+	height: 28rpx;
+	font-size: 16rpx;
+	padding: 4rpx 8rpx;
+	mix-blend-mode: multiply;
+}
+.text-name{
+	font-size: 16rpx;
+	padding: 4rpx 8rpx;
+	font-weight: 500;
+	height: 32rpx;
+	color: #FFFFFF;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.no-img{
+	font-size: 22rpx;
+	padding: 4rpx 8rpx;
+	font-weight: 500;
+	height: 32rpx;
+	color: #000;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}

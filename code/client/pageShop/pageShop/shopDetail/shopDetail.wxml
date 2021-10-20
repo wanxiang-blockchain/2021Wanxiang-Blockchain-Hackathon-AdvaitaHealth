@@ -1,0 +1,112 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='商品详情' background="#fff" color="#000"></MyHeader>
+<!-- 授权登录框1 -->
+<login wx:if="{{!userInfo}}"></login>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view bindscroll="bindscroll" scroll-into-view="{{type}}" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll_h" bindscrolltolower="searchScrollLower">
+	<view class="banner-box">
+		<Carousel imgUrls='{{imgUrls}}' imgType="aspectFit" swiperIndex="{{swiperIndex}}" autoplay="{{true}}" height="372" wx:if="{{hasMade}}"></Carousel>
+		<Carousel imgUrls='{{imgUrls}}' imgType="aspectFill" swiperIndex="{{swiperIndex}}" autoplay="{{true}}" height="250" wx:else></Carousel>
+	</view>
+	<!-- <view class="train-bg">
+		<view class="train-title">体验价</view>
+		<view class="train-old">
+			<text style="font-size: 24rpx;">￥</text>199.00 
+			<text class="train-new">
+				<text class="train-new-text" style="font-size: 21rpx">入群体验 ￥</text>
+				<text>99.00</text>
+			</text>
+		</view>
+		<view class="train-group" bindtap="goChatGroup">
+			加入体验群，享入群租赁体验价99元。
+			<view class="train-btn">
+				<text class="train-btn-text">入群</text>
+				<text class="train-btn-icon iconfont iconjiantouyou"></text></view>
+		</view>
+	</view> -->
+	<view class="title-box box-bar">
+		<view class="title-name">{{title}}</view>
+		<view class="shop-price"><text class="shop-icon">￥</text>{{price}}
+			<text class="shop-grey">￥{{oldPrice}}</text>
+			<text class="shop-discount" wx:if="{{agentprice != price && userInfo.Wechat_xcxSetUser && userInfo.Wechat_xcxSetUser.is_allow_channel && userInfo.Wechat_xcxSetUser.is_allow_channel==1}}">代理折扣价￥{{agentprice}}</text>
+		</view>
+	</view>
+	<view class="deliver box-bar">
+		<view class="deliver-name">发货</view>
+		<view class="deliver-content"><text class="deliver-icon iconfont iconlocation"></text>广州<text class="deliver-line">|</text>快递<text
+			 wx:if="{{info.mail_price}}">{{info.mail_price==0?'免运费':info.mail_price+'元'}}</text></view>
+		<view class="deliver-num">库存: {{stock}}</view>
+	</view>
+	<!-- <view class="choose" bindtap="showMask">
+		<view class="deliver box-bar choose-name">
+			<view class="deliver-name">选择</view>
+			<view class="deliver-content">请选择 下单方式</view>
+			<text class="deliver-num iconfont iconjiantouyou"></text>
+		</view>
+		
+		<view class="flex-box choose-type">
+			<view class="choose-item">直购</view>
+			<view class="choose-item">租赁</view>
+			<view class="choose-item">预存金</view>
+		</view>
+		<view class="choose-name"><text class="">参数</text>品牌 | 型号...</view>
+	</view> -->
+	<!-- <view class="flex-box box-bar column-bar">
+		<view class="column-item">商品详情</view>
+		<view class="column-item column-active">租赁条件</view>
+		<view class="column-item">成为代理</view>
+	</view> -->
+	<view id="indexes-0" class="detail-item" style="height: 1rpx;"></view>
+	<view class="tags-false"  wx:if="{{tabArr.length>0}}">
+		<view class="data flex-box {{isImbibition?'imbibition':''}}" bindtap="changeTab" style="top:{{statusBarHeight+ navHeight}}px">
+			<view class="data-box {{(tabType == index)?'active':''}}" data-num="{{index}}" wx:for="{{tabArr}}" wx:key="index">{{item}}</view>
+		</view>
+	</view>
+	<view class="tags-false" wx:else></view>
+	
+	<video id="myVideo"  wx:if="{{info.video_url}}" src="{{info.video_url}}" autoplay="{{true}}" binderror="videoErrorCallback"
+	 show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls picture-in-picture-mode="{{['push', 'pop']}}"></video>
+	
+	<view class="box-bar detail-cloth"  bindtap="previewImg" wx:if="{{autoTab}}" style="padding: 0;">
+		<view class="" wx:for="{{detailInfo}}" wx:key="index">
+			<view  style="height: 100rpx;"></view>
+			<rich-text nodes="{{item}}"></rich-text>
+		</view>
+	</view>
+	<view class="box-bar detail" bindtap="previewImg" wx:else>
+		<view class="">
+			<rich-text nodes="{{detailInfo}}"></rich-text>
+		</view>
+	</view>
+	
+	<!-- 评价 -->
+	<view id="indexes-1" class="detail-item" style="height: 1rpx;"></view>
+	<view  >
+		<view class="shop-title" style="border-bottom: 20rpx solid #F8F8F8;">评价 {{listTotal?listTotal:0}}</view>
+		<articleList info="{{item}}" binddetail="goSaltDetail" wx:for="{{list}}" wx:key="index"></articleList>
+		<view class="no-more" wx:if="{{ list && list.length == 0}}">-- 暂无数据 --</view>
+	</view>
+	
+	<!-- 		<view class="buy-box">
+		<text bindtap="goIndex" class="buy-bg iconfont iconyuanquanlanse1" style="{{skinThemeStyle}}"></text>
+		<view class="buy-cart {{scaleCart?'on':''}}" bindtap="goCart">
+			<text class="buy-icon iconfont icongouwu"></text>
+			<view class="buy-num" wx:if="{{cart>0}}" style="{{skinThemeStyle}}"></view>
+		</view>
+		<view class="buy-add" bindtap="showMask" style="{{skinThemeStyle}}">加入购物车</view>
+		<view class="buy-now" bindtap="goOrder" style="{{skinThemeStyle}}">立即购买</view>
+	</view> -->
+	<view class="buy-box">
+		<view class="buy-cart {{scaleCart?'on':''}}" bindtap="goCart">
+			<text class="buy-icon iconfont icongouwu"></text>
+			<view class="buy-num" wx:if="{{cart>0}}" style="{{skinThemeStyle}}"></view>
+		</view>
+		<view class="buy-design" bindtap="showCloth" wx:if="{{hasMade}}" style="{{skinThemeStyle}}">再设计</view>
+		<view class="buy-add" bindtap="showMask" style="{{skinThemeStyle}}">加入购物车</view>
+	</view>
+	<view style="height: 164rpx;width: 100%;"></view>
+</scroll-view>
+<chooseClothes wx:if="{{showClothMask}}" info="{{info.poster}}" bindhideMask="hideMask"></chooseClothes>
+<!-- 参数 -->
+<buyParam wx:if="{{showWechatMask}}" info="{{info}}" buyNow="{{buyNow}}" bindgoOrder="goOrder" bindhideMask="hideMask"
+ bindparamAddCart="paramAddCart"></buyParam>

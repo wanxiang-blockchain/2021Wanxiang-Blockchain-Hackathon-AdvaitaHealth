@@ -1,0 +1,52 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText=''></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view bindscrolltolower="searchScrollLower" style="background: #F9F9F9; height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll_h" scroll-into-view="{{isSelect}}">
+	<view class="history-bg">
+		<view class="history-total">{{total}}</view>
+	</view>
+	<view class="history-content">
+		<!-- 储值卡 -->
+		<view class="history-item" wx:if="{{sort == 1}}" wx:for="{{list}}" wx:key="index" bindtap="goDetail" data-name="{{item.db_name}}"
+		 data-id="{{item.db_id}}">
+			<view class="history-title" wx:if="{{item.type_id != 11}}">{{item.title}}</view>
+			<view class="history-title" wx:else>{{item.title+'-'+(item.user && item.user.nickname)}}</view>
+			<view class="history-price" style="right: {{item.db_name == 'orders'? 64:32}}rpx">{{item.deduction_price}}</view>
+			<view class="history-time">{{item.time}}</view>
+			<view class="info-more iconfont iconjiantouyou" wx:if="{{item.db_name == 'orders'}}"></view>
+		</view>
+		<!-- 现金 -->
+		<view class="history-item" 
+			wx:if="{{sort != 1}}" 
+			wx:for="{{list}}" 
+			wx:key="index" 
+			bindtap="goDetail" 
+			data-total="{{item.rebate && item.rebate.sale_price || 0}}"
+			data-money="{{item.price}}" 
+			data-time="{{item.add_time}}" 
+			data-period="{{item.rebate && item.rebate.period}}"
+			data-name="{{item.type_id}}" 
+			data-id="{{item.cash_num}}">
+			<view class="history-title">
+				{{item.type_name}}
+				<text wx:if="{{item.rebate && item.rebate.period == 'month'}}">(月)</text>
+				<text wx:if="{{item.rebate && item.rebate.period == 'season'}}">(季)</text>
+				<text wx:if="{{item.rebate && item.rebate.period == 'year'}}">(年)</text>
+			</view>
+			<view class="history-time">{{item.time}}</view>
+			<block wx:if="{{item.type_id == 1}}">
+				<view class="history-num">{{item.price}}</view>
+				<view class="history-result" wx:if="{{item.audit_state == 0}}">审核中</view>
+				<view class="history-result" wx:elif="{{item.audit_state == 1}}">提现成功</view>
+				<view class="history-result" wx:else>提现失败</view>
+			</block>
+			<block wx:else>
+				<view class="history-price" style="right: {{item.type_id == 15?64:32}}rpx;">{{item.price}}</view>
+				<view class="info-more iconfont iconjiantouyou" wx:if="{{item.type_id == 15}}"></view>
+			</block>
+		</view>
+	</view>
+	<view class="no-more" wx:if="{{ list && list.length === 0 && !searchLoading }}">-- 暂无数据 --</view>
+	<view class="no-more" wx:if="{{!listMore && list && list.length > 0 && !searchLoading}}">-- 已加载全部内容 --</view>
+</scroll-view>

@@ -1,0 +1,17 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='商城' background="#fff" color="#000"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{windowIsBang ? 40 : 16}}px - 52px ); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true"  scroll-into-view="{{isSelect}}">
+	<view class="coupon-item">
+		<view class="coupon-num"><text class="coupon-big">8</text>折</view>
+		<view class="coupon-text">优惠卷</view>
+		<view class="coupon-content">
+			<view class="coupon-title">代理商品优惠券</view>
+			<view class="coupon-tips">使用后：使用您所分享的二维码购买手表的顾客将可以领取8折优惠券</view>
+		</view>
+		<view class="coupon-btn">使用</view>
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

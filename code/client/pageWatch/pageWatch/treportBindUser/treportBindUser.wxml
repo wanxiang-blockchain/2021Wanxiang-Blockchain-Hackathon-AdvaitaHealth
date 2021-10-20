@@ -1,0 +1,50 @@
+<!--头部-->
+<include src="../../../pages/common/auth.wxml" />
+<include src="../../../pages/common/public.wxml" />
+<MyHeader bind:back="back" backIcon="{{true}}"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px - 130rpx); width:{{windowWidth}}px;position:relative;background: #FBFBFB;"
+ scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="searchScrollLower">
+
+	<view class="p-title">
+		<view class="line"></view>选择想要转让这份报告的成员
+	</view>
+	<view class="user-list">
+		<view class="user-item" bindtap="addFriend">
+			<myUserInfo height="126" borderLeft="147" contentLeft="147">
+				<view slot="avatar">
+					<view class="" mode="widthFix"  style="height:88rpx;width:88rpx;left: 30rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 50%;box-shadow: 0px 0px 10rpx 0px rgba(0, 0, 0, 0.1);">
+						<view class="iconfont iconjiahao1" style="font-size: 52rpx;color: #2B86FF;position: absolute;top: 0;bottom: 0;left: 0;right: 0; margin: auto;width: 52rpx;height: 80rpx;"></view>
+					</view>
+				</view>
+				<view slot="content">
+					<view class="hidden-text" style="margin-top: 42rpx;width: 560rpx;">添加好友</view>
+				</view>
+			</myUserInfo>
+		</view>
+		<view class="user-item" wx:for="{{treport_user_list}}" wx:key="index" bindtap="switchUser" data-index="{{index}}">
+			<myUserInfo height="126" borderLeft="147" contentLeft="147">
+				<view slot="avatar">
+					<image class="" mode="widthFix" src="{{item.avatar_url}}" style="height:88rpx;width:88rpx;left: 30rpx;position: absolute;top: 0;bottom: 0;margin: auto;border-radius: 50%;background-color: #ccc;"></image>
+					<image wx:if="{{item.active}}" class="" mode="widthFix" src="https://i.2fei2.com/shop/logo/2020-12-01/17:14:11/5fc60963d6510.png"
+					 style="height:30rpx;width:30rpx;left: 93rpx;position: absolute;top: 20rpx;border-radius: 50%;background-color: #ccc;"></image>
+				</view>
+				<view slot="content">
+					<view class="hidden-text" style="margin-top: 42rpx;width: 560rpx;color: {{item.active?'#1966CA':'#6D7278'}};">{{item.name}}</view>
+				</view>
+			</myUserInfo>
+		</view>
+	</view>
+	<view class="btn-all"  bindtap="confirm">确定转让</view>
+</scroll-view>
+<!-- 添加成员 -->
+<messageboxOne wx:if="{{addUserMask}}" height="322" title="添加好友" bindcancel="hideAddUser">
+	<view slot="content1">
+		<view class="add-item-mask">
+			<button class="share-btn" open-type="share" id="auth"></button>
+			<view class="add-icon-mask iconfont iconweixinhaoyou1"></view>
+			<view class="add-text-mask">邀请微信好友</view>
+		</view>
+		<view class="add-tips">*添加好友后，可查看彼此报告总分数。</view>
+	</view>
+</messageboxOne>

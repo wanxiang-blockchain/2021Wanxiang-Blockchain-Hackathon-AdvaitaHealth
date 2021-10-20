@@ -1,0 +1,32 @@
+<view class="cart-item" wx:if="{{type==1}}">
+	<image wx:if="{{item.artwork_id !=0 && item.goods_poster}}" src="{{item.goods_poster?item.goods_poster+'?imageView2/1/w/200/h/200':''}}" class="cart-img" ></image>
+	<image class="cart-img" wx:else src="{{(item.logo_url ||item.goods_logo_url)?(item.logo_url ||item.goods_logo_url) +'?imageView2/1/w/200/h/200':''}}" mode="widthFix"></image>
+	<view class="cart-content">
+		<view class="cart-title hidden-text">{{item.goods_name}}</view>
+		<view class="cart-type">规格：{{item.typeName}}</view>
+		<view class="cart-price">￥{{item.sale_price}}</view>
+	</view>
+	<view class="cart-num">x {{item.buy_num}}</view>
+</view>
+
+<!-- 放大版 -->
+<view class="cart-item" wx:if="{{type==2}}" style="height: 212rpx;">
+	<image wx:if="{{item.goods_poster ||item.goods_logo_url}}" src="{{(item.goods_poster ||item.goods_logo_url)?(item.goods_poster ||item.goods_logo_url)+'?imageView2/1/w/200/h/200':''}}" class="cart-img cart-img2" style="height: 212rpx;width: 212rpx;"></image>
+	<image wx:elif="{{item.logo_url}}" src="{{item.logo_url?item.logo_url+'?imageView2/1/w/200/h/200':''}}" class="cart-img cart-img2" style="height: 212rpx;width: 212rpx;"></image>
+	<view class="cart-content" style="left: 252rpx;height: 190rpx;">
+		<view class="cart-title hidden-text" style="font-size: 32rpx;color: #000;">{{item.goods_name}}</view>
+		<view class="cart-type" style="font-size: 24rpx;color: #000;margin: 0;font-weight: bold;">规格：{{item.typeName}}</view>
+		<view class="cart-price" style="font-size: 32rpx;color: #999;margin-top: 40rpx;">￥{{item.sale_price}}</view>
+	</view>
+	<!-- <view class="cart-num">x {{item.buy_num}}</view> -->
+</view>
+<!-- 放大版矿盐 -->
+<view class="cart-item" wx:if="{{type==3}}" style="height: 212rpx;">
+	<image wx:if="{{item.logo_url}}" src="{{item.logo_url?item.logo_url+'?imageView2/1/w/200/h/200':''}}" class="cart-img cart-img2" style="height: 212rpx;width: 212rpx;"></image>
+	<view class="cart-content" style="left: 252rpx;height: 190rpx;">
+		<view class="cart-title hidden-text" style="font-size: 32rpx;color: #000;">{{item.goods_name}}</view>
+		<view class="cart-type" style="font-size: 24rpx;color: #000;margin: 0;font-weight: bold;"></view>
+		<view class="cart-price" style="font-size: 32rpx;color: #999;margin-top: 40rpx;">￥{{item.min_sale_price}}</view>
+	</view>
+	<!-- <view class="cart-num">x {{item.buy_num}}</view> -->
+</view>

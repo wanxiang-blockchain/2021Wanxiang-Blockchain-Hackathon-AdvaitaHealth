@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+    	 "login":"/components/login/login",
+    	 "myLoading": "/components/myLoading/myLoading",
+		 "retry": "/components/retry/retry",
+		 "MyHeader": "/components/MyHeader/MyHeader"
+    },
+	"navigationBarTextStyle": "black"
+
+}

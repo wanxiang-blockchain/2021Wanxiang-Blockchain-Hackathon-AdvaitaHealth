@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"cart": "/pageShop/components/cart/cart",
+		"login":"/components/login/login"
+	},
+	"navigationBarTextStyle": "black"
+}

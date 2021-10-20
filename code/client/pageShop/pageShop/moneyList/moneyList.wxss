@@ -1,0 +1,110 @@
+page {
+	font-size: 24rpx;
+	color: #333333;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.history-bg{
+	width: 750rpx;
+	height: 250rpx;
+	background: #2B86FF;
+	position: relative;
+}
+.history-bg::after{
+	content: '';
+	width: 1800rpx;
+	height: 1800rpx;
+	background-color: #2B86FF;
+	border-radius: 0 0 1800rpx 1800rpx;
+	position: absolute;
+	left: -524rpx;
+	bottom: -90rpx;
+	z-index: -2;
+}
+.history-total{
+	padding: 32rpx 0;
+	height: 184rpx;
+	font-size: 86rpx;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 120rpx;
+}
+.history-content{
+	width: 686rpx;
+	min-height: 500rpx;
+	background: #FFFFFF;
+	border-radius: 12rpx;
+	margin: auto;
+	margin-top: -67rpx;
+	z-index: 2;
+	position: relative;
+}
+.history-item{
+	height: 158rpx;
+	padding: 32rpx;
+	position: relative;
+}
+.history-title{
+	height: 45rpx;
+	font-size: 32rpx;
+	font-weight: 400;
+	color: #333333;
+	line-height: 45rpx;
+}
+.history-time{
+	height: 37rpx;
+	font-size: 26rpx;
+	font-weight: 400;
+	color: #999999;
+	line-height: 37rpx;
+	margin-top: 12rpx;
+}
+.history-result{
+	height: 37rpx;
+	font-size: 26rpx;
+	font-weight: 400;
+	color: #666666;
+	line-height: 37rpx;
+	position: absolute;
+	right: 32rpx;
+	bottom: 34rpx;
+}
+.history-num{
+	height: 42rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #FF5000;
+	line-height: 42rpx;
+	position: absolute;
+	right: 32rpx;
+	top: 32rpx;
+}
+.history-price{
+	height: 42rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #00C490;
+	line-height: 42rpx;
+	position: absolute;
+	right: 64rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.info-more{
+	height: 40rpx;
+	font-size: 26rpx;
+	font-weight: normal;
+	color: #999999;
+	position: absolute;
+	right: 32rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}

@@ -1,0 +1,48 @@
+<!-- 朋友圈评论 -->
+<view class="m-mask" wx:if="{{type == 1}}" bindtap="hideFriendMask" style='z-index: 10001;bottom:{{inputBottom}}px;background: transparent;'>
+	<view class="comment-box" catchtap="forbiddenBubble">
+		<input class="comment-input" value="{{comment}}" bindinput='getInputText' bindfocus="foucus" bindblur="blur"
+		 maxlength="-1" bindconfirm='submit' type="text" placeholder="{{commentInfo.name?'回复'+commentInfo.name:'评论'}}"
+		 placeholder-style="color: #D3D3D3;" adjust-position="{{false}}" />
+		<text class="conmment-btn" bindtap="submit">发送</text>
+	</view>
+</view>
+
+<!-- 定制文字 -->
+<myLoading wx:if="{{loading}}"></myLoading>
+<view class="textarea-box" wx:if="{{type == 2}}">
+	<textarea class="comment-textarea" focus="true" value="{{comment}}" bindinput='getInputText' bindfocus="foucus"
+	 bindblur="blur" bindconfirm='submitText' type="text" maxlength="-1" placeholder="输入文字" placeholder-style="color: #D3D3D3;"
+	 adjust-position="{{false}}" />
+	<view class="textarea-btn" bindtap="submitText">确定</view>
+</view>
+
+<!-- 觉察原因 -->
+<view wx:if="{{type == 3}}">
+	<view class="reason-mask" wx:if="{{inputMask}}" bindtap="hideMask">
+		<view class="reason-bg" style='position:fixed;bottom:{{inputBottom}}px;' catchtap="forbiddenBubble">
+			<view class="reason-box clearfix" >
+				<view class="reason-title">觉察原因：</view>
+				<textarea
+				class="reason-textarea" 
+				focus="true"
+				value="{{comment}}" 
+				bindinput='getInputText' 
+				bindconfirm='submitText'
+				bindfocus="foucus"
+				bindblur="blur" 
+				type="text" 
+				maxlength="-1"
+				placeholder="请根据手表佩戴中的行为，记录觉察原因。例：喝酒了" 
+				placeholder-style="color: #D3D3D3;" 
+				adjust-position="{{false}}"/>
+				<view class="reason-save {{comment?'btn-active':''}}" bindtap='submitText2'>保存</view>
+			</view>
+		</view>
+	</view>
+	<view class="reason-box clearfix"  wx:else >
+		<view class="reason-title" wx:if="{{comment}}">觉察原因：</view>
+		<view class="reason-content">{{comment}}</view>
+		<view class="reason-save" style="background-color: #2B86FE;" bindtap="showInput" >{{initContent?'修改':'觉察原因'}}</view>
+	</view>
+</view>

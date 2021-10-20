@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"MyHeader": "/components/MyHeader/MyHeader",
+		"login":"/components/login/login",
+		"myLoading": "/components/myLoading/myLoading"
+	},
+	"navigationBarTextStyle": "white"
+}

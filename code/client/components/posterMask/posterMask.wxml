@@ -1,0 +1,15 @@
+<!-- 早晚冥想生成海报 -->
+<myLoading wx:if="{{loading}}"></myLoading>
+<view class="">
+	<!-- <myPreview wx:if="{{isShow}}" :posterData="posterData" :color="color" :text="text" :bgImg="bgImg" :height="height" :wxaCode="userInfo.share_qrcode"></myPreview> -->
+	<view class="mask" bindtap="hideCanvas">
+		<view class="canvas-content" catchtap="forbiddenBubble">
+			<text class="share-close iconfont iconshanchu" bindtap="hideCanvas"></text>
+			<image class="canvas-temp" src="{{img}}" wx:if="{{width}}" style="width: {{width}}rpx;" mode="aspectFit" />
+			<button class="canvas-btn" bindtap="saveImageToPhotosAlbumFunc">
+				<text class="share-icon iconfont iconxiazai1"></text>
+				保存图片
+			</button>
+		</view>
+	</view>
+</view>

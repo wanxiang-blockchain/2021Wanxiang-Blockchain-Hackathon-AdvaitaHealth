@@ -1,0 +1,129 @@
+<!--头部-->
+<include src="../../../pages/common/auth.wxml" />
+<MyHeader bind:clickDate="clickDate" bind:back="back" backIcon="{{true}}"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;background: #FBFBFB;"
+ scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="searchScrollLower">
+	<!-- <image wx:if="{{example!=1}}" class="report-img"  bindtap="goUrl" data-url="/pages/trendList/trendList" src="https://i.2fei2.com/shop/logo/2020-09-25/15:21:53/5f6d9a91e755b.png" mode="widthFix"></image> -->
+	<view wx:if="{{example!=1}}" class="enter-box" bindtap="goUrl" data-url="/pages/trendList/trendList">
+		<text class="enter-icon iconfont iconjiankangqushi-01-011"></text>
+		<text class="enter-center">健康趋势报告</text>
+		<text class="enter-text">立即查看<text class="enter-back iconfont iconjiantouyou"></text></text>
+	</view>
+	<view class="p-title">测评报告</view>
+	<view class="">
+		<block wx:for="{{list}}" wx:key="index">
+			<view class="log-item">
+				<view style="padding: 0 32rpx;">
+					<navigator url="{{item.bind_treport_user_table_id!=0 ? '/pageWatch/pageWatch/treport/treport' : '/pageWatch/pageWatch/treportBindUser/treportBindUser'}}?DeviceIdentity={{item.deviceidentity}}&id={{item.db_id}}&bindid={{item.treport_bind_user_db_id}}&example={{example}}&isSelf=1"
+					 open-type="navigate">
+						<view class="user-box">
+							<image wx:if="{{example==1}}" mode="aspectFill" src="https://i.2fei2.com/shop/logo/2020-08-12/17:34:33/5f33b7a911bb7.png"
+							 class="log-img"></image>
+							<image wx:else src="{{item.avatar_url}}" class="log-img"></image>
+							<view class="log-score"><text class="log-num">{{item.count}}</text> 分</view>
+							<view class="log-name">
+								<text class="hidden-text" style="max-width: 280rpx;vertical-align: middle;font-weight: bold;">{{example==1? '陈先生' :item.nickname}}</text>
+								<text style="vertical-align: middle;font-weight: bold;"> 的报告</text>
+							</view>
+							<text class="enter-text" style="height: 40rpx;right: 0;">查看详情<text class="enter-back iconfont iconjiantouyou"></text></text>
+						</view>
+						<view class="flex-box" style="margin-top: 22rpx;" wx:if="{{example!=1}}">
+							<view class="log-text">绑定码：{{item.deviceidentity}}</view>
+						</view>
+						<view class="flex-box" style="margin-top: 14rpx;">
+							<view class="log-text">测量日期：{{item.startString}}</view>
+							<view class="log-text">出具时间：{{item.endString}}</view>
+						</view>
+					</navigator>
+					<view class="border-line"></view>
+				</view>
+				<view class="rask-more {{item.active?'':'more-hide'}}">
+					<!-- wx:if="{{index==0 || item.active}}" -->
+					<view style="padding: 0 32rpx;">
+						<view class="rask-box flex-box">
+							<view class="rask-item">
+								<view class="rask-text" style="font-size: 36rpx;color: {{item.heartColor||'#666'}};">{{item &&item.heart_multi_score?item.heart_multi_score:'-'}}</view>
+								<view class="rask-title rask-bold">心藏测评</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.spiritColor||'#666'}};">{{item &&item.spiritscore?item.spiritscore:'-'}}</view>
+								<view class="rask-title">{{item.mentalText}}</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.cardiovascularColor||'#666'}};">{{item &&item.cardiovascularscore?item.cardiovascularscore:'-'}}</view>
+								<view class="rask-title">心血管</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.sleepqualiColor||'#666'}};">{{item &&item.sleepqualiscore?item.sleepqualiscore:'-'}}</view>
+								<view class="rask-title">睡眠质量</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.diurnalrhythmColor||'#666'}};">{{item &&item.diurnalrhythmscore?item.diurnalrhythmscore:'-'}}</view>
+								<view class="rask-title">生命节律</view>
+							</view>
+						</view>
+						<view class="rask-box flex-box">
+							<view class="rask-item">
+								<view class="rask-text" style="font-size: 36rpx;color: {{item.liverColor||'#666'}};">{{item &&item.liver_multi_score?item.liver_multi_score:'-'}}</view>
+								<view class="rask-title rask-bold">肝藏测评</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.liverColor||'#666'}};">{{item &&item.liver_multi_score?item.liver_multi_score:'-'}}</view>
+								<view class="rask-title">{{item.anxietyText}}</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="font-size: 36rpx;color: {{item.kidneyColor||'#666'}};">{{item &&item.kidney_multi_score?item.kidney_multi_score:'-'}}</view>
+								<view class="rask-title rask-bold">肾藏测评</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.sympatheticColor||'#666'}};">{{item &&item.sympatheticscore?item.sympatheticscore:'-'}}</view>
+								<view class="rask-title">{{item.hanreText}}</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.energyColor||'#666'}};">{{item &&item.energyscore?item.energyscore:'-'}}</view>
+								<view class="rask-title">生命活力</view>
+							</view>
+						</view>
+						<view class="rask-box flex-box" style="margin-bottom: 0;">
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.sleepqualiColor||'#666'}};">{{item &&item.sleepqualiscore?item.sleepqualiscore:'-'}}</view>
+								<view class="rask-title">失眠</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.cardiovascularColor||'#666'}};">{{item &&item.cardiovascularscore?item.cardiovascularscore:'-'}}</view>
+								<view class="rask-title">心血管</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.diabeteriskColor||'#666'}};">{{item &&item.diabeteriskscore?item.diabeteriskscore:'-'}}</view>
+								<view class="rask-title">糖尿病</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.dementiariskColor||'#666'}};">{{item &&item.dementiariskscore?item.dementiariskscore:'-'}}</view>
+								<view class="rask-title">老年痴呆</view>
+							</view>
+							<view class="rask-item">
+								<view class="rask-text" style="color: {{item.cerebroriskColor||'#666'}};">{{item &&item.cerebroriskscore?item.cerebroriskscore:'-'}}</view>
+								<view class="rask-title">脑血管</view>
+							</view>
+						</view>
+					</view>
+					<view style="margin-top: 32rpx;" wx:if="{{user_id == item.user_id}}">
+						<commentInput type="3" info="{{item}}" placeContent="{{item.treport_diary_text}}"></commentInput>
+					</view>
+					<aiList info="{{item.singema_val}}" showTitle="true"></aiList>
+				</view>
+				<view bindtap="triggleMore" data-index="{{index}}" class="more-arr iconfont iconjiantouxia {{item.active?'arr-rotate':''}}"></view>
+			</view>
+		</block>
+	</view>
+	<view class="loading" wx:if="{{searchLoading}}">
+		<view class="lds-css ng-scope">
+			<view style="width:100%;height:100%" class="lds-rolling">
+				<view></view>
+			</view>
+		</view>
+	</view>
+	<view class="no-more" wx:if="{{ list && list.length === 0 && !searchLoading }}">-- 暂无数据 --</view>
+	<view class="no-more" wx:if="{{!listMore && list && list.length > 0 && !searchLoading}}">-- 已加载全部内容 --</view>
+</scroll-view>

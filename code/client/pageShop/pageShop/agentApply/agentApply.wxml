@@ -1,0 +1,8 @@
+<MyHeader  bind:back="back"  backIcon="{{true}}"></MyHeader>
+<!-- 授权登录框 -->
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;" scroll-y="true" class="scroll_h" scroll-into-view="{{isSelect}}">
+	<AddApply bindhideMask="hideMask" wx:if="{{type == 'apply'}}"></AddApply>
+	<image class="agent-avatar" style="height: {{height}}rpx;" wx:if="{{type == 'rule'}}" src="{{url}}"
+	 mode="aspectFill"></image>
+</scroll-view>

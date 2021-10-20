@@ -1,0 +1,151 @@
+<!-- 头部 -->
+<include src="../../../pages/common/auth.wxml" />
+<MyHeader bind:clickDate="clickDate" titleText='{{title}}' bind:back="back" backIcon="{{true}}" background="#2B86FF"
+ color="#fff"></MyHeader>
+<myLoading wx:if="{{loading}}"></myLoading>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view scroll-y="true" style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;background: #FBFBFB;"
+ scroll-top="{{scrollTop}}" bindscrolltolower="searchScrollLower">
+	<view wx:if="{{type == 0}}">
+		<view class="wifi-state">
+			<view class="item" bindtap="selectWatches">
+				<image src="http://i.2fei2.com/5e02bdc081f6f.png" class="watches"></image>
+				<view class="my-content">
+					<view class="title">
+						<text class="user-name" wx:if="_GET.name">{{_GET.name}}</text>{{_GET.name!='' ? ' 正在使用' : '手表未绑定成员'}}
+					</view>
+					<view class="bind-code">绑定码：{{_GET.device_id}}</view>
+				</view>
+				<view class="bind-btn" bindtap="goUrl" data-url="/pages/focus/focus?url=https://mp.weixin.qq.com/s/Tu00TyMYEadaS7adIvgEUQ">连接教程</view>
+				<view class="clearfix"></view>
+			</view>
+		</view>
+		<view class="wifi-title" wx:if="{{userList.length>0}}">我的网络</view>
+		<view class="my-list" wx:if="{{userList.length>0}}">
+		<!-- 	<view class="my-item" wx:for="{{userList}}" wx:key="{{index}}" bindtap="addWifi" data-activeindex="{{index}}"
+			 data-name="{{item.ssid}}" data-update="1" data-readonly="1"> -->
+			<view class="my-item" wx:for="{{userList}}" wx:key="index" data-activeindex="{{index}}"
+			 data-name="{{item.ssid}}" data-update="1" data-readonly="1">
+				<text class="my-suo iconfont iconkaisuoxianshidakaisuoicon" wx:if="{{item.state == 1}}"></text>
+				<text class="my-suo iconfont iconsuo" wx:else></text>
+				<view class="my-name">{{item.ssid}}</view>
+				<view class="my-btn my-result" wx:if="{{item.state == 0}}" catchtap="forbiddenBubble">连接失败</view>
+				<view class="my-btn my-result" wx:if="{{item.state == 1}}" catchtap="forbiddenBubble">连接成功</view>
+				<view class="my-btn " wx:if="{{item.state == 2}}" catchtap="forbiddenBubble">等待连接</view>
+				<text class="my-remove iconfont icon_shanchu" catchtap="showRemoveMask" data-index="{{index}}"></text>
+			</view>
+		</view>
+		<view class="wifi-title">其他网络</view>
+		<view class="block-box">
+			<!-- <image class="block-img" src="https://i.2fei2.com/shop/logo/2020-07-28/10:04:48/5f1f87c0ba600.png"></image> -->
+			<view class="block-btn" bindtap="startWifi">添加WiFi</view>
+		</view>
+
+		
+	</view>
+	
+	<view wx:elif="{{type == 1}}">
+		<view class="step-box" style="transform: scale({{helpStep==1?0.7:1}});top: {{helpStep==1?-50:64}}rpx;">
+			<view class="step-one" >
+				<text class="step-icon iconfont iconshouji" style="font-size: 126rpx;"></text>
+				<view class="step-num num-one">1</view>
+				<view class="step-text text-one">账号密码写入云</view>
+				<view class="step-arrow arrow-one"></view>
+			</view>
+			<view class="step-two" style="opacity:{{helpStep>=2?1:0.2}};">
+				<text class="step-icon iconfont iconyun" style="font-size: 138rpx;"></text>
+				<view class="step-num num-two">2</view>
+				<view class="step-text text-two">长按开机键同步到手表</view>
+				<view class="step-arrow arrow-two"></view>
+			</view>
+			<view class="step-three" style="opacity:{{helpStep>=3?1:0.2}};">
+				<text class="step-icon iconfont iconshoubiao1" style="font-size: 148rpx;"></text>
+				<view class="step-num num-three">3</view>
+				<view class="step-text text-three">手表链接WLAN</view>
+				<view class="step-arrow arrow-three"></view>
+			</view>
+			<view class="step-four" style="opacity:{{helpStep>=4?1:0.2}};">
+				<text class="step-icon iconfont iconWIFIwofi" style="font-size: 140rpx;"></text>
+			</view>
+		</view>
+		<view wx:if="{{helpStep == 1}}" class="step-wifi">
+			<view class="my-list" wx:if="{{wifiList.length>0&&!isLoading}}">
+				<view class="my-item" bindtap="addWifi" data-name="{{item.SSID}}" data-update="0" data-readonly="1" wx:for="{{wifiList}}"
+				 wx:key="index">
+					<text class="my-suo iconfont iconWIFIwofi"></text>
+					<view class="my-name">{{item.SSID}}</view>
+					<text class="my-wifi">连接</text>
+				</view>
+				<view class="my-other" bindtap="addWifi" data-update="0" data-readonly="0">手动添加</view>
+			</view>
+			<view class="m-loading" wx:if="{{isLoading}}">加载中</view>
+			<view class="m-loading" wx:if="{{isIos && wifiList.length==0 &&isLoading}}" bindtap="startWifi" style="color: red;">请在系统网络中搜索出全部WiFi列表后,返回此页面,点此重试</view>
+			
+			
+			<view class="block-box" wx:if="{{wifiList.length==0&&!isLoading}}">
+				<!-- <image class="block-img" src="https://i.2fei2.com/shop/logo/2020-07-28/10:04:48/5f1f87c0ba600.png"></image> -->
+				<view class="block-text">没有找到可用的网络</view>
+				<view class="block-btn" bindtap="addWifi" data-update="0" data-readonly="0">手动添加</view>
+			</view>
+		</view>
+		<view wx:elif="{{helpStep == 2}}" >
+			<view class="wifi-tips">打开手表点击【设置】-【WLAN】进入页面，在4G信号好的环境下等待手表写入WiFi信息，写入后页面将同步该WiFi名称</view>
+			<view class="btn-all" bindtap="nextWifi" data-step="3">下一步</view>
+		</view>
+		<view wx:elif="{{helpStep == 3}}" >
+			<view class="wifi-tips">手表写入WiFi名称后，在WLAN环境下，手表将自动寻找并连接，待手表从【未连接】变为【已验证】，则连接WiFi成功</view>
+			<view class="btn-all" bindtap="nextWifi" data-step="4">下一步</view>
+		</view>
+		<view wx:else >
+			<view class="btn-all" bindtap="nextWifi" data-step="5" style="margin-top: 116rpx;">等待验证成功</view>
+			<view class="wifi-back" bindtap="nextWifi" data-step="1">验证未成功返回到第一步</view>
+		</view>
+		<van-popup class="secure-box" show="{{ showPicker }}" round position="bottom">
+			<van-picker show-toolbar columns="{{columns}}" default-index="3" bind:confirm="onPickerConfirm" bind:cancel="onPickerCancel" />
+		</van-popup>
+	</view>
+	<!-- 移除wifi -->
+	<view class="m-mask" wx:if="{{showRemoveWifi}}" bindtap="hideRemoveMask">
+		<view class="mask-box" catchtap="stopMask">
+			<view class="mask-title">要移除Wi-Fi网络“{{userList[removeIndex].ssid}}”吗？</view>
+			<view class="mask-content">
+				您的设备将不再加入此Wi-Fi网络
+			</view>
+			<view class="mask-group">
+				<button class="mask-btn mask-cancel" bindtap="hideRemoveMask">取消</button>
+				<button class="mask-btn" bindtap="comfirmRemoveMask">移除</button>
+			</view>
+		</view>
+	</view>
+	<!-- 订阅wifi -->
+	<view class="m-mask" wx:if="{{orderWifiMask}}" bindtap="orderHideMask">
+		<view class="mask-box" catchtap="stopMask">
+			<view class="mask-title">等待连接</view>
+			<view class="mask-content" style="padding: 0 45rpx;text-align: left;">
+				<view class="">Wifi账号密码已上传，等待手表连接Wifi进行验证。</view>
+				<!-- <view class="">连接成功后我们会通过微信订阅消息通知您，请留意！</view> -->
+			</view>
+			<view class="mask-group">
+				<button class="mask-btn" bindtap="orderHideMask" style="width: 550rpx;margin: 0 auto;">好的，我知道了</button>
+			</view>
+		</view>
+	</view>
+	<!-- 添加wifi -->
+	<view class="m-mask" wx:if="{{showAddWifi}}" bindtap="hideMask">
+		<view class="mask-box" catchtap="stopMask" style="height:588rpx">
+			<view class="mask-title">{{hasWifiName?'输入密码':'其他网络'}}</view>
+			<view class="mask-content" style="text-align: left;">
+				<van-field class="mask-input" readonly="{{hasWifiName}}" clickable label="网络" value="{{chooseWifiName}}"
+				 input-align="right" border="{{false}}" placeholder="网络名称" bind:input="getWifiName" />
+				<van-field class="mask-input" readonly clickable label="安全性" value="{{secure.text}}" input-align="right" border="{{false}}"
+				 placeholder="请选择安全性" bindtap="changeShowPicker" is-link="{{true}}" />
+				<van-field class="mask-input" value="{{wifiPwd}}" bind:input="getWifiPwd" input-align="right" border="{{false}}"
+				 placeholder="密码" label="密码" />
+			</view>
+			<view class="mask-group">
+				<button class="mask-btn" bindtap="comfirmAddMask" style="width:100%">{{hasUpdate?'修改':'完成'}}</button>
+			</view>
+		</view>
+	</view>
+	<include src="../../../pages/common/public.wxml" />
+</scroll-view>

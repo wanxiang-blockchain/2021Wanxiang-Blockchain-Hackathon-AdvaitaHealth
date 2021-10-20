@@ -1,0 +1,7 @@
+<include src="../common/head.wxml"/>
+<view style="text-align: center;">
+<image src="http://i.2fei2.com/596f1f3f750fe.png" style="display:block;margin:0 auto;width:40%" mode="aspectFit"></image>
+<text>{{text}}</text>
+</view>
+
+<include src="../common/footer.wxml"/>

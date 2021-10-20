@@ -1,0 +1,9 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='' background="#fff" color="#000"></MyHeader>
+<myLoading wx:if="{{loading}}"></myLoading>
+<scroll-view style="height: calc({{windowHeight}}px - {{statusBarHeight}}px - {{navHeight}}px); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true">
+	<image class="m-img picture" style="width: 100%;height: {{height}}rpx;" wx:if="{{url}}" src="{{url}}" mode="aspectFill"></image>
+	<view class="go-btn" bindtap="goNext">马上制作</view>
+	<view class="go-btn" bindtap="goBuy">马上下单</view>
+</scroll-view>
+

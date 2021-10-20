@@ -1,0 +1,9 @@
+<view class="userinfo" style="height:{{height}}rpx">
+	<slot name="avatar"></slot>
+	<view class="user-content" style="left: {{contentLeft}}rpx;width:calc(100% - {{contentLeft}}rpx);">
+		<slot name="content"></slot>
+	</view>
+	<view class="" style="width:120rpx;height: 58rpx;line-height: 58rpx;background: #2B86FF;border-radius: 30rpx;font-size: 24rpx;color: #fff;position: absolute;right: 32rpx;top:0rpx;bottom: 0;margin: auto;text-align: center;{{btnStyle}}"
+	 wx:if="{{btnText}}" bindtap="showDeleteUser">{{btnText}}</view>
+	<view class="border-line" wx:if="{{isBorder}}" style="left: {{borderLeft}}rpx;"></view>
+</view>

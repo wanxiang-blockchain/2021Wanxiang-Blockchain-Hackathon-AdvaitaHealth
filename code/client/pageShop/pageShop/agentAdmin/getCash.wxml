@@ -1,0 +1,21 @@
+<MyHeader bind:back="back" backIcon="{{true}}" titleText='商城' background="#fff" color="#000"></MyHeader>
+<login wx:if="{{!userInfo}}"></login>
+<scroll-view style="height: calc({{windowHeight}}px - {{windowIsBang ? 40 : 16}}px - 52px ); width:{{windowWidth}}px;position:relative;"
+ scroll-y="true" class="scroll-box" scroll-into-view="{{isSelect}}">
+	<view class="cash-box">
+		<text class="wx-icon iconfont iconweixin"></text>
+		<view class="cash-title">提现到微信</view>
+	</view>
+	<view class="money-box">
+		<view class="money-name">提现金额</view>
+		<view class="money-input">
+			<text class="money-icon">￥</text>
+			<input class="input-custom" type="text" placeholder="请输入提现金额" />
+		</view>
+		<view class="money-tips">佣金金额￥18939.00，<text class="text-blue">全部提现</text></view>
+		<view class="money-btn">提现</view>
+	</view>
+	<view style="height: 1px;width: 100%;"></view>
+</scroll-view>
+
+<include src="../common/auth.wxml" />

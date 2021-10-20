@@ -1,0 +1,67 @@
+<scroll-view style="width:750rpx;" scroll-y="true" bindscrolltolower="searchScrollLower">
+	<view class="content">
+		<view class="live-title">
+			<view class="title-li" data-current="0">
+				全部直播
+			</view>
+		</view>
+		<view class="share-night">每日晚上 22:00 一起静坐</view>
+		<view class="share-box" bindtap="goUrl" data-url="/pageHappy/pageHappy/shareNight/shareNight">
+			<image class="share-img" src="https://i.2fei2.com/shop/logo/2021-01-28/09:43:15/601216b32ff5f.png" mode="aspectFill"></image>
+			<view class="share-btn">前去共修</view>
+		</view>
+		<view class="live-title">
+			<view class="title-li" data-current="0">
+				周二 周四 早上5点
+			</view>
+		</view>
+		<view class="live-list">
+			<view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="goRoom" data-room="{{item}}">
+				<view class="img-box">
+					<image class="room-img" src="{{item.cover_img }}" mode="aspectFill"></image>
+					<view class="room">
+						<view class="room-name">{{item.anchor_name}}</view>
+						<!-- <view class="room-num">{{item.click_num}}</view> -->
+						<!-- <view class="room-icon iconfont icon-icon-test"></view> -->
+					</view>
+					<view class="room-state" wx:if="{{item.live_status == 101}}">直播中</view>
+					<view class="room-state state-end" wx:if="{{item.live_status == 102}}">未开始</view>
+					<view class="room-state state-end" wx:if="{{item.live_status == 103}}">已结束</view>
+				</view>
+				<view class="list-title">{{item.name}}</view>
+				<view class="list-time">{{item.start_time}} 开始</view>
+			</view>
+		</view>
+		<!-- <view class="no-more" wx:if="{{ !listMore && list.length > 0 }}">-- 没有更多数据了 --</view>
+		<view class="no-more" wx:if="{{ list.length === 0 }}">-- 暂无数据 --</view> -->
+		<view class="live-title" wx:if="{{listDone.length>0}}">
+			<view class="title-li" bindtap="clickTab" data-current="0">
+				往期回放
+			</view>
+		</view>
+		<view class="live-list" wx:if="{{listDone.length>0}}">
+			<view class="list-item" wx:for="{{listDone}}" wx:key="index" bindtap="goRoom" data-room="{{item}}" style="margin-bottom: 60rpx">
+				<!-- <view class="img-box">
+					<image class="room-img" src="{{item.data_code.image }}" mode="aspectFill"></image>
+					<view class="room">
+						<view class="room-name">{{item.data_code.teacher}}</view>
+					</view>
+				</view>
+				<view class="list-title">{{item.data_code.title}}</view> -->
+				<view class="img-box">
+					<image class="room-img" src="{{item.cover_img }}" mode="aspectFill"></image>
+					<view class="room">
+						<view class="room-name">{{item.anchor_name}}</view>
+						<view class="room-num">{{item.click_num}}</view>
+						<view class="room-icon iconfont icon-icon-test"></view>
+					</view>
+					<view class="room-state" wx:if="{{item.live_status == 101}}">直播中</view>
+					<view class="room-state state-end" wx:if="{{item.live_status == 102}}">未开始</view>
+					<view class="room-state state-end" wx:if="{{item.live_status == 103}}">已结束</view>
+				</view>
+				<view class="list-title">{{item.name}}</view>
+				<view class="list-time">{{item.start_time}} 开始</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

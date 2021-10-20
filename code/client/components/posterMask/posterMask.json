@@ -1,0 +1,6 @@
+{
+	"usingComponents": {
+		"myLoading": "/components/myLoading/myLoading"
+	},
+	"component": true
+}

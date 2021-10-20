@@ -1,0 +1,53 @@
+page {
+	font-size: 24rpx;
+	color: #333333;
+}
+
+.flex-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.scroll_h{
+	background-color: #f9f9f9;
+}
+/* 代理切换 */
+.mask-title{
+	height: 42rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #333333;
+	line-height: 42rpx;
+	text-align: left;
+	padding-left: 32rpx;
+}
+.mask-item{
+	height: 47rpx;
+	font-size: 28rpx;
+	font-weight: 400;
+	color: #333333;
+	line-height: 47rpx;
+	text-align: left;
+	padding-left: 32rpx;
+	position: relative;
+	margin-bottom: 40rpx;
+}
+.mask-check{
+	color: #c6c6c6;
+	position: absolute;
+	right: 32rpx;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.mask-btn{
+	width: 206rpx;
+	height: 70rpx;
+	background: #2B86FF;
+	color: #fff;
+	margin: auto;
+	border: none;
+	border-radius: 49rpx;
+	line-height: 70rpx;
+}

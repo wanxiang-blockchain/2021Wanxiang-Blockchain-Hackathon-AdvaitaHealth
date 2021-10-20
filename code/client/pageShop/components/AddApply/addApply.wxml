@@ -1,0 +1,45 @@
+<view class="tab-box join" wx:if="{{!showMask}}">
+	<view class="join-title">我们诚挚邀请你加入健康推广的队伍，成为我们的推广使者</view>
+	<view class="join-title" style="margin-top: 12rpx;">请填写下面表格，随时联系我们！</view>
+	<view class="join-box">
+		<view class="join-item" style="border: 1rpx solid #CDB9FF;">
+			<view class="join-name" style="background-color: #CDB9FF;color: #6236FF;">姓名</view>
+			<input class="join-input {{name?'join-active':''}}" value="{{name}}" bindinput="userName" style="line-height: 100rpx;"
+			type="text" placeholder="填写姓名" placeholder-style="color: #D3D3D3;" />
+		</view>
+		<view class="join-item" style="border: 1rpx solid #B1EAFD;">
+			<view class="join-name" style="background-color: #B1EAFD;color: #2C99BD;">手机</view>
+			<button class="join-input {{phone?'join-active':''}}" style="line-height: 40rpx;" open-type="getPhoneNumber"
+			 bindgetphonenumber="getPhoneNumber">{{phone?phone:'授权本机号码'}}</button>
+		</view>
+		<view class="join-item" style="border: 1rpx solid #FF9EC3;">
+			<view class="join-name" style="background-color: #FF9EC3;color: #CF2F6C;">地址</view>
+			<view class="join-input {{address?'join-active':''}}" bindtap="getLocation">{{address?address:'授权位置信息'}}</view>
+		</view>
+		<view class="join-item " style="border: 1rpx solid #F9BEAD;" id="select">
+			<view class="join-name" style="background-color: #F9BEAD;color: #BC4B2A;width: 200rpx;line-height: 30rpx;padding-top:20rpx ;">是否有自己的公司(包括个体户)</view>
+			<view class="join-input {{hasCompany?'join-active':''}}" bindtap="showCompany" style="width: 300rpx;">
+				{{hasCompany=='1'?'是':''}}
+				{{hasCompany=='0'?'否':''}}
+				<view style="transform: rotate(90deg);display: inline-block;height: 24rpx;line-height: 16rpx;">
+					<text class="join-back iconfont iconjiantouyou"></text>
+				</view>
+			</view>
+
+			<view class="select-box" wx-if="{{companyMask}}">
+				<view class="select-mask" bindtap="showCompany"></view>
+				<view class="select-item" data-type="1" bindtap="getCompany">是</view>
+				<view class="select-item" data-type="0" bindtap="getCompany">否</view>
+			</view>
+		</view>
+	</view>
+	<view class="btn-box">
+		<!-- <cell class="team-cell" wx-if="{{name && hasCompany}}" plugid="cd5d4f6258c551f883a7a5e3f897f0e3" bindcompletemessage="completemessage" /> -->
+		<view class="btn-gra btn-all" bindtap="finalAdd" style="height:100rpx;line-height:100rpx">提交并联系客服</view>
+	</view>
+</view>
+<view wx:else style="width: 690rpx;margin: 0 auto;">
+	<button class="btn-gra btn-all" open-type="contact" send-message-title="联系客服"  show-message-card style="height:100rpx;line-height:100rpx;margin-bottom: 40rpx;" session-from="https://i.2fei2.com/shop/logo/2020-08-12/10:06:43/5f334eb3ceb97.png">提交成功，立即联系代理客服</button>
+</view>
+
+<include src="public.wxml"/>

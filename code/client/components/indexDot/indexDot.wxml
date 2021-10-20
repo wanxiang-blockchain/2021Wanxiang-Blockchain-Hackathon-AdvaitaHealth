@@ -1,0 +1,3 @@
+	<view  class="data">
+	<view bindtap="changeTab" class="data-box {{swiperIndex == index?'active':''}}" data-num="{{index}}"  wx:for="{{totalNum}}" wx:key="index"></view>	
+	</view>
